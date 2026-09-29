@@ -76,6 +76,16 @@ min/max (-2.60 m / 1339.65 m); every other break is a round feet value.
    **Overlay** over the hillshade layer, and tune hillshade transparency to
    taste.
 
+## Screenshots
+
+Naming convention: `screenshots/<map-scale>_<location>.png` (map scale as
+`1-N`, e.g. `1-16034` for 1:16,034). Add one per zoom level/location tested
+so the ramp's behavior across scales stays visible over time.
+
+### 1:16,034 — Chittenden/Bolton, Winooski River valley
+
+![Chittenden/Bolton at 1:16,034](screenshots/1-16034_chittenden-bolton.png)
+
 ## Revising
 
 If a class boundary looks off over specific terrain (e.g., the 500–1000 ft

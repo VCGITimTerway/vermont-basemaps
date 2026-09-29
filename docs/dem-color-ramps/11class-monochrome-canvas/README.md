@@ -61,6 +61,29 @@ values from the table above for each class swatch. See
 [`11class-feet-aligned`](../11class-feet-aligned/README.md#applying-in-arcgis-pro)
 for the full step-by-step.
 
+## Companion layers
+
+Colors for other basemap layers, designed to sit alongside this ramp
+without competing with user-added thematic data. Same hue family (~36°)
+as the terrain, distinguished by saturation/lightness/hue-shift rather
+than by introducing an unrelated color:
+
+| Layer | Fill | Outline |
+|---|---|---|
+| Buildings | `#DCD9D6` (220,217,214) — same hue, saturation dropped to ~8% so it reads as neutral "built" gray | `#C7C2BC` |
+| Open space (parks/conserved land) | `#DFE7DA` (223,231,218) — hue shifted to soft sage (~95°), similar saturation/lightness to terrain | `#C3D0B9` |
+| Contour lines | `#95805F` (149,128,95) — same hue family, ~48% lightness, ~22% saturation; dark enough to read over the lightest terrain classes without turning into a dark mass where contours are dense | Index contours (labeled) can go a touch darker, e.g. `#7A6650`, for hierarchy |
+
+## Screenshots
+
+Naming convention: `screenshots/<map-scale>_<location>.png` (map scale as
+`1-N`, e.g. `1-4203` for 1:4,203). Add one per zoom level/location tested
+so the ramp's behavior across scales stays visible over time.
+
+### 1:4,203 — Lamoille (Johnson), contour line color test
+
+![Lamoille at 1:4,203](screenshots/1-4203_lamoille.png)
+
 ## Revising
 
 If it reads as *too* flat/washed out once real overlay data is on top,
