@@ -1,0 +1,30 @@
+# gdaldem color-relief ramp for STATEWIDE_2023_35cm_DEMHF.tif
+# elevation values in meters (raster's native vertical unit)
+# 11 classified (flat) bands, not a smooth gradient.
+# Each boundary is listed twice (color just below the line, then the new
+# color starting exactly at the line) so gdaldem's linear interpolation
+# produces hard edges instead of blending between classes.
+# usage: gdaldem color-relief input.tif color-relief.txt output.tif -alpha
+-2.60 59 110 120 255
+0 59 110 120 255
+0.001 82 146 127 255
+30.48 82 146 127 255
+30.48001 124 168 119 255
+152.4 124 168 119 255
+152.4001 158 179 111 255
+304.8 158 179 111 255
+304.8001 184 179 110 255
+457.2 184 179 110 255
+457.2001 194 167 107 255
+609.6 194 167 107 255
+609.6001 201 154 108 255
+762.0 201 154 108 255
+762.0001 190 141 113 255
+914.4 190 141 113 255
+914.4001 173 137 133 255
+1066.8 173 137 133 255
+1066.8001 194 168 164 255
+1219.2 194 168 164 255
+1219.2001 237 234 229 255
+1339.65 237 234 229 255
+nv 0 0 0 0
