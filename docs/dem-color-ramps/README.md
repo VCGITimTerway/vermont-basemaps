@@ -13,3 +13,8 @@ version.
   round feet values (finer near 0–500 ft and 3500–4000 ft, 500 ft steps
   in between) to sit under foot-labeled contours. Desaturated for
   hillshade blending.
+- [`11class-monochrome-canvas/`](11class-monochrome-canvas/README.md) —
+  same 11 class breaks as the keeper, but a near-monochrome, light
+  "canvas" palette designed for basemaps that carry user-added thematic
+  points/lines/polygons on top — the terrain stays a quiet backdrop
+  rather than a focal layer.
