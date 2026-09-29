@@ -1,2 +1,2 @@
-# basemap
-This is a repository for developing and maintaning updates to Vermont basemaps
+# Vermont Basemaps
+This is a repository for developing and maintaining updates to Vermont basemaps.
