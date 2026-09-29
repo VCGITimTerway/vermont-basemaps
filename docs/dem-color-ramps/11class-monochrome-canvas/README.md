@@ -76,9 +76,25 @@ than by introducing an unrelated color:
 
 ## Screenshots
 
-Naming convention: `screenshots/<map-scale>_<location>.png` (map scale as
-`1-N`, e.g. `1-4203` for 1:4,203). Add one per zoom level/location tested
-so the ramp's behavior across scales stays visible over time.
+Naming convention: `screenshots/<map-scale>_<location>.<ext>` (map scale as
+`1-N`, e.g. `1-4203` for 1:4,203; `.png` or `.jpg` both fine). Add one per
+zoom level/location tested so the ramp's behavior across scales stays
+visible over time.
+
+### Burlington, zoomed out → in
+
+![Burlington/Winooski at 1:18,055](screenshots/1-18055_burlington.jpg)
+*1:18,055 — Burlington/Winooski, showing the palette across mixed urban
+grid, UVM/hillside terrain east of downtown, and the Winooski River delta
+wetlands.*
+
+![Burlington Old North End/downtown at 1:9,027](screenshots/1-9027_burlington.jpg)
+*1:9,027 — Old North End through downtown Burlington; buildings and open
+space (parks, cemetery) visible against the terrain tint.*
+
+![Battery Park/waterfront at 1:4,513](screenshots/1-4513_burlington.jpg)
+*1:4,513 — Battery Park and the Lake Champlain waterfront bluff; contour
+lines visible over the steepest terrain in this set.*
 
 ### 1:4,203 — Lamoille (Johnson), contour line color test
 
