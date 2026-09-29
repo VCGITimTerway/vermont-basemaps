@@ -81,7 +81,16 @@ Naming convention: `screenshots/<map-scale>_<location>.<ext>` (map scale as
 zoom level/location tested so the ramp's behavior across scales stays
 visible over time.
 
-### Burlington, zoomed out → in
+### Burlington/Winooski corridor, zoomed out → in
+
+![Winooski River corridor at 1:72,223](screenshots/1-72223_winooski_corridor.jpg)
+*1:72,223 — Winooski River corridor from Williston/Richmond to Jonesville,
+regional view showing the palette across broad terrain with foot-labeled
+contours (1000 ft) and floodplain wetlands.*
+
+![Burlington/South Burlington at 1:36,112](screenshots/1-36112_burlington.jpg)
+*1:36,112 — Burlington, Winooski, South Burlington, and the airport;
+transition from dense urban grid to suburban/exurban terrain.*
 
 ![Burlington/Winooski at 1:18,055](screenshots/1-18055_burlington.jpg)
 *1:18,055 — Burlington/Winooski, showing the palette across mixed urban
@@ -95,10 +104,6 @@ space (parks, cemetery) visible against the terrain tint.*
 ![Battery Park/waterfront at 1:4,513](screenshots/1-4513_burlington.jpg)
 *1:4,513 — Battery Park and the Lake Champlain waterfront bluff; contour
 lines visible over the steepest terrain in this set.*
-
-### 1:4,203 — Lamoille (Johnson), contour line color test
-
-![Lamoille at 1:4,203](screenshots/1-4203_lamoille.png)
 
 ## Revising
 
