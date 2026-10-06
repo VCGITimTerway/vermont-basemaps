@@ -10,28 +10,62 @@ definition and how a parcel transitions between them).
 
 ## Stewardship
 
-- **Maintained by:** TODO — likely assembled from municipal/town-level
-  submissions rather than surveyed directly by VCGI; confirm the actual
-  aggregation process
-- **Update cadence:** TODO
-- **Last known update:** TODO
+- **Maintained by:** VCGI, compiling/standardizing data sourced from
+  Vermont municipalities, Vermont licensed land surveyors, and the
+  Vermont Department of Taxes (Grand List).
+- **Update cadence:** **Weekly** (statewide), per the published metadata
+  — "Vermont GIS Parcel Data is generally updated weekly." Note the
+  *content* currency still varies by municipality (some towns' underlying
+  parcel geometry/attribution is much more current than others — the
+  weekly cadence is about republishing, not about how recently each town
+  resurveyed).
+- **Last known update:** Ongoing (weekly); program began 2018-01-24
+  (first statewide load), Grand List join automation added 2018-10-02.
+- **Source:** [published metadata, `CadastralParcels_VTPARCELS`](https://maps.vcgi.vermont.gov/gisdata/metadata/CadastralParcels_VTPARCELS.htm)
+  (an ISO/ArcGIS-item-style metadata record, not the older FGDC format
+  used for the lidar products above)
 
 ## Derivation
 
-- **Input sources:** TODO — presumably town/municipal grand list or
-  cadastral submissions, standardized statewide
-- **Methodology:** TODO — standardization/conflation process from
-  municipal sources into one statewide schema
+- **Input sources:** Individual municipality-submitted parcel datasets
+  (via the Statewide Property Parcel Mapping Program), joined to Grand
+  List records from the VT Department of Taxes by SPAN (Span Parcel
+  Account Number).
+- **Methodology:**
+  1. Municipalities submit parcel geometry conforming to the **Vermont
+     GIS Parcel Data Standard 2.3**.
+  2. VCGI standardizes/loads these into one statewide feature class
+     (`Cadastral_VTPARCELS_poly_standardized_parcels` for active,
+     `..._standardized_inactive` for inactive).
+  3. Grand List data (ownership, SPAN, assessment info) is joined via an
+     intersection/reconciliation table matching active SPAN numbers.
+  4. The published **Active** layer is a *value-added join product* — it
+     includes not just land parcels but unlanded buildings, public
+     rights-of-way, trail rights-of-way (from VTrans Town Highway Maps),
+     and surface water areas that serve as property boundaries.
 
 ## Use cases & limitations
 
 - **Intended use cases:** Parcel boundary reference layer for basemaps;
   attribute lookups (owner, SPAN parcel ID) for property-related
-  applications.
-- **Known limitations / caveats:** TODO — positional accuracy varies
-  significantly by source municipality for cadastral data in general;
-  confirm whether that caveat applies here and how it's communicated to
-  users
+  applications. Explicitly **not** a survey product (see below).
+- **Known limitations / caveats:**
+  - **"This data layer is not a legal survey. It is not a legal
+    conveyance or description of property and is intended for planning
+    purposes only."** — stated directly in the metadata; don't let this
+    caveat get lost if parcels are surfaced as an authoritative-looking
+    basemap layer.
+  - **Stacked-polygon effect:** where a one-to-many relationship exists
+    between land and Grand List records (e.g., a parcel with 15 mobile
+    homes as separate taxable records), the layer includes one polygon
+    *per Grand List record*, all with identical geometry stacked on top
+    of each other. An identify/click on such a parcel returns many
+    overlapping identical-shaped features, not one — matters for any
+    click/hover interaction built against this layer, and for rendering
+    performance if fills are even slightly transparent (stacked
+    translucent fills darken).
+  - Positional accuracy inherently varies by source municipality (not
+    independently quantified statewide in the metadata reviewed here).
 - **Appropriate scale / zoom range:** Large-scale/high-zoom only — parcel
   boundaries are not meaningful at statewide zoom levels.
 

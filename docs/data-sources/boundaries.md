@@ -10,24 +10,48 @@ has been identified yet — see below).
 
 ## Stewardship
 
-- **Maintained by:** TODO
-- **Update cadence:** TODO — boundary changes are infrequent (annexation,
-  incorporation) but the source should be re-checked periodically rather
-  than assumed static
-- **Last known update:** TODO
+- **Maintained by:** VCGI (process credited to Steve Sharp and others,
+  per the metadata's lineage steps), reviewing records from the **VT
+  State Archives, Secretary of State's Office**, with corrections welcomed
+  from VGIS users.
+- **Update cadence:** **Annual**, per the published metadata. Versioned
+  (e.g. `2026A`) — a `UPDACT` field tracks what changed since the prior
+  version and is reset each release.
+- **Last known update:** 2026A (content date 2026-07-31).
+- **Source:** [published FGDC metadata, `BoundaryOther_BNDHASH`](https://maps.vcgi.vermont.gov/gisdata/metadata/BoundaryOther_BNDHASH.htm)
 
 ## Derivation
 
-- **Input sources:** TODO
-- **Methodology:** TODO — the "BNDHASH" naming convention across all of
-  these services suggests a shared hash/versioning scheme tying the line
-  and polygon products together; confirm what it actually tracks
+- **Input sources:** "Best available" boundaries from multiple sources
+  (tracked per-feature via `ARC_SRC`/`SRC_NOTES` attributes), integrated
+  from the predecessor layer **TBHASH** (the master town boundary layer
+  prior to BNDHASH).
+- **Methodology:** Maintained as a single ESRI geodatabase feature dataset
+  with shared topology rules across all levels, so village/town/county
+  boundaries stay vertically integrated (a village boundary can't drift
+  from its parent town boundary, etc.). "BNDHASH" itself isn't a
+  processing method — it's the dataset name; the actual feature classes
+  inside it are `BNDHASH_POLY_VILLAGES`, `BNDHASH_POLY_TOWNS`,
+  `BNDHASH_POLY_COUNTIES`, `BNDHASH_POLY_RPCS` (**Regional Planning
+  Commissions — a boundary level not in our original inventory, worth
+  adding**), `BNDHASH_POLY_VTBND` (state), and `BNDHASH_LINE` (the shared
+  line geometry all polygons are built from — this is the "All Lines"
+  service in our inventory).
 
 ## Use cases & limitations
 
 - **Intended use cases:** Reference boundary lines/labels for basemaps at
-  multiple zoom levels (state down to village).
-- **Known limitations / caveats:** TODO
+  multiple zoom levels (state down to village). Explicitly includes RPC
+  boundaries alongside state/county/town/village.
+- **Known limitations / caveats:**
+  - **Not a legally definitive boundary layer** — stated directly in the
+    metadata: *"VCGI has NOT attempted to create a legally definitive
+    boundary layer... BNDHASH should be used for general mapping purposes
+    only."* Ultimate authority rests with the Secretary of State's Office
+    and the VT Legislature.
+  - Based on municipality/county/village lists from a 2000 Secretary of
+    State publication, with endorsed legislative changes (e.g. village
+    mergers) folded in since — not a live feed from that source.
 - **Appropriate scale / zoom range:** Varies by level — state boundary
   relevant at statewide zoom, village boundaries only at large scale.
 
