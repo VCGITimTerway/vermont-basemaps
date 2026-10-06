@@ -105,6 +105,11 @@ querying each REST endpoint directly, not inferred from naming alone,
 though in practice the naming convention holds: `_SP_` in a service name
 means Vermont State Plane, `_WM_` means Web Mercator).
 
+Deeper per-layer detail (stewardship, update cadence, derivation,
+methodology, use cases/limitations, and the specific path to a PMTiles/
+TiTiler output) lives in [`../data-sources/`](../data-sources/README.md),
+one file per layer, linked from each row below where a profile exists.
+
 ### VSDI (Vermont Spatial Data Infrastructure)
 
 Administrative boundaries are split across services by geometry type: all
@@ -114,16 +119,16 @@ service, **VT Data – Boundaries, All Lines**, while each level's
 
 | Layer | Current service | Projection | Notes |
 |---|---|---|---|
-| Boundaries — All Lines | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_line_SP_v1/FeatureServer/0) | EPSG:32145 (VT State Plane) | Single shared line service covering state/county/municipal/village boundary lines |
-| State Boundary | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_vtbnd_SP_v1/FeatureServer/0) | EPSG:32145 (VT State Plane) | Polygon |
-| County Boundaries | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_counties_SP_v1/FeatureServer/0) | EPSG:32145 (VT State Plane) | Polygon |
-| Municipal Boundaries | — | — | No dedicated polygon service identified yet; only covered as lines via the shared "All Lines" service above |
-| Village Boundaries | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_villages_SP_v1/FeatureServer/0) | EPSG:32145 (VT State Plane) | Polygon |
-| Parcels — Active | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_VTPARCELS_WM_NOCACHE_v2/FeatureServer/1) | EPSG:3857 (Web Mercator) | Same service as Inactive, different layer ID. Already has a PMTiles proof-of-concept (`parcels.pmtiles`, sandbox prefix) |
-| Parcels — Inactive | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_VTPARCELS_WM_NOCACHE_v2/FeatureServer/0) | EPSG:3857 (Web Mercator) | Same service as Active, different layer ID |
-| Protected Lands | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Cadastral_PROTECTEDLND_poly_SP_v2/FeatureServer/0) | EPSG:32145 (VT State Plane) | Subtypes: state parks, state forests, national parks, national forests, national wildlife refuges, national wilderness areas, municipal parks, municipal forests |
-| Military Sites | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Cadastral_PROTECTEDLND_poly_SP_v2/FeatureServer/0) | EPSG:32145 (VT State Plane) | **Not a separate service** — a filtered subset of the Protected Lands service above |
-| 1' Contours (QL2 lidar) | [ArcGIS Server MapServer, cached](https://maps.vcgi.vermont.gov/arcgis/rest/services/EGC_services/MAP_VCGI_LIDARCONTOURS_WM_CACHE_v1/MapServer) + [Esri Vector Tile Service](https://tiles.arcgis.com/tiles/BkFxaEFNwHqX3tAw/arcgis/rest/services/VECTOR_VCGI_CN1TGEN_WM_v1/VectorTileServer) | EPSG:3857 (Web Mercator), both services | **Two existing pipelines already, not derived from a shared export** — see [Gaps](#gaps--open-questions). No PMTiles equivalent exists yet. Styling currently done per-basemap in Esri's Vector Tile Style Editor (see the contour color work in [`../dem-color-ramps/11class-monochrome-canvas/`](../dem-color-ramps/11class-monochrome-canvas/README.md)) |
+| Boundaries — All Lines | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_line_SP_v1/FeatureServer/0) | EPSG:32145 (VT State Plane) | Single shared line service covering state/county/municipal/village boundary lines. [Profile](../data-sources/boundaries.md) |
+| State Boundary | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_vtbnd_SP_v1/FeatureServer/0) | EPSG:32145 (VT State Plane) | Polygon. [Profile](../data-sources/boundaries.md) |
+| County Boundaries | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_counties_SP_v1/FeatureServer/0) | EPSG:32145 (VT State Plane) | Polygon. [Profile](../data-sources/boundaries.md) |
+| Municipal Boundaries | — | — | No dedicated polygon service identified yet; only covered as lines via the shared "All Lines" service above. [Profile](../data-sources/boundaries.md) |
+| Village Boundaries | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_villages_SP_v1/FeatureServer/0) | EPSG:32145 (VT State Plane) | Polygon. [Profile](../data-sources/boundaries.md) |
+| Parcels — Active | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_VTPARCELS_WM_NOCACHE_v2/FeatureServer/1) | EPSG:3857 (Web Mercator) | Same service as Inactive, different layer ID. Already has a PMTiles proof-of-concept (`parcels.pmtiles`, sandbox prefix). [Profile](../data-sources/parcels.md) |
+| Parcels — Inactive | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_VTPARCELS_WM_NOCACHE_v2/FeatureServer/0) | EPSG:3857 (Web Mercator) | Same service as Active, different layer ID. [Profile](../data-sources/parcels.md) |
+| Protected Lands | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Cadastral_PROTECTEDLND_poly_SP_v2/FeatureServer/0) | EPSG:32145 (VT State Plane) | Subtypes: state parks, state forests, national parks, national forests, national wildlife refuges, national wilderness areas, municipal parks, municipal forests. [Profile](../data-sources/protected-lands.md) |
+| Military Sites | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Cadastral_PROTECTEDLND_poly_SP_v2/FeatureServer/0) | EPSG:32145 (VT State Plane) | **Not a separate service** — a filtered subset of the Protected Lands service above. [Profile](../data-sources/protected-lands.md) |
+| 1' Contours (QL2 lidar) | [ArcGIS Server MapServer, cached](https://maps.vcgi.vermont.gov/arcgis/rest/services/EGC_services/MAP_VCGI_LIDARCONTOURS_WM_CACHE_v1/MapServer) + [Esri Vector Tile Service](https://tiles.arcgis.com/tiles/BkFxaEFNwHqX3tAw/arcgis/rest/services/VECTOR_VCGI_CN1TGEN_WM_v1/VectorTileServer) | EPSG:3857 (Web Mercator), both services | **Two existing pipelines already, not derived from a shared export** — see [Gaps](#gaps--open-questions). No PMTiles equivalent exists yet. Styling currently done per-basemap in Esri's Vector Tile Style Editor (see the contour color work in [`../dem-color-ramps/11class-monochrome-canvas/`](../dem-color-ramps/11class-monochrome-canvas/README.md)). [Profile](../data-sources/contours-1ft.md) |
 | Surface Waters | AGOL hosted feature layer | *pending* | Waterbodies, waterlines — service links/projection to follow separately (more complex than the others) |
 | Base Land Cover | AGOL hosted feature layer | *pending* | Service links/projection to follow separately |
 | Land Cover — Impervious Surfaces | AGOL hosted feature layer | *pending* | |
@@ -150,11 +155,11 @@ Service links/projection not yet provided for this group.
 
 | Product | Current format/source | Notes |
 |---|---|---|
-| Bare Earth DEM | COG, S3 (`vtopendata-prd`) | QL1 lidar, hydro-flattened — the DEM this repo's color ramps are built for |
-| Bare Earth Hillshade | COG, S3 | |
-| DSM Hillshade | COG, S3 | Surface model (includes buildings/canopy), distinct from bare-earth hillshade |
-| Best of Color Imagery | COG, S3 | |
-| Time in Daylight | COG, S3 | |
+| Bare Earth DEM | COG, S3 (`vtopendata-prd`) | QL1 lidar, hydro-flattened — the DEM this repo's color ramps are built for. [Profile](../data-sources/dem-bare-earth.md) |
+| Bare Earth Hillshade | COG, S3 | [Profile](../data-sources/hillshade-bare-earth.md) |
+| DSM Hillshade | COG, S3 | Surface model (includes buildings/canopy), distinct from bare-earth hillshade. [Profile](../data-sources/hillshade-dsm.md) |
+| Best of Color Imagery | COG, S3 | [Profile](../data-sources/orthoimagery-best-of-color.md) |
+| Time in Daylight | COG, S3 | [Profile](../data-sources/time-in-daylight.md) |
 
 ## Gaps / open questions
 
