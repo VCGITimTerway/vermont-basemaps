@@ -94,30 +94,48 @@ non-Esri apps — see [Gaps](#gaps--open-questions) below.
 
 Default assumption for everything below unless noted otherwise: **VSDI**
 vector layers are currently hosted feature layers in ArcGIS Online; raster
-products are COGs in the `vtopendata-prd`/`vtopendata-dev` S3 buckets.
+products are COGs in the `vtopendata-prd`/`vtopendata-dev` S3 buckets. The
+authoritative, currently-published list of VSDI services is also
+maintained independently in the Services Registry table of VCGI's
+[Web Services Life Cycle Policy](https://files.vcgi.vermont.gov/other/policies/web-services-life-cycle-policies.html#services-registry)
+— cross-check there if a service below looks stale.
+
+Projection is taken from the service's own `spatialReference` (confirmed by
+querying each REST endpoint directly, not inferred from naming alone,
+though in practice the naming convention holds: `_SP_` in a service name
+means Vermont State Plane, `_WM_` means Web Mercator).
 
 ### VSDI (Vermont Spatial Data Infrastructure)
 
-| Layer | Current format/source | Notes |
-|---|---|---|
-| State Boundary | AGOL hosted feature layer | |
-| County Boundaries | AGOL hosted feature layer | |
-| Municipal Boundaries | AGOL hosted feature layer | |
-| Village Boundaries | AGOL hosted feature layer | |
-| Parcels | AGOL hosted feature layer | Already has a PMTiles proof-of-concept (`parcels.pmtiles`, sandbox prefix) |
-| Protected Lands | AGOL hosted feature layer(s) | Subtypes: state parks, state forests, national parks, national forests, national wildlife refuges, national wilderness areas, municipal parks, municipal forests |
-| Military Sites | AGOL hosted feature layer | |
-| 1' Contours (QL2 lidar) | **Not a hosted feature layer** — published via ArcGIS Server ([cached WM MapServer](https://maps.vcgi.vermont.gov/arcgis/rest/services/EGC_services/MAP_VCGI_LIDARCONTOURS_WM_CACHE_v1/MapServer)) and independently as an [Esri Vector Tile Service](https://tiles.arcgis.com/tiles/BkFxaEFNwHqX3tAw/arcgis/rest/services/VECTOR_VCGI_CN1TGEN_WM_v1/VectorTileServer) | **Two existing pipelines already, not derived from a shared export** — see [Gaps](#gaps--open-questions). No PMTiles equivalent exists yet. Styling currently done per-basemap in Esri's Vector Tile Style Editor (see the contour color work in [`../dem-color-ramps/11class-monochrome-canvas/`](../dem-color-ramps/11class-monochrome-canvas/README.md)) |
-| Surface Waters | AGOL hosted feature layer | Waterbodies, waterlines |
-| Base Land Cover | AGOL hosted feature layer | |
-| Land Cover — Impervious Surfaces | AGOL hosted feature layer | |
-| Land Cover — Tree Canopy | AGOL hosted feature layer | |
-| Mountains and Hills | AGOL hosted feature layer | |
-| Tree Centroids | *Available next year* | |
-| Tree Canopy (next-gen) | *Available next year* | Presumably supersedes/complements Land Cover — Tree Canopy above; relationship between the two not yet clarified |
-| Wetlands (VSWI) | AGOL hosted feature layer | Vermont Significant Wetland Inventory |
+Administrative boundaries are split across services by geometry type: all
+boundary **lines** (state/county/municipal/village) come from one shared
+service, **VT Data – Boundaries, All Lines**, while each level's
+**polygon** equivalent (where one exists) is published as its own service.
+
+| Layer | Current service | Projection | Notes |
+|---|---|---|---|
+| Boundaries — All Lines | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_line_SP_v1/FeatureServer/0) | EPSG:32145 (VT State Plane) | Single shared line service covering state/county/municipal/village boundary lines |
+| State Boundary | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_vtbnd_SP_v1/FeatureServer/0) | EPSG:32145 (VT State Plane) | Polygon |
+| County Boundaries | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_counties_SP_v1/FeatureServer/0) | EPSG:32145 (VT State Plane) | Polygon |
+| Municipal Boundaries | — | — | No dedicated polygon service identified yet; only covered as lines via the shared "All Lines" service above |
+| Village Boundaries | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_villages_SP_v1/FeatureServer/0) | EPSG:32145 (VT State Plane) | Polygon |
+| Parcels — Active | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_VTPARCELS_WM_NOCACHE_v2/FeatureServer/1) | EPSG:3857 (Web Mercator) | Same service as Inactive, different layer ID. Already has a PMTiles proof-of-concept (`parcels.pmtiles`, sandbox prefix) |
+| Parcels — Inactive | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_VTPARCELS_WM_NOCACHE_v2/FeatureServer/0) | EPSG:3857 (Web Mercator) | Same service as Active, different layer ID |
+| Protected Lands | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Cadastral_PROTECTEDLND_poly_SP_v2/FeatureServer/0) | EPSG:32145 (VT State Plane) | Subtypes: state parks, state forests, national parks, national forests, national wildlife refuges, national wilderness areas, municipal parks, municipal forests |
+| Military Sites | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Cadastral_PROTECTEDLND_poly_SP_v2/FeatureServer/0) | EPSG:32145 (VT State Plane) | **Not a separate service** — a filtered subset of the Protected Lands service above |
+| 1' Contours (QL2 lidar) | [ArcGIS Server MapServer, cached](https://maps.vcgi.vermont.gov/arcgis/rest/services/EGC_services/MAP_VCGI_LIDARCONTOURS_WM_CACHE_v1/MapServer) + [Esri Vector Tile Service](https://tiles.arcgis.com/tiles/BkFxaEFNwHqX3tAw/arcgis/rest/services/VECTOR_VCGI_CN1TGEN_WM_v1/VectorTileServer) | EPSG:3857 (Web Mercator), both services | **Two existing pipelines already, not derived from a shared export** — see [Gaps](#gaps--open-questions). No PMTiles equivalent exists yet. Styling currently done per-basemap in Esri's Vector Tile Style Editor (see the contour color work in [`../dem-color-ramps/11class-monochrome-canvas/`](../dem-color-ramps/11class-monochrome-canvas/README.md)) |
+| Surface Waters | AGOL hosted feature layer | *pending* | Waterbodies, waterlines — service links/projection to follow separately (more complex than the others) |
+| Base Land Cover | AGOL hosted feature layer | *pending* | Service links/projection to follow separately |
+| Land Cover — Impervious Surfaces | AGOL hosted feature layer | *pending* | |
+| Land Cover — Tree Canopy | AGOL hosted feature layer | *pending* | |
+| Mountains and Hills | AGOL hosted feature layer | *pending* | |
+| Tree Centroids | *Available next year* | *pending* | |
+| Tree Canopy (next-gen) | *Available next year* | *pending* | Presumably supersedes/complements Land Cover — Tree Canopy above; relationship between the two not yet clarified |
+| Wetlands (VSWI) | AGOL hosted feature layer | *pending* | Vermont Significant Wetland Inventory — service links/projection to follow separately |
 
 ### E911 Board layers
+
+Service links/projection not yet provided for this group.
 
 | Layer | Current format/source |
 |---|---|
