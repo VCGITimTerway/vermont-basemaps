@@ -58,6 +58,22 @@ min/max (-2.60 m / 1339.65 m); every other break is a round feet value.
   doubled entries at each boundary so classes render as hard-edged flat
   bands rather than a smooth gradient. Usable directly with GDAL/QGIS, and
   as a reference table for manually building the ramp in other tools.
+- [`titiler-colormap.json`](titiler-colormap.json) — TiTiler/rio-tiler
+  "intervals" colormap format (a JSON list of `[[min, max], [r, g, b, a]]`
+  pairs), elevation in meters. Unlike `color-relief.txt`, intervals here
+  are naturally hard-edged (no doubled-entry trick needed) and the end
+  classes are padded slightly (-50 m floor, 2000 m ceiling) past the DEM's
+  actual -2.60 m/1339.65 m range so resampling/reprojection edge cases
+  don't fall outside the defined colormap.
+
+## Applying in TiTiler
+
+Paste the contents of [`titiler-colormap.json`](titiler-colormap.json)
+into the endpoint generator's custom colormap JSON field (not the color
+formula field — that's for GDAL-style band-math expressions, which this
+isn't). No rescale/color formula needed alongside it; the intervals
+colormap is self-contained. If the tool round-trips the colormap through
+a URL, it'll end up as the COG tile endpoint's `colormap` query parameter.
 
 ## Applying in ArcGIS Pro
 
