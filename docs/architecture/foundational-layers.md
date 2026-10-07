@@ -59,8 +59,9 @@ Online, not just this one ramp. If this keeps being fragile across more
 colormaps/variants, registering each ramp as a **named colormap** directly
 in the `titiler-deployment` app config (so the URL param becomes a short
 plain name instead of embedded JSON) would sidestep the whole class of
-problem — not yet done, since it requires a deployment change rather than
-just a URL.
+problem — see [`titiler-named-colormaps.md`](titiler-named-colormaps.md)
+for how that would work. Not yet implemented or live-tested; just a
+worked-out plan to come back to if minifying ever stops being enough.
 
 ### Vector → PMTiles (+ parallel Esri Vector Tiles)
 
