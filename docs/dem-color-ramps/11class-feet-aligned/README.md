@@ -60,11 +60,16 @@ min/max (-2.60 m / 1339.65 m); every other break is a round feet value.
   as a reference table for manually building the ramp in other tools.
 - [`titiler-colormap.json`](titiler-colormap.json) — TiTiler/rio-tiler
   "intervals" colormap format (a JSON list of `[[min, max], [r, g, b, a]]`
-  pairs), elevation in meters. Unlike `color-relief.txt`, intervals here
-  are naturally hard-edged (no doubled-entry trick needed) and the end
-  classes are padded slightly (-50 m floor, 2000 m ceiling) past the DEM's
-  actual -2.60 m/1339.65 m range so resampling/reprojection edge cases
-  don't fall outside the defined colormap.
+  pairs), elevation in meters, pretty-printed for readability. Unlike
+  `color-relief.txt`, intervals here are naturally hard-edged (no
+  doubled-entry trick needed) and the end classes are padded slightly
+  (-50 m floor, 2000 m ceiling) past the DEM's actual -2.60 m/1339.65 m
+  range so resampling/reprojection edge cases don't fall outside the
+  defined colormap.
+- [`titiler-colormap.min.json`](titiler-colormap.min.json) — same content,
+  minified to one line with no whitespace. **Use this one when the
+  colormap has to be embedded in a URL** (e.g. pasted into a tile-layer
+  URL template) — see the ArcGIS Online gotcha below.
 
 ## Applying in TiTiler
 
@@ -74,6 +79,21 @@ formula field — that's for GDAL-style band-math expressions, which this
 isn't). No rescale/color formula needed alongside it; the intervals
 colormap is self-contained. If the tool round-trips the colormap through
 a URL, it'll end up as the COG tile endpoint's `colormap` query parameter.
+
+**ArcGIS Online gotcha (confirmed):** a URL with the pretty-printed
+colormap (whitespace/newlines percent-encoded as `%20`/`%0A`) renders fine
+when requested directly (confirmed via `curl` and in the TiTiler
+preview), but **failed to render when added as a Tile Layer in ArcGIS
+Online Map Viewer** — tiles silently didn't draw, no visible error.
+Re-encoding the exact same colormap **minified** (no whitespace, see
+[`titiler-colormap.min.json`](titiler-colormap.min.json)) fixed it. Root
+cause not fully confirmed, but the working theory is that Map Viewer's
+custom tile-layer URL handling decodes/re-encodes the pasted URL at some
+point and doesn't correctly round-trip the whitespace-heavy percent
+sequences in the pretty-printed version — the minified version has far
+fewer of them. **Takeaway: always use the minified JSON when building a
+TiTiler colormap URL for ArcGIS Online**, even though either form works
+fine for direct requests or non-Esri (MapLibre/Leaflet) consumption.
 
 ## Applying in ArcGIS Pro
 

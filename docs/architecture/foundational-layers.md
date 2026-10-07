@@ -43,6 +43,25 @@ endpoint — including handling ArcGIS's swapped `{z}/{y}/{x}` token order
 endpoint usable from both an open-source MapLibre map and an ArcGIS Online
 web map.
 
+**Confirmed gotcha — minify custom colormap JSON for ArcGIS Online.** A
+TiTiler tile URL with a custom `colormap` query param (classified
+"intervals" format) worked fine requested directly and in non-Esri
+previews, but silently failed to render when added as a Tile Layer in
+ArcGIS Online Map Viewer — until the colormap JSON was minified (no
+whitespace/newlines). Token order wasn't the issue here (confirmed by
+testing); something about Map Viewer's custom tile-layer URL handling
+doesn't correctly round-trip the whitespace-heavy percent-encoded
+sequences in a pretty-printed JSON blob. Worked example (pretty vs.
+minified) in
+[`../dem-color-ramps/11class-feet-aligned/`](../dem-color-ramps/11class-feet-aligned/README.md#applying-in-titiler).
+Apply this to every future TiTiler colormap URL destined for ArcGIS
+Online, not just this one ramp. If this keeps being fragile across more
+colormaps/variants, registering each ramp as a **named colormap** directly
+in the `titiler-deployment` app config (so the URL param becomes a short
+plain name instead of embedded JSON) would sidestep the whole class of
+problem — not yet done, since it requires a deployment change rather than
+just a URL.
+
 ### Vector → PMTiles (+ parallel Esri Vector Tiles)
 
 [`VCGI/pmtiles`](https://github.com/VCGI/pmtiles) — a PMTiles CDN
