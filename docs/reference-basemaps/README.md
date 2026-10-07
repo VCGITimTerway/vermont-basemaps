@@ -51,3 +51,26 @@ source for the vector tile schema itself lives in
 - MapTiler Basic, OSM Bright, and MapTiler 3D trace back to Mapbox Open
   Styles instead, with no equivalent CC-BY design requirement noted in
   their license files.
+
+## Source: VCGI (internal, 2024 development tests)
+
+Screenshots (not style files) from earlier, unpublished VCGI basemap
+exploration in
+[VCGI/standards-and-guidelines-dev](https://github.com/VCGI/standards-and-guidelines-dev/tree/main/basemaps)
+(private repo — the images below are mirrored here since that repo isn't
+broadly accessible). Internal design reference, not an external style to
+compare against like the OpenMapTiles entries above.
+
+### Large Scale Physical Geography — Site Planning
+
+Likely not a "basemap" in the sense of the other entries here — more a
+potential toggle-able set of layer states and styling in a web
+application, useful for as-built site planning and conceptual
+development at large scale. Shows contours, individual tree-canopy point
+symbols, building footprints, and impervious/paved surfaces together at
+a scale where those details are legible (source repo credits this to a
+"2024 KEHS COG and Basemap Test" ArcGIS Pro project).
+
+![Large scale physical geography site planning test, variant 1](screenshots/vcgi-2024-large-scale-physical-geography-1.png)
+
+![Large scale physical geography site planning test, variant 2 — grayer impervious/paved surface styling](screenshots/vcgi-2024-large-scale-physical-geography-2.png)
