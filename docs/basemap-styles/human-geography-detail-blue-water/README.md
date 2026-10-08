@@ -27,6 +27,9 @@ kept in case of needing to revert. Each future backup should be named
   ArcGIS Online specifically.
 - **Added [`vermont-mask.geojson`](vermont-mask.geojson)** — the actual
   working fix for cropping in ArcGIS Online, see below.
+- **Railway symbol**: solid rail line + wide short-dash "ties" layer,
+  replacing the dotted look. See "Railway symbol" below. Backed up
+  beforehand as [`backups/v2-before-railway.json`](backups/v2-before-railway.json).
 
 ## Vermont-only cropping
 
@@ -100,28 +103,25 @@ place names from VCGI's own VSDI data instead (which would carry real
 Vermont attribution, enabling genuine per-feature filtering on both
 platforms) rather than treating this as an Esri-only workaround problem.
 
-## Pending
+## Railway symbol
 
-**Railway symbol change not yet made.** The `Railroad` layer is currently
-a solid gray (`#c8c8c8`) line with a dash pattern (`[2,1,2,1]`) that reads
-as dotted. The ask is a solid line with a perpendicular cross-tie mark
-(the standard railway cartographic convention), but this style's sprite
-sheet has no rail-related icon (confirmed — only 22 icons total, all
-road-shield rectangles and a few area-fill patterns), and `line-dasharray`
-can't produce perpendicular ties regardless (it only toggles the line
-on/off along its own direction). Three options, still waiting on a
-choice:
+**Resolved — went with option 2** (ruled out the Esri Style Editor route:
+no built-in railroad/cross-tie symbol available there either). Two
+stacked line layers now render the classic no-sprite-needed "hachured
+railway" look:
 
-1. **Solid line only, no ties** — just remove the dasharray. No new
-   assets needed, doable immediately.
-2. **Solid line + contrasting dash overlay** — a second thin, short-dash
-   line on top of the solid base; the common no-sprite-needed convention
-   several basemaps use to suggest "railway," but not literally
-   perpendicular ties.
-3. **True cross-ties via Esri's Style Editor** — check whether Esri's
-   Vector Tile Style Editor has a built-in railroad/cross-tie line symbol
-   in its picker; if so, apply it there (generates the correct sprite
-   automatically), then export and hand back the updated style.json.
+- **`Railroad/ties`** (new, drawn first/underneath): wide (`line-width: 5`)
+  dark gray (`#505050`, matching this style's existing road-casing
+  color), short-dash (`line-dasharray: [0.2, 2]`) — frequent brief
+  segments at the full width.
+- **`Railroad`** (existing layer, modified): dasharray removed, now a
+  solid `#c8c8c8` line at its original width (1.5), drawn on top.
+
+Because the ties layer is wider than the solid rail-bed line on top, each
+short dash segment only shows as a small tick poking out past both edges
+of the solid line — reading as cross-ties without needing any sprite
+icon. Backed up beforehand as
+[`backups/v2-before-railway.json`](backups/v2-before-railway.json).
 
 ## Related
 
