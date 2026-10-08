@@ -30,4 +30,4 @@ bitten the first entry below already, see its README.
 
 | Test | Live embed | Notes |
 |---|---|---|
-| [Topographic — Test 01 (Styled DEM)](topographic-test-01-styled-dem/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-01-styled-dem/) | Embed not yet rendering for outside viewers — item sharing not yet public, see its README |
+| [Topographic — Test 01 (Styled DEM)](topographic-test-01-styled-dem/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-01-styled-dem/) | Public, layer list documented from the actual web map JSON |
