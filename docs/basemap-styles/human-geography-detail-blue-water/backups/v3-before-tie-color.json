@@ -896,7 +896,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#c8c8c8",
+        "line-color": "#505050",
         "line-width": 5,
         "line-dasharray": [
           0.2,

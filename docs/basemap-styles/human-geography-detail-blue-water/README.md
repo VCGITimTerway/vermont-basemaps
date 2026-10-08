@@ -110,10 +110,11 @@ no built-in railroad/cross-tie symbol available there either). Two
 stacked line layers now render the classic no-sprite-needed "hachured
 railway" look:
 
-- **`Railroad/ties`** (new, drawn first/underneath): wide (`line-width: 5`)
-  dark gray (`#505050`, matching this style's existing road-casing
-  color), short-dash (`line-dasharray: [0.2, 2]`) — frequent brief
-  segments at the full width.
+- **`Railroad/ties`** (new, drawn first/underneath): wide (`line-width: 5`),
+  short-dash (`line-dasharray: [0.2, 2]`) — frequent brief segments at the
+  full width. Color matches the rail line itself (`#c8c8c8`) — changed
+  from an initial darker gray (`#505050`) after testing in the Vector
+  Tile Style Editor showed the matching color read as more visible.
 - **`Railroad`** (existing layer, modified): dasharray removed, now a
   solid `#c8c8c8` line at its original width (1.5), drawn on top.
 
