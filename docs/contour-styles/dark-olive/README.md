@@ -17,6 +17,13 @@ structure.
   layers (`50ft`/`50ft` Index Major/Minor, z14–15) had no explicit
   `line-width` to begin with (MapLibre default of 1) and were left as-is.
 
+## To revisit
+
+Which contour interval shows at which zoom level may need adjustment,
+particularly at regional/small-scale zoom levels (the broader
+1000/500/250 ft tiers at z7–13) — not changed in this pass, which was
+line-width only.
+
 ## Related
 
 - [`../../data-sources/contours-1ft.md`](../../data-sources/contours-1ft.md) —
