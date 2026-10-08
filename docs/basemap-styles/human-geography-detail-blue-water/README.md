@@ -18,23 +18,62 @@ kept in case of needing to revert. Each future backup should be named
 
 - **v1 → current:** Added a Vermont-plus-buffer `bounds` array
   (`[-73.5, 42.727, -71.4653, 45.0169]`) to the shared `esri` source.
-  This is the same bbox already used for the 1' contour service
-  elsewhere in this repo (see
-  [`../../contour-styles/dark-olive/style.json`](../../contour-styles/dark-olive/style.json)),
-  reused here for consistency.
-  - **Why a bounding box and not per-feature filtering:** this style's
-    source has no symbol/label layer for named places at all (only road
-    labels), and there's no attribute in the other layers (water, roads,
-    boundaries, etc.) identifying which state/country a feature belongs
-    to — a true "only features touching Vermont" filter isn't expressible
-    against this data. A source-level `bounds` is the standard MapLibre
-    mechanism for this: it crops which vector tiles are requested/drawn
-    to a bounding box, affecting every layer pulling from that source
-    uniformly (roads, water, boundaries, airports, buildings, trails,
-    ferry, railroad, and road labels all share the one `esri` source).
-  - This intentionally keeps features that cross the border (e.g. all of
-    Lake Champlain, which extends into New York) rather than clipping at
-    the state line exactly, per the original request.
+  **Confirmed NOT to achieve cropping in ArcGIS Online** — see
+  "Vermont-only cropping" below. Left in `style.json` anyway since it's
+  spec-correct per the MapLibre style spec and harmless where unsupported
+  — it may actually work if this style is ever loaded in a non-Esri
+  MapLibre/Mapbox GL context later, consistent with this project's
+  dual-platform (ArcGIS + open-source) goal. Just don't rely on it for
+  ArcGIS Online specifically.
+- **Added [`vermont-mask.geojson`](vermont-mask.geojson)** — the actual
+  working fix for cropping in ArcGIS Online, see below.
+
+## Vermont-only cropping
+
+**`bounds` does not work in ArcGIS Online.** Confirmed by screenshot after
+applying it — roads, water polygons, and place labels from NH/NY/MA/the
+wider region still rendered unchanged. ArcGIS's vector tile renderer
+appears to silently ignore the MapLibre style spec's `bounds` property
+on a source entirely (not a partial/edge-tile issue — the crop had zero
+effect).
+
+**Per-feature attribute filtering isn't possible either.** Decoded an
+actual tile directly from the live service
+(`World_Basemap_v2/VectorTileServer/tile/8/93/76.pbf`) and inspected
+every layer's real attribute schema. None of the relevant layers (`Road`,
+`Water area`, `Water line`, `Boundary line`, `Railroad`, etc.) carry any
+country/state/admin attribute — just things like `Viz`, `DisputeID`,
+`_symbol`, and per-language label fields. There's nothing to write a
+`filter` expression against; this is a data limitation, not a style
+authoring gap.
+
+**Working fix: an opaque mask overlay.** [`vermont-mask.geojson`](vermont-mask.geojson)
+is a single polygon covering the whole world *except* Vermont — the real
+geometric difference (world rectangle minus Vermont), computed from
+Vermont's actual boundary (pulled live from the
+[`FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_vtbnd_SP_v1`](../../architecture/foundational-layers.md#vsdi-vermont-spatial-data-infrastructure)
+service already documented in this repo), simplified to ~30m tolerance
+(invisible at any basemap scale) to keep the file a practical 68 KB
+instead of 500 KB.
+
+To use it in ArcGIS Online Map Viewer:
+
+1. **Add → Add Layer from URL**, paste the raw file's GitHub Pages URL:
+   `https://vcgitimterway.github.io/vermont-basemaps/basemap-styles/human-geography-detail-blue-water/vermont-mask.geojson`,
+   layer type **GeoJSON**.
+2. Style its fill as a **solid color matching the basemap's background**
+   (e.g. white/light canvas for a Light basemap, dark gray/near-black for
+   a Dark basemap) with no outline.
+3. Place this mask layer **above every world-wide Esri Living Atlas vector
+   tile layer** (Human Geography Base, this Detail layer, Human Geography
+   Label, and any other "Blue Water" variants) — one mask layer covers all
+   of them at once, since it's a geometric overlay that doesn't care what
+   renders beneath it. Keep it *below* any Vermont-specific overlays (DEM,
+   contours, parcels, etc.) so those still show normally within the state.
+4. The fill color needs to be re-set per basemap variant (Light vs. Dark
+   vs. monochrome) — the mask geometry itself is reusable, but its style
+   isn't "one size fits all" across variants with different background
+   colors.
 
 ## Pending
 
