@@ -75,6 +75,31 @@ To use it in ArcGIS Online Map Viewer:
    isn't "one size fits all" across variants with different background
    colors.
 
+### Known limitation: label text gets cut off mid-glyph
+
+Placing the mask above *every* layer (including the Human Geography Label
+layer) crops text labels the same way it crops polygons/lines — but
+cutting a polygon at an edge looks natural, while cutting text mid-word
+(e.g. "Plattsburgh" or "Brattleboro" sliced at the mask boundary) reads as
+broken, not intentional. There's no attribute to fix this by filtering
+(see above — no per-label geographic attribute exists), so the only lever
+is **layer order**: placing the mask *below* the label layer instead of
+above it. That lets nearby cross-border city labels render in full rather
+than getting clipped — normal basemap behavior (most basemaps show some
+out-of-state context near borders) — at the cost of no longer hiding
+those labels at all. Currently applied as a workaround for testing
+purposes; not necessarily the final answer.
+
+This is also a concrete data point for
+[`../../architecture/foundational-layers.md` gap #4](../../architecture/foundational-layers.md#gaps--open-questions)
+(no open-source equivalent of Living Atlas for transportation/place
+names): it's now clear Living Atlas content is awkward even on the
+*ArcGIS* side for a hard Vermont-only product, not just absent for
+open-source apps. Strengthens the case for eventually sourcing roads and
+place names from VCGI's own VSDI data instead (which would carry real
+Vermont attribution, enabling genuine per-feature filtering on both
+platforms) rather than treating this as an Esri-only workaround problem.
+
 ## Pending
 
 **Railway symbol change not yet made.** The `Railroad` layer is currently

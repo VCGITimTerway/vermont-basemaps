@@ -211,6 +211,19 @@ delivery pipelines above:
    Community Maps contribution), which doesn't help a MapLibre-based
    basemap. These likely need their own VSDI → PMTiles pipeline,
    independent of the Community Maps cadence.
+   **Confirmed, not just theoretical:** restricting a Living Atlas vector
+   tile layer to just Vermont (for the
+   [Human Geography Detail - Blue Water style](../basemap-styles/human-geography-detail-blue-water/README.md))
+   turned out to be awkward even on the *ArcGIS* side, not only absent
+   for open-source apps — neither the MapLibre style spec's `bounds`
+   property nor per-feature attribute filtering work against this data
+   (no country/state attribution exists on the actual vector tiles,
+   confirmed by decoding a live tile), and the fallback (an opaque mask
+   polygon) cleanly crops polygons/lines but cuts labels off mid-word,
+   which only has an ugly-or-absent tradeoff, no clean fix. This is
+   concrete motivation to source transportation and place names from
+   VCGI's own VSDI data instead of Living Atlas for *both* platforms,
+   not just the open-source one.
 5. **Per-variant raster styling presets aren't defined yet.** TiTiler can
    serve arbitrary colormap/rescale per basemap variant (Light/Dark/
    Physical Geography) from the same COGs, but those presets need to be
