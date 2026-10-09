@@ -23,7 +23,11 @@ bitten the first entry below already, see its README.
    - `README.md` — layers shown + design decisions (pull the actual
      layer list from the web map JSON once the item is public, rather
      than describing from memory)
-3. Add a row below.
+3. Add a row below **and** a matching `<li>` entry in
+   [`index.html`](index.html) (the index page's own live-served listing —
+   this file is **not** auto-generated from the README table, so both
+   need updating or the new test won't be reachable from the top-level
+   webmap-tests landing page).
 4. Live URL pattern: `https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/<slug>/`
 
 ## Tests
