@@ -94,8 +94,20 @@ unless the contours are regenerated from the 2023 QL1 data.
   - Vertical units are **US feet** here (confirmed in the metadata's
     spatial reference section — `Altitude_Distance_Units: U.S. feet`),
     unlike the DEM/hillshade which are in meters.
-- **Appropriate scale / zoom range:** Zoom-dependent by design — specific
-  z-level/interval breakpoints not yet documented here.
+- **Appropriate scale / zoom range:** Zoom-dependent by design, and this
+  is enforced server-side, not just by style convention — confirmed by
+  decoding actual tiles directly from the VectorTileServer: 1000ft
+  interval only exists in tiles at z7–10, 500ft first appears at z11,
+  250ft at z12, 100ft at z13, and so on. The finer intervals are
+  genuinely absent from the tile data below their zoom, not merely
+  filtered out by a style's `minzoom`/`maxzoom` — a consuming style
+  cannot show finer detail earlier than this without the service itself
+  being republished with different zoom-tier assignments. This exactly
+  matches Esri's own factory-default style's zoom breaks for this
+  service, confirmed when investigating whether the
+  [dark-olive style](../contour-styles/dark-olive/README.md#to-revisit)'s
+  sparse Champlain Valley contours at low zoom could be improved —
+  they couldn't, via styling alone.
 
 ## Current source
 

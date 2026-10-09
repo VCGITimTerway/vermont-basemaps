@@ -19,10 +19,28 @@ structure.
 
 ## To revisit
 
-Which contour interval shows at which zoom level may need adjustment,
-particularly at regional/small-scale zoom levels (the broader
-1000/500/250 ft tiers at z7–13) — not changed in this pass, which was
-line-width only.
+~~Which contour interval shows at which zoom level may need
+adjustment...~~ **Investigated — not fixable via style changes.**
+Decoded actual tiles directly from the VectorTileServer at z7–13: the
+finer-interval data (500ft, 250ft, 100ft...) genuinely doesn't exist in
+the tiles below the zoom it currently appears at (z7–10 tiles contain
+*only* the 1000ft interval, full stop) — this is a hard server-side/data
+limitation, not a style `minzoom`/`maxzoom` choice. Our zoom breaks
+already exactly match Esri's own factory-default style for this service;
+there's no slack to recover by editing the style.json. See
+[`../../data-sources/contours-1ft.md`](../../data-sources/contours-1ft.md#path-to-pmtiles--titiler-output)
+for the underlying pipeline gaps this ties into.
+
+Two real paths forward if the sparse Champlain Valley contours at low
+zoom still need addressing:
+
+1. Ask whoever manages the contour VectorTileServer's publishing pipeline
+   whether a finer interval (e.g. 500ft) could be exposed starting at a
+   lower zoom (e.g. z9–10 instead of z11) in a future republish.
+2. Lean on the [Bare Earth Hillshade](../../data-sources/hillshade-bare-earth.md)
+   layer instead at this zoom tier — it's a continuous raster with no
+   zoom-gating, so it can convey subtle valley relief via shading even
+   where contour *lines* structurally can't help yet.
 
 ## Related
 
