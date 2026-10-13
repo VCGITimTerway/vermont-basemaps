@@ -31,6 +31,14 @@ wall instead of the map for anyone outside VCGI's org.
    webmap-tests landing page).
 4. Live URL pattern: `https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/<slug>/`
 
+The `index.html` entry includes a thumbnail `<img>` pointing at the
+item's live AGOL thumbnail URL:
+`https://vcgi.maps.arcgis.com/sharing/rest/content/items/<itemId>/info/thumbnail/ago_downloaded.png`
+(confirm the actual filename — it's taken from the item's own `thumbnail`
+field, fetchable via `.../sharing/rest/content/items/<itemId>?f=json`,
+and isn't always `ago_downloaded.png`). No need to download/commit a
+copy — it updates automatically if the item is ever re-saved.
+
 ## Tests
 
 | Test | Live embed | Notes |

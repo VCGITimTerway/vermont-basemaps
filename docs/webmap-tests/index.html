@@ -14,10 +14,17 @@
   header a { color: #cfd9c9; }
   main { max-width: 760px; margin: 0 auto; padding: 1.5rem 1rem; }
   h1 { font-size: 1.4rem; }
-  ul { padding-left: 1.2rem; }
-  li { margin-bottom: 1rem; }
-  .status { color: #666; font-size: 0.9rem; }
-  a.embed { font-weight: 600; }
+  .card {
+    display: flex; gap: 1rem; align-items: flex-start;
+    margin-bottom: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid #ddd;
+  }
+  .card img {
+    width: 150px; height: 100px; object-fit: cover;
+    border: 1px solid #ccc; border-radius: 4px; flex-shrink: 0;
+  }
+  .status { color: #666; font-size: 0.9rem; margin-top: 0.25rem; }
+  a.embed { font-weight: 600; font-size: 1.05rem; }
 </style>
 </head>
 <body>
@@ -29,21 +36,32 @@
   <h1>Webmap Tests</h1>
   <p>Named ArcGIS Online web maps built to test basemap appearance, each
   embedded live below. Full documentation (layers shown, design
-  decisions) for each is linked alongside it.</p>
-  <ul>
-    <li>
+  decisions) for each is linked alongside it. Thumbnails are each item's
+  live ArcGIS Online thumbnail, not a static copy.</p>
+
+  <div class="card">
+    <a href="topographic-test-01-styled-dem/">
+      <img src="https://vcgi.maps.arcgis.com/sharing/rest/content/items/c6a5d16848b84f02a67a2e73be6958f9/info/thumbnail/ago_downloaded.png" alt="Topographic Test 01 thumbnail">
+    </a>
+    <div>
       <a class="embed" href="topographic-test-01-styled-dem/">Topographic — Test 01 (Styled DEM)</a>
       —
       <a href="https://github.com/VCGITimTerway/vermont-basemaps/blob/main/docs/webmap-tests/topographic-test-01-styled-dem/README.md">documentation</a>
       <div class="status">Styled DEM + hillshade terrain, VCGI-sourced water labels, E911 recreation layers.</div>
-    </li>
-    <li>
+    </div>
+  </div>
+
+  <div class="card">
+    <a href="topographic-test-01b-world-terrain-labels/">
+      <img src="https://vcgi.maps.arcgis.com/sharing/rest/content/items/bbab5ff34b7543df8a06cee07a6f30ec/info/thumbnail/ago_downloaded.png" alt="Topographic Test 01b thumbnail">
+    </a>
+    <div>
       <a class="embed" href="topographic-test-01b-world-terrain-labels/">Topographic — Test 01b (World Terrain Labels)</a>
       —
       <a href="https://github.com/VCGITimTerway/vermont-basemaps/blob/main/docs/webmap-tests/topographic-test-01b-world-terrain-labels/README.md">documentation</a>
       <div class="status">Save-as of Test 01; swaps four label layers for one Esri "World Terrain Reference"-styled layer.</div>
-    </li>
-  </ul>
+    </div>
+  </div>
 </main>
 </body>
 </html>
