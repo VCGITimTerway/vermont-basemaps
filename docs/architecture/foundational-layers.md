@@ -21,6 +21,49 @@ web apps, which is the main constraint shaping the delivery architecture
 below: raster and vector data each need a path that works on both sides,
 and ideally from one maintained source rather than two drifting copies.
 
+### Distribution/packaging — not yet addressed
+
+Everything in this repo so far is about getting individual *layers*
+sourced and styled (TiTiler COGs, PMTiles, Esri Vector Tile Services).
+None of it yet addresses how a finished basemap gets **packaged for an
+end user to pick as one thing**, rather than assembling a dozen
+operational layers by hand the way the Topographic Test 01/01b webmaps
+currently do.
+
+- **ArcGIS side:** confirmed via Esri's own documentation
+  ([Create a custom basemap gallery for your organization](https://www.esri.com/arcgis-blog/products/arcgis-online/mapping/custom-basemap-gallery),
+  Szukalski, 2019/2022 — fetched this session from a saved copy since the
+  live URL 403s for automated fetches). The mechanism, confirmed:
+  1. An org admin creates a **Group** dedicated to basemaps (public or
+     org-visible; all maps added to it must be shared publicly).
+  2. Each web map destined for the gallery gets its layers moved into
+     that map's **Basemap** layer group (operational layers above the
+     basemap group simply don't render when the map is used as a
+     basemap) — then the map itself gets shared into the Group above.
+  3. In **Organization Settings → Map → Basemap Gallery**, that Group is
+     selected as the gallery source; there's also a one-click option to
+     additionally copy Esri's own default basemaps into the same group
+     so they keep showing up alongside the custom ones.
+  Net effect: a user picks one gallery entry instead of assembling
+  layers by hand. Esri's own guidance explicitly calls out using the
+  [ArcGIS Vector Tile Style Editor](https://developers.arcgis.com/vector-tile-style-editor/)
+  to build custom basemap variants from Esri's vector basemaps as one
+  path, or authoring fully custom maps from VCGI's own layers as
+  another — both already consistent with how this repo's basemap
+  variants are being built. The practical implication for this project:
+  each finished variant (Light, Dark, Physical Geography, ...) likely
+  needs to collapse down to as few parts as possible — ideally a
+  **base / detail / label** 3-way split at most — and get published as
+  its own gallery-ready item, not stay as a sprawling test webmap like
+  Test 01/01b.
+- **Open-source side:** no equivalent packaging concept defined yet
+  either — likely just "one style.json per basemap variant," but how
+  that gets discovered/distributed to consuming apps (a styles index
+  page? a fixed URL convention?) isn't decided. See
+  [`../reference-basemaps/README.md`](../reference-basemaps/README.md#source-linz-land-information-new-zealand)
+  for how LINZ handles this (API keys + TileJSON/StyleJSON, hosted
+  service decoupled from self-hostable code) as a possible model.
+
 ## Delivery architecture (already in production)
 
 Two pieces of shared infrastructure already exist and are live — this
