@@ -5,9 +5,8 @@
 Administrative boundary lines and polygons at four levels: state, county,
 municipal (town), and village. Lines for all four levels are published
 together in one shared service; polygons are published per-level as
-separate services. Municipal Boundaries ("Admin3") is also one of VCGI's
-Esri Community Maps contributions — see
-[`../architecture/foundational-layers.md`](../architecture/foundational-layers.md#esri-community-maps-separate-existing-pipeline).
+separate services. Municipal Boundaries is also one of VCGI's Esri
+Community Maps contributions (as "Admin3") — see below.
 
 ## Stewardship
 
@@ -71,6 +70,16 @@ matches).
 | Village | Polygon | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_villages_SP_v1/FeatureServer/0) | EPSG:32145 (VT State Plane) |
 
 **Format:** AGOL hosted feature layer throughout (uncached, queryable).
+
+### Esri Community Maps contribution (Admin3)
+
+Municipal Boundaries feeds Esri's Community Maps program as "Admin3":
+all features from the Municipal service above submitted, no filter,
+labeled via `TOWNNAMEMC`. Part of VCGI's broader Community Maps
+contribution — see
+[`../architecture/foundational-layers.md`](../architecture/foundational-layers.md#esri-community-maps-separate-existing-pipeline)
+for the full list of layers VCGI contributes and the shared 6-month pull
+cadence.
 
 ## Path to PMTiles / TiTiler output
 

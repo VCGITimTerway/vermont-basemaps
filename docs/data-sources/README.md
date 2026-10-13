@@ -30,12 +30,14 @@ that only VCGI staff can fill in accurately.
 | Parcels (Active/Inactive) | [`parcels.md`](parcels.md) | Good — sourced from published metadata | Partial — PMTiles prototyped |
 | Boundaries (State/County/Municipal/Village) | [`boundaries.md`](boundaries.md) | Good — sourced from published FGDC metadata | No |
 | Protected Lands / Military Sites | [`protected-lands.md`](protected-lands.md) | Partial | No |
-| Surface Waters | — not yet started, but service URLs confirmed (`FS_VCGI_OPENDATA_Water_VHDCARTO_poly_SP_v1` / `..._line_SP_v1`, via VCGI's Community Maps contribution — see [`foundational-layers.md`](../architecture/foundational-layers.md#esri-community-maps-separate-existing-pipeline)) | Partial | — |
+| Surface Waters | [`surface-waters.md`](surface-waters.md) | Partial | No |
+| Trails (E911) | [`trails-e911.md`](trails-e911.md) | Partial | No |
+| Building Footprints (Esri Community Maps composite) | [`building-footprints-cmp.md`](building-footprints-cmp.md) | Partial — static composite, see profile | No |
 | Base Land Cover / Impervious / Tree Canopy | — not yet started | — | — |
 | Mountains and Hills | — not yet started | — | — |
 | Tree Centroids / Tree Canopy (next-gen) | — not yet started | — | — |
 | Wetlands (VSWI) | — not yet started | — | — |
-| E911 layers (driveways, buildings, cemeteries, golf courses, quarries/mines, trails) | — not yet started, though the Trail service (`FS_VCGI_OPENDATA_Emergency_TRAILS_line_SP_v1`, distinct from the Alpine Trails subtype used elsewhere) is now identified via Community Maps. Note: `ESRICMP_BuildingFootprintsVT_v1` (the Buildings 2022 source) is a static composite built from both land-cover buildings and E911 footprints, not itself an E911 layer — see [`foundational-layers.md`](../architecture/foundational-layers.md#esri-community-maps-separate-existing-pipeline) | — | — |
+| E911 layers (driveways, buildings footprints, cemeteries, golf courses, quarries/mines) | — not yet started | — | — |
 
 "Good" means pulled from VCGI's own published metadata record for that
 exact product (cited in each profile), not inferred. "Partial" means the

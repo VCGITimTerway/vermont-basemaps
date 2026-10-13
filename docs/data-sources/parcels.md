@@ -7,9 +7,8 @@ layer. Split into **active** and **inactive** parcels within the same
 service (inactive presumably meaning superseded/retired parcel records
 rather than deleted, but TODO: confirm the actual active/inactive
 definition and how a parcel transitions between them). The active layer
-("Owner Parcel") is also one of VCGI's Esri Community Maps contributions
-— see
-[`../architecture/foundational-layers.md`](../architecture/foundational-layers.md#esri-community-maps-separate-existing-pipeline).
+is also one of VCGI's Esri Community Maps contributions (as "Owner
+Parcel") — see below.
 
 ## Stewardship
 
@@ -84,6 +83,16 @@ definition and how a parcel transitions between them). The active layer
   `OBJECTID`, `OWNER1`, `OWNER2`, `SPAN` (parcel ID), `id` — confirm this
   field list is still current against the live service, not just the
   prototype tileset.
+
+### Esri Community Maps contribution (Owner Parcel)
+
+The active parcels layer feeds Esri's Community Maps program as "Owner
+Parcel": all features from the active service above submitted, no
+filter, no label field configured. Part of VCGI's broader Community Maps
+contribution — see
+[`../architecture/foundational-layers.md`](../architecture/foundational-layers.md#esri-community-maps-separate-existing-pipeline)
+for the full list of layers VCGI contributes and the shared 6-month pull
+cadence.
 
 ## Path to PMTiles / TiTiler output
 

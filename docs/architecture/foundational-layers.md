@@ -75,7 +75,9 @@ buckets.
   intermediate export (FlatGeobuf/GeoJSON) → `tippecanoe` (via Docker,
   since it's not natively a Windows tool) → `.pmtiles`. Plan is to host
   this in AWS so it's a no-install, "drag and drop" job rather than
-  something requiring local tooling.
+  something requiring local tooling. A hand-rolled (non-tippecanoe) proof
+  of concept exists for one layer — see
+  [`../pmtiles-pipeline/alpine-ski-lifts/`](../pmtiles-pipeline/alpine-ski-lifts/README.md).
 - **ArcGIS Online consumption already worked out:** vector tilesets need a
   hosted Mapbox-Style-Spec `style.json` pointing at the tile URL (added via
   *Add Layer from URL* → Vector Tile Layer, or published as a reusable
@@ -114,29 +116,18 @@ themes need their own VSDI → PMTiles path for non-Esri apps — see
 [Gaps](#gaps--open-questions) below.
 
 VCGI's current contribution configuration (all layers pulled on the same
-6-month cadence; next pull 2027-03-17):
+6-month cadence; next pull 2027-03-17). Filter/label mechanics and full
+sourcing detail live in each layer's own profile — this table is just the
+index:
 
-| Community Maps layer | VCGI source service | Filter | Label field |
-|---|---|---|---|
-| Admin3 (Municipal Boundary) | [`FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_towns_SP_v1`](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_towns_SP_v1/FeatureServer/0) | All features | `TOWNNAMEMC` |
-| Building Footprint | [`ESRICMP_BuildingFootprintsVT_v1`](https://maps.vcgi.vermont.gov/arcgis/rest/services/VCGI_services/ESRICMP_BuildingFootprintsVT_v1/MapServer/2) — a **static composite**, not a maintained feed: built at a point in time from both land-cover-derived buildings and E911 building footprints, with schema changes to match Community Maps' requirements. VCGI hasn't yet decided what feeds future updates or on what cadence | By `Carto` code (Recreation, Government, Commercial, Education, Medical, etc. — 13 categories) | `LABEL_LOCAL` |
-| National Forest / National Park / State Forest / State Park | [`FS_VCGI_OPENDATA_Cadastral_PROTECTEDLND_poly_SP_v2`](../data-sources/protected-lands.md) (same service for all four) | `PAGENCY1`/`DESIGNAT`/`NAME` per category — see [protected-lands.md](../data-sources/protected-lands.md#subtype-values-confirmed-via-community-maps-contribution) | `NAME` |
-| Owner Parcel | [`FS_VCGI_VTPARCELS_WM_NOCACHE_v2`](../data-sources/parcels.md) (active parcels) | All features | — |
-| Trail | [`FS_VCGI_OPENDATA_Emergency_TRAILS_line_SP_v1`](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_OPENDATA_Emergency_TRAILS_line_SP_v1/FeatureServer/0) — distinct from the "Alpine Trails" polygon layer used in webmap tests, which comes from the shared E911 FOOTPRINTS service instead | Excludes `TRAILTYPE` T7/T8 | `TRAILNAME` |
-| Waterbody | [`FS_VCGI_OPENDATA_Water_VHDCARTO_poly_SP_v1`](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_OPENDATA_Water_VHDCARTO_poly_SP_v1/FeatureServer/0) | `FTYPE` = LakePond / StreamRiver | `GNIS_NAME` |
-| Waterline | [`FS_VCGI_OPENDATA_Water_VHDCARTO_line_SP_v1`](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_OPENDATA_Water_VHDCARTO_line_SP_v1/FeatureServer/0) | `FCODE`/`FTYPE` → CanalDitch / RiverStream / RiverStreamIntermit | `GNIS_NAME` |
-
-This is the real answer to the "Human Geography Detail — Blue Water" and
-"World Terrain Reference Labels" open-source sourcing question flagged
-elsewhere as "needs its own VCGI source" — it's the **Waterbody/Waterline
-VHDCARTO services above**, already confirmed `Query`-capable (EPSG:32145).
-
-The Trail service above is distinct from the similarly-named "Alpine
-Trails" layer used elsewhere in this repo (that one's a polygon subtype
-of the shared E911 FOOTPRINTS service) — don't conflate them. The
-Building Footprint service *is* related to "Buildings 2022" (the vector
-tile layer used in the webmap tests) but isn't simply "the same data" —
-see the static-composite note above.
+| Community Maps layer | Profile |
+|---|---|
+| Admin3 (Municipal Boundary) | [`boundaries.md`](../data-sources/boundaries.md#esri-community-maps-contribution-admin3) |
+| Building Footprint | [`building-footprints-cmp.md`](../data-sources/building-footprints-cmp.md) — a **static composite** (2021-10-27), not a maintained feed; VCGI hasn't yet decided what feeds future updates |
+| National Forest / National Park / State Forest / State Park | [`protected-lands.md`](../data-sources/protected-lands.md#subtype-values-confirmed-via-community-maps-contribution) |
+| Owner Parcel | [`parcels.md`](../data-sources/parcels.md#esri-community-maps-contribution-owner-parcel) |
+| Trail | [`trails-e911.md`](../data-sources/trails-e911.md#esri-community-maps-contribution) — distinct from the "Alpine Trails" polygon layer used in webmap tests |
+| Waterbody / Waterline | [`surface-waters.md`](../data-sources/surface-waters.md#esri-community-maps-contribution) — also the open-source sourcing answer for the "Human Geography Detail — Blue Water" and "World Terrain Reference Labels" layers used elsewhere in this repo |
 
 ## Foundational layer inventory
 
@@ -170,34 +161,32 @@ service, **VT Data – Boundaries, All Lines**, while each level's
 | Boundaries — All Lines | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_line_SP_v1/FeatureServer/0) | EPSG:32145 (VT State Plane) | Single shared line service covering state/county/municipal/village boundary lines. [Profile](../data-sources/boundaries.md) |
 | State Boundary | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_vtbnd_SP_v1/FeatureServer/0) | EPSG:32145 (VT State Plane) | Polygon. [Profile](../data-sources/boundaries.md) |
 | County Boundaries | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_counties_SP_v1/FeatureServer/0) | EPSG:32145 (VT State Plane) | Polygon. [Profile](../data-sources/boundaries.md) |
-| Municipal Boundaries | — | — | No dedicated polygon service identified yet; only covered as lines via the shared "All Lines" service above. [Profile](../data-sources/boundaries.md) |
+| Municipal Boundaries | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_towns_SP_v1/FeatureServer/0) | EPSG:32145 (VT State Plane) | Polygon. [Profile](../data-sources/boundaries.md) |
 | Village Boundaries | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_villages_SP_v1/FeatureServer/0) | EPSG:32145 (VT State Plane) | Polygon. [Profile](../data-sources/boundaries.md) |
 | Parcels — Active | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_VTPARCELS_WM_NOCACHE_v2/FeatureServer/1) | EPSG:3857 (Web Mercator) | Same service as Inactive, different layer ID. Already has a PMTiles proof-of-concept (`parcels.pmtiles`, sandbox prefix). [Profile](../data-sources/parcels.md) |
 | Parcels — Inactive | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_VTPARCELS_WM_NOCACHE_v2/FeatureServer/0) | EPSG:3857 (Web Mercator) | Same service as Active, different layer ID. [Profile](../data-sources/parcels.md) |
 | Protected Lands | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Cadastral_PROTECTEDLND_poly_SP_v2/FeatureServer/0) | EPSG:32145 (VT State Plane) | Subtypes: state parks, state forests, national parks, national forests, national wildlife refuges, national wilderness areas, municipal parks, municipal forests. [Profile](../data-sources/protected-lands.md) |
 | Military Sites | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Cadastral_PROTECTEDLND_poly_SP_v2/FeatureServer/0) | EPSG:32145 (VT State Plane) | **Not a separate service** — a filtered subset of the Protected Lands service above. [Profile](../data-sources/protected-lands.md) |
 | 1' Contours (QL2 lidar) | [ArcGIS Server MapServer, cached](https://maps.vcgi.vermont.gov/arcgis/rest/services/EGC_services/MAP_VCGI_LIDARCONTOURS_WM_CACHE_v1/MapServer) (queryable) + [Esri Vector Tile Service](https://tiles.arcgis.com/tiles/BkFxaEFNwHqX3tAw/arcgis/rest/services/VECTOR_VCGI_CN1TGEN_WM_v1/VectorTileServer) | EPSG:3857 (Web Mercator), both services | No PMTiles build yet — see [Gaps](#gaps--open-questions). Styling currently authored per-basemap in Esri's Vector Tile Style Editor (see the contour color work in [`../dem-color-ramps/11class-monochrome-canvas/`](../dem-color-ramps/11class-monochrome-canvas/README.md)). [Profile](../data-sources/contours-1ft.md) |
-| Surface Waters | AGOL hosted feature layer | *pending* | Waterbodies, waterlines — service links/projection to follow separately (more complex than the others) |
+| Surface Waters | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_OPENDATA_Water_VHDCARTO_poly_SP_v1/FeatureServer/0) (waterbodies) + [line service](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_OPENDATA_Water_VHDCARTO_line_SP_v1/FeatureServer/0) | EPSG:32145 (VT State Plane), both services | VHDCARTO (cartographic Vermont Hydrography Dataset). [Profile](../data-sources/surface-waters.md) |
 | Base Land Cover | AGOL hosted feature layer | *pending* | Service links/projection to follow separately |
 | Land Cover — Impervious Surfaces | AGOL hosted feature layer | *pending* | |
 | Land Cover — Tree Canopy | AGOL hosted feature layer | *pending* | |
-| Mountains and Hills | AGOL hosted feature layer | *pending* | |
+| Mountains and Hills | [ArcGIS MapServer sublayer](https://maps.vcgi.vermont.gov/arcgis/rest/services/VCGI_services/VCGI_BASEMAP_WM_v2/MapServer/4) | EPSG:32145 (VT State Plane) | `capabilities: Map,Query,Data` confirmed |
 | Tree Centroids | *Available next year* | *pending* | |
 | Tree Canopy (next-gen) | *Available next year* | *pending* | Presumably supersedes/complements Land Cover — Tree Canopy above; relationship between the two not yet clarified |
-| Wetlands (VSWI) | AGOL hosted feature layer | *pending* | Vermont Significant Wetland Inventory — service links/projection to follow separately |
+| Wetlands (VSWI) | [AGOL hosted feature layer](https://services5.arcgis.com/Uzks6LSde6r23wwG/arcgis/rest/services/Vermont_Significant_Wetland_Inventory/FeatureServer/0) (hosted by ANR, who are VCGI staff — not a cross-org data-sharing question) | *pending* | Vermont Significant Wetland Inventory. **Distinct from** `LandLandcov_Wetlands2016`/`2022` (a land-cover-classification-derived dataset, not this regulatory inventory) — don't conflate |
 
 ### E911 Board layers
 
-Service links/projection not yet provided for this group.
-
-| Layer | Current format/source |
-|---|---|
-| Private Driveways | AGOL hosted feature layer |
-| Building Footprints | AGOL hosted feature layer |
-| Cemeteries | AGOL hosted feature layer |
-| Golf Course | AGOL hosted feature layer |
-| Quarries / Mines | AGOL hosted feature layer |
-| Trails | AGOL hosted feature layer |
+| Layer | Current format/source | Notes |
+|---|---|---|
+| Private Driveways | AGOL hosted feature layer | *pending* |
+| Building Footprints | AGOL hosted feature layer | *pending* — **not the same thing** as the Esri Community Maps "Building Footprint" composite ([profile](../data-sources/building-footprints-cmp.md)), which is a derived, static export built partly *from* this dataset |
+| Cemeteries | AGOL hosted feature layer | *pending* |
+| Golf Course | AGOL hosted feature layer | *pending* |
+| Quarries / Mines | AGOL hosted feature layer | *pending* |
+| Trails | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_OPENDATA_Emergency_TRAILS_line_SP_v1/FeatureServer/0) | EPSG:32145 (VT State Plane) confirmed. **Distinct from** "Alpine Trails" (a polygon subtype of the separate shared E911 FOOTPRINTS service, used in webmap tests). [Profile](../data-sources/trails-e911.md) |
 
 ### VCGI-maintained raster products
 
@@ -229,12 +218,17 @@ them in Map Viewer.
    recommended approach (one shared PMTiles tileset for both platforms,
    rather than maintaining the existing Esri Vector Tile Service as a
    separate pipeline going forward).
-2. **No single source-of-truth export defined yet** for the general case:
-   as the PMTiles pipeline matures, each VSDI/E911 layer needs one
-   canonical export (e.g., AGOL hosted feature layer → FlatGeobuf) that
-   *both* the PMTiles build and any Esri Vector Tile Service/Package
-   publishing step consume, rather than two pipelines independently
-   reading from (and potentially drifting from) the source.
+2. **No single source-of-truth export *process* formalized yet**, even
+   though many individual layers now have confirmed source URLs (see the
+   inventory above and the per-layer `data-sources/` profiles). As the
+   PMTiles pipeline matures, each VSDI/E911 layer needs one canonical
+   export (e.g., AGOL hosted feature layer → FlatGeobuf) that *both* the
+   PMTiles build and any Esri Vector Tile Service/Package publishing step
+   consume, rather than independently reading from (and potentially
+   drifting from) the source. The Esri Community Maps contribution
+   config is a partial precedent for this pattern (one source service,
+   one documented filter/label config) but feeds Living Atlas, not a
+   VCGI-controlled Esri Vector Tile Service.
 3. **Style authoring is one-directional.** Tooling exists to convert AGOL
    renderer JSON → MapLibre `style.json` (`arcgis-webmap.mjs`, the
    `arcgis-to-maplibre` skill), but not the reverse. If a basemap's visual
@@ -259,7 +253,10 @@ them in Map Viewer.
    which only has an ugly-or-absent tradeoff, no clean fix. This is
    concrete motivation to source transportation and place names from
    VCGI's own VSDI data instead of Living Atlas for *both* platforms,
-   not just the open-source one.
+   not just the open-source one. The VHDCARTO Waterbody/Waterline
+   services ([profile](../data-sources/surface-waters.md)) are a
+   confirmed, ready-to-use source for the water-feature-name portion of
+   this.
 5. **Per-variant raster styling presets aren't defined yet.** TiTiler can
    serve arbitrary colormap/rescale per basemap variant (Light/Dark/
    Physical Geography) from the same COGs, but those presets need to be
