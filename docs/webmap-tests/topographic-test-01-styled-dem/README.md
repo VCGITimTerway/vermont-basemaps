@@ -9,7 +9,7 @@ again rather than editing this table by hand.
 **Live embed:** <https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-01-styled-dem/>
 **ArcGIS Online item:** <https://vcgi.maps.arcgis.com/apps/mapviewer/index.html?webmap=c6a5d16848b84f02a67a2e73be6958f9>
 **AGOL item title:** "Basemap 2026 - Topographic - Test 01 (TiTiler Styled DEM)"
-**Test extent:** roughly Woodstock/Killington area, VT (-72.85 to -72.69° W, 43.59 to 43.65° N)
+**Test extent:** centered -72.7178, 43.4065 at 1:18,056 (Plymouth/Ludlow/Okemo area, VT) — updated 2026-10-13, was previously centered further north near Woodstock/Killington
 
 ## Basemap
 
@@ -72,6 +72,9 @@ recolored "Buildings 2022 Copy DCD9D6" variant.
 
 ## Related
 
+- [`../../architecture/cross-platform-publishing.md`](../../architecture/cross-platform-publishing.md) —
+  per-layer status on getting every layer in this test map serving
+  cleanly on both ArcGIS and open-source apps
 - [`../README.md`](../README.md) — index of all webmap tests
 - [`../../dem-color-ramps/11class-feet-aligned/README.md`](../../dem-color-ramps/11class-feet-aligned/README.md)
 - [`../../contour-styles/dark-olive/README.md`](../../contour-styles/dark-olive/README.md)

@@ -184,7 +184,15 @@ Service links/projection not yet provided for this group.
 ## Gaps / open questions
 
 Concrete follow-ups raised by comparing this inventory against the two
-delivery pipelines above:
+delivery pipelines above. See
+[`cross-platform-publishing.md`](cross-platform-publishing.md) for the
+concrete, per-layer version of this worked against an actual web map
+(Topographic Test 01) — including a correction worth knowing up front:
+the "no popup" limitation on vector tile layers in ArcGIS Online is
+specific to how Map Viewer's Vector Tile Layer item type behaves, not a
+limitation of PMTiles/MVT itself — a shared PMTiles pipeline can still
+support popups on the open-source side even for a layer that can't have
+them in Map Viewer.
 
 1. **Contours already have two independent pipelines** (ArcGIS Server
    cached MapServer + a separately-generated Esri Vector Tile Service),
