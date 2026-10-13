@@ -46,7 +46,7 @@ same source for the open-source side's rendering and popups.
 | Human Geography Detail — Blue Water | Esri Living Atlas (`World_Basemap_v2`), customized copy in [`basemap-styles/`](../basemap-styles/human-geography-detail-blue-water/README.md) | ✅ | 🔧, needs its own source | Licensed Esri content, not exportable as-is. Open-source equivalent needs VCGI's own hydrography (Surface Waters/VHDCARTO — see [`data-sources/README.md`](../data-sources/README.md)) |
 | Vermont Significant Wetlands Inventory | [AGOL hosted FeatureServer](https://services5.arcgis.com/Uzks6LSde6r23wwG/arcgis/rest/services/Vermont_Significant_Wetland_Inventory/FeatureServer/0) (ANR, who are VCGI staff — no cross-org data-sharing question here) | ✅ | 🔧 | Standard export |
 | Buildings 2022 | Vector tile, sourced from VCGI's own 2022 high-resolution land cover classification (Buildings class within the [Base Land Cover COG](https://s3.us-east-2.amazonaws.com/vtopendata-prd/Landcover/STATEWIDE_2022_50cm_LANDCOVER_Base.tif)) | ✅ | 🔧 | VCGI's own data. The vector building-footprint product likely corresponds to the `LandLandcov_Buildings2022` metadata record (not yet opened — see [`data-sources/README.md`](../data-sources/README.md)); confirm there before building an export |
-| E911 Alpine Ski Lifts | [AGOL hosted FeatureServer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_ALPINELIFTS_line_SP_v1/FeatureServer/0), `capabilities: Query,Extract` | ✅ | 🔧 | Standard export |
+| E911 Alpine Ski Lifts | [AGOL hosted FeatureServer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_ALPINELIFTS_line_SP_v1/FeatureServer/0), `capabilities: Query,Extract` | ✅ | ✅ (proof of concept) | See [`../pmtiles-pipeline/alpine-ski-lifts/`](../pmtiles-pipeline/alpine-ski-lifts/README.md) — a working PMTiles file exists; production build should use tippecanoe once Docker is available (not installed in this environment) |
 | VT Mask (GeoJSON) | [This repo](../basemap-styles/human-geography-detail-blue-water/vermont-mask.geojson), served via GitHub Pages | ✅ | ✅ | Already cross-platform as-is |
 | Human Geography Label | Esri Living Atlas vector tile | ✅ | 🔧, needs its own source | Licensed Esri content. Candidate VCGI source for place names generally: `BasemapLandmarks_GEONAME` (metadata record identified, not yet opened) |
 | Mountains and Hills | [ArcGIS MapServer sublayer](https://maps.vcgi.vermont.gov/arcgis/rest/services/VCGI_services/VCGI_BASEMAP_WM_v2/MapServer/4), `capabilities: Map,Query,Data` | ✅ | 🔧 | Standard export |
@@ -55,10 +55,9 @@ same source for the open-source side's rendering and popups.
 
 ## Suggested next steps, roughly in order
 
-1. Pick one layer to build as the first real export → tippecanoe →
-   PMTiles run, proving out the pipeline end-to-end. Alpine Ski Lifts or
-   Mountains and Hills are simplest (single-purpose services, no
-   shared-service filtering needed).
+1. Run the Alpine Ski Lifts proof of concept through real tippecanoe
+   (once Docker is available) and compare against the hand-rolled
+   version in [`pmtiles-pipeline/alpine-ski-lifts/`](../pmtiles-pipeline/alpine-ski-lifts/README.md).
 2. Open the `LandLandcov_Buildings2022` and `BasemapLandmarks_GEONAME`
    metadata records to confirm they're the right VCGI sources for
    buildings and place names, respectively (same approach used for the
