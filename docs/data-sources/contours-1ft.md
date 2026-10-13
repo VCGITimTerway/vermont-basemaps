@@ -111,15 +111,17 @@ unless the contours are regenerated from the 2023 QL1 data.
 
 ## Current source
 
-**Not a hosted feature layer** — unlike most other VSDI vector layers,
-published only via ArcGIS Server/AGOL tile services, with no feature
-service identified yet:
+Published as both a cached map service and a vector tile service — and,
+usefully, the map service is queryable:
 
-- **Service:** [ArcGIS Server MapServer, cached](https://maps.vcgi.vermont.gov/arcgis/rest/services/EGC_services/MAP_VCGI_LIDARCONTOURS_WM_CACHE_v1/MapServer)
-- **Service (vector tiles):** [Esri Vector Tile Service](https://tiles.arcgis.com/tiles/BkFxaEFNwHqX3tAw/arcgis/rest/services/VECTOR_VCGI_CN1TGEN_WM_v1/VectorTileServer)
-- **Format:** Cached map tiles (first service) + pre-built vector tiles
-  (second service) — both are already-tiled outputs, not a queryable
-  feature service
+- **Service (queryable):** [ArcGIS Server MapServer, cached](https://maps.vcgi.vermont.gov/arcgis/rest/services/EGC_services/MAP_VCGI_LIDARCONTOURS_WM_CACHE_v1/MapServer),
+  `capabilities: Query,Map,Data`. Exposes every generalization tier (1ft
+  through 1000ft, including the `_Major` variants) as its own queryable
+  sublayer (27 total) — this is the source to export from for a PMTiles
+  build.
+- **Service (vector tiles):** [Esri Vector Tile Service](https://tiles.arcgis.com/tiles/BkFxaEFNwHqX3tAw/arcgis/rest/services/VECTOR_VCGI_CN1TGEN_WM_v1/VectorTileServer) —
+  what the current Esri-side styles (including
+  [dark-olive](../contour-styles/dark-olive/README.md)) are built against.
 - **Projection (EPSG):** EPSG:3857 (Web Mercator), confirmed for both
   services
 - **Geometry type:** Line
@@ -129,26 +131,14 @@ service identified yet:
 - **Target format:** PMTiles (vector), for open-source/MapLibre
   consumption
 - **Pipeline steps:**
-  1. **Blocked on finding a source-of-truth export.** Neither existing
-     service is a queryable feature service — the standard AGOL hosted
-     feature layer → FlatGeobuf/GeoJSON → tippecanoe path assumed
-     elsewhere in this repo doesn't have an obvious starting point here.
-     Need to identify whether an underlying feature class/feature service
-     exists (e.g. in ArcGIS Server's `EGC_services`) that the Vector Tile
-     Service was itself generated from, and use that as the PMTiles
-     source instead of trying to extract geometry from the tile services.
-  2. Once a source export exists: standard tippecanoe → PMTiles pipeline
-     (see [`../architecture/foundational-layers.md`](../architecture/foundational-layers.md#vector--pmtiles--parallel-esri-vector-tiles)).
-- **Known gaps / blockers:**
-  - This is the clearest existing case of the "two independent pipelines"
-    problem in the architecture doc (gap #1) — the cached MapServer and
-    the Vector Tile Service are not confirmed to be generated from a
-    shared export.
-  - No PMTiles equivalent exists yet.
-  - Styling is currently authored directly in Esri's Vector Tile Style
-    Editor against the existing Vector Tile Service (see the contour
-    color work in
-    [`../dem-color-ramps/11class-monochrome-canvas/`](../dem-color-ramps/11class-monochrome-canvas/README.md))
+  1. Export each relevant sublayer from the queryable MapServer above.
+  2. Standard tippecanoe → PMTiles pipeline (see
+     [`../architecture/foundational-layers.md`](../architecture/foundational-layers.md#vector--pmtiles--parallel-esri-vector-tiles)).
+- **Known gaps / blockers:** No PMTiles build exists yet — see
+  [`../architecture/cross-platform-publishing.md`](../architecture/cross-platform-publishing.md)
+  for the recommended approach (one shared PMTiles tileset for both
+  platforms, replacing the separate Esri Vector Tile Service rather than
+  running two pipelines in parallel).
     — once a MapLibre `style.json` exists for the PMTiles version, the two
     styles will need to be kept in sync by hand (architecture doc gap #3).
 

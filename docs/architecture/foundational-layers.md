@@ -148,7 +148,7 @@ service, **VT Data – Boundaries, All Lines**, while each level's
 | Parcels — Inactive | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_VTPARCELS_WM_NOCACHE_v2/FeatureServer/0) | EPSG:3857 (Web Mercator) | Same service as Active, different layer ID. [Profile](../data-sources/parcels.md) |
 | Protected Lands | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Cadastral_PROTECTEDLND_poly_SP_v2/FeatureServer/0) | EPSG:32145 (VT State Plane) | Subtypes: state parks, state forests, national parks, national forests, national wildlife refuges, national wilderness areas, municipal parks, municipal forests. [Profile](../data-sources/protected-lands.md) |
 | Military Sites | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Cadastral_PROTECTEDLND_poly_SP_v2/FeatureServer/0) | EPSG:32145 (VT State Plane) | **Not a separate service** — a filtered subset of the Protected Lands service above. [Profile](../data-sources/protected-lands.md) |
-| 1' Contours (QL2 lidar) | [ArcGIS Server MapServer, cached](https://maps.vcgi.vermont.gov/arcgis/rest/services/EGC_services/MAP_VCGI_LIDARCONTOURS_WM_CACHE_v1/MapServer) + [Esri Vector Tile Service](https://tiles.arcgis.com/tiles/BkFxaEFNwHqX3tAw/arcgis/rest/services/VECTOR_VCGI_CN1TGEN_WM_v1/VectorTileServer) | EPSG:3857 (Web Mercator), both services | **Two existing pipelines already, not derived from a shared export** — see [Gaps](#gaps--open-questions). No PMTiles equivalent exists yet. Styling currently done per-basemap in Esri's Vector Tile Style Editor (see the contour color work in [`../dem-color-ramps/11class-monochrome-canvas/`](../dem-color-ramps/11class-monochrome-canvas/README.md)). [Profile](../data-sources/contours-1ft.md) |
+| 1' Contours (QL2 lidar) | [ArcGIS Server MapServer, cached](https://maps.vcgi.vermont.gov/arcgis/rest/services/EGC_services/MAP_VCGI_LIDARCONTOURS_WM_CACHE_v1/MapServer) (queryable) + [Esri Vector Tile Service](https://tiles.arcgis.com/tiles/BkFxaEFNwHqX3tAw/arcgis/rest/services/VECTOR_VCGI_CN1TGEN_WM_v1/VectorTileServer) | EPSG:3857 (Web Mercator), both services | No PMTiles build yet — see [Gaps](#gaps--open-questions). Styling currently authored per-basemap in Esri's Vector Tile Style Editor (see the contour color work in [`../dem-color-ramps/11class-monochrome-canvas/`](../dem-color-ramps/11class-monochrome-canvas/README.md)). [Profile](../data-sources/contours-1ft.md) |
 | Surface Waters | AGOL hosted feature layer | *pending* | Waterbodies, waterlines — service links/projection to follow separately (more complex than the others) |
 | Base Land Cover | AGOL hosted feature layer | *pending* | Service links/projection to follow separately |
 | Land Cover — Impervious Surfaces | AGOL hosted feature layer | *pending* | |
@@ -194,13 +194,13 @@ limitation of PMTiles/MVT itself — a shared PMTiles pipeline can still
 support popups on the open-source side even for a layer that can't have
 them in Map Viewer.
 
-1. **Contours already have two independent pipelines** (ArcGIS Server
-   cached MapServer + a separately-generated Esri Vector Tile Service),
-   neither derived from a shared export, and no PMTiles version exists for
-   open-source apps yet. This is the clearest live example of the
-   single-source-of-truth problem the rest of VSDI will hit as the PMTiles
-   pipeline comes online — worth deciding the contour pipeline first as a
-   template for the rest.
+1. **Contours have no PMTiles build yet.** The queryable MapServer
+   ([`MAP_VCGI_LIDARCONTOURS_WM_CACHE_v1`](https://maps.vcgi.vermont.gov/arcgis/rest/services/EGC_services/MAP_VCGI_LIDARCONTOURS_WM_CACHE_v1/MapServer))
+   is a confirmed source to export from — see
+   [`cross-platform-publishing.md`](cross-platform-publishing.md) for the
+   recommended approach (one shared PMTiles tileset for both platforms,
+   rather than maintaining the existing Esri Vector Tile Service as a
+   separate pipeline going forward).
 2. **No single source-of-truth export defined yet** for the general case:
    as the PMTiles pipeline matures, each VSDI/E911 layer needs one
    canonical export (e.g., AGOL hosted feature layer → FlatGeobuf) that

@@ -34,4 +34,4 @@ bitten the first entry below already, see its README.
 
 | Test | Live embed | Notes |
 |---|---|---|
-| [Topographic — Test 01 (Styled DEM)](topographic-test-01-styled-dem/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-01-styled-dem/) | Final state documented 2026-10-09; superseded by whatever test comes next |
+| [Topographic — Test 01 (Styled DEM)](topographic-test-01-styled-dem/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-01-styled-dem/) | Styled DEM + hillshade terrain, VCGI-sourced water labels, E911 recreation layers |
