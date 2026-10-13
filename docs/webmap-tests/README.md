@@ -6,17 +6,18 @@ markdown can't render an `<iframe>` — github.com strips them — so each
 test gets a small static HTML page alongside its documentation).
 
 **Prerequisite for every entry here:** the web map item's sharing level
-must be set to **Everyone (public)** in ArcGIS Online, and the item's
-**"Allow others to embed this map"** option must be enabled (both in
-Content → item → Share/Settings). Without both, the embed shows a
-sign-in wall instead of the map for anyone outside VCGI's org — this has
-bitten the first entry below already, see its README.
+must be set to **Everyone (public)** in ArcGIS Online (Content → item →
+Share). There's no separate "allow embedding" setting for Web Map items —
+public sharing alone is sufficient. A `save as` copy does **not** carry
+over the original's sharing setting, so this needs doing again for every
+new test, not just the first one. Without it, the embed shows a sign-in
+wall instead of the map for anyone outside VCGI's org.
 
 ## Adding a new test
 
-1. In ArcGIS Online: set the item's sharing to Everyone, enable
-   embedding, and grab the share URL (Share → Link, or the `arcg.is`
-   short link — either works as the iframe `src`).
+1. In ArcGIS Online: set the item's sharing to Everyone, and grab the
+   share URL (Share → Link, or the `arcg.is` short link — either works as
+   the iframe `src`).
 2. Create `docs/webmap-tests/<slug>/` with:
    - `index.html` — the embed page (copy an existing one, swap the title
      and iframe `src`)
@@ -35,3 +36,4 @@ bitten the first entry below already, see its README.
 | Test | Live embed | Notes |
 |---|---|---|
 | [Topographic — Test 01 (Styled DEM)](topographic-test-01-styled-dem/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-01-styled-dem/) | Styled DEM + hillshade terrain, VCGI-sourced water labels, E911 recreation layers |
+| [Topographic — Test 01b (World Terrain Labels)](topographic-test-01b-world-terrain-labels/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-01b-world-terrain-labels/) | Save-as of Test 01; swaps four label layers for one Esri "World Terrain Reference"-styled layer |
