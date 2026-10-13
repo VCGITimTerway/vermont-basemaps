@@ -35,7 +35,7 @@ that only VCGI staff can fill in accurately.
 | Mountains and Hills | — not yet started | — | — |
 | Tree Centroids / Tree Canopy (next-gen) | — not yet started | — | — |
 | Wetlands (VSWI) | — not yet started | — | — |
-| E911 layers (driveways, buildings, cemeteries, golf courses, quarries/mines, trails) | — not yet started, though the Trail service (`FS_VCGI_OPENDATA_Emergency_TRAILS_line_SP_v1`, distinct from the Alpine Trails subtype used elsewhere) and a dedicated Building Footprint service (`ESRICMP_BuildingFootprintsVT_v1`) are now identified via Community Maps | — | — |
+| E911 layers (driveways, buildings, cemeteries, golf courses, quarries/mines, trails) | — not yet started, though the Trail service (`FS_VCGI_OPENDATA_Emergency_TRAILS_line_SP_v1`, distinct from the Alpine Trails subtype used elsewhere) is now identified via Community Maps. Note: `ESRICMP_BuildingFootprintsVT_v1` (the Buildings 2022 source) is a static composite built from both land-cover buildings and E911 footprints, not itself an E911 layer — see [`foundational-layers.md`](../architecture/foundational-layers.md#esri-community-maps-separate-existing-pipeline) | — | — |
 
 "Good" means pulled from VCGI's own published metadata record for that
 exact product (cited in each profile), not inferred. "Partial" means the

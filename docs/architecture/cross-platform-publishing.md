@@ -45,7 +45,7 @@ same source for the open-source side's rendering and popups.
 | 1ft Lidar Contours (Dark Olive) | Esri Vector Tile Service (`VECTOR_VCGI_CN1TGEN_WM_v1`) **and** an [ArcGIS Server MapServer](https://maps.vcgi.vermont.gov/arcgis/rest/services/EGC_services/MAP_VCGI_LIDARCONTOURS_WM_CACHE_v1/MapServer), `capabilities: Query,Map,Data` | ✅ | 🔧 | The MapServer exposes every generalization tier (1ft through 1000ft, including the `_Major` variants) as its own queryable sublayer (27 total) — a full tippecanoe export is achievable directly from this service |
 | Human Geography Detail — Blue Water | Esri Living Atlas (`World_Basemap_v2`), customized copy in [`basemap-styles/`](../basemap-styles/human-geography-detail-blue-water/README.md) | ✅ | 🔧 | Licensed Esri content, not exportable as-is. Open-source equivalent: VCGI's own `FS_VCGI_OPENDATA_Water_VHDCARTO_poly_SP_v1` / `..._line_SP_v1` services — confirmed `Query`-capable, EPSG:32145 — see [`foundational-layers.md`](foundational-layers.md#esri-community-maps-separate-existing-pipeline) |
 | Vermont Significant Wetlands Inventory | [AGOL hosted FeatureServer](https://services5.arcgis.com/Uzks6LSde6r23wwG/arcgis/rest/services/Vermont_Significant_Wetland_Inventory/FeatureServer/0) (ANR, who are VCGI staff — no cross-org data-sharing question here) | ✅ | 🔧 | Standard export |
-| Buildings 2022 | Vector tile, sourced from VCGI's own 2022 high-resolution land cover classification (Buildings class within the [Base Land Cover COG](https://s3.us-east-2.amazonaws.com/vtopendata-prd/Landcover/STATEWIDE_2022_50cm_LANDCOVER_Base.tif)) | ✅ | 🔧 | VCGI's own data. Two possible vector sources, not yet reconciled: the `LandLandcov_Buildings2022` metadata record, or [`ESRICMP_BuildingFootprintsVT_v1`](https://maps.vcgi.vermont.gov/arcgis/rest/services/VCGI_services/ESRICMP_BuildingFootprintsVT_v1/MapServer/2) (a service built specifically for Esri Community Maps, with its own `Carto`-coded categories — see [`foundational-layers.md`](foundational-layers.md#esri-community-maps-separate-existing-pipeline)) — confirm which (if either) matches this layer before building an export |
+| Buildings 2022 | Vector tile, sourced from [`ESRICMP_BuildingFootprintsVT_v1`](https://maps.vcgi.vermont.gov/arcgis/rest/services/VCGI_services/ESRICMP_BuildingFootprintsVT_v1/MapServer/2) | ✅ | 🔧, sourcing unresolved | VCGI's own data, but **this service is a static composite**, not a maintained feed — built at a point in time from both land-cover-derived buildings and E911 building footprints, with schema changes to match Esri Community Maps' requirements. VCGI hasn't yet decided what feeds *future* updates or on what cadence. Export today would capture that static snapshot as-is; resolve the update-source question before treating this as a long-term pipeline |
 | E911 Alpine Ski Lifts | [AGOL hosted FeatureServer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_ALPINELIFTS_line_SP_v1/FeatureServer/0), `capabilities: Query,Extract` | ✅ | ✅ (proof of concept) | See [`../pmtiles-pipeline/alpine-ski-lifts/`](../pmtiles-pipeline/alpine-ski-lifts/README.md) — a working PMTiles file exists; production build should use tippecanoe once Docker is available (not installed in this environment) |
 | VT Mask (GeoJSON) | [This repo](../basemap-styles/human-geography-detail-blue-water/vermont-mask.geojson), served via GitHub Pages | ✅ | ✅ | Already cross-platform as-is |
 | Human Geography Label | Esri Living Atlas vector tile | ✅ | 🔧, needs its own source | Licensed Esri content. Candidate VCGI source for place names generally: `BasemapLandmarks_GEONAME` (metadata record identified, not yet opened) |
@@ -59,11 +59,12 @@ same source for the open-source side's rendering and popups.
 1. Run the Alpine Ski Lifts proof of concept through real tippecanoe
    (once Docker is available) and compare against the hand-rolled
    version in [`pmtiles-pipeline/alpine-ski-lifts/`](../pmtiles-pipeline/alpine-ski-lifts/README.md).
-2. Reconcile the two Buildings 2022 candidate sources
-   (`LandLandcov_Buildings2022` vs. `ESRICMP_BuildingFootprintsVT_v1`),
-   and open `BasemapLandmarks_GEONAME` to confirm it's the right VCGI
-   source for general place names (same approach used for the
-   DEM/hillshade/contours/parcels/boundaries profiles already done in
+2. Decide what should feed *future* updates to Buildings 2022 (the
+   current `ESRICMP_BuildingFootprintsVT_v1` service is a static
+   composite, not a maintained pipeline — see above), and open
+   `BasemapLandmarks_GEONAME` to confirm it's the right VCGI source for
+   general place names (same approach used for the DEM/hillshade/
+   contours/parcels/boundaries profiles already done in
    [`data-sources/`](../data-sources/README.md)).
 3. Build the contour export from the MapServer's per-tier sublayers,
    replacing the current Esri-only Vector Tile Service with the shared

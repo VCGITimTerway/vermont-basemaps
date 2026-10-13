@@ -119,7 +119,7 @@ VCGI's current contribution configuration (all layers pulled on the same
 | Community Maps layer | VCGI source service | Filter | Label field |
 |---|---|---|---|
 | Admin3 (Municipal Boundary) | [`FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_towns_SP_v1`](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_towns_SP_v1/FeatureServer/0) | All features | `TOWNNAMEMC` |
-| Building Footprint | [`ESRICMP_BuildingFootprintsVT_v1`](https://maps.vcgi.vermont.gov/arcgis/rest/services/VCGI_services/ESRICMP_BuildingFootprintsVT_v1/MapServer/2) — a service built specifically for this contribution | By `Carto` code (Recreation, Government, Commercial, Education, Medical, etc. — 13 categories) | `LABEL_LOCAL` |
+| Building Footprint | [`ESRICMP_BuildingFootprintsVT_v1`](https://maps.vcgi.vermont.gov/arcgis/rest/services/VCGI_services/ESRICMP_BuildingFootprintsVT_v1/MapServer/2) — a **static composite**, not a maintained feed: built at a point in time from both land-cover-derived buildings and E911 building footprints, with schema changes to match Community Maps' requirements. VCGI hasn't yet decided what feeds future updates or on what cadence | By `Carto` code (Recreation, Government, Commercial, Education, Medical, etc. — 13 categories) | `LABEL_LOCAL` |
 | National Forest / National Park / State Forest / State Park | [`FS_VCGI_OPENDATA_Cadastral_PROTECTEDLND_poly_SP_v2`](../data-sources/protected-lands.md) (same service for all four) | `PAGENCY1`/`DESIGNAT`/`NAME` per category — see [protected-lands.md](../data-sources/protected-lands.md#subtype-values-confirmed-via-community-maps-contribution) | `NAME` |
 | Owner Parcel | [`FS_VCGI_VTPARCELS_WM_NOCACHE_v2`](../data-sources/parcels.md) (active parcels) | All features | — |
 | Trail | [`FS_VCGI_OPENDATA_Emergency_TRAILS_line_SP_v1`](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_OPENDATA_Emergency_TRAILS_line_SP_v1/FeatureServer/0) — distinct from the "Alpine Trails" polygon layer used in webmap tests, which comes from the shared E911 FOOTPRINTS service instead | Excludes `TRAILTYPE` T7/T8 | `TRAILNAME` |
@@ -130,9 +130,13 @@ This is the real answer to the "Human Geography Detail — Blue Water" and
 "World Terrain Reference Labels" open-source sourcing question flagged
 elsewhere as "needs its own VCGI source" — it's the **Waterbody/Waterline
 VHDCARTO services above**, already confirmed `Query`-capable (EPSG:32145).
-The Building Footprint and Trail services above are also newly-identified
-and distinct from similarly-named services already documented elsewhere
-in this repo (Buildings 2022, Alpine Trails) — don't conflate them.
+
+The Trail service above is distinct from the similarly-named "Alpine
+Trails" layer used elsewhere in this repo (that one's a polygon subtype
+of the shared E911 FOOTPRINTS service) — don't conflate them. The
+Building Footprint service *is* related to "Buildings 2022" (the vector
+tile layer used in the webmap tests) but isn't simply "the same data" —
+see the static-composite note above.
 
 ## Foundational layer inventory
 
