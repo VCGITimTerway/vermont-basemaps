@@ -27,12 +27,33 @@ filter definition.
 
 - **Intended use cases:** Protected-lands context layer for basemaps;
   Military Sites as a specific point of interest/caution layer, filtered
-  from the same source.
-- **Known limitations / caveats:** TODO — confirm the exact attribute
-  field and values used to distinguish subtypes (including Military
-  Sites), since that's what any derived PMTiles/Esri style would need to
-  filter on
+  from the same source. Also one of VCGI's Esri Community Maps
+  contributions (four separate categories pulled from this one service —
+  see below).
+- **Known limitations / caveats:** Subtype fields confirmed for 4 of the
+  8+ subtypes (see below, via VCGI's Community Maps contribution config)
+  — national wildlife refuges, national wilderness areas, municipal
+  parks, municipal forests, and the Military Sites filter itself are
+  still unconfirmed.
 - **Appropriate scale / zoom range:** TODO
+
+### Subtype values (confirmed via Community Maps contribution)
+
+Field names/values VCGI uses to filter this service into four of its
+Esri Community Maps layers (see
+[`../architecture/foundational-layers.md`](../architecture/foundational-layers.md#esri-community-maps-separate-existing-pipeline)):
+
+| Subtype | Filter |
+|---|---|
+| National Forest | `PAGENCY1 = '2000032000'` |
+| National Park | `PAGENCY1 = '2000031100' AND NAME LIKE '%Park'` |
+| State Forest | `DESIGNAT = 'SF'` |
+| State Park | `DESIGNAT = 'SP'` |
+
+Label field for all four: `NAME`. The remaining subtypes (national
+wildlife refuges, national wilderness areas, municipal parks, municipal
+forests) and the Military Sites filter aren't part of the Community Maps
+config, so their field values are still unconfirmed.
 
 ## Current source
 
@@ -58,9 +79,10 @@ filter definition.
      just filter the combined Protected Lands tileset client-side by the
      same attribute — avoids maintaining two parallel exports of what's
      really one dataset.
-- **Known gaps / blockers:** Need the subtype/category field name and its
-  values (including whatever distinguishes Military Sites) before a
-  filtered style or a filtered export can be built correctly.
+- **Known gaps / blockers:** Subtype fields known for National/State
+  Forest/Park (see above); still need the Military Sites filter and the
+  remaining subtypes' fields before a complete filtered style/export can
+  be built.
 
 ## Related
 

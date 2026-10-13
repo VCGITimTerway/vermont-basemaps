@@ -6,7 +6,10 @@ Statewide parcel (cadastral) polygons — the property/ownership boundary
 layer. Split into **active** and **inactive** parcels within the same
 service (inactive presumably meaning superseded/retired parcel records
 rather than deleted, but TODO: confirm the actual active/inactive
-definition and how a parcel transitions between them).
+definition and how a parcel transitions between them). The active layer
+("Owner Parcel") is also one of VCGI's Esri Community Maps contributions
+— see
+[`../architecture/foundational-layers.md`](../architecture/foundational-layers.md#esri-community-maps-separate-existing-pipeline).
 
 ## Stewardship
 

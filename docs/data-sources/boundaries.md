@@ -5,8 +5,9 @@
 Administrative boundary lines and polygons at four levels: state, county,
 municipal (town), and village. Lines for all four levels are published
 together in one shared service; polygons are published per-level as
-separate services (except municipal, where no dedicated polygon service
-has been identified yet — see below).
+separate services. Municipal Boundaries ("Admin3") is also one of VCGI's
+Esri Community Maps contributions — see
+[`../architecture/foundational-layers.md`](../architecture/foundational-layers.md#esri-community-maps-separate-existing-pipeline).
 
 ## Stewardship
 
@@ -66,7 +67,7 @@ matches).
 | All levels (shared) | Line | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_line_SP_v1/FeatureServer/0) ("VT Data – Boundaries, All Lines") | EPSG:32145 (VT State Plane) |
 | State | Polygon | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_vtbnd_SP_v1/FeatureServer/0) | EPSG:32145 (VT State Plane) |
 | County | Polygon | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_counties_SP_v1/FeatureServer/0) | EPSG:32145 (VT State Plane) |
-| Municipal | Polygon | **Not identified yet** — only covered as lines via the shared service above | — |
+| Municipal | Polygon | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_towns_SP_v1/FeatureServer/0), label field `TOWNNAMEMC` | EPSG:32145 (VT State Plane) |
 | Village | Polygon | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_villages_SP_v1/FeatureServer/0) | EPSG:32145 (VT State Plane) |
 
 **Format:** AGOL hosted feature layer throughout (uncached, queryable).
@@ -81,13 +82,8 @@ matches).
      boundaries at multiple levels), consider whether they should be one
      combined PMTiles tileset (multiple layers, one per level) or four
      separate tilesets — affects how basemap styles reference them.
-  2. Resolve the missing Municipal polygon source before this layer can be
-     included as a polygon fill in any basemap variant (it currently only
-     exists as a line).
-- **Known gaps / blockers:**
-  - Municipal Boundaries polygon service not identified.
-  - No PMTiles or parallel Esri Vector Tile Service built yet for any of
-    these.
+- **Known gaps / blockers:** No PMTiles or parallel Esri Vector Tile
+  Service built yet for any of these.
 
 ## Related
 

@@ -101,14 +101,38 @@ buckets.
 
 ### Esri Community Maps (separate, existing pipeline)
 
-VCGI contributes foundational layers to Esri's Community Maps program on a
-~6-month cadence, which populates the Living Atlas Human Geography
-light/dark **detail** and **label** layers. At least transportation and
-place names are, today, typically consumed in Esri-centric apps as a styled
-Esri vector tile layer *from Living Atlas*, not from VCGI's own VSDI
-publishing path. That's a real asymmetry: there's no open-source equivalent
-of Living Atlas, so those two themes need their own VSDI → PMTiles path for
-non-Esri apps — see [Gaps](#gaps--open-questions) below.
+VCGI contributes foundational layers to Esri's Community Maps program,
+which populates the Living Atlas Human Geography light/dark **detail**
+and **label** layers (and related styled layers like World Terrain
+Reference Labels — see
+[`../webmap-tests/topographic-test-01b-world-terrain-labels/README.md`](../webmap-tests/topographic-test-01b-world-terrain-labels/README.md)).
+At least transportation and place names are, today, typically consumed
+in Esri-centric apps as a styled Esri vector tile layer *from Living
+Atlas*, not from VCGI's own VSDI publishing path. That's a real
+asymmetry: there's no open-source equivalent of Living Atlas, so those
+themes need their own VSDI → PMTiles path for non-Esri apps — see
+[Gaps](#gaps--open-questions) below.
+
+VCGI's current contribution configuration (all layers pulled on the same
+6-month cadence; next pull 2027-03-17):
+
+| Community Maps layer | VCGI source service | Filter | Label field |
+|---|---|---|---|
+| Admin3 (Municipal Boundary) | [`FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_towns_SP_v1`](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_towns_SP_v1/FeatureServer/0) | All features | `TOWNNAMEMC` |
+| Building Footprint | [`ESRICMP_BuildingFootprintsVT_v1`](https://maps.vcgi.vermont.gov/arcgis/rest/services/VCGI_services/ESRICMP_BuildingFootprintsVT_v1/MapServer/2) — a service built specifically for this contribution | By `Carto` code (Recreation, Government, Commercial, Education, Medical, etc. — 13 categories) | `LABEL_LOCAL` |
+| National Forest / National Park / State Forest / State Park | [`FS_VCGI_OPENDATA_Cadastral_PROTECTEDLND_poly_SP_v2`](../data-sources/protected-lands.md) (same service for all four) | `PAGENCY1`/`DESIGNAT`/`NAME` per category — see [protected-lands.md](../data-sources/protected-lands.md#subtype-values-confirmed-via-community-maps-contribution) | `NAME` |
+| Owner Parcel | [`FS_VCGI_VTPARCELS_WM_NOCACHE_v2`](../data-sources/parcels.md) (active parcels) | All features | — |
+| Trail | [`FS_VCGI_OPENDATA_Emergency_TRAILS_line_SP_v1`](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_OPENDATA_Emergency_TRAILS_line_SP_v1/FeatureServer/0) — distinct from the "Alpine Trails" polygon layer used in webmap tests, which comes from the shared E911 FOOTPRINTS service instead | Excludes `TRAILTYPE` T7/T8 | `TRAILNAME` |
+| Waterbody | [`FS_VCGI_OPENDATA_Water_VHDCARTO_poly_SP_v1`](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_OPENDATA_Water_VHDCARTO_poly_SP_v1/FeatureServer/0) | `FTYPE` = LakePond / StreamRiver | `GNIS_NAME` |
+| Waterline | [`FS_VCGI_OPENDATA_Water_VHDCARTO_line_SP_v1`](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/ArcGIS/rest/services/FS_VCGI_OPENDATA_Water_VHDCARTO_line_SP_v1/FeatureServer/0) | `FCODE`/`FTYPE` → CanalDitch / RiverStream / RiverStreamIntermit | `GNIS_NAME` |
+
+This is the real answer to the "Human Geography Detail — Blue Water" and
+"World Terrain Reference Labels" open-source sourcing question flagged
+elsewhere as "needs its own VCGI source" — it's the **Waterbody/Waterline
+VHDCARTO services above**, already confirmed `Query`-capable (EPSG:32145).
+The Building Footprint and Trail services above are also newly-identified
+and distinct from similarly-named services already documented elsewhere
+in this repo (Buildings 2022, Alpine Trails) — don't conflate them.
 
 ## Foundational layer inventory
 
