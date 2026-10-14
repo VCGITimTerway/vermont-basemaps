@@ -17,20 +17,26 @@
     font-size: 0.9rem;
   }
   header a { color: #bfe3c8; }
-  main { max-width: 760px; margin: 0 auto; padding: 1.5rem 1rem; }
+  main { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1rem; }
   h1 { font-size: 1.4rem; color: #003300; }
+  .card-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
   .card {
-    display: flex; gap: 1rem; align-items: flex-start;
-    margin-bottom: 1.5rem; padding-bottom: 1.5rem;
-    border-bottom: 1px solid #ddd;
+    display: flex; flex-direction: column; gap: 0.75rem;
+    padding: 1rem; border: 1px solid #ddd; border-radius: 6px;
   }
   .card img {
-    width: 150px; height: 100px; object-fit: cover;
-    border: 1px solid #ccc; border-radius: 4px; flex-shrink: 0;
+    width: 100%; height: 160px; object-fit: cover;
+    border: 1px solid #ccc; border-radius: 4px;
   }
   .status { color: #555555; font-size: 0.9rem; margin-top: 0.25rem; }
   main a { color: #00417e; }
   a.embed { font-weight: 600; font-size: 1.05rem; color: #007834; }
+  @media (max-width: 700px) {
+    .card-grid { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -45,6 +51,7 @@
   decisions) for each is linked alongside it. Thumbnails are each item's
   live ArcGIS Online thumbnail, not a static copy.</p>
 
+  <div class="card-grid">
   <div class="card">
     <a href="topographic-test-01-styled-dem/">
       <img src="https://vcgi.maps.arcgis.com/sharing/rest/content/items/c6a5d16848b84f02a67a2e73be6958f9/info/thumbnail/ago_downloaded.png" alt="Topographic Test 01 thumbnail">
@@ -91,6 +98,7 @@
       <a href="https://github.com/VCGITimTerway/vermont-basemaps/blob/main/docs/webmap-tests/topographic-test-02b-world-terrain-labels/README.md">documentation</a>
       <div class="status">Save-as of Test 02; swaps four label layers for the same Esri "World Terrain Reference" layer used in Test 01b.</div>
     </div>
+  </div>
   </div>
 </main>
 </body>
