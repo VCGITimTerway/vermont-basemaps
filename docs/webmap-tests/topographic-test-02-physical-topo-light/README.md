@@ -20,7 +20,7 @@ contributes nothing to the visible ground surface here.
 | # | Layer | Source | On? | Opacity | Notes |
 |---|---|---|---|---|---|
 | 0 | Lidar DEM Hillshade | ArcGIS cached ImageServer ([`IMG_VCGI_LIDARHILLSHD_WM_CACHE_v1`](https://maps.vcgi.vermont.gov/arcgis/rest/services/EGC_services/IMG_VCGI_LIDARHILLSHD_WM_CACHE_v1/ImageServer)) | On | 0.4 | `minScale` ≈ 1:13.1M. **No DEM color-ramp layer in this map at all** — see [Design notes](#design-notes) |
-| 1 | Vermont Protected Lands Database | [AGOL hosted FeatureServer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Cadastral_PROTECTEDLND_poly_SP_v2/FeatureServer/0) | *unconfirmed* | 0.25 | New to this test, not present in Test 01 — on/off state isn't reliably determinable from the JSON alone (see note below); confirm with Tim |
+| 1 | Vermont Protected Lands Database | [AGOL hosted FeatureServer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Cadastral_PROTECTEDLND_poly_SP_v2/FeatureServer/0) | On | 0.25 | New to this test, not present in Test 01. Filtered to `INT_ORGTYP` = State, Municipal, or Federal — i.e. publicly stewarded protected areas only |
 | 2 | Alpine Trails — VT E911 Other Mapped Features of Interest | [shared FeatureServer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_FOOTPRINTS_poly_SP_v1/FeatureServer/0) | On | 0.41 | `FOOTPRINTTYPE` filter on the shared E911 footprints service |
 | 3 | Golf Courses — VT E911 Other Mapped Features of Interest | same FeatureServer | On | 0.75 | |
 | 4 | Quarries — VT E911 Other Mapped Features of Interest | same FeatureServer | On | 0.41 | |
@@ -40,9 +40,8 @@ explicit `visibility` key per layer — several layers that are genuinely
 on (e.g. Test 01b's replacement label layer) have no key at all, same as
 several that are genuinely off. Where a layer here matches one already
 documented for Test 01/01b under the same title, its On/Off state is
-carried over by that precedent rather than guessed fresh. The one row
-with no precedent (Protected Lands Database, new to this map) is flagged
-`*unconfirmed*` rather than guessed.
+carried over by that precedent; Protected Lands Database (new to this
+map, no precedent) was confirmed directly with Tim.
 
 ## Design notes
 
@@ -65,8 +64,11 @@ with no precedent (Protected Lands Database, new to this map) is flagged
   [`human-geography-detail-blue-water/`](../../basemap-styles/human-geography-detail-blue-water/README.md)
   does — worth doing if this variant becomes the long-term "Light" style).
 - **Vermont Protected Lands Database** is new to this test (not part of
-  Test 01's layer set) — see [`protected-lands.md`](../../data-sources/protected-lands.md)
-  for what's known about that source.
+  Test 01's layer set), shown filtered to `INT_ORGTYP` = State,
+  Municipal, or Federal — publicly stewarded protected land only,
+  excluding privately held conservation parcels. See
+  [`protected-lands.md`](../../data-sources/protected-lands.md) for what's
+  known about the underlying source.
 - Quarries, Alpine Trails, and Golf Courses are all filtered views of the
   same shared E911 FeatureServer, not three separate services (same as
   Test 01).
