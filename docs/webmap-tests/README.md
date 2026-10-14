@@ -20,7 +20,13 @@ wall instead of the map for anyone outside VCGI's org.
    the iframe `src`).
 2. Create `docs/webmap-tests/<slug>/` with:
    - `index.html` — the embed page (copy an existing one, swap the title
-     and iframe `src`)
+     and iframe `src`). Keep the `<head>` fonts/stylesheet block as-is —
+     every page here links the
+     [VCGI State of Vermont-themed stylesheet](https://files.vcgi.vermont.gov/other/css/vcgi-sov-stylesheet-v.1.1.css)
+     plus its required "Source Sans 3" Google Font, and the inline
+     `<style>` block's colors (`#003300` header, `#007834`/`#00417e`
+     links) are picked to match that stylesheet's palette rather than
+     being ad hoc
    - `README.md` — layers shown + design decisions (pull the actual
      layer list from the web map JSON once the item is public, rather
      than describing from memory)
