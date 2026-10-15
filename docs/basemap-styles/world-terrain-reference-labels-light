@@ -692,6 +692,7 @@
         ]
       },
       "paint": {
+        "text-color": "#505050",
         "text-halo-color": "#FFFFFF",
         "text-halo-width": 1,
         "text-halo-blur": 1
