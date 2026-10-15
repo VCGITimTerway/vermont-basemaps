@@ -103,6 +103,71 @@ open-source side could eventually look like.
 (Not legal advice — read LINZ's own Terms of Use and licensing pages
 directly before treating any of the above as settled for our purposes.)
 
+## Source: UGRC (Utah Geospatial Resource Center)
+
+Another state-run basemap program, published as a trio of named
+general-purpose basemaps rather than one product:
+
+- [Hybrid](https://gis.utah.gov/products/sgid/base-maps/hybrid/) —
+  reference cartography blended with current high-resolution aerial
+  imagery; most features (lakes, rivers, land ownership, parks) are shown
+  as labels only, not drawn polygons, so the imagery stays the visual
+  focus.
+- [Lite](https://gis.utah.gov/products/sgid/base-maps/lite/) — "a light,
+  muted, general reference base map that doesn't compete with your
+  thematic data." Roads/highways/rail plus county and municipal
+  boundaries, with building footprints and address-point house numbers
+  appearing only at closer zoom.
+- [Terrain](https://gis.utah.gov/products/sgid/base-maps/terrain/) — land
+  cover + DEM-derived relief, built around a "unique 2 layer hillshade and
+  50 foot contours," plus agricultural land, wetlands, a 2016 Great Salt
+  Lake level layer, highways, rail, and boundary layers.
+- [Connecting to Discover (client docs)](https://gis.utah.gov/documentation/discover/clients/) —
+  how to consume any of the three from QGIS, ArcGIS Pro/Online, CAD
+  software, and custom web apps.
+
+### Architecture
+
+- **All three are raster, not vector tiles** — pre-rendered 256px tiles,
+  Web Mercator (EPSG:3857), at Esri's standard common zoom scales. Unlike
+  LINZ's Topographic product above, there's no vector/MVT counterpart to
+  any of these three.
+- **No API keys — access is via unique per-user links instead.** Their
+  "Discover" delivery platform authenticates through an unguessable
+  per-user URL segment (a "quad-word," e.g.
+  `bottle-apple-crater-oberon`), not a login or key. Client docs
+  explicitly say to leave any client's auth fields blank.
+- **Public web maps using their licensed high-res imagery need separate
+  "locked-down" links** — the default per-user links aren't meant to be
+  embedded in something publicly shared; a distinct link type exists for
+  that case. Worth noting as a contrast to VCGI's own TiTiler/PMTiles
+  endpoints, which are fully open with no per-user link step at all.
+- **Custom web app access is documented specifically for the ArcGIS Maps
+  SDK for JavaScript**, via `WebTileLayer` pointed at a Discover tile URL
+  template (`.../tiles/lite_basemap/{level}/{col}/{row}`). Directly
+  relevant if VCGI's basemaps end up needing a non-Map-Viewer ArcGIS
+  consumption path: confirms `WebTileLayer` (not just a Vector Tile Layer
+  item) is a workable route for raster basemap tiles in that SDK.
+- **Cache-level mismatch caveat:** `WebTileLayer`'s default assumed zoom
+  levels (0–19, the common set shared by most commercial tile providers)
+  don't always match Discover's actual basemap zoom levels, requiring a
+  manually-constructed `TileInfo`/`LOD` object (tile size, origin,
+  spatial reference, per-level resolution) rather than relying on the
+  class's defaults — a concrete example of a style/service needing to
+  describe its own zoom scheme explicitly rather than assuming a client
+  library's default matches.
+- **UGRC publishes their own `layer-selector` npm package** to handle
+  basemap-switching/overlay-toggling and paper over the cache-level
+  configuration work above — an example of a small reusable client-side
+  helper rather than solving it per-app.
+- No licensing/attribution terms are stated on the basemap product pages
+  themselves (unlike LINZ's explicit CC-BY 4.0 data license above) — not
+  confirmed as "no license" so much as "not stated where we looked."
+
+(Not legal advice — contact UGRC (`ugrc@utah.gov`) or read their own
+policies directly before treating any of the above as settled for our
+purposes.)
+
 ## Source: VCGI (internal, 2024 development tests)
 
 Screenshots (not style files) from earlier, unpublished VCGI basemap
