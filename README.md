@@ -7,8 +7,8 @@ Development test versions of potential updated basemaps [are available here](htt
 ## Data Sources
 Documentation of and implications for data sources used in updated basemaps [are in this folder](https://github.com/VCGITimTerway/vermont-basemaps/tree/main/docs/data-sources).
 
-## References
-Reference basemaps by VCGI and other providers [are in this folder](https://github.com/VCGITimTerway/vermont-basemaps/tree/main/docs/reference-basemaps).
-
 ## Technical Considerations
 Documentation of technical considerations for delivering updated basemaps, including layer publishing details [are largely in this folder](https://github.com/VCGITimTerway/vermont-basemaps/tree/main/docs/architecture).
+
+## References
+Reference basemaps by VCGI and other providers [are in this folder](https://github.com/VCGITimTerway/vermont-basemaps/tree/main/docs/reference-basemaps).
