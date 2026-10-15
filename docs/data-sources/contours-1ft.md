@@ -105,7 +105,7 @@ unless the contours are regenerated from the 2023 QL1 data.
   being republished with different zoom-tier assignments. This exactly
   matches Esri's own factory-default style's zoom breaks for this
   service, confirmed when investigating whether the
-  [dark-olive style](../contour-styles/dark-olive/README.md#to-revisit)'s
+  [dark-olive style](../contour-styles/dark-olive/README.md#low-zoom-contour-density)'s
   sparse Champlain Valley contours at low zoom could be improved —
   they couldn't, via styling alone.
 

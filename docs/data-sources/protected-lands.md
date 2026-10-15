@@ -55,6 +55,15 @@ wildlife refuges, national wilderness areas, municipal parks, municipal
 forests) and the Military Sites filter aren't part of the Community Maps
 config, so their field values are still unconfirmed.
 
+### Ownership-type filter (confirmed via Topographic Test 02/02b)
+
+Separate from the four Community Maps subtype filters above, `INT_ORGTYP`
+is a confirmed field distinguishing managing-agency type. [Topographic
+Test 02/02b](../webmap-tests/topographic-test-02-physical-topo-light/README.md)
+filters this service to `INT_ORGTYP` = `State`, `Municipal`, or `Federal`
+to show only publicly stewarded protected land, excluding privately held
+conservation parcels.
+
 ## Current source
 
 - **Service:** [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Cadastral_PROTECTEDLND_poly_SP_v2/FeatureServer/0)
@@ -67,6 +76,8 @@ config, so their field values are still unconfirmed.
   national forests, national wildlife refuges, national wilderness areas,
   municipal parks, municipal forests (field name/values for these subtypes
   and for the Military Sites filter: TODO)
+- **Known fields:** `NAME`, `DESIGNAT`, `PAGENCY1` (subtype filters, above),
+  `INT_ORGTYP` (ownership-type filter, above)
 
 ## Path to PMTiles / TiTiler output
 
@@ -87,3 +98,5 @@ config, so their field values are still unconfirmed.
 ## Related
 
 - Architecture doc row: [`../architecture/foundational-layers.md`](../architecture/foundational-layers.md#vsdi-vermont-spatial-data-infrastructure)
+- [`../webmap-tests/topographic-test-02-physical-topo-light/README.md`](../webmap-tests/topographic-test-02-physical-topo-light/README.md) —
+  first basemap test to use this layer, with the `INT_ORGTYP` filter above
