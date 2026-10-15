@@ -1,5 +1,5 @@
 # Vermont Basemaps
-This is a repository for developing and maintaining updates to Vermont basemaps. Basemaps are being tested for use in ESRI and non-ESRI / open-source applications and environments, and heavily depend on Vermont Spatial Data Infrastructure (VSDI) content.
+This is a repository for developing and maintaining updates to Vermont basemaps. Basemaps are being tested for use in ESRI and non-ESRI / open-source applications and environments, and heavily depend on [Vermont Spatial Data Infrastructure (VSDI)](https://files.vcgi.vermont.gov/other/policies/web-services-life-cycle-policies.html#services-registry) content.
 
 ## Previews
 Development test versions of potential updated basemaps [are available here](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/). See links there for further documentation of them within this repo.
