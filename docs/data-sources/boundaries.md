@@ -97,3 +97,6 @@ cadence.
 ## Related
 
 - Architecture doc row: [`../architecture/foundational-layers.md`](../architecture/foundational-layers.md#vsdi-vermont-spatial-data-infrastructure)
+- [`../webmap-tests/topographic-test-02c-admin/README.md`](../webmap-tests/topographic-test-02c-admin/README.md) —
+  first basemap test to use Municipal boundaries (as "Town Boundaries"),
+  styled as a dotted-line + white-halo pair with scale-dependent width
