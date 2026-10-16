@@ -24,7 +24,7 @@ elsewhere rather than assuming everything shares a license or schema.
 
 Maintained under the [openmaptiles GitHub org](https://github.com/openmaptiles);
 source for the vector tile schema itself lives in
-[openmaptiles/openmaptiles](https://github.com/openmaptiles/openmaptiles).
+[openmaptiles/openmaptiles](https://github.com/openmaptiles/openmaptiles). Overview [here](https://openmaptiles.org/).
 
 | Style | Repo | Vermont demo | Description | License |
 |---|---|---|---|---|
