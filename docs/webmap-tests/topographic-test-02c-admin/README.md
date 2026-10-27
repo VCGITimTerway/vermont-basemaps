@@ -37,11 +37,20 @@ Same as Test 02/02b: **Human Geography Map** (Esri Living Atlas), own
 | 8 | Buildings 2022 (White) | Vector tile (same "White" style variant as Test 02/02b) | Off | — | |
 | 9 | VT Data — E911 Alpine Ski Lifts | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_ALPINELIFTS_line_SP_v1/FeatureServer/0) | Off | — | |
 | 10 | VT Mask - GeoJSON Test | [`vermont-mask.geojson`](../../basemap-styles/human-geography-detail-blue-water/vermont-mask.geojson) | On | — | Positioned below both the Town Boundaries and label layers (same label-clipping reasoning as prior tests) |
-| 11 | **Town Boundaries Group** | [ArcGIS Online group layer](#town-boundaries-group) wrapping two views of the same VCGI municipal boundary service — new to this test | On | — | Group has no `minScale` restriction note of its own beyond 1:196,470 (hidden when zoomed out further than that); see below |
+| 11 | **Town Boundaries Group** | [Group layer item](#town-boundaries-group) wrapping two views of the same VCGI municipal boundary service | On | — | Saved as a standalone, reusable **Group layer item** (`Group Layer - Town Boundaries`, item `78853d8236e04a1d8d6df5c0f94e7c13`, public) — addable to other web maps directly, not just an ad-hoc group local to this map (see [Group layers](../README.md#group-layers)). Group has no `minScale` restriction of its own beyond 1:196,470 (hidden when zoomed out further than that); see below |
 | 12 | **World Terrain Reference Labels Light** | Esri Living Atlas vector tile (`World_Basemap_v2`), VCGI-styled — **a different, newer item than Test 01b/02b's label layer**, not a reused copy | On | — | This is the muted-text label style edited earlier this session (placename and spot-elevation colors lightened to `#505050`) — see [`../../basemap-styles/`](../../basemap-styles/world-terrain-reference-labels-light). Layer-level `minScale` ≈ 1:1,676,470 (hidden when zoomed out past regional scale) |
 | 13 | **Thematic Features Example** | Inline ArcGIS Online "Map Notes" sketch layer (not a hosted service — no `itemId`/`url`, defined directly in the web map JSON) | On *(presumed — this is the layer the test exists to demonstrate; no explicit `visibility` key was found to confirm it directly, unlike the Town Boundaries group below)* | — | 15 polygons, 4 polylines, 12 points, 5 text annotations; all hidden when zoomed out past 1:26,029 |
 
 ### Town Boundaries Group
+
+Saved as a standalone **Group layer item** — `Group Layer - Town
+Boundaries` (item `78853d8236e04a1d8d6df5c0f94e7c13`, owner
+`Publisher_VCGI`, public) — rather than staying an ad-hoc group local to
+this one web map. Per the propagation caveat documented in [Group
+layers](../README.md#group-layers), any future styling/structure edits
+made to this item won't automatically reach this web map (or any other
+map it's added to) without re-adding it; only edits to the underlying
+boundary data itself update live.
 
 Both sublayers point at the same VCGI municipal polygon service already
 profiled in [`boundaries.md`](../../data-sources/boundaries.md)
