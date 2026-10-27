@@ -58,11 +58,17 @@ config, so their field values are still unconfirmed.
 ### Ownership-type filter (confirmed via Topographic Test 02/02b)
 
 Separate from the four Community Maps subtype filters above, `INT_ORGTYP`
-is a confirmed field distinguishing managing-agency type. [Topographic
+is a confirmed field distinguishing managing-agency type, with coded
+values rather than spelled-out text. [Topographic
 Test 02/02b](../webmap-tests/topographic-test-02-physical-topo-light/README.md)
-filters this service to `INT_ORGTYP` = `State`, `Municipal`, or `Federal`
-to show only publicly stewarded protected land, excluding privately held
-conservation parcels.
+filters this service to `INT_ORGTYP = 'STAT' OR INT_ORGTYP = 'LOC' OR
+INT_ORGTYP = 'FED'` to show only publicly stewarded protected land
+(State/Municipal/Federal), excluding privately held conservation parcels.
+Test 02b's current configuration additionally OR's in several `DESIGNAT`
+values (`SF`, `SP`, `ML`, `MF`, `MP`, `SL`) alongside the ownership-type
+clause — see [Test 02b's layer
+table](../webmap-tests/topographic-test-02b-world-terrain-labels/README.md)
+for the exact expression in use there.
 
 ## Current source
 
@@ -77,7 +83,8 @@ conservation parcels.
   municipal parks, municipal forests (field name/values for these subtypes
   and for the Military Sites filter: TODO)
 - **Known fields:** `NAME`, `DESIGNAT`, `PAGENCY1` (subtype filters, above),
-  `INT_ORGTYP` (ownership-type filter, above)
+  `INT_ORGTYP` (ownership-type filter, above; coded values `STAT`, `LOC`,
+  `FED`, not spelled-out text)
 
 ## Path to PMTiles / TiTiler output
 
