@@ -45,6 +45,48 @@ field, fetchable via `.../sharing/rest/content/items/<itemId>?f=json`,
 and isn't always `ago_downloaded.png`). No need to download/commit a
 copy — it updates automatically if the item is ever re-saved.
 
+## Group layers
+
+Operational layers can be organized into groups within a web map (e.g.
+Test 02b's "Base" and "Labels" groups). Two distinct things both get
+called "groups" in ArcGIS Online, with very different behavior:
+
+- **Ad-hoc groups** — created via **Options → Group** on a layer in Map
+  Viewer, then adding more layers into it. These exist only inside that
+  one web map's JSON (an `id`/`title` on a `GroupLayer` entry in
+  `operationalLayers`, no `itemId` or service URL of its own) and can't
+  be referenced from, or added to, another web map.
+- **Group layer items** — created from an ad-hoc group via its
+  **Options → Save as**. This produces a standalone AGOL item with its
+  own item ID, shareable and addable to other web maps from Content, the
+  Add Layer browser, etc., without re-building the stacking order by
+  hand each time.
+
+**Important limitation, confirmed via Esri's documentation:** saving a
+group as a Group layer item does **not** create a live link. Per
+[ArcGIS Online Help](https://doc.arcgis.com/en/arcgis-online/create-maps/organize-layers-mv.htm):
+> "Group layer property configurations, such as styling, labels, and
+> visibility settings, are imported into the web map, and the map is not
+> updated as changes are made separately to the group layer item. Only
+> updates to the underlying data are reflected across all maps where the
+> group layer is used."
+
+So a web map captures a snapshot of the group's styling/structure at the
+time the Group layer item is added. Later edits to the item (adding,
+removing, reordering, or restyling sublayers) do **not** propagate to
+maps that already reference it — there's no documented refresh/sync
+action either, only removing and re-adding the group layer item. Only
+edits to the underlying feature *data* (not structure/styling) update
+live everywhere the group is used.
+
+**Practical implication for this repo:** Group layer items are worth
+creating once a group (Base, Labels, a future Admin Boundaries, etc.) is
+stable and meant to be handed to others as a consistent starting point —
+but while a group is still actively being revised, editing the ad-hoc
+group directly inside each test webmap (current approach) stays simpler
+than maintaining Group layer items that won't reflect those edits
+anywhere else.
+
 ## Tests
 
 | Test | Live embed | Notes |
