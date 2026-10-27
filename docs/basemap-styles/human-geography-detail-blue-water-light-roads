@@ -985,7 +985,7 @@
           6,
           3
         ],
-        "line-color": "#999999"
+        "line-color": "#bcbcbc"
       }
     },
     {
@@ -1012,7 +1012,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#999999",
+        "line-color": "#bcbcbc",
         "line-width": {
           "base": 1.2,
           "stops": [
@@ -1056,7 +1056,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#999999",
+        "line-color": "#bcbcbc",
         "line-width": {
           "base": 1.4,
           "stops": [
@@ -1104,7 +1104,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#999999",
+        "line-color": "#bcbcbc",
         "line-width": {
           "base": 1.2,
           "stops": [
@@ -1152,7 +1152,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#999999",
+        "line-color": "#bcbcbc",
         "line-width": {
           "base": 1.2,
           "stops": [
@@ -1200,7 +1200,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#999999",
+        "line-color": "#bcbcbc",
         "line-width": {
           "base": 1.2,
           "stops": [
@@ -1248,7 +1248,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#999999",
+        "line-color": "#bcbcbc",
         "line-width": {
           "base": 1.2,
           "stops": [
@@ -1296,7 +1296,7 @@
         "line-cap": "round"
       },
       "paint": {
-        "line-color": "#999999",
+        "line-color": "#bcbcbc",
         "line-width": {
           "base": 1.2,
           "stops": [
@@ -1343,7 +1343,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#999999",
+        "line-color": "#bcbcbc",
         "line-width": {
           "base": 1.2,
           "stops": [
@@ -1390,7 +1390,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#999999",
+        "line-color": "#bcbcbc",
         "line-width": {
           "base": 1.2,
           "stops": [
@@ -1920,7 +1920,7 @@
           3
         ],
         "line-opacity": 0.5,
-        "line-color": "#999999"
+        "line-color": "#bcbcbc"
       }
     },
     {
@@ -1947,7 +1947,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#999999",
+        "line-color": "#bcbcbc",
         "line-opacity": 0.5,
         "line-width": {
           "base": 1.2,
@@ -1988,7 +1988,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#999999",
+        "line-color": "#bcbcbc",
         "line-opacity": 0.5,
         "line-width": {
           "base": 1.4,
@@ -2037,7 +2037,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#999999",
+        "line-color": "#bcbcbc",
         "line-opacity": 0.5,
         "line-width": {
           "base": 1.2,
@@ -2086,7 +2086,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#999999",
+        "line-color": "#bcbcbc",
         "line-opacity": 0.5,
         "line-width": {
           "base": 1.2,
@@ -2135,7 +2135,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#999999",
+        "line-color": "#bcbcbc",
         "line-opacity": 0.5,
         "line-width": {
           "base": 1.2,
@@ -2184,7 +2184,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#999999",
+        "line-color": "#bcbcbc",
         "line-opacity": 0.5,
         "line-width": {
           "base": 1.2,
@@ -2233,7 +2233,7 @@
         "line-cap": "round"
       },
       "paint": {
-        "line-color": "#999999",
+        "line-color": "#bcbcbc",
         "line-opacity": 0.5,
         "line-width": {
           "base": 1.2,
@@ -2281,7 +2281,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#999999",
+        "line-color": "#bcbcbc",
         "line-opacity": 0.5,
         "line-width": {
           "base": 1.2,
@@ -2329,7 +2329,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#999999",
+        "line-color": "#bcbcbc",
         "line-opacity": 0.5,
         "line-width": {
           "base": 1.2,
