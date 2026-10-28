@@ -780,7 +780,7 @@
       },
       "paint": {
         "line-width": 2.9,
-        "line-color": "#8c8c8c"
+        "line-color": "#bcbcbc"
       }
     },
     {
@@ -839,7 +839,11 @@
       },
       "paint": {
         "line-width": 1.6,
-        "line-color": "#ffffff"
+        "line-color": "#ffffff",
+        "line-dasharray": [
+          3,
+          2
+        ]
       }
     },
     {
