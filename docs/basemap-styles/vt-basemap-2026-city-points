@@ -1,7 +1,7 @@
 {
   "version": 8,
-  "sprite": "../sprites/sprite",
-  "glyphs": "../fonts/{fontstack}/{range}.pbf",
+  "sprite": "https://vectortileservices1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/VT_Basemap_2026_City_Points_WM/VectorTileServer/resources/sprites/sprite",
+  "glyphs": "https://vectortileservices1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/VT_Basemap_2026_City_Points_WM/VectorTileServer/resources/fonts/{fontstack}/{range}.pbf",
   "sources": {
     "VT_Basemap_2026_City_Points_WM": {
       "type": "vector",
@@ -14,7 +14,10 @@
       "minzoom": 0,
       "maxzoom": 10,
       "scheme": "xyz",
-      "url": "../../"
+      "url": "https://vectortileservices1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/VT_Basemap_2026_City_Points_WM/VectorTileServer",
+      "tiles": [
+        "https://vectortileservices1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/VT_Basemap_2026_City_Points_WM/VectorTileServer/tile/{z}/{y}/{x}.pbf"
+      ]
     }
   },
   "layers": [
