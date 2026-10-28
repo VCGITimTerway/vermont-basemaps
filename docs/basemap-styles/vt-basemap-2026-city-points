@@ -1,0 +1,152 @@
+{
+  "version": 8,
+  "sprite": "../sprites/sprite",
+  "glyphs": "../fonts/{fontstack}/{range}.pbf",
+  "sources": {
+    "VT_Basemap_2026_City_Points_WM": {
+      "type": "vector",
+      "bounds": [
+        -73.254,
+        42.8627,
+        -71.8854,
+        44.9375
+      ],
+      "minzoom": 0,
+      "maxzoom": 10,
+      "scheme": "xyz",
+      "url": "../../"
+    }
+  },
+  "layers": [
+    {
+      "id": "VT Basemap 2026 City Points WM",
+      "type": "circle",
+      "source": "VT_Basemap_2026_City_Points_WM",
+      "source-layer": "VT Basemap 2026 City Points WM",
+      "maxzoom": 10,
+      "filter": [
+        "in",
+        "_name",
+        "Barre",
+        "Bennington",
+        "Brattleboro",
+        "Burlington",
+        "Montpelier",
+        "Rutland",
+        "Saint Albans",
+        "Saint Johnsbury"
+      ],
+      "layout": {},
+      "paint": {
+        "circle-radius": 2.4,
+        "circle-color": "#FFFFFF",
+        "circle-stroke-color": "#4E4E4E",
+        "circle-stroke-width": 0.533333
+      }
+    },
+    {
+      "id": "VT Basemap 2026 City Points WM/label/Default",
+      "type": "symbol",
+      "source": "VT_Basemap_2026_City_Points_WM",
+      "source-layer": "VT Basemap 2026 City Points WM",
+      "maxzoom": 10,
+      "filter": [
+        "in",
+        "_name",
+        "Barre",
+        "Bennington",
+        "Brattleboro",
+        "Burlington",
+        "Montpelier",
+        "Rutland",
+        "Saint Albans",
+        "Saint Johnsbury"
+      ],
+      "layout": {
+        "text-font": [
+          "Arial Regular"
+        ],
+        "text-size": 10.6667,
+        "text-anchor": "bottom-left",
+        "text-justify": "left",
+        "text-offset": [
+          0.275,
+          0.025
+        ],
+        "text-field": "{_name}",
+        "text-optional": true
+      },
+      "paint": {
+        "text-color": "#505050",
+        "text-halo-color": "#FCFCFA",
+        "text-halo-width": 1.33333
+      }
+    },
+    {
+      "id": "VT Basemap 2026 City Points WM/other",
+      "type": "circle",
+      "source": "VT_Basemap_2026_City_Points_WM",
+      "source-layer": "VT Basemap 2026 City Points WM",
+      "minzoom": 8,
+      "maxzoom": 10,
+      "filter": [
+        "in",
+        "_name",
+        "Island Pond",
+        "Manchester",
+        "Middlebury",
+        "Newport",
+        "Springfield",
+        "Vergennes",
+        "Wallingford",
+        "White River Junction"
+      ],
+      "layout": {},
+      "paint": {
+        "circle-radius": 2.4,
+        "circle-color": "#FFFFFF",
+        "circle-stroke-color": "#4E4E4E",
+        "circle-stroke-width": 0.533333
+      }
+    },
+    {
+      "id": "VT Basemap 2026 City Points WM/label/Other",
+      "type": "symbol",
+      "source": "VT_Basemap_2026_City_Points_WM",
+      "source-layer": "VT Basemap 2026 City Points WM",
+      "minzoom": 8,
+      "maxzoom": 10,
+      "filter": [
+        "in",
+        "_name",
+        "Island Pond",
+        "Manchester",
+        "Middlebury",
+        "Newport",
+        "Springfield",
+        "Vergennes",
+        "Wallingford",
+        "White River Junction"
+      ],
+      "layout": {
+        "text-font": [
+          "Arial Regular"
+        ],
+        "text-size": 10.6667,
+        "text-anchor": "bottom-left",
+        "text-justify": "left",
+        "text-offset": [
+          0.275,
+          0.025
+        ],
+        "text-field": "{_name}",
+        "text-optional": true
+      },
+      "paint": {
+        "text-color": "#505050",
+        "text-halo-color": "#FCFCFA",
+        "text-halo-width": 1.33333
+      }
+    }
+  ]
+}
