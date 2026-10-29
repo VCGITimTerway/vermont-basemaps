@@ -1,0 +1,324 @@
+{
+  "version": 8,
+  "sprite": "https://www.arcgis.com/sharing/rest/content/items/a6a4272f7f904905b13644e20de6f6ea/resources/sprites/sprite-1793299179306",
+  "glyphs": "https://basemaps.arcgis.com/arcgis/rest/services/World_Basemap_v2/VectorTileServer/resources/fonts/{fontstack}/{range}.pbf",
+  "sources": {
+    "esri": {
+      "type": "vector",
+      "url": "https://basemaps.arcgis.com/arcgis/rest/services/World_Basemap_v2/VectorTileServer",
+      "tiles": [
+        "https://basemaps.arcgis.com/arcgis/rest/services/World_Basemap_v2/VectorTileServer/tile/{z}/{y}/{x}.pbf"
+      ],
+      "bounds": [
+        -73.5,
+        42.727,
+        -71.4653,
+        45.0169
+      ]
+    }
+  },
+  "layers": [
+    {
+      "id": "Marine area",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "Marine area",
+      "layout": {},
+      "paint": {
+        "fill-color": "#c2c8ca"
+      }
+    },
+    {
+      "id": "Water area small scale",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "Water area small scale",
+      "minzoom": 1,
+      "maxzoom": 5,
+      "layout": {},
+      "paint": {
+        "fill-color": "#c2c8ca"
+      }
+    },
+    {
+      "id": "Water area medium scale/Lake or river",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "Water area medium scale",
+      "filter": [
+        "==",
+        "_symbol",
+        0
+      ],
+      "minzoom": 5,
+      "maxzoom": 7,
+      "layout": {},
+      "paint": {
+        "fill-color": "#c2c8ca"
+      }
+    },
+    {
+      "id": "Water area large scale/Lake or river",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "Water area large scale",
+      "filter": [
+        "==",
+        "_symbol",
+        0
+      ],
+      "minzoom": 7,
+      "maxzoom": 11,
+      "layout": {},
+      "paint": {
+        "fill-color": "#c2c8ca"
+      }
+    },
+    {
+      "id": "Water line small scale",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "Water line small scale",
+      "minzoom": 1,
+      "maxzoom": 5,
+      "layout": {
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#c2c8ca",
+        "line-width": 0.5
+      }
+    },
+    {
+      "id": "Water line medium scale",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "Water line medium scale",
+      "minzoom": 5,
+      "maxzoom": 7,
+      "layout": {
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#c2c8ca",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              5,
+              0.5
+            ],
+            [
+              7,
+              0.7
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "Water line large scale",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "Water line large scale",
+      "minzoom": 7,
+      "maxzoom": 11,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#c2c8ca",
+        "line-width": 0.7
+      }
+    },
+    {
+      "id": "Boundary line/Admin0/0/Small",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "Boundary line",
+      "filter": [
+        "all",
+        [
+          "==",
+          "_symbol",
+          0
+        ],
+        [
+          "!in",
+          "Viz",
+          3
+        ]
+      ],
+      "minzoom": 1,
+      "maxzoom": 4,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#a8a8a8"
+      }
+    },
+    {
+      "id": "Boundary line/Admin0/0",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "Boundary line",
+      "filter": [
+        "all",
+        [
+          "==",
+          "_symbol",
+          0
+        ],
+        [
+          "!in",
+          "Viz",
+          3
+        ]
+      ],
+      "minzoom": 4,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#a8a8a8",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              4,
+              1.5
+            ],
+            [
+              14,
+              2.5
+            ]
+          ]
+        },
+        "line-dasharray": [
+          8,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "id": "Boundary line/Admin1/0",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "Boundary line",
+      "filter": [
+        "all",
+        [
+          "==",
+          "_symbol",
+          1
+        ],
+        [
+          "!in",
+          "Viz",
+          3
+        ]
+      ],
+      "minzoom": 6,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#c8c8c8",
+        "line-width": {
+          "base": 1,
+          "stops": [
+            [
+              4,
+              1
+            ],
+            [
+              14,
+              1.5
+            ]
+          ]
+        },
+        "line-dasharray": [
+          8,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "arcgisStyleUrl": "https://www.arcgis.com/sharing/rest/content/items/a6a4272f7f904905b13644e20de6f6ea/resources/styles/root.json",
+    "arcgisOriginalItemTitle": "VT Basemap 2026 Context Boundaries",
+    "arcgisQuickEditor": {
+      "land": "#808082",
+      "water": "#ddeff4",
+      "labelTextColor": "#000003",
+      "labelHaloColor": "#efefef",
+      "baseColor": "#808082",
+      "labelContrast": 4.5,
+      "labelColorMode": "LABELS_MAP_COLORS",
+      "colorMode": "CUSTOM",
+      "colors": {
+        "water": "#ddeff4",
+        "land": "#808082",
+        "building": "#d2d2d2",
+        "road": "#adadad",
+        "boundaries": "#3a3a3c"
+      }
+    },
+    "arcgisQuickEditorWarning": true,
+    "arcgisEditorExtents": [
+      {
+        "spatialReference": {
+          "wkid": 102100
+        },
+        "xmin": -8528322.654685957,
+        "ymin": 5249495.534266382,
+        "xmax": -7543202.234146868,
+        "ymax": 5654917.53229085
+      },
+      {
+        "spatialReference": {
+          "latestWkid": 3857,
+          "wkid": 102100
+        },
+        "xmin": -8284264.854315942,
+        "ymin": 5287751.288355854,
+        "xmax": -7957725.869481755,
+        "ymax": 5436956.367568479
+      },
+      {
+        "spatialReference": {
+          "latestWkid": 3857,
+          "wkid": 102100
+        },
+        "xmin": -8623498.859826181,
+        "ymin": 4686730.2881586375,
+        "xmax": -8541864.113617651,
+        "ymax": 4724031.557961785
+      },
+      {
+        "spatialReference": {
+          "latestWkid": 3857,
+          "wkid": 102100
+        },
+        "xmin": 16831631.255501077,
+        "ymin": -4011961.3124891175,
+        "xmax": 16832906.798410617,
+        "ymax": -4011378.480148428
+      }
+    ],
+    "arcgisMinimapVisibility": true
+  }
+}

@@ -47,3 +47,9 @@ the 1' contour layer.
   (its boundary-line sub-layers exist there but are disabled by
   default). Positioned above the VT mask so neighboring-state context
   still shows at statewide zoom while non-Vermont roads stay masked.
+- [`vt-basemap-2026-context-boundaries-desat`](vt-basemap-2026-context-boundaries-desat) —
+  save-as of Context Boundaries with water desaturated to the same
+  `#c2c8ca` used in Light Roads Desat (all 7 water/marine layers), for
+  use alongside that style in the desaturated "Base" configuration.
+  Boundary-line colors (country/state gray) are unchanged — only water
+  was in scope for this pass.
