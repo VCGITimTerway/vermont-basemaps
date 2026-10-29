@@ -15,9 +15,9 @@ does and doesn't give you.
 
 These are designed to combine into a single basemap "style," and **must
 be stacked in the order listed** (top row drawn last, i.e. on top).
-There will be more than one such combination — the one below is keyed to
-**Base Topo** (includes the Lidar DEM Hillshade); a second keyed to a
-plain **Base** (without hillshade) is forthcoming.
+There are two such combinations so far — identical except for the
+bottom group: **Base Topo** includes the Lidar DEM Hillshade layer,
+**Base** does not.
 
 ### Base Topo configuration
 
@@ -28,9 +28,21 @@ plain **Base** (without hillshade) is forthcoming.
 | Bottom | Base Topo | `d5173a686f4844fd8584cfecb37ab940` | Terrain, protected lands, recreation features, roads, buildings, the VT mask, the state boundary line, and surrounding-state context boundaries |
 
 [Test 02b](topographic-test-02b-world-terrain-labels/README.md) is the
-reference example for this combination — see its layer tables for
-exactly what each group currently contains and how it's configured
-there.
+reference example for this combination.
+
+### Base configuration
+
+| Order | Group | Item ID | Contents |
+|---|---|---|---|
+| Top | Labels | `0ff87dab7daf4141a5e95a2f8be0715e` | Same item as the Base Topo configuration above |
+| — | Boundaries | `78853d8236e04a1d8d6df5c0f94e7c13` | Same item as the Base Topo configuration above |
+| Bottom | Base | `1a119fb231ac4e8985346ddcc438692f` | Same as Base Topo, minus the Lidar DEM Hillshade layer |
+
+[Test 02d](topographic-test-02d-base/README.md) is the reference example
+for this combination.
+
+See each test's own layer tables for exactly what each group currently
+contains and how it's configured there.
 
 **Prerequisite for every entry here:** the web map item's sharing level
 must be set to **Everyone (public)** in ArcGIS Online (Content → item →
@@ -128,6 +140,12 @@ not what to build against directly; use
 | Test | Live embed | Notes |
 |---|---|---|
 | [Topographic — Test 02b (World Terrain Labels)](topographic-test-02b-world-terrain-labels/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-02b-world-terrain-labels/) | Reference example for the Base Topo + Boundaries + Labels combination above; shared muted "World Terrain Reference Labels Light" style, plus custom VCGI City Points and Town Labels layers |
+
+### Base configuration example
+
+| Test | Live embed | Notes |
+|---|---|---|
+| [Topographic — Test 02d (Physical Topo Light Base)](topographic-test-02d-base/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-02d-base/) | Reference example for the Base + Boundaries + Labels combination above; same as Test 02b minus the Lidar DEM Hillshade layer |
 
 ### Development Web Map Tests
 
