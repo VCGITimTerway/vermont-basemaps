@@ -16,6 +16,15 @@ the 1' contour layer.
   save-as of the above with lighter road border colors (for use as a
   muted background under thematic data) and a dashed trail symbol
   ported from the base style.
+- [`human-geography-detail-blue-water-light-roads-desat`](human-geography-detail-blue-water-light-roads-desat) —
+  save-as of Light Roads with water desaturated, for a grayscale/
+  monochromatic basemap variant (first piece of a desaturated "Base"
+  configuration). All 10 water-related layers (`Water area`/`Water
+  line` at every scale tier, `Marine area`) changed from the saturated
+  `#ddeff4` to `#c2c8ca` — a cool neutral gray lifted directly from
+  [OpenMapTiles' Positron style](https://github.com/openmaptiles/positron-gl-style/blob/master/style.json)
+  (`rgb(194, 200, 202)`), the reference MapTiler Positron look this
+  variant is aiming for.
 - [`world-terrain-reference-labels-light`](world-terrain-reference-labels-light) —
   styled copy of Esri's World Terrain Reference Labels item
   (`World_Basemap_v2`), with placename and spot-elevation text muted to
