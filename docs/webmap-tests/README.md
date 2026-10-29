@@ -13,16 +13,24 @@ add by item ID rather than rebuilding the layer stack by hand. All are
 shared publicly. See [Group layers](#group-layers) below for what reuse
 does and doesn't give you.
 
-| Group | Item ID | Contents |
-|---|---|---|
-| Base Topo | `d5173a686f4844fd8584cfecb37ab940` | Terrain, protected lands, recreation features, roads, buildings, the VT mask, the state boundary line, and surrounding-state context boundaries |
-| Boundaries | `78853d8236e04a1d8d6df5c0f94e7c13` | Town Boundaries, styled as a two-layer halo (white backing + dotted line + labels) |
-| Labels | `0ff87dab7daf4141a5e95a2f8be0715e` | World Terrain Reference Labels Light, VCGI Town Labels, and VCGI City Points, layered for a statewide-to-close-in zoom handoff |
+These are designed to combine into a single basemap "style," and **must
+be stacked in the order listed** (top row drawn last, i.e. on top).
+There will be more than one such combination — the one below is keyed to
+**Base Topo** (includes the Lidar DEM Hillshade); a second keyed to a
+plain **Base** (without hillshade) is forthcoming.
+
+### Base Topo configuration
+
+| Order | Group | Item ID | Contents |
+|---|---|---|---|
+| Top | Labels | `0ff87dab7daf4141a5e95a2f8be0715e` | World Terrain Reference Labels Light, VCGI Town Labels, and VCGI City Points, layered for a statewide-to-close-in zoom handoff |
+| — | Boundaries | `78853d8236e04a1d8d6df5c0f94e7c13` | Town Boundaries, styled as a two-layer halo (white backing + dotted line + labels) |
+| Bottom | Base Topo | `d5173a686f4844fd8584cfecb37ab940` | Terrain, protected lands, recreation features, roads, buildings, the VT mask, the state boundary line, and surrounding-state context boundaries |
 
 [Test 02b](topographic-test-02b-world-terrain-labels/README.md) is the
-current reference example combining Base Topo + Boundaries + Labels —
-see its layer tables for exactly what each group currently contains and
-how it's configured there.
+reference example for this combination — see its layer tables for
+exactly what each group currently contains and how it's configured
+there.
 
 **Prerequisite for every entry here:** the web map item's sharing level
 must be set to **Everyone (public)** in ArcGIS Online (Content → item →
@@ -115,10 +123,20 @@ Preconfigured examples for seeing how the basemaps look and function —
 not what to build against directly; use
 [Reusable Group Layers](#reusable-group-layers) above for that.
 
+### Base Topo configuration example
+
+| Test | Live embed | Notes |
+|---|---|---|
+| [Topographic — Test 02b (World Terrain Labels)](topographic-test-02b-world-terrain-labels/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-02b-world-terrain-labels/) | Reference example for the Base Topo + Boundaries + Labels combination above; shared muted "World Terrain Reference Labels Light" style, plus custom VCGI City Points and Town Labels layers |
+
+### Development Web Map Tests
+
+Earlier test iterations — predate the Group Layer composition above,
+kept for reference.
+
 | Test | Live embed | Notes |
 |---|---|---|
 | [Topographic — Test 01 (Styled DEM)](topographic-test-01-styled-dem/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-01-styled-dem/) | Styled DEM + hillshade terrain, VCGI-sourced water labels, E911 recreation layers |
 | [Topographic — Test 01b (World Terrain Labels)](topographic-test-01b-world-terrain-labels/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-01b-world-terrain-labels/) | Save-as of Test 01; swaps four label layers for one Esri "World Terrain Reference"-styled layer |
 | [Topographic — Test 02 (Physical Topo Light)](topographic-test-02-physical-topo-light/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-02-physical-topo-light/) | Muted hillshade-only terrain (no DEM color ramp), new "Light Roads" and "Buildings White" style variants, intended as a basemap for user-added thematic data |
-| [Topographic — Test 02b (World Terrain Labels)](topographic-test-02b-world-terrain-labels/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-02b-world-terrain-labels/) | Save-as of Test 02; shared muted "World Terrain Reference Labels Light" style, plus custom VCGI City Points and Town Labels layers; operational layers grouped into "Base Topo," "Boundaries," and "Labels" |
 | [Topographic — Test 02c (Physical Topo Light Admin)](topographic-test-02c-admin/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-02c-admin/) | Save-as of Test 02b; adds a Town Boundaries layer, a new muted-text label style, and a sample thematic sketch layer demonstrating the basemap's intended use |

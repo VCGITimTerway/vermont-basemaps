@@ -35,7 +35,17 @@
   main a { color: #00417e; }
   a.embed { font-weight: 600; font-size: 1.05rem; color: #007834; }
   h2 { font-size: 1.15rem; color: #003300; margin-top: 2rem; }
-  .group-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; }
+  h3 { font-size: 1rem; color: #003300; margin-top: 1.5rem; }
+  .stack-note { font-size: 0.85rem; color: #555555; margin: 0.25rem 0 0.75rem; }
+  .stack-list {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  .stack-list .group-item { position: relative; }
+  .stack-list .stack-pos {
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em;
+    color: #007834; font-weight: 600;
+  }
   .group-item {
     padding: 0.85rem 1rem; border: 1px solid #ddd; border-radius: 6px;
     border-left: 4px solid #007834;
@@ -63,31 +73,40 @@
   for what reuse does and doesn't give you (styling/structure changes to
   the item don't automatically propagate to maps that already reference
   it).</p>
-  <div class="group-list">
-    <div class="group-item">
-      <div class="title">Base Topo</div>
-      <div class="item-id">d5173a686f4844fd8584cfecb37ab940</div>
-      <div class="status">Terrain, protected lands, recreation features,
-      roads, buildings, the VT mask, the state boundary line, and
-      surrounding-state context boundaries. —
-      <a href="https://vcgi.maps.arcgis.com/home/item.html?id=d5173a686f4844fd8584cfecb37ab940">item page</a></div>
-    </div>
-    <div class="group-item">
-      <div class="title">Boundaries</div>
-      <div class="item-id">78853d8236e04a1d8d6df5c0f94e7c13</div>
-      <div class="status">Town Boundaries, styled as a two-layer halo
-      (white backing + dotted line + labels). —
-      <a href="https://vcgi.maps.arcgis.com/home/item.html?id=78853d8236e04a1d8d6df5c0f94e7c13">item page</a></div>
-    </div>
-    <div class="group-item">
+  <p>These three combine into one basemap "style" and must be stacked in
+  the order shown (top layer drawn last, i.e. on top). There will be more
+  than one such combination — this one is keyed to Base Topo (with the
+  Lidar DEM Hillshade); a second keyed to a plain "Base" (without
+  hillshade) is forthcoming.</p>
+
+  <h3>Base Topo configuration</h3>
+  <ol class="stack-list">
+    <li class="group-item">
+      <div class="stack-pos">Top</div>
       <div class="title">Labels</div>
       <div class="item-id">0ff87dab7daf4141a5e95a2f8be0715e</div>
       <div class="status">World Terrain Reference Labels Light, VCGI Town
       Labels, and VCGI City Points, layered for a statewide-to-close-in
       zoom handoff. —
       <a href="https://vcgi.maps.arcgis.com/home/item.html?id=0ff87dab7daf4141a5e95a2f8be0715e">item page</a></div>
-    </div>
-  </div>
+    </li>
+    <li class="group-item">
+      <div class="title">Boundaries</div>
+      <div class="item-id">78853d8236e04a1d8d6df5c0f94e7c13</div>
+      <div class="status">Town Boundaries, styled as a two-layer halo
+      (white backing + dotted line + labels). —
+      <a href="https://vcgi.maps.arcgis.com/home/item.html?id=78853d8236e04a1d8d6df5c0f94e7c13">item page</a></div>
+    </li>
+    <li class="group-item">
+      <div class="stack-pos">Bottom</div>
+      <div class="title">Base Topo</div>
+      <div class="item-id">d5173a686f4844fd8584cfecb37ab940</div>
+      <div class="status">Terrain, protected lands, recreation features,
+      roads, buildings, the VT mask, the state boundary line, and
+      surrounding-state context boundaries. —
+      <a href="https://vcgi.maps.arcgis.com/home/item.html?id=d5173a686f4844fd8584cfecb37ab940">item page</a></div>
+    </li>
+  </ol>
 
   <h2>Web Map Examples</h2>
   <p>Named ArcGIS Online web maps built to test basemap appearance, each
@@ -96,10 +115,27 @@
   use the Group Layers above for that. Full documentation (layers shown,
   design decisions) for each is linked alongside it. Thumbnails are each
   item's live ArcGIS Online thumbnail, not a static copy.</p>
-  <p><a href="topographic-test-02b-world-terrain-labels/">Test 02b</a>
-  is the current reference example for the Base Topo + Boundaries +
-  Labels combination above.</p>
 
+  <h3>Base Topo configuration example</h3>
+  <p class="stack-note">Test 02b is the reference example for the Base
+  Topo + Boundaries + Labels combination above.</p>
+  <div class="card-grid">
+  <div class="card">
+    <a href="topographic-test-02b-world-terrain-labels/">
+      <img src="https://vcgi.maps.arcgis.com/sharing/rest/content/items/8d2975f539db4897bd61cfe2f8ced44c/info/thumbnail/ago_downloaded.png" alt="Topographic Test 02b thumbnail">
+    </a>
+    <div>
+      <a class="embed" href="topographic-test-02b-world-terrain-labels/">Topographic — Test 02b (World Terrain Labels)</a>
+      —
+      <a href="https://github.com/VCGITimTerway/vermont-basemaps/blob/main/docs/webmap-tests/topographic-test-02b-world-terrain-labels/README.md">documentation</a>
+      <div class="status">Save-as of Test 02; shared muted "World Terrain Reference Labels Light" style plus custom VCGI City Points and Town Labels layers; layers grouped into Base Topo, Boundaries, and Labels.</div>
+    </div>
+  </div>
+  </div>
+
+  <h3>Development Web Map Tests</h3>
+  <p class="stack-note">Earlier test iterations — predate the Group
+  Layer composition above, kept for reference.</p>
   <div class="card-grid">
   <div class="card">
     <a href="topographic-test-01-styled-dem/">
@@ -134,18 +170,6 @@
       —
       <a href="https://github.com/VCGITimTerway/vermont-basemaps/blob/main/docs/webmap-tests/topographic-test-02-physical-topo-light/README.md">documentation</a>
       <div class="status">Muted hillshade-only terrain (no DEM color ramp), new "Light Roads" and "Buildings White" style variants.</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <a href="topographic-test-02b-world-terrain-labels/">
-      <img src="https://vcgi.maps.arcgis.com/sharing/rest/content/items/8d2975f539db4897bd61cfe2f8ced44c/info/thumbnail/ago_downloaded.png" alt="Topographic Test 02b thumbnail">
-    </a>
-    <div>
-      <a class="embed" href="topographic-test-02b-world-terrain-labels/">Topographic — Test 02b (World Terrain Labels)</a>
-      —
-      <a href="https://github.com/VCGITimTerway/vermont-basemaps/blob/main/docs/webmap-tests/topographic-test-02b-world-terrain-labels/README.md">documentation</a>
-      <div class="status">Save-as of Test 02; shared muted "World Terrain Reference Labels Light" style plus custom VCGI City Points and Town Labels layers; layers grouped into Base Topo, Boundaries, and Labels.</div>
     </div>
   </div>
 
