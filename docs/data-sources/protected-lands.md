@@ -107,3 +107,7 @@ for the exact expression in use there.
 - Architecture doc row: [`../architecture/foundational-layers.md`](../architecture/foundational-layers.md#vsdi-vermont-spatial-data-infrastructure)
 - [`../webmap-tests/topographic-test-02-physical-topo-light/README.md`](../webmap-tests/topographic-test-02-physical-topo-light/README.md) —
   first basemap test to use this layer, with the `INT_ORGTYP` filter above
+- [`../webmap-tests/README.md#reusable-group-layers`](../webmap-tests/README.md#reusable-group-layers) —
+  this layer is part of the shared **Base Topo**/**Base** Group Layer
+  composition (not itself a standalone Group Layer item), so it's
+  carried into every web map that references either group

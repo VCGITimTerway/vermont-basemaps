@@ -42,7 +42,14 @@ Community Maps contributions (as "Admin3") — see below.
 
 - **Intended use cases:** Reference boundary lines/labels for basemaps at
   multiple zoom levels (state down to village). Explicitly includes RPC
-  boundaries alongside state/county/town/village.
+  boundaries alongside state/county/town/village. Confirmed in production
+  use in both the **Base Topo** and **Base** Group Layer configurations
+  (see [Related](#related) below): the State polygon service supplies a
+  visible dashed-line state outline (not just the VT Mask's hole
+  geometry — see [`human-geography-detail-blue-water/README.md`](../basemap-styles/human-geography-detail-blue-water/README.md)
+  for that separate, mask-specific use), and the Municipal polygon
+  service backs the reusable "Boundaries" Group Layer item (Town
+  Boundaries, styled as a two-layer halo).
 - **Known limitations / caveats:**
   - **Not a legally definitive boundary layer** — stated directly in the
     metadata: *"VCGI has NOT attempted to create a legally definitive
@@ -97,6 +104,14 @@ cadence.
 ## Related
 
 - Architecture doc row: [`../architecture/foundational-layers.md`](../architecture/foundational-layers.md#vsdi-vermont-spatial-data-infrastructure)
-- [`../webmap-tests/topographic-test-02c-admin/README.md`](../webmap-tests/topographic-test-02c-admin/README.md) —
-  first basemap test to use Municipal boundaries (as "Town Boundaries"),
-  styled as a dotted-line + white-halo pair with scale-dependent width
+- [`../webmap-tests/README.md#reusable-group-layers`](../webmap-tests/README.md#reusable-group-layers) —
+  Municipal boundaries are packaged as the reusable **Boundaries** Group
+  Layer item (dotted-line + white-halo pair with scale-dependent width),
+  shared across the Base Topo and Base configurations ([Test 02b](../webmap-tests/topographic-test-02b-world-terrain-labels/README.md),
+  [Test 02c](../webmap-tests/topographic-test-02c-admin/README.md),
+  [Test 02d](../webmap-tests/topographic-test-02d-base/README.md)) —
+  Test 02c was the first to use it, before it was saved as a standalone
+  item
+- State Boundary's dashed-line use in Base Topo/Base: see each test's
+  "Base Topo group" / "Base group" layer table (e.g.
+  [Test 02b](../webmap-tests/topographic-test-02b-world-terrain-labels/README.md#base-topo-group))
