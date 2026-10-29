@@ -53,12 +53,14 @@
   .group-item .title { font-weight: 600; font-size: 1.05rem; color: #003300; }
   .group-item .item-id { font-family: "Courier New", monospace; font-size: 0.85rem; color: #555555; }
   .config-columns {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
     align-items: start;
+  }
+  @media (max-width: 900px) {
+    .config-columns { grid-template-columns: 1fr; }
   }
   @media (max-width: 700px) {
     .card-grid { grid-template-columns: 1fr; }
-    .config-columns { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -79,11 +81,46 @@
   the item don't automatically propagate to maps that already reference
   it).</p>
   <p>These three combine into one basemap "style" and must be stacked in
-  the order shown (top layer drawn last, i.e. on top). There are two such
-  combinations so far — identical except for the bottom group: Base Topo
-  includes the Lidar DEM Hillshade layer, Base does not.</p>
+  the order shown (top layer drawn last, i.e. on top). There are three
+  such combinations so far.</p>
 
   <div class="config-columns">
+    <div>
+      <h3>Desaturated configuration</h3>
+      <p class="stack-note">Grayscale/monochromatic take on the basemap
+      (MapTiler Positron as the visual reference). Every vector-tile
+      style with a saturated color has a desaturated sibling substituted
+      in; anything already neutral is reused as-is.</p>
+      <ol class="stack-list">
+        <li class="group-item">
+          <div class="stack-pos">Top</div>
+          <div class="title">Labels Desaturated</div>
+          <div class="item-id">ceaef1a3a4744f8e99f05f9f3148443e</div>
+          <div class="status">Desaturated World Terrain Reference Labels
+          Light, plus the same Town Labels and City Points items reused
+          from the other configurations. —
+          <a href="https://vcgi.maps.arcgis.com/home/item.html?id=ceaef1a3a4744f8e99f05f9f3148443e">item page</a></div>
+        </li>
+        <li class="group-item">
+          <div class="title">Boundaries</div>
+          <div class="item-id">78853d8236e04a1d8d6df5c0f94e7c13</div>
+          <div class="status">Same item as the other configurations —
+          its existing light-gray/white palette needed no desaturated
+          copy. —
+          <a href="https://vcgi.maps.arcgis.com/home/item.html?id=78853d8236e04a1d8d6df5c0f94e7c13">item page</a></div>
+        </li>
+        <li class="group-item">
+          <div class="stack-pos">Bottom</div>
+          <div class="title">Base Desaturated</div>
+          <div class="item-id">024fe4874e67434d8987e580300b228c</div>
+          <div class="status">Same as Base, with desaturated Light Roads
+          and Context Boundaries styles substituted in; the Wetlands
+          Inventory symbol is a deliberate exception, kept at
+          reduced-but-visible saturation. —
+          <a href="https://vcgi.maps.arcgis.com/home/item.html?id=024fe4874e67434d8987e580300b228c">item page</a></div>
+        </li>
+      </ol>
+    </div>
     <div>
       <h3>Base Topo configuration</h3>
       <ol class="stack-list">
@@ -151,6 +188,22 @@
   item's live ArcGIS Online thumbnail, not a static copy.</p>
 
   <div class="config-columns">
+    <div>
+      <h3>Desaturated configuration example</h3>
+      <p class="stack-note">Test 02e is the reference example for the
+      Desaturated + Boundaries + Labels Desaturated combination above.</p>
+      <div class="card">
+        <a href="topographic-test-02e-desaturated/">
+          <img src="https://vcgi.maps.arcgis.com/sharing/rest/content/items/fcda751408f64e42a8371b797524f769/info/thumbnail/ago_downloaded.png" alt="Topographic Test 02e thumbnail">
+        </a>
+        <div>
+          <a class="embed" href="topographic-test-02e-desaturated/">Topographic — Test 02e (Desaturated)</a>
+          —
+          <a href="https://github.com/VCGITimTerway/vermont-basemaps/blob/main/docs/webmap-tests/topographic-test-02e-desaturated/README.md">documentation</a>
+          <div class="status">Grayscale/monochromatic take on the basemap; references the Base Desaturated and Labels Desaturated Group Layers.</div>
+        </div>
+      </div>
+    </div>
     <div>
       <h3>Base Topo configuration example</h3>
       <p class="stack-note">Test 02b is the reference example for the Base

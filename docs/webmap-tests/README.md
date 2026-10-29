@@ -15,9 +15,23 @@ does and doesn't give you.
 
 These are designed to combine into a single basemap "style," and **must
 be stacked in the order listed** (top row drawn last, i.e. on top).
-There are two such combinations so far — identical except for the
-bottom group: **Base Topo** includes the Lidar DEM Hillshade layer,
-**Base** does not.
+There are three such combinations so far:
+
+### Desaturated configuration
+
+A grayscale/monochromatic take on the basemap (MapTiler Positron is the
+visual reference). Every vector-tile style with a saturated color has a
+desaturated sibling substituted in; anything already neutral (Town
+Boundaries, Town Labels, City Points, State Boundary) is reused as-is.
+
+| Order | Group | Item ID | Contents |
+|---|---|---|---|
+| Top | Labels Desaturated | `ceaef1a3a4744f8e99f05f9f3148443e` | Desaturated World Terrain Reference Labels Light, plus the same Town Labels and City Points items reused from the other configurations |
+| — | Boundaries | `78853d8236e04a1d8d6df5c0f94e7c13` | Same item as the other configurations — its existing light-gray/white palette needed no desaturated copy |
+| Bottom | Base Desaturated | `024fe4874e67434d8987e580300b228c` | Same as Base, with desaturated Light Roads and Context Boundaries styles substituted in; the Wetlands Inventory symbol is a deliberate exception, kept at reduced-but-visible saturation |
+
+[Test 02e](topographic-test-02e-desaturated/README.md) is the reference
+example for this combination.
 
 ### Base Topo configuration
 
@@ -122,8 +136,8 @@ live everywhere the group is used.
 
 **Practical implication for this repo:** Group layer items are worth
 creating once a group is stable and meant to be handed to others as a
-consistent starting point — Test 02b's Base Topo, Boundaries, and Labels
-groups are now all saved this way (see
+consistent starting point — the Desaturated, Base Topo, and Base
+configurations' groups are now all saved this way (see
 [Reusable Group Layers](#reusable-group-layers) above). While a group is
 still actively being revised, editing it as an ad-hoc group directly
 inside a test webmap stays simpler than maintaining a Group layer item
@@ -134,6 +148,12 @@ that won't reflect those edits anywhere else.
 Preconfigured examples for seeing how the basemaps look and function —
 not what to build against directly; use
 [Reusable Group Layers](#reusable-group-layers) above for that.
+
+### Desaturated configuration example
+
+| Test | Live embed | Notes |
+|---|---|---|
+| [Topographic — Test 02e (Desaturated)](topographic-test-02e-desaturated/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-02e-desaturated/) | Reference example for the Desaturated + Boundaries + Labels Desaturated combination above; grayscale/monochromatic take on the basemap (MapTiler Positron as the visual reference) |
 
 ### Base Topo configuration example
 
