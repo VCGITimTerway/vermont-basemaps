@@ -12,3 +12,29 @@ the 1' contour layer.
   Vermont Physical Geography Light - Human Geography Detail - Blue
   Water"). Vermont-cropped via source bounds; railway symbol change
   pending a decision.
+- [`human-geography-detail-blue-water-light-roads`](human-geography-detail-blue-water-light-roads) —
+  save-as of the above with lighter road border colors (for use as a
+  muted background under thematic data) and a dashed trail symbol
+  ported from the base style.
+- [`world-terrain-reference-labels-light`](world-terrain-reference-labels-light) —
+  styled copy of Esri's World Terrain Reference Labels item
+  (`World_Basemap_v2`), with placename and spot-elevation text muted to
+  `#505050`. Used by [Test 02b](../webmap-tests/topographic-test-02b-world-terrain-labels/README.md)
+  and [Test 02c](../webmap-tests/topographic-test-02c-admin/README.md).
+- [`vt-basemap-2026-city-points`](vt-basemap-2026-city-points) — VCGI's
+  own city-point labels, filling the statewide/regional zoom gap where
+  Esri's Living Atlas content has no Vermont-only filter. Tiered across
+  three zoom levels (statewide/regional/close-in).
+- [`vt-basemap-2026-town-labels`](vt-basemap-2026-town-labels) — VCGI's
+  own Vermont municipal-name labels, filling a content gap (official
+  town names not always present in Living Atlas content), not just a
+  zoom gap. Manually deconflicted against World Terrain Reference
+  Labels Light's own place content (vector tile layers don't share
+  label collision detection across separate items — see
+  [Test 02b](../webmap-tests/topographic-test-02b-world-terrain-labels/README.md#whats-different-from-test-02)).
+- [`vt-basemap-2026-context-boundaries`](vt-basemap-2026-context-boundaries) —
+  surrounding state/international boundary lines and water, derived from
+  the same `World_Basemap_v2` source as the base Blue Water style
+  (its boundary-line sub-layers exist there but are disabled by
+  default). Positioned above the VT mask so neighboring-state context
+  still shows at statewide zoom while non-Vermont roads stay masked.

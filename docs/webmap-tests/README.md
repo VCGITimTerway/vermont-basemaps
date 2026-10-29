@@ -5,6 +5,25 @@ embedded as a live, working example via GitHub Pages (plain repo
 markdown can't render an `<iframe>` — github.com strips them — so each
 test gets a small static HTML page alongside its documentation).
 
+## Reusable Group Layers
+
+For development purposes (adding these basemap layers into your own app
+or web map), these **Group layer items** are the priority reference —
+add by item ID rather than rebuilding the layer stack by hand. All are
+shared publicly. See [Group layers](#group-layers) below for what reuse
+does and doesn't give you.
+
+| Group | Item ID | Contents |
+|---|---|---|
+| Base Topo | `d5173a686f4844fd8584cfecb37ab940` | Terrain, protected lands, recreation features, roads, buildings, the VT mask, the state boundary line, and surrounding-state context boundaries |
+| Boundaries | `78853d8236e04a1d8d6df5c0f94e7c13` | Town Boundaries, styled as a two-layer halo (white backing + dotted line + labels) |
+| Labels | `0ff87dab7daf4141a5e95a2f8be0715e` | World Terrain Reference Labels Light, VCGI Town Labels, and VCGI City Points, layered for a statewide-to-close-in zoom handoff |
+
+[Test 02b](topographic-test-02b-world-terrain-labels/README.md) is the
+current reference example combining Base Topo + Boundaries + Labels —
+see its layer tables for exactly what each group currently contains and
+how it's configured there.
+
 **Prerequisite for every entry here:** the web map item's sharing level
 must be set to **Everyone (public)** in ArcGIS Online (Content → item →
 Share). There's no separate "allow embedding" setting for Web Map items —
@@ -48,8 +67,10 @@ copy — it updates automatically if the item is ever re-saved.
 ## Group layers
 
 Operational layers can be organized into groups within a web map (e.g.
-Test 02b's "Base" and "Labels" groups). Two distinct things both get
-called "groups" in ArcGIS Online, with very different behavior:
+Test 02b's "Base Topo," "Boundaries," and "Labels" groups — see
+[Reusable Group Layers](#reusable-group-layers) above). Two distinct
+things both get called "groups" in ArcGIS Online, with very different
+behavior:
 
 - **Ad-hoc groups** — created via **Options → Group** on a layer in Map
   Viewer, then adding more layers into it. These exist only inside that
@@ -80,14 +101,19 @@ edits to the underlying feature *data* (not structure/styling) update
 live everywhere the group is used.
 
 **Practical implication for this repo:** Group layer items are worth
-creating once a group (Base, Labels, a future Admin Boundaries, etc.) is
-stable and meant to be handed to others as a consistent starting point —
-but while a group is still actively being revised, editing the ad-hoc
-group directly inside each test webmap (current approach) stays simpler
-than maintaining Group layer items that won't reflect those edits
-anywhere else.
+creating once a group is stable and meant to be handed to others as a
+consistent starting point — Test 02b's Base Topo, Boundaries, and Labels
+groups are now all saved this way (see
+[Reusable Group Layers](#reusable-group-layers) above). While a group is
+still actively being revised, editing it as an ad-hoc group directly
+inside a test webmap stays simpler than maintaining a Group layer item
+that won't reflect those edits anywhere else.
 
-## Tests
+## Web Map Examples
+
+Preconfigured examples for seeing how the basemaps look and function —
+not what to build against directly; use
+[Reusable Group Layers](#reusable-group-layers) above for that.
 
 | Test | Live embed | Notes |
 |---|---|---|
