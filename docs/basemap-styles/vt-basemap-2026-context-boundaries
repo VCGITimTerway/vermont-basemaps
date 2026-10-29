@@ -1,0 +1,138 @@
+{
+  "version": 8,
+  "sprite": "https://www.arcgis.com/sharing/rest/content/items/7d9137a20a224f2392e904653787d5cf/resources/sprites/sprite-1792076994652",
+  "glyphs": "https://basemaps.arcgis.com/arcgis/rest/services/World_Basemap_v2/VectorTileServer/resources/fonts/{fontstack}/{range}.pbf",
+  "sources": {
+    "esri": {
+      "type": "vector",
+      "url": "https://basemaps.arcgis.com/arcgis/rest/services/World_Basemap_v2/VectorTileServer",
+      "tiles": [
+        "https://basemaps.arcgis.com/arcgis/rest/services/World_Basemap_v2/VectorTileServer/tile/{z}/{y}/{x}.pbf"
+      ],
+      "bounds": [
+        -73.5,
+        42.727,
+        -71.4653,
+        45.0169
+      ]
+    }
+  },
+  "layers": [
+    {
+      "id": "Boundary line/Admin0/0/Small",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "Boundary line",
+      "filter": [
+        "all",
+        [
+          "==",
+          "_symbol",
+          0
+        ],
+        [
+          "!in",
+          "Viz",
+          3
+        ]
+      ],
+      "minzoom": 1,
+      "maxzoom": 4,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#999999"
+      }
+    },
+    {
+      "id": "Boundary line/Admin0/0",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "Boundary line",
+      "filter": [
+        "all",
+        [
+          "==",
+          "_symbol",
+          0
+        ],
+        [
+          "!in",
+          "Viz",
+          3
+        ]
+      ],
+      "minzoom": 4,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#999999",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              4,
+              1.5
+            ],
+            [
+              14,
+              2.5
+            ]
+          ]
+        },
+        "line-dasharray": [
+          10,
+          4
+        ]
+      }
+    },
+    {
+      "id": "Boundary line/Admin1/0",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "Boundary line",
+      "filter": [
+        "all",
+        [
+          "==",
+          "_symbol",
+          1
+        ],
+        [
+          "!in",
+          "Viz",
+          3
+        ]
+      ],
+      "minzoom": 6,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#999999",
+        "line-width": {
+          "base": 1,
+          "stops": [
+            [
+              4,
+              1
+            ],
+            [
+              14,
+              1.5
+            ]
+          ]
+        },
+        "line-dasharray": [
+          10,
+          6
+        ]
+      }
+    }
+  ]
+}
