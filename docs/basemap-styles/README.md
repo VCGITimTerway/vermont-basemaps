@@ -30,6 +30,20 @@ the 1' contour layer.
   (`World_Basemap_v2`), with placename and spot-elevation text muted to
   `#505050`. Used by [Test 02b](../webmap-tests/topographic-test-02b-world-terrain-labels/README.md)
   and [Test 02c](../webmap-tests/topographic-test-02c-admin/README.md).
+- [`world-terrain-reference-labels-light-desat`](world-terrain-reference-labels-light-desat) —
+  save-as of the above for the desaturated "Base" configuration. All
+  water-feature label text (lakes, rivers, bays, marine/ocean names — 38
+  layers across `Water line/area/point`, `Marine area/waterbody`,
+  `Ocean point/area`, and the disputed-waterbody label) changed from the
+  saturated `#1e73c8` to `#9DA9B1`, a muted blue-gray lifted from
+  [OpenMapTiles' Positron style](https://github.com/openmaptiles/positron-gl-style/blob/master/style.json)'s
+  own `water_name` text color (`rgb(157,169,177)`) — same source used for
+  Light Roads Desat's water fill, for a consistent design lineage. Also
+  normalized the Marine/Ocean label halos (previously pale blue,
+  `#e0f4ff`/`#e5f6ff`) to the same off-white `#fcfcfa` halo used
+  everywhere else in this style, since a blue-tinted halo would have
+  undercut the desaturation. Non-blue water labels (islands, playas,
+  dams/weirs — already neutral gray) were left unchanged.
 - [`vt-basemap-2026-city-points`](vt-basemap-2026-city-points) — VCGI's
   own city-point labels, filling the statewide/regional zoom gap where
   Esri's Living Atlas content has no Vermont-only filter. Tiered across
