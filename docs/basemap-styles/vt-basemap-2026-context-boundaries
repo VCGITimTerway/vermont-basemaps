@@ -19,6 +19,120 @@
   },
   "layers": [
     {
+      "id": "Marine area",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "Marine area",
+      "layout": {},
+      "paint": {
+        "fill-color": "#ddeff4"
+      }
+    },
+    {
+      "id": "Water area small scale",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "Water area small scale",
+      "minzoom": 1,
+      "maxzoom": 5,
+      "layout": {},
+      "paint": {
+        "fill-color": "#ddeff4"
+      }
+    },
+    {
+      "id": "Water area medium scale/Lake or river",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "Water area medium scale",
+      "filter": [
+        "==",
+        "_symbol",
+        0
+      ],
+      "minzoom": 5,
+      "maxzoom": 7,
+      "layout": {},
+      "paint": {
+        "fill-color": "#ddeff4"
+      }
+    },
+    {
+      "id": "Water area large scale/Lake or river",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "Water area large scale",
+      "filter": [
+        "==",
+        "_symbol",
+        0
+      ],
+      "minzoom": 7,
+      "maxzoom": 11,
+      "layout": {},
+      "paint": {
+        "fill-color": "#ddeff4"
+      }
+    },
+    {
+      "id": "Water line small scale",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "Water line small scale",
+      "minzoom": 1,
+      "maxzoom": 5,
+      "layout": {
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#ddeff4",
+        "line-width": 0.5
+      }
+    },
+    {
+      "id": "Water line medium scale",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "Water line medium scale",
+      "minzoom": 5,
+      "maxzoom": 7,
+      "layout": {
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#ddeff4",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              5,
+              0.5
+            ],
+            [
+              7,
+              0.7
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "Water line large scale",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "Water line large scale",
+      "minzoom": 7,
+      "maxzoom": 11,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#ddeff4",
+        "line-width": 0.7
+      }
+    },
+    {
       "id": "Boundary line/Admin0/0/Small",
       "type": "line",
       "source": "esri",
