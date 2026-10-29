@@ -52,8 +52,13 @@
   }
   .group-item .title { font-weight: 600; font-size: 1.05rem; color: #003300; }
   .group-item .item-id { font-family: "Courier New", monospace; font-size: 0.85rem; color: #555555; }
+  .config-columns {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+    align-items: start;
+  }
   @media (max-width: 700px) {
     .card-grid { grid-template-columns: 1fr; }
+    .config-columns { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -78,59 +83,64 @@
   combinations so far — identical except for the bottom group: Base Topo
   includes the Lidar DEM Hillshade layer, Base does not.</p>
 
-  <h3>Base Topo configuration</h3>
-  <ol class="stack-list">
-    <li class="group-item">
-      <div class="stack-pos">Top</div>
-      <div class="title">Labels</div>
-      <div class="item-id">0ff87dab7daf4141a5e95a2f8be0715e</div>
-      <div class="status">World Terrain Reference Labels Light, VCGI Town
-      Labels, and VCGI City Points, layered for a statewide-to-close-in
-      zoom handoff. —
-      <a href="https://vcgi.maps.arcgis.com/home/item.html?id=0ff87dab7daf4141a5e95a2f8be0715e">item page</a></div>
-    </li>
-    <li class="group-item">
-      <div class="title">Boundaries</div>
-      <div class="item-id">78853d8236e04a1d8d6df5c0f94e7c13</div>
-      <div class="status">Town Boundaries, styled as a two-layer halo
-      (white backing + dotted line + labels). —
-      <a href="https://vcgi.maps.arcgis.com/home/item.html?id=78853d8236e04a1d8d6df5c0f94e7c13">item page</a></div>
-    </li>
-    <li class="group-item">
-      <div class="stack-pos">Bottom</div>
-      <div class="title">Base Topo</div>
-      <div class="item-id">d5173a686f4844fd8584cfecb37ab940</div>
-      <div class="status">Terrain, protected lands, recreation features,
-      roads, buildings, the VT mask, the state boundary line, and
-      surrounding-state context boundaries. —
-      <a href="https://vcgi.maps.arcgis.com/home/item.html?id=d5173a686f4844fd8584cfecb37ab940">item page</a></div>
-    </li>
-  </ol>
-
-  <h3>Base configuration</h3>
-  <ol class="stack-list">
-    <li class="group-item">
-      <div class="stack-pos">Top</div>
-      <div class="title">Labels</div>
-      <div class="item-id">0ff87dab7daf4141a5e95a2f8be0715e</div>
-      <div class="status">Same item as the Base Topo configuration above. —
-      <a href="https://vcgi.maps.arcgis.com/home/item.html?id=0ff87dab7daf4141a5e95a2f8be0715e">item page</a></div>
-    </li>
-    <li class="group-item">
-      <div class="title">Boundaries</div>
-      <div class="item-id">78853d8236e04a1d8d6df5c0f94e7c13</div>
-      <div class="status">Same item as the Base Topo configuration above. —
-      <a href="https://vcgi.maps.arcgis.com/home/item.html?id=78853d8236e04a1d8d6df5c0f94e7c13">item page</a></div>
-    </li>
-    <li class="group-item">
-      <div class="stack-pos">Bottom</div>
-      <div class="title">Base</div>
-      <div class="item-id">1a119fb231ac4e8985346ddcc438692f</div>
-      <div class="status">Same as Base Topo, minus the Lidar DEM
-      Hillshade layer. —
-      <a href="https://vcgi.maps.arcgis.com/home/item.html?id=1a119fb231ac4e8985346ddcc438692f">item page</a></div>
-    </li>
-  </ol>
+  <div class="config-columns">
+    <div>
+      <h3>Base Topo configuration</h3>
+      <ol class="stack-list">
+        <li class="group-item">
+          <div class="stack-pos">Top</div>
+          <div class="title">Labels</div>
+          <div class="item-id">0ff87dab7daf4141a5e95a2f8be0715e</div>
+          <div class="status">World Terrain Reference Labels Light, VCGI Town
+          Labels, and VCGI City Points, layered for a statewide-to-close-in
+          zoom handoff. —
+          <a href="https://vcgi.maps.arcgis.com/home/item.html?id=0ff87dab7daf4141a5e95a2f8be0715e">item page</a></div>
+        </li>
+        <li class="group-item">
+          <div class="title">Boundaries</div>
+          <div class="item-id">78853d8236e04a1d8d6df5c0f94e7c13</div>
+          <div class="status">Town Boundaries, styled as a two-layer halo
+          (white backing + dotted line + labels). —
+          <a href="https://vcgi.maps.arcgis.com/home/item.html?id=78853d8236e04a1d8d6df5c0f94e7c13">item page</a></div>
+        </li>
+        <li class="group-item">
+          <div class="stack-pos">Bottom</div>
+          <div class="title">Base Topo</div>
+          <div class="item-id">d5173a686f4844fd8584cfecb37ab940</div>
+          <div class="status">Terrain, protected lands, recreation features,
+          roads, buildings, the VT mask, the state boundary line, and
+          surrounding-state context boundaries. —
+          <a href="https://vcgi.maps.arcgis.com/home/item.html?id=d5173a686f4844fd8584cfecb37ab940">item page</a></div>
+        </li>
+      </ol>
+    </div>
+    <div>
+      <h3>Base configuration</h3>
+      <ol class="stack-list">
+        <li class="group-item">
+          <div class="stack-pos">Top</div>
+          <div class="title">Labels</div>
+          <div class="item-id">0ff87dab7daf4141a5e95a2f8be0715e</div>
+          <div class="status">Same item as the Base Topo configuration above. —
+          <a href="https://vcgi.maps.arcgis.com/home/item.html?id=0ff87dab7daf4141a5e95a2f8be0715e">item page</a></div>
+        </li>
+        <li class="group-item">
+          <div class="title">Boundaries</div>
+          <div class="item-id">78853d8236e04a1d8d6df5c0f94e7c13</div>
+          <div class="status">Same item as the Base Topo configuration above. —
+          <a href="https://vcgi.maps.arcgis.com/home/item.html?id=78853d8236e04a1d8d6df5c0f94e7c13">item page</a></div>
+        </li>
+        <li class="group-item">
+          <div class="stack-pos">Bottom</div>
+          <div class="title">Base</div>
+          <div class="item-id">1a119fb231ac4e8985346ddcc438692f</div>
+          <div class="status">Same as Base Topo, minus the Lidar DEM
+          Hillshade layer. —
+          <a href="https://vcgi.maps.arcgis.com/home/item.html?id=1a119fb231ac4e8985346ddcc438692f">item page</a></div>
+        </li>
+      </ol>
+    </div>
+  </div>
 
   <h2>Web Map Examples</h2>
   <p>Named ArcGIS Online web maps built to test basemap appearance, each
@@ -140,38 +150,39 @@
   design decisions) for each is linked alongside it. Thumbnails are each
   item's live ArcGIS Online thumbnail, not a static copy.</p>
 
-  <h3>Base Topo configuration example</h3>
-  <p class="stack-note">Test 02b is the reference example for the Base
-  Topo + Boundaries + Labels combination above.</p>
-  <div class="card-grid">
-  <div class="card">
-    <a href="topographic-test-02b-world-terrain-labels/">
-      <img src="https://vcgi.maps.arcgis.com/sharing/rest/content/items/8d2975f539db4897bd61cfe2f8ced44c/info/thumbnail/ago_downloaded.png" alt="Topographic Test 02b thumbnail">
-    </a>
+  <div class="config-columns">
     <div>
-      <a class="embed" href="topographic-test-02b-world-terrain-labels/">Topographic — Test 02b (World Terrain Labels)</a>
-      —
-      <a href="https://github.com/VCGITimTerway/vermont-basemaps/blob/main/docs/webmap-tests/topographic-test-02b-world-terrain-labels/README.md">documentation</a>
-      <div class="status">Save-as of Test 02; shared muted "World Terrain Reference Labels Light" style plus custom VCGI City Points and Town Labels layers; layers grouped into Base Topo, Boundaries, and Labels.</div>
+      <h3>Base Topo configuration example</h3>
+      <p class="stack-note">Test 02b is the reference example for the Base
+      Topo + Boundaries + Labels combination above.</p>
+      <div class="card">
+        <a href="topographic-test-02b-world-terrain-labels/">
+          <img src="https://vcgi.maps.arcgis.com/sharing/rest/content/items/8d2975f539db4897bd61cfe2f8ced44c/info/thumbnail/ago_downloaded.png" alt="Topographic Test 02b thumbnail">
+        </a>
+        <div>
+          <a class="embed" href="topographic-test-02b-world-terrain-labels/">Topographic — Test 02b (World Terrain Labels)</a>
+          —
+          <a href="https://github.com/VCGITimTerway/vermont-basemaps/blob/main/docs/webmap-tests/topographic-test-02b-world-terrain-labels/README.md">documentation</a>
+          <div class="status">Save-as of Test 02; shared muted "World Terrain Reference Labels Light" style plus custom VCGI City Points and Town Labels layers; layers grouped into Base Topo, Boundaries, and Labels.</div>
+        </div>
+      </div>
     </div>
-  </div>
-  </div>
-
-  <h3>Base configuration example</h3>
-  <p class="stack-note">Test 02d is the reference example for the Base
-  + Boundaries + Labels combination above.</p>
-  <div class="card-grid">
-  <div class="card">
-    <a href="topographic-test-02d-base/">
-      <img src="https://vcgi.maps.arcgis.com/sharing/rest/content/items/5e5d8a7a2bb54ca791271c7050f6e29d/info/thumbnail/ago_downloaded.png" alt="Topographic Test 02d thumbnail">
-    </a>
     <div>
-      <a class="embed" href="topographic-test-02d-base/">Topographic — Test 02d (Physical Topo Light Base)</a>
-      —
-      <a href="https://github.com/VCGITimTerway/vermont-basemaps/blob/main/docs/webmap-tests/topographic-test-02d-base/README.md">documentation</a>
-      <div class="status">Same as Test 02b, minus the Lidar DEM Hillshade layer; references the Base Group Layer instead of Base Topo.</div>
+      <h3>Base configuration example</h3>
+      <p class="stack-note">Test 02d is the reference example for the Base
+      + Boundaries + Labels combination above.</p>
+      <div class="card">
+        <a href="topographic-test-02d-base/">
+          <img src="https://vcgi.maps.arcgis.com/sharing/rest/content/items/5e5d8a7a2bb54ca791271c7050f6e29d/info/thumbnail/ago_downloaded.png" alt="Topographic Test 02d thumbnail">
+        </a>
+        <div>
+          <a class="embed" href="topographic-test-02d-base/">Topographic — Test 02d (Physical Topo Light Base)</a>
+          —
+          <a href="https://github.com/VCGITimTerway/vermont-basemaps/blob/main/docs/webmap-tests/topographic-test-02d-base/README.md">documentation</a>
+          <div class="status">Same as Test 02b, minus the Lidar DEM Hillshade layer; references the Base Group Layer instead of Base Topo.</div>
+        </div>
+      </div>
     </div>
-  </div>
   </div>
 
   <h3>Development Web Map Tests</h3>
