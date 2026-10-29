@@ -32,10 +32,14 @@ the 1' contour layer.
   and [Test 02c](../webmap-tests/topographic-test-02c-admin/README.md).
 - [`world-terrain-reference-labels-light-desat`](world-terrain-reference-labels-light-desat) —
   save-as of the above for the desaturated "Base" configuration. All
-  water-feature label text (lakes, rivers, bays, marine/ocean names — 38
+  water-feature label text (lakes, rivers, bays, marine/ocean names — 39
   layers across `Water line/area/point`, `Marine area/waterbody`,
-  `Ocean point/area`, and the disputed-waterbody label) changed from the
-  saturated `#1e73c8` to `#9DA9B1`, a muted blue-gray lifted from
+  `Ocean point/area`, the disputed-waterbody label, and ferry route names
+  like "Burlington - Port Kent") changed from saturated blue (`#1e73c8`,
+  plus `#0087ff` on the ferry-label layer specifically — a different,
+  even more saturated blue that the first pass missed since it doesn't
+  share the other layers' hex value) to `#9DA9B1`, a muted blue-gray
+  lifted from
   [OpenMapTiles' Positron style](https://github.com/openmaptiles/positron-gl-style/blob/master/style.json)'s
   own `water_name` text color (`rgb(157,169,177)`) — same source used for
   Light Roads Desat's water fill, for a consistent design lineage. Also
