@@ -79,18 +79,20 @@ the 1' contour layer.
   - **Water** (10 layers) set to `"visibility": "none"`, so the vector
     tile's flat water fill/line doesn't cover the real water visible in
     the underlying aerial imagery.
-  - **Major roads** (Freeway/Motorway, Highway, Major, and their ramp
-    variants — `_symbol` 0–4, both `Road` and `Road tunnel`) recolored
-    from gray to amber `#e8a33d` on the casing layer, to stand out
-    against imagery the way major roads do on Utah's Hybrid basemap.
-    The white fill layer is unchanged, so these read as an amber-bordered
-    white road rather than a solid amber ribbon.
-  - **Minor/local roads** (Minor, Local, Service, Pedestrian, 4WD, and
-    their ramp variants — `_symbol` 5–10) given `line-opacity: 0.6` on
-    the gray casing layer, and the white fill layer hidden
-    (`"visibility": "none"`) entirely — leaving a single semi-transparent
-    gray line rather than a solid white-and-gray road, similar to LINZ's
-    NZ Aerial Imagery basemap. Trails (a separate `Trail or path`
-    source-layer, not part of `Road`) are untouched by this pass.
-  First-pass values (amber shade, 0.6 opacity, which road classes count
-  as "major") — easy to retune once seen rendered over real imagery.
+  - **Major and minor/local roads now share the same single-ribbon
+    treatment**, after an initial attempt at a two-tone amber-bordered
+    white road for major roads proved too harsh against imagery (not the
+    clean, translucent look of LINZ's NZ Aerial Imagery basemap). Both
+    tiers now hide their white fill layer (`"visibility": "none"`),
+    leaving only the colored casing layer, semi-transparent, as the
+    entire visible road:
+    - **Major roads** (Freeway/Motorway, Highway, Major, and their ramp
+      variants — `_symbol` 0–4, both `Road` and `Road tunnel`): muted
+      warm tan `#c9915a` at `line-opacity: 0.75`.
+    - **Minor/local roads** (Minor, Local, Service, Pedestrian, 4WD, and
+      their ramp variants — `_symbol` 5–10): unchanged gray `#bcbcbc`/
+      `#8c8c8c` at `line-opacity: 0.6`.
+  - Trails (a separate `Trail or path` source-layer, not part of `Road`)
+    are untouched by this pass.
+  First-pass values (tan shade/opacity, which road classes count as
+  "major") — easy to retune once seen rendered over real imagery.
