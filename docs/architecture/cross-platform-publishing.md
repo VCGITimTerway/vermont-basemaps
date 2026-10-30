@@ -1,7 +1,8 @@
-# Cross-Platform Publishing: Topographic Test 01 Layers
+# Cross-Platform Publishing: Foundational Basemap Layers
 
-For each layer currently in
-[Topographic — Test 01](../webmap-tests/topographic-test-01-styled-dem/README.md),
+For each of the basemap's foundational layers (terrain, contours, Blue
+Water detail, building footprints, E911 recreation features — the same
+set now carried in the Base Topo/Base Group Layer configurations),
 what it takes to get it serving cleanly on **both** ArcGIS (Map Viewer,
 Experience Builder) and open-source (MapLibre/Leaflet) apps, given where
 it's published today. Companion to [`foundational-layers.md`](foundational-layers.md),

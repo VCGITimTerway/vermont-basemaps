@@ -6,12 +6,12 @@ this table by hand.
 
 **Live embed:** <https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-02b-world-terrain-labels/>
 **ArcGIS Online item:** <https://vcgi.maps.arcgis.com/apps/mapviewer/index.html?webmap=8d2975f539db4897bd61cfe2f8ced44c>
-**AGOL item title:** "Basemap 2026 - Topographic - Test 02b Physical Topo Light"
+**AGOL item title:** "VT Basemap 2026 - Base Topo - Test 02b"
 **Test extent:** centered roughly -72.35, 43.87 at a statewide view
 
-Save-as copy of [Topographic Test 02](../topographic-test-02-physical-topo-light/README.md)
-with one original change (the label layer), since developed further with
-a custom label layer stack, surrounding-context boundaries, and layer
+Save-as copy of an earlier physical-topo-light test webmap, with one
+original change (the label layer), since developed further with a
+custom label layer stack, surrounding-context boundaries, and layer
 grouping.
 
 ## Basemap
@@ -32,7 +32,7 @@ you):
 | Group | Item ID | Notes |
 |---|---|---|
 | **Base Topo** | `d5173a686f4844fd8584cfecb37ab940` ("VT Basemap 2026 Base Topo") | Terrain, protected lands, recreation features, roads, buildings, the VT mask, the state boundary line, and surrounding-context boundaries |
-| **Boundaries** | `78853d8236e04a1d8d6df5c0f94e7c13` ("Group Layer - Town Boundaries") | Same item reused from [Test 02c](../topographic-test-02c-admin/README.md#town-boundaries-group); this map restricts its visible range to below 1:897,547 |
+| **Boundaries** | `78853d8236e04a1d8d6df5c0f94e7c13` ("VT Basemap 2026 Town Boundaries") | Same item reused from [Test 02c](../topographic-test-02c-admin/README.md#town-boundaries-group); this map restricts its visible range to below 1:897,547 |
 | **Labels** | `0ff87dab7daf4141a5e95a2f8be0715e` ("VT Basemap 2026 Labels") | All label layers, described below |
 
 Rendering order (bottom to top): Base Topo, then Boundaries, then Labels.
@@ -109,11 +109,9 @@ layers for one Esri-derived label layer):
 
 ## Related
 
-- [`../topographic-test-02-physical-topo-light/README.md`](../topographic-test-02-physical-topo-light/README.md) —
-  the version this was saved from
 - [`../topographic-test-02c-admin/README.md`](../topographic-test-02c-admin/README.md) —
   shares both the "World Terrain Reference Labels Light" item and the
-  "Group Layer - Town Boundaries" item
+  "VT Basemap 2026 Town Boundaries" item
 - [`../../basemap-styles/world-terrain-reference-labels-light`](../../basemap-styles/world-terrain-reference-labels-light)
 - [`../../basemap-styles/vt-basemap-2026-town-labels`](../../basemap-styles/vt-basemap-2026-town-labels)
 - [`../../basemap-styles/vt-basemap-2026-city-points`](../../basemap-styles/vt-basemap-2026-city-points)

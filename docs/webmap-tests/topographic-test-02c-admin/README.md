@@ -1,4 +1,4 @@
-# Topographic — Test 02c (Physical Topo Light Admin)
+# Topographic — Test 02c (Base + Thematic Features)
 
 Pulled directly from the web map's JSON via the AGOL sharing REST API,
 not hand-described — re-pull if this map changes rather than editing
@@ -6,56 +6,50 @@ this table by hand.
 
 **Live embed:** <https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-02c-admin/>
 **ArcGIS Online item:** <https://vcgi.maps.arcgis.com/apps/mapviewer/index.html?webmap=c204789fd709456aaad6749f8d4188eb>
-**AGOL item title:** "Basemap 2026 - Topographic - Test 02c Physical Topo Light Admin"
-**Test extent:** centered -72.5728, 44.2647 at 1:9,028 — a closer-in,
-town-scale extent than Test 02/02b, consistent with this test's purpose
-(showing municipal boundaries and sample thematic data, both of which
-only render at this kind of zoom — see the table below)
+**AGOL item title:** "VT Basemap 2026 - Base - Thematic Features - Test 02c"
+**Test extent:** centered -72.5722, 44.2650 at a town-scale zoom,
+consistent with this test's purpose (showing municipal boundaries and
+sample thematic data, both of which only render at this kind of zoom —
+see the table below)
 
-Save-as copy of [Topographic Test 02b](../topographic-test-02b-world-terrain-labels/README.md)
-with two additions: a Town Boundaries layer, and a sample thematic
-point/line/polygon layer demonstrating the basemap's intended use as a
-muted background for user-added data.
+Built on the **Base** Group Layer configuration (same as
+[Test 02d](../topographic-test-02d-base/README.md)) plus two additions:
+the Town Boundaries Group Layer, and a sample thematic point/line/polygon
+layer demonstrating the basemap's intended use as a muted background for
+user-added data.
 
 ## Basemap
 
-Same as Test 02/02b: **Human Geography Map** (Esri Living Atlas), own
+Same as Test 02b/02d: **Human Geography Map** (Esri Living Atlas), own
 "Human Geography Base" vector tile sub-layer turned **off**.
+
+## Layer groups
+
+| Group (in-map label) | Item ID | Notes |
+|---|---|---|
+| Base | `1a119fb231ac4e8985346ddcc438692f` ("VT Basemap 2026 Base") | Same item reused from [Test 02d](../topographic-test-02d-base/README.md) — no Lidar DEM Hillshade |
+| Town Boundaries | `78853d8236e04a1d8d6df5c0f94e7c13` ("VT Basemap 2026 Town Boundaries") | Same item reused from Test 02b/02d/02e (there shown with the in-map label "Boundaries" — this map happens to label it "Town Boundaries" instead); scale range restricted to below 1:1,412,738 in this map |
+| Labels | `0ff87dab7daf4141a5e95a2f8be0715e` ("VT Basemap 2026 Labels") | Same item reused from Test 02b/02d |
+
+Plus one ad-hoc, non-grouped layer: **Thematic Features Example**.
 
 ## Layers shown (top to bottom as returned by the API)
 
-| # | Layer | Source | On? | Opacity | Notes |
-|---|---|---|---|---|---|
-| 0 | Lidar DEM Hillshade | ArcGIS cached ImageServer ([`IMG_VCGI_LIDARHILLSHD_WM_CACHE_v1`](https://maps.vcgi.vermont.gov/arcgis/rest/services/EGC_services/IMG_VCGI_LIDARHILLSHD_WM_CACHE_v1/ImageServer)) | On | 0.4 | Same as Test 02/02b — no DEM color-ramp layer in this map either |
-| 1 | Vermont Protected Lands Database | [AGOL hosted FeatureServer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Cadastral_PROTECTEDLND_poly_SP_v2/FeatureServer/0) | On | 0.25 | Filtered to `INT_ORGTYP` = State, Municipal, or Federal — same as Test 02/02b (see [`protected-lands.md`](../../data-sources/protected-lands.md)) |
-| 2 | Alpine Trails — VT E911 Other Mapped Features of Interest | [shared FeatureServer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_FOOTPRINTS_poly_SP_v1/FeatureServer/0) | On | 0.67 | Opacity raised from 0.41 (Test 02/02b) to 0.67 in this test |
-| 3 | Golf Courses — VT E911 Other Mapped Features of Interest | same FeatureServer | On | 0.75 | |
-| 4 | Quarries — VT E911 Other Mapped Features of Interest | same FeatureServer | On | 0.41 | |
-| 5 | 1ft Lidar Contours — "COPY - Dark Olive" | Vector tile (Esri VT style copy) | Off | 0.25 | |
-| 6 | Human Geography Detail — Blue Water Light Roads | Esri Living Atlas vector tile, VCGI-styled (same "Light Roads" style variant as Test 02/02b) | Off | — | |
-| 7 | Vermont Significant Wetlands Inventory | [AGOL hosted feature layer](https://services5.arcgis.com/Uzks6LSde6r23wwG/arcgis/rest/services/Vermont_Significant_Wetland_Inventory/FeatureServer/0) | Off | 0.75 | |
-| 8 | Buildings 2022 (White) | Vector tile (same "White" style variant as Test 02/02b) | Off | — | |
-| 9 | VT Data — E911 Alpine Ski Lifts | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_ALPINELIFTS_line_SP_v1/FeatureServer/0) | Off | — | |
-| 10 | VT Mask - GeoJSON Test | [`vermont-mask.geojson`](../../basemap-styles/human-geography-detail-blue-water/vermont-mask.geojson) | On | — | Positioned below both the Town Boundaries and label layers (same label-clipping reasoning as prior tests) |
-| 11 | **Town Boundaries Group** | [Group layer item](#town-boundaries-group) wrapping two views of the same VCGI municipal boundary service | On | — | Saved as a standalone, reusable **Group layer item** (`Group Layer - Town Boundaries`, item `78853d8236e04a1d8d6df5c0f94e7c13`, public) — addable to other web maps directly, not just an ad-hoc group local to this map (see [Group layers](../README.md#group-layers)). Group has no `minScale` restriction of its own beyond 1:196,470 (hidden when zoomed out further than that); see below |
-| 12 | **World Terrain Reference Labels Light** | Esri Living Atlas vector tile (`World_Basemap_v2`), VCGI-styled — **a different, newer item than Test 01b/02b's label layer**, not a reused copy | On | — | This is the muted-text label style edited earlier this session (placename and spot-elevation colors lightened to `#505050`) — see [`../../basemap-styles/`](../../basemap-styles/world-terrain-reference-labels-light). Layer-level `minScale` ≈ 1:1,676,470 (hidden when zoomed out past regional scale) |
-| 13 | **Thematic Features Example** | Inline ArcGIS Online "Map Notes" sketch layer (not a hosted service — no `itemId`/`url`, defined directly in the web map JSON) | On *(presumed — this is the layer the test exists to demonstrate; no explicit `visibility` key was found to confirm it directly, unlike the Town Boundaries group below)* | — | 15 polygons, 4 polylines, 12 points, 5 text annotations; all hidden when zoomed out past 1:26,029 |
+### Base group
 
-### Town Boundaries Group
+Same composition as [Test 02d's Base group](../topographic-test-02d-base/README.md#base-group):
+Protected Lands Database, Alpine Trails/Golf Courses/Quarries, 1ft Lidar
+Contours, Blue Water Light Roads, Wetlands Inventory, Buildings 2022,
+Alpine Ski Lifts, VT Mask, State Boundary, and Context Boundaries —
+unchanged here except Alpine Trails' opacity, raised from 0.41 to 0.67
+in this test.
 
-Saved as a standalone **Group layer item** — `Group Layer - Town
-Boundaries` (item `78853d8236e04a1d8d6df5c0f94e7c13`, owner
-`Publisher_VCGI`, public) — rather than staying an ad-hoc group local to
-this one web map. Per the propagation caveat documented in [Group
-layers](../README.md#group-layers), any future styling/structure edits
-made to this item won't automatically reach this web map (or any other
-map it's added to) without re-adding it; only edits to the underlying
-boundary data itself update live.
+### Town Boundaries group (Group layer item)
 
-Both sublayers point at the same VCGI municipal polygon service already
-profiled in [`boundaries.md`](../../data-sources/boundaries.md)
+Both sublayers point at the same VCGI municipal polygon service profiled
+in [`boundaries.md`](../../data-sources/boundaries.md)
 (`FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_towns_SP_v1`), styled as two
-layers stacked for a halo effect — confirmed **both explicitly On**
+layers stacked for a halo effect — both explicitly On
 (`visibility: true` on each, independent of the group):
 
 - **Town Boundaries-Outline** — no fill, wide (4.5px) semi-transparent
@@ -66,32 +60,42 @@ layers stacked for a halo effect — confirmed **both explicitly On**
   1:6,421,213), labeled with `TOWNNAME` in muted gray (`#8C8C8C`) bold
   text with a light halo.
 
+### Labels group (Group layer item)
+
+Same three sublayers as [Test 02b/02d's Labels
+group](../topographic-test-02b-world-terrain-labels/README.md#labels-group-group-layer-item):
+World Terrain Reference Labels Light (On), Town Labels Manual Deconflict
+(presumed On), City Points (presumed On).
+
+### Thematic Features Example (ad-hoc layer, not grouped)
+
+Inline ArcGIS Online "Map Notes" sketch layer (not a hosted service — no
+`itemId`/`url`, defined directly in the web map JSON). On *(presumed —
+this is the layer the test exists to demonstrate; no explicit
+`visibility` key was found to confirm it directly)*. 15 polygons, 4
+polylines, 12 points, 5 text annotations; all hidden when zoomed out
+past 1:26,029.
+
 ## Design notes
 
-- **New label style, not just new content layers:** the label layer in
-  this test ("World Terrain Reference Labels Light") is a different AGOL
-  item from the one Test 01b/02b use, not the same style reused. It's the
-  copy whose placename and spot-elevation text colors were muted to
-  `#505050` earlier this session — Test 02c is the first webmap test
-  using it.
-- **Town Boundaries' two-layer halo styling** (solid white backing +
-  dotted gray line + gray labels) is a reasonable reference point if a
-  similar treatment is wanted for other boundary levels (county, village)
-  in future tests.
 - **The Thematic Features Example layer is the point of this test:** it
   demonstrates the muted basemap's intended role as a background for
-  user-added point/line/polygon data, per Tim's own description of this
-  test's purpose.
-- Everything else (base layers 0–10) is unchanged from
-  [Test 02b](../topographic-test-02b-world-terrain-labels/README.md)
-  except the Alpine Trails opacity bump noted above.
+  user-added point/line/polygon data.
+- **Town Boundaries' two-layer halo styling** (solid white backing +
+  dotted gray line + gray labels) is a reasonable reference point if a
+  similar treatment is wanted for other boundary levels (county,
+  village) in future tests.
+- This test now shares all three of its Group Layers (Base, Town
+  Boundaries, Labels) with Test 02b/02d rather than carrying its own
+  copies — the only things unique to this map are the Alpine Trails
+  opacity bump and the Thematic Features Example layer itself.
 
 ## Related
 
+- [`../topographic-test-02d-base/README.md`](../topographic-test-02d-base/README.md) —
+  the Base configuration this one builds on
 - [`../topographic-test-02b-world-terrain-labels/README.md`](../topographic-test-02b-world-terrain-labels/README.md) —
-  the version this was saved from
-- [`../../basemap-styles/world-terrain-reference-labels-light`](../../basemap-styles/world-terrain-reference-labels-light) —
-  the new muted label style used here
+  shares the same Labels and Town Boundaries Group Layer items
 - [`../../data-sources/boundaries.md`](../../data-sources/boundaries.md) —
   the Town Boundaries source
 - [`../../data-sources/protected-lands.md`](../../data-sources/protected-lands.md)

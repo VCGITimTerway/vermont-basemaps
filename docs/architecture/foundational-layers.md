@@ -27,8 +27,11 @@ Everything in this repo so far is about getting individual *layers*
 sourced and styled (TiTiler COGs, PMTiles, Esri Vector Tile Services).
 None of it yet addresses how a finished basemap gets **packaged for an
 end user to pick as one thing**, rather than assembling a dozen
-operational layers by hand the way the Topographic Test 01/01b webmaps
-currently do.
+operational layers by hand the way the Topographic Test 01b webmap
+still does (the Base Topo/Base/Desaturated Group Layer configurations —
+see [`../webmap-tests/README.md#reusable-group-layers`](../webmap-tests/README.md#reusable-group-layers) —
+are a step toward this for ArcGIS, though not yet a single gallery-ready
+basemap item).
 
 - **ArcGIS side:** confirmed via Esri's own documentation
   ([Create a custom basemap gallery for your organization](https://www.esri.com/arcgis-blog/products/arcgis-online/mapping/custom-basemap-gallery),
@@ -55,7 +58,7 @@ currently do.
   needs to collapse down to as few parts as possible — ideally a
   **base / detail / label** 3-way split at most — and get published as
   its own gallery-ready item, not stay as a sprawling test webmap like
-  Test 01/01b.
+  Test 01b.
 - **Open-source side:** no equivalent packaging concept defined yet
   either — likely just "one style.json per basemap variant," but how
   that gets discovered/distributed to consuming apps (a styles index
@@ -246,8 +249,8 @@ service, **VT Data – Boundaries, All Lines**, while each level's
 Concrete follow-ups raised by comparing this inventory against the two
 delivery pipelines above. See
 [`cross-platform-publishing.md`](cross-platform-publishing.md) for the
-concrete, per-layer version of this worked against an actual web map
-(Topographic Test 01) — including a correction worth knowing up front:
+concrete, per-layer version of this worked against the basemap's
+foundational layers — including a correction worth knowing up front:
 the "no popup" limitation on vector tile layers in ArcGIS Online is
 specific to how Map Viewer's Vector Tile Layer item type behaves, not a
 limitation of PMTiles/MVT itself — a shared PMTiles pipeline can still

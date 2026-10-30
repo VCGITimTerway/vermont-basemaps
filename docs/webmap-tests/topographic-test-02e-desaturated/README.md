@@ -27,7 +27,7 @@ Three groups:
 | Group | Item ID | Notes |
 |---|---|---|
 | Base Desaturated | `024fe4874e67434d8987e580300b228c` ("VT Basemap 2026 Base Desaturated") | Same composition as [Base](../topographic-test-02d-base/README.md#base-group), with desaturated vector-tile styles substituted in — see below |
-| Boundaries | `78853d8236e04a1d8d6df5c0f94e7c13` ("Group Layer - Town Boundaries") | **Same, non-desaturated item** reused from Test 02b/02c/02d — its existing light-gray/white palette was already close enough to the desaturated target that no separate copy was made |
+| Boundaries | `78853d8236e04a1d8d6df5c0f94e7c13` ("VT Basemap 2026 Town Boundaries") | **Same, non-desaturated item** reused from Test 02b/02c/02d — its existing light-gray/white palette was already close enough to the desaturated target that no separate copy was made |
 | Labels Desaturated | `ceaef1a3a4744f8e99f05f9f3148443e` ("VT Basemap 2026 Labels Desaturated") | Desaturated World Terrain Reference Labels Light, plus the same Town Labels and City Points items reused from the Labels group — see below |
 
 ## Layers shown (top to bottom within each group, as returned by the API)

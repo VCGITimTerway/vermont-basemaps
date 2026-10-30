@@ -6,11 +6,11 @@ this table by hand.
 
 **Live embed:** <https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-01b-world-terrain-labels/>
 **ArcGIS Online item:** <https://vcgi.maps.arcgis.com/apps/mapviewer/index.html?webmap=bbab5ff34b7543df8a06cee07a6f30ec>
-**AGOL item title:** "Basemap 2026 - Topographic - Test 01b (World Topographic Labels)"
-**Test extent:** centered -72.7166, 43.4048 at 1:18,056 (same area as Test 01)
+**AGOL item title:** "VT Basemap 2026 - Topographic - Test 01b"
+**Test extent:** centered -72.7166, 43.4048 at 1:18,056
 
-Save-as copy of [Topographic Test 01](../topographic-test-01-styled-dem/README.md)
-with one change: the label layer.
+Save-as copy of an earlier styled-DEM test webmap, with one change: the
+label layer.
 
 ## Basemap
 
@@ -63,8 +63,6 @@ cohesive style — more sourcing work than Test 01 implied, not less.
 
 ## Related
 
-- [`../topographic-test-01-styled-dem/README.md`](../topographic-test-01-styled-dem/README.md) —
-  the version this was saved from
 - [`../../architecture/cross-platform-publishing.md`](../../architecture/cross-platform-publishing.md) —
   per-layer status on getting every layer serving cleanly on both ArcGIS
   and open-source apps

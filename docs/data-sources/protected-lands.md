@@ -55,12 +55,12 @@ wildlife refuges, national wilderness areas, municipal parks, municipal
 forests) and the Military Sites filter aren't part of the Community Maps
 config, so their field values are still unconfirmed.
 
-### Ownership-type filter (confirmed via Topographic Test 02/02b)
+### Ownership-type filter (confirmed via the Base Topo/Base configuration)
 
 Separate from the four Community Maps subtype filters above, `INT_ORGTYP`
 is a confirmed field distinguishing managing-agency type, with coded
-values rather than spelled-out text. [Topographic
-Test 02/02b](../webmap-tests/topographic-test-02-physical-topo-light/README.md)
+values rather than spelled-out text. [Test
+02b](../webmap-tests/topographic-test-02b-world-terrain-labels/README.md)
 filters this service to `INT_ORGTYP = 'STAT' OR INT_ORGTYP = 'LOC' OR
 INT_ORGTYP = 'FED'` to show only publicly stewarded protected land
 (State/Municipal/Federal), excluding privately held conservation parcels.
@@ -105,8 +105,6 @@ for the exact expression in use there.
 ## Related
 
 - Architecture doc row: [`../architecture/foundational-layers.md`](../architecture/foundational-layers.md#vsdi-vermont-spatial-data-infrastructure)
-- [`../webmap-tests/topographic-test-02-physical-topo-light/README.md`](../webmap-tests/topographic-test-02-physical-topo-light/README.md) —
-  first basemap test to use this layer, with the `INT_ORGTYP` filter above
 - [`../webmap-tests/README.md#reusable-group-layers`](../webmap-tests/README.md#reusable-group-layers) —
   this layer is part of the shared **Base Topo**/**Base** Group Layer
   composition (not itself a standalone Group Layer item), so it's

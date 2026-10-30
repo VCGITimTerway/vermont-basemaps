@@ -169,12 +169,9 @@ not what to build against directly; use
 
 ### Development Web Map Tests
 
-Earlier test iterations — predate the Group Layer composition above,
-kept for reference.
+Earlier test iterations, kept for reference.
 
 | Test | Live embed | Notes |
 |---|---|---|
-| [Topographic — Test 01 (Styled DEM)](topographic-test-01-styled-dem/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-01-styled-dem/) | Styled DEM + hillshade terrain, VCGI-sourced water labels, E911 recreation layers |
-| [Topographic — Test 01b (World Terrain Labels)](topographic-test-01b-world-terrain-labels/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-01b-world-terrain-labels/) | Save-as of Test 01; swaps four label layers for one Esri "World Terrain Reference"-styled layer |
-| [Topographic — Test 02 (Physical Topo Light)](topographic-test-02-physical-topo-light/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-02-physical-topo-light/) | Muted hillshade-only terrain (no DEM color ramp), new "Light Roads" and "Buildings White" style variants, intended as a basemap for user-added thematic data |
-| [Topographic — Test 02c (Physical Topo Light Admin)](topographic-test-02c-admin/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-02c-admin/) | Save-as of Test 02b; adds a Town Boundaries layer, a new muted-text label style, and a sample thematic sketch layer demonstrating the basemap's intended use |
+| [Topographic — Test 01b (World Terrain Labels)](topographic-test-01b-world-terrain-labels/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-01b-world-terrain-labels/) | Swaps four label layers for one Esri "World Terrain Reference"-styled layer |
+| [Topographic — Test 02c (Base + Thematic Features)](topographic-test-02c-admin/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-02c-admin/) | Mock-up demonstrating sample thematic features on top of the Base configuration, plus a Town Boundaries layer |

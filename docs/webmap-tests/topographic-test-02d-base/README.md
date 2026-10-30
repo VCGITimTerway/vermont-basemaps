@@ -27,7 +27,7 @@ Three groups, all saved, public **Group layer items**:
 | Group | Item ID | Notes |
 |---|---|---|
 | Base | `1a119fb231ac4e8985346ddcc438692f` ("VT Basemap 2026 Base") | Same composition as [Base Topo](../topographic-test-02b-world-terrain-labels/README.md#base-topo-group) minus the Lidar DEM Hillshade layer — see below |
-| Boundaries | `78853d8236e04a1d8d6df5c0f94e7c13` ("Group Layer - Town Boundaries") | Same item reused from Test 02b/02c |
+| Boundaries | `78853d8236e04a1d8d6df5c0f94e7c13` ("VT Basemap 2026 Town Boundaries") | Same item reused from Test 02b/02c |
 | Labels | `0ff87dab7daf4141a5e95a2f8be0715e` ("VT Basemap 2026 Labels") | Same item reused from Test 02b |
 
 ## Layers shown (top to bottom within each group, as returned by the API)
