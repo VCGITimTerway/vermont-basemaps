@@ -71,3 +71,26 @@ the 1' contour layer.
   use alongside that style in the desaturated "Base" configuration.
   Boundary-line colors (country/state gray) are unchanged — only water
   was in scope for this pass.
+- [`human-geography-detail-blue-water-light-roads-imagery`](human-geography-detail-blue-water-light-roads-imagery) —
+  save-as of Light Roads for the in-progress "Base Imagery" Group Layer
+  configuration (imagery basemap — [Test 03](../webmap-tests/) once
+  documented). Likely to be renamed "Transparent Roads Imagery" to match
+  its current design:
+  - **Water** (10 layers) set to `"visibility": "none"`, so the vector
+    tile's flat water fill/line doesn't cover the real water visible in
+    the underlying aerial imagery.
+  - **Major roads** (Freeway/Motorway, Highway, Major, and their ramp
+    variants — `_symbol` 0–4, both `Road` and `Road tunnel`) recolored
+    from gray to amber `#e8a33d` on the casing layer, to stand out
+    against imagery the way major roads do on Utah's Hybrid basemap.
+    The white fill layer is unchanged, so these read as an amber-bordered
+    white road rather than a solid amber ribbon.
+  - **Minor/local roads** (Minor, Local, Service, Pedestrian, 4WD, and
+    their ramp variants — `_symbol` 5–10) given `line-opacity: 0.6` on
+    the gray casing layer, and the white fill layer hidden
+    (`"visibility": "none"`) entirely — leaving a single semi-transparent
+    gray line rather than a solid white-and-gray road, similar to LINZ's
+    NZ Aerial Imagery basemap. Trails (a separate `Trail or path`
+    source-layer, not part of `Road`) are untouched by this pass.
+  First-pass values (amber shade, 0.6 opacity, which road classes count
+  as "major") — easy to retune once seen rendered over real imagery.
