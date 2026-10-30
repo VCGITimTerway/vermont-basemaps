@@ -86,9 +86,15 @@ the 1' contour layer.
     tiers now hide their white fill layer (`"visibility": "none"`),
     leaving only the colored casing layer, semi-transparent, as the
     entire visible road:
-    - **Major roads** (Freeway/Motorway, Highway, Major, and their ramp
-      variants — `_symbol` 0–4, both `Road` and `Road tunnel`): muted
-      warm tan `#c9915a` at `line-opacity: 0.75`.
+    - **Interstates** (Freeway/Motorway + its ramps — `_symbol` 0, 2)
+      and **Major roads** (`_symbol` 3, 4 — arterials, not state-numbered
+      highways): muted warm tan `#c9915a` at `line-opacity: 0.55`.
+    - **State highways** (Esri's `Highway` class — `_symbol` 1):
+      recolored to a more yellow-orange `#e0b030`, same `line-opacity:
+      0.55`, to distinguish numbered state routes from interstates.
+      (Esri's taxonomy doesn't have a distinct "arterial" tier separate
+      from "Major," so `_symbol` 3/4 were grouped with interstates here,
+      not highways — flag if that grouping should move instead.)
     - **Minor/local roads** (Minor, Local, Service, Pedestrian, 4WD, and
       their ramp variants — `_symbol` 5–10): unchanged gray `#bcbcbc`/
       `#8c8c8c` at `line-opacity: 0.6`.
