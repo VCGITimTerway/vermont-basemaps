@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "sprite": "https://www.arcgis.com/sharing/rest/content/items/6d4d8c80629d4bc58d8cb9d4f967e563/resources/sprites/sprite-1793387842475",
+  "sprite": "https://www.arcgis.com/sharing/rest/content/items/6d4d8c80629d4bc58d8cb9d4f967e563/resources/sprites/sprite-1793388307543",
   "glyphs": "https://basemaps.arcgis.com/arcgis/rest/services/World_Basemap_v2/VectorTileServer/resources/fonts/{fontstack}/{range}.pbf",
   "sources": {
     "esri": {
@@ -50,7 +50,8 @@
       "minzoom": 11,
       "layout": {},
       "paint": {
-        "fill-color": "#e7e5e5"
+        "fill-color": "#bcbcbc",
+        "fill-opacity": 0.45
       }
     },
     {
@@ -795,7 +796,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-width": 2.9,
+        "line-width": 1.9,
         "line-color": "#bcbcbc",
         "line-opacity": 0.5
       }
@@ -856,13 +857,13 @@
         "line-join": "round"
       },
       "paint": {
-        "line-width": 1.6,
+        "line-width": 1.1,
         "line-color": "#ffffff",
         "line-dasharray": [
           3,
           2
         ],
-        "line-opacity": 0.6
+        "line-opacity": 0.3
       }
     },
     {
@@ -3457,39 +3458,39 @@
         "spatialReference": {
           "wkid": 102100
         },
-        "xmin": -48319908.820959106,
-        "ymin": 5362732.26319803,
-        "xmax": -47919073.04463184,
-        "ymax": 5565443.262210219
+        "xmin": -48158447.415153615,
+        "ymin": 5504509.813052709,
+        "xmax": -48154599.28851078,
+        "ymax": 5506093.492732535
       },
       {
         "spatialReference": {
           "latestWkid": 3857,
           "wkid": 102100
         },
-        "xmin": -8253690.043001908,
-        "ymin": 5287751.2883558385,
-        "xmax": -7988300.68079579,
-        "ymax": 5436956.367568495
+        "xmin": -8164763.1930981595,
+        "ymin": 5380263.01809096,
+        "xmax": -8083128.446889561,
+        "ymax": 5417564.287894139
       },
       {
         "spatialReference": {
           "latestWkid": 3857,
           "wkid": 102100
         },
-        "xmin": -8615855.156997696,
-        "ymin": 4686730.288158622,
-        "xmax": -8549507.816446137,
-        "ymax": 4724031.557961801
+        "xmin": -8620441.378694836,
+        "ymin": 4686806.725186904,
+        "xmax": -8538806.632486235,
+        "ymax": 4724107.994990083
       },
       {
         "spatialReference": {
           "latestWkid": 3857,
           "wkid": 102100
         },
-        "xmin": 16831521.37727293,
+        "xmin": 16831401.944416232,
         "ymin": -4011969.6727890866,
-        "xmax": 16832558.054469075,
+        "xmax": 16832677.487325773,
         "ymax": -4011386.840448397
       }
     ],
