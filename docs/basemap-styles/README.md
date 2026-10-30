@@ -98,9 +98,21 @@ the 1' contour layer.
       grouped with interstates here, not highways — flag if that
       grouping should move instead.)
     - **Minor/local roads** (Minor, Local, Service, Pedestrian, 4WD, and
-      their ramp variants — `_symbol` 5–10): unchanged gray `#bcbcbc`/
-      `#8c8c8c` at `line-opacity: 0.6`.
-  - Trails (a separate `Trail or path` source-layer, not part of `Road`)
-    are untouched by this pass.
-  First-pass values (tan shade/opacity, which road classes count as
-  "major") — easy to retune once seen rendered over real imagery.
+      their ramp variants — `_symbol` 5–10): gray `#bcbcbc`/`#8c8c8c` at
+      `line-opacity: 0.45`.
+  - **Trails** (`Trail or path`, a separate source-layer from `Road`):
+    width reduced (casing 2.9→1.9, dashed overlay 1.6→2 — the overlay
+    ended up wider than the casing after iteration, intentional per
+    testing) and both layers given opacity (casing `#8c8c8c` at 0.5,
+    white dashed overlay at 0.3) so the "close-to-white" dash reads as
+    subtle rather than a bright highlight. Dash pattern itself (`[3,2]`)
+    unchanged throughout.
+  - **Airport runways** (`Airport/Airport runway`): were solid
+    near-white (`#e7e5e5`, fully opaque) — recolored to the same
+    `#bcbcbc` at `0.45` opacity as local roads, so they recede the same
+    way. `Airport/Airport property` (a separate, already-faint fill) was
+    left alone.
+  First-pass-and-iterated values (tan/yellow shades, opacities, which
+  road classes count as "major") — this style is still being tuned
+  against real imagery, re-pull before further edits rather than
+  assuming this doc is current.

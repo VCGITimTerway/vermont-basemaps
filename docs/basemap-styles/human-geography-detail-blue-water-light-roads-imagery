@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "sprite": "https://www.arcgis.com/sharing/rest/content/items/6d4d8c80629d4bc58d8cb9d4f967e563/resources/sprites/sprite-1793388307543",
+  "sprite": "https://www.arcgis.com/sharing/rest/content/items/6d4d8c80629d4bc58d8cb9d4f967e563/resources/sprites/sprite-1793388846010",
   "glyphs": "https://basemaps.arcgis.com/arcgis/rest/services/World_Basemap_v2/VectorTileServer/resources/fonts/{fontstack}/{range}.pbf",
   "sources": {
     "esri": {
@@ -792,13 +792,24 @@
       "source-layer": "Trail or path",
       "minzoom": 15,
       "layout": {
+        "visibility": "visible",
+        "line-miter-limit": 2,
+        "line-round-limit": 1.05,
         "line-cap": "round",
         "line-join": "round"
       },
       "paint": {
+        "line-opacity": 0.5,
+        "line-color": "#8c8c8c",
         "line-width": 1.9,
-        "line-color": "#bcbcbc",
-        "line-opacity": 0.5
+        "line-gap-width": 0,
+        "line-blur": 0,
+        "line-translate-anchor": "map",
+        "line-offset": 0,
+        "line-translate": [
+          0,
+          0
+        ]
       }
     },
     {
@@ -853,17 +864,28 @@
       "source-layer": "Trail or path",
       "minzoom": 15,
       "layout": {
+        "visibility": "visible",
+        "line-miter-limit": 2,
+        "line-round-limit": 1.05,
         "line-cap": "round",
         "line-join": "round"
       },
       "paint": {
-        "line-width": 1.1,
+        "line-opacity": 0.3,
         "line-color": "#ffffff",
+        "line-width": 2,
+        "line-gap-width": 0,
+        "line-blur": 0,
         "line-dasharray": [
           3,
           2
         ],
-        "line-opacity": 0.3
+        "line-translate-anchor": "map",
+        "line-offset": 0,
+        "line-translate": [
+          0,
+          0
+        ]
       }
     },
     {
@@ -3458,19 +3480,19 @@
         "spatialReference": {
           "wkid": 102100
         },
-        "xmin": -48158447.415153615,
-        "ymin": 5504509.813052709,
-        "xmax": -48154599.28851078,
-        "ymax": 5506093.492732535
+        "xmin": -48155545.597561605,
+        "ymin": 5504898.478345775,
+        "xmax": -48153039.89622807,
+        "ymax": 5506482.158025601
       },
       {
         "spatialReference": {
           "latestWkid": 3857,
           "wkid": 102100
         },
-        "xmin": -8164763.1930981595,
+        "xmin": -8150469.468808826,
         "ymin": 5380263.01809096,
-        "xmax": -8083128.446889561,
+        "xmax": -8097422.171178894,
         "ymax": 5417564.287894139
       },
       {
@@ -3478,9 +3500,9 @@
           "latestWkid": 3857,
           "wkid": 102100
         },
-        "xmin": -8620441.378694836,
+        "xmin": -8606147.654405503,
         "ymin": 4686806.725186904,
-        "xmax": -8538806.632486235,
+        "xmax": -8553100.356775569,
         "ymax": 4724107.994990083
       },
       {
@@ -3488,9 +3510,9 @@
           "latestWkid": 3857,
           "wkid": 102100
         },
-        "xmin": 16831401.944416232,
+        "xmin": 16831625.28385826,
         "ymin": -4011969.6727890866,
-        "xmax": 16832677.487325773,
+        "xmax": 16832454.147883747,
         "ymax": -4011386.840448397
       }
     ],
