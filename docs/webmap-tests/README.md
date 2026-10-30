@@ -153,19 +153,19 @@ not what to build against directly; use
 
 | Test | Live embed | Notes |
 |---|---|---|
-| [Topographic — Test 02e (Desaturated)](topographic-test-02e-desaturated/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-02e-desaturated/) | Reference example for the Desaturated + Boundaries + Labels Desaturated combination above; grayscale/monochromatic take on the basemap (MapTiler Positron as the visual reference) |
+| [Desaturated — Test 02e](topographic-test-02e-desaturated/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-02e-desaturated/) | Reference example for the Desaturated + Boundaries + Labels Desaturated combination above; grayscale/monochromatic take on the basemap (MapTiler Positron as the visual reference) |
 
 ### Base Topo configuration example
 
 | Test | Live embed | Notes |
 |---|---|---|
-| [Topographic — Test 02b (World Terrain Labels)](topographic-test-02b-world-terrain-labels/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-02b-world-terrain-labels/) | Reference example for the Base Topo + Boundaries + Labels combination above; shared muted "World Terrain Reference Labels Light" style, plus custom VCGI City Points and Town Labels layers |
+| [Base Topo — Test 02b](topographic-test-02b-world-terrain-labels/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-02b-world-terrain-labels/) | Reference example for the Base Topo + Boundaries + Labels combination above; shared muted "World Terrain Reference Labels Light" style, plus custom VCGI City Points and Town Labels layers |
 
 ### Base configuration example
 
 | Test | Live embed | Notes |
 |---|---|---|
-| [Topographic — Test 02d (Physical Topo Light Base)](topographic-test-02d-base/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-02d-base/) | Reference example for the Base + Boundaries + Labels combination above; same as Test 02b minus the Lidar DEM Hillshade layer |
+| [Base — Test 02d](topographic-test-02d-base/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-02d-base/) | Reference example for the Base + Boundaries + Labels combination above; same as Test 02b minus the Lidar DEM Hillshade layer |
 
 ### Development Web Map Tests
 
