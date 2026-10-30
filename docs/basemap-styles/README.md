@@ -71,6 +71,24 @@ the 1' contour layer.
   use alongside that style in the desaturated "Base" configuration.
   Boundary-line colors (country/state gray) are unchanged — only water
   was in scope for this pass.
+- [`world-terrain-reference-labels-dark-imagery`](world-terrain-reference-labels-dark-imagery) —
+  styled copy of Esri's World Terrain Reference Labels item, for the
+  "Labels Imagery" Group Layer configuration (dark aerial imagery
+  background). Text/halo roles flipped from the default light-basemap
+  convention (dark text, light halo) to a dark-imagery-appropriate one
+  (light text, dark halo matching each category's original text color)
+  — 82 layers flipped. Two categories deliberately **excluded** and left
+  as-is per explicit instruction: water labels (any layer whose color is
+  part of the blue water family — `#1e73c8`/`#0087ff`/`#8499a6`/
+  `#73AFBF` — covering `Water line/area/point`, `Marine`, `Ocean`, and
+  `Ferry/label/Ferry`, regardless of source-layer name: e.g. gray-colored
+  "Water area" labels like islands/dams/playas were still flipped, since
+  their *color* was never actually part of the blue water family) and
+  open-space labels (`#5a7850`/`#778069` — Cemetery, Golf course, Zoo,
+  Park or farming, Trail or path, Pedestrian areas). One layer
+  (`Neighborhood`) had no original text-color to flip from — set
+  manually to light text (`#fcfcfa`) on a dark neutral halo (`#3c3c3c`)
+  to match the rest.
 - [`human-geography-detail-blue-water-light-roads-imagery`](human-geography-detail-blue-water-light-roads-imagery) —
   save-as of Light Roads for the in-progress "Base Imagery" Group Layer
   configuration (imagery basemap — [Test 03](../webmap-tests/) once
