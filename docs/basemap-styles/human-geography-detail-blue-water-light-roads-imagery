@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "sprite": "https://www.arcgis.com/sharing/rest/content/items/6d4d8c80629d4bc58d8cb9d4f967e563/resources/sprites/sprite-1793380220765",
+  "sprite": "https://www.arcgis.com/sharing/rest/content/items/6d4d8c80629d4bc58d8cb9d4f967e563/resources/sprites/sprite-1793387842475",
   "glyphs": "https://basemaps.arcgis.com/arcgis/rest/services/World_Basemap_v2/VectorTileServer/resources/fonts/{fontstack}/{range}.pbf",
   "sources": {
     "esri": {
@@ -796,7 +796,8 @@
       },
       "paint": {
         "line-width": 2.9,
-        "line-color": "#bcbcbc"
+        "line-color": "#bcbcbc",
+        "line-opacity": 0.5
       }
     },
     {
@@ -828,20 +829,20 @@
           "stops": [
             [
               14,
-              2.5
+              1.68
             ],
             [
               17,
-              6.5
+              4.36
             ],
             [
               20,
-              16.5
+              11.06
             ]
           ]
         },
         "line-color": "#8c8c8c",
-        "line-opacity": 0.6
+        "line-opacity": 0.45
       }
     },
     {
@@ -860,7 +861,8 @@
         "line-dasharray": [
           3,
           2
-        ]
+        ],
+        "line-opacity": 0.6
       }
     },
     {
@@ -893,15 +895,15 @@
           "stops": [
             [
               14,
-              1
+              0.67
             ],
             [
               17,
-              5
+              3.35
             ],
             [
               20,
-              15
+              10.05
             ]
           ]
         },
@@ -995,11 +997,11 @@
           "stops": [
             [
               14,
-              3
+              2.01
             ],
             [
               17,
-              4.5
+              3.02
             ]
           ]
         },
@@ -1008,7 +1010,7 @@
           3
         ],
         "line-color": "#bcbcbc",
-        "line-opacity": 0.6
+        "line-opacity": 0.45
       }
     },
     {
@@ -1041,19 +1043,19 @@
           "stops": [
             [
               14,
-              2.5
+              1.68
             ],
             [
               17,
-              6.5
+              4.36
             ],
             [
               20,
-              16.5
+              11.06
             ]
           ]
         },
-        "line-opacity": 0.6
+        "line-opacity": 0.45
       }
     },
     {
@@ -1086,23 +1088,23 @@
           "stops": [
             [
               13,
-              3
+              2.01
             ],
             [
               14,
-              4.5
+              3.02
             ],
             [
               17,
-              12
+              8.04
             ],
             [
               20,
-              45
+              30.15
             ]
           ]
         },
-        "line-opacity": 0.6
+        "line-opacity": 0.45
       }
     },
     {
@@ -1135,23 +1137,23 @@
           "stops": [
             [
               13,
-              3
+              2.01
             ],
             [
               15,
-              6
+              4.02
             ],
             [
               17,
-              13
+              8.72
             ],
             [
               20,
-              33
+              22.11
             ]
           ]
         },
-        "line-opacity": 0.6
+        "line-opacity": 0.45
       }
     },
     {
@@ -1184,23 +1186,23 @@
           "stops": [
             [
               12,
-              2.9
+              1.94
             ],
             [
               14,
-              5
+              3.35
             ],
             [
               17,
-              14
+              9.38
             ],
             [
               20,
-              46
+              30.82
             ]
           ]
         },
-        "line-opacity": 0.6
+        "line-opacity": 0.45
       }
     },
     {
@@ -1233,23 +1235,23 @@
           "stops": [
             [
               13,
-              3
+              2.01
             ],
             [
               15,
-              6
+              4.02
             ],
             [
               17,
-              13
+              8.72
             ],
             [
               20,
-              33
+              22.11
             ]
           ]
         },
-        "line-opacity": 0.55
+        "line-opacity": 0.4
       }
     },
     {
@@ -1282,23 +1284,23 @@
           "stops": [
             [
               10,
-              3
+              2.01
             ],
             [
               14,
-              7
+              4.69
             ],
             [
               17,
-              16
+              10.72
             ],
             [
               20,
-              48
+              32.16
             ]
           ]
         },
-        "line-opacity": 0.55
+        "line-opacity": 0.4
       }
     },
     {
@@ -1331,23 +1333,23 @@
           "stops": [
             [
               13,
-              3
+              2.01
             ],
             [
               15,
-              6
+              4.02
             ],
             [
               17,
-              13
+              8.72
             ],
             [
               20,
-              33
+              22.11
             ]
           ]
         },
-        "line-opacity": 0.55
+        "line-opacity": 0.4
       }
     },
     {
@@ -1379,23 +1381,23 @@
           "stops": [
             [
               8,
-              3.5
+              2.35
             ],
             [
               14,
-              7
+              4.69
             ],
             [
               17,
-              22
+              14.74
             ],
             [
               20,
-              50
+              33.5
             ]
           ]
         },
-        "line-opacity": 0.4
+        "line-opacity": 0.3
       }
     },
     {
@@ -1427,23 +1429,23 @@
           "stops": [
             [
               8,
-              3.5
+              2.35
             ],
             [
               14,
-              7
+              4.69
             ],
             [
               17,
-              22
+              14.74
             ],
             [
               20,
-              50
+              33.5
             ]
           ]
         },
-        "line-opacity": 0.55
+        "line-opacity": 0.4
       }
     },
     {
@@ -1476,11 +1478,11 @@
           "stops": [
             [
               14,
-              1
+              0.67
             ],
             [
               17,
-              2.5
+              1.68
             ]
           ]
         }
@@ -1517,15 +1519,15 @@
           "stops": [
             [
               14,
-              1
+              0.67
             ],
             [
               17,
-              5
+              3.35
             ],
             [
               20,
-              15
+              10.05
             ]
           ]
         }
@@ -1562,19 +1564,19 @@
           "stops": [
             [
               13,
-              1.5
+              1.01
             ],
             [
               14,
-              3
+              2.01
             ],
             [
               17,
-              10
+              6.7
             ],
             [
               20,
-              40
+              26.8
             ]
           ]
         }
@@ -1611,19 +1613,19 @@
           "stops": [
             [
               13,
-              1
+              0.67
             ],
             [
               14,
-              2.5
+              1.68
             ],
             [
               17,
-              10
+              6.7
             ],
             [
               20,
-              30
+              20.1
             ]
           ]
         }
@@ -1660,19 +1662,19 @@
           "stops": [
             [
               12,
-              1
+              0.67
             ],
             [
               14,
-              3
+              2.01
             ],
             [
               17,
-              12
+              8.04
             ],
             [
               20,
-              42
+              28.14
             ]
           ]
         }
@@ -1709,19 +1711,19 @@
           "stops": [
             [
               13,
-              1
+              0.67
             ],
             [
               14,
-              2.5
+              1.68
             ],
             [
               17,
-              10
+              6.7
             ],
             [
               20,
-              30
+              20.1
             ]
           ]
         }
@@ -1758,19 +1760,19 @@
           "stops": [
             [
               10,
-              1
+              0.67
             ],
             [
               14,
-              5
+              3.35
             ],
             [
               17,
-              13
+              8.72
             ],
             [
               20,
-              44
+              29.48
             ]
           ]
         }
@@ -1807,19 +1809,19 @@
           "stops": [
             [
               13,
-              1
+              0.67
             ],
             [
               14,
-              2.5
+              1.68
             ],
             [
               17,
-              10
+              6.7
             ],
             [
               20,
-              30
+              20.1
             ]
           ]
         }
@@ -1854,19 +1856,19 @@
           "stops": [
             [
               8,
-              1
+              0.67
             ],
             [
               14,
-              5
+              3.35
             ],
             [
               17,
-              18
+              12.06
             ],
             [
               20,
-              45
+              30.15
             ]
           ]
         },
@@ -1903,19 +1905,19 @@
           "stops": [
             [
               8,
-              1
+              0.67
             ],
             [
               14,
-              5
+              3.35
             ],
             [
               17,
-              18
+              12.06
             ],
             [
               20,
-              45
+              30.15
             ]
           ]
         }
@@ -1961,7 +1963,7 @@
           6,
           3
         ],
-        "line-opacity": 0.6,
+        "line-opacity": 0.45,
         "line-color": "#bcbcbc"
       }
     },
@@ -1990,7 +1992,7 @@
       },
       "paint": {
         "line-color": "#bcbcbc",
-        "line-opacity": 0.6,
+        "line-opacity": 0.45,
         "line-width": {
           "base": 1.2,
           "stops": [
@@ -2031,7 +2033,7 @@
       },
       "paint": {
         "line-color": "#bcbcbc",
-        "line-opacity": 0.6,
+        "line-opacity": 0.45,
         "line-width": {
           "base": 1.4,
           "stops": [
@@ -2080,7 +2082,7 @@
       },
       "paint": {
         "line-color": "#bcbcbc",
-        "line-opacity": 0.6,
+        "line-opacity": 0.45,
         "line-width": {
           "base": 1.2,
           "stops": [
@@ -2129,7 +2131,7 @@
       },
       "paint": {
         "line-color": "#bcbcbc",
-        "line-opacity": 0.6,
+        "line-opacity": 0.45,
         "line-width": {
           "base": 1.2,
           "stops": [
@@ -2178,7 +2180,7 @@
       },
       "paint": {
         "line-color": "#c9915a",
-        "line-opacity": 0.55,
+        "line-opacity": 0.4,
         "line-width": {
           "base": 1.2,
           "stops": [
@@ -2227,7 +2229,7 @@
       },
       "paint": {
         "line-color": "#c9915a",
-        "line-opacity": 0.55,
+        "line-opacity": 0.4,
         "line-width": {
           "base": 1.2,
           "stops": [
@@ -2276,7 +2278,7 @@
       },
       "paint": {
         "line-color": "#c9915a",
-        "line-opacity": 0.55,
+        "line-opacity": 0.4,
         "line-width": {
           "base": 1.2,
           "stops": [
@@ -2324,7 +2326,7 @@
       },
       "paint": {
         "line-color": "#e0b030",
-        "line-opacity": 0.4,
+        "line-opacity": 0.3,
         "line-width": {
           "base": 1.2,
           "stops": [
@@ -2372,7 +2374,7 @@
       },
       "paint": {
         "line-color": "#c9915a",
-        "line-opacity": 0.55,
+        "line-opacity": 0.4,
         "line-width": {
           "base": 1.2,
           "stops": [
@@ -3445,12 +3447,9 @@
       "labelColorMode": "LABELS_MAP_COLORS",
       "colorMode": "CUSTOM",
       "colors": {
-        "water": "#ddeff4",
-        "land": "#808082",
-        "building": "#d2d2d2",
-        "road": "#adadad",
-        "boundaries": "#3a3a3c"
-      }
+        "road": "#747474"
+      },
+      "road": "#747474"
     },
     "arcgisQuickEditorWarning": true,
     "arcgisEditorExtents": [
@@ -3458,19 +3457,19 @@
         "spatialReference": {
           "wkid": 102100
         },
-        "xmin": -48242756.572672985,
-        "ymin": 5408499.495328127,
-        "xmax": -48043103.054792024,
-        "ymax": 5509854.99483431
+        "xmin": -48319908.820959106,
+        "ymin": 5362732.26319803,
+        "xmax": -47919073.04463184,
+        "ymax": 5565443.262210219
       },
       {
         "spatialReference": {
           "latestWkid": 3857,
           "wkid": 102100
         },
-        "xmin": -8253384.294888767,
+        "xmin": -8253690.043001908,
         "ymin": 5287751.2883558385,
-        "xmax": -7988606.42890893,
+        "xmax": -7988300.68079579,
         "ymax": 5436956.367568495
       },
       {
@@ -3478,9 +3477,9 @@
           "latestWkid": 3857,
           "wkid": 102100
         },
-        "xmin": -8615778.71996941,
+        "xmin": -8615855.156997696,
         "ymin": 4686730.288158622,
-        "xmax": -8549584.253474422,
+        "xmax": -8549507.816446137,
         "ymax": 4724031.557961801
       },
       {
@@ -3488,10 +3487,10 @@
           "latestWkid": 3857,
           "wkid": 102100
         },
-        "xmin": 16831751.88268634,
-        "ymin": -4011961.3124891175,
-        "xmax": 16832786.171225354,
-        "ymax": -4011378.480148428
+        "xmin": 16831521.37727293,
+        "ymin": -4011969.6727890866,
+        "xmax": 16832558.054469075,
+        "ymax": -4011386.840448397
       }
     ],
     "arcgisMinimapVisibility": true,
