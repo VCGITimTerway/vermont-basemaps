@@ -17,14 +17,29 @@ the 1' contour layer.
   muted background under thematic data) and a dashed trail symbol
   ported from the base style.
 - [`human-geography-detail-blue-water-light-roads-desat`](human-geography-detail-blue-water-light-roads-desat) —
-  save-as of Light Roads with water desaturated, for a grayscale/
-  monochromatic basemap variant (first piece of a desaturated "Base"
-  configuration). All 10 water-related layers (`Water area`/`Water
-  line` at every scale tier, `Marine area`) changed from the saturated
-  `#ddeff4` to `#c2c8ca` — a cool neutral gray lifted directly from
-  [OpenMapTiles' Positron style](https://github.com/openmaptiles/positron-gl-style/blob/master/style.json)
-  (`rgb(194, 200, 202)`), the reference MapTiler Positron look this
-  variant is aiming for.
+  save-as of Light Roads with water and transportation desaturated, for
+  a grayscale/monochromatic basemap variant (the main style in the
+  desaturated "Base Desaturated" Group Layer configuration), benchmarked
+  throughout against
+  [OpenMapTiles' Positron style](https://github.com/openmaptiles/positron-gl-style/blob/master/style.json).
+  - **Water** (10 layers: `Water area`/`Water line` at every scale tier,
+    `Marine area`): lightened in stages, currently `#d4dadc` (Tim's own
+    further refinement of an earlier `#c2c8ca`, which was itself lifted
+    from Positron's `water` fill, `rgb(194, 200, 202)`).
+  - **Road casings** (19 layers, all road classes — this style doesn't
+    tier road colors by class the way the Imagery variant does):
+    lightened from `#505050` to `#d5d5d5`, matching Positron's
+    `highway_major_casing`/`highway_motorway_casing`
+    (`rgb(213, 213, 213)`) almost exactly.
+  - **Trails and pedestrian-road casings** (`Trail or path/1`,
+    `Road/Pedestrian/1`): lightened from `#8c8c8c` to `#eaeaea`,
+    matching Positron's `highway_path` (`rgb(234, 234, 234)`) — Positron
+    keeps paths lighter than roads, mirrored here.
+  - **Railroad**: lightened from `#c8c8c8` to `#dddddd`, matching
+    Positron's `railway` color exactly.
+  - Buildings and the plain `Boundary line`/`Airport property` layers in
+    this style are hidden (`"visibility": "none"`) and weren't touched —
+    no visible effect either way.
 - [`world-terrain-reference-labels-light`](world-terrain-reference-labels-light) —
   styled copy of Esri's World Terrain Reference Labels item
   (`World_Basemap_v2`), with placename and spot-elevation text muted to
