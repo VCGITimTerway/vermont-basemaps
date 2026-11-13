@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "sprite": "https://www.arcgis.com/sharing/rest/content/items/04faa79cda0446759b7024bb9b46e3ff/resources/sprites/sprite-1793219228275",
+  "sprite": "https://www.arcgis.com/sharing/rest/content/items/70bdd74a5472484eaa169b583a642237/resources/sprites/sprite-1794603876242",
   "glyphs": "https://vectortileservices1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/Town_Labels/VectorTileServer/resources/fonts/{fontstack}/{range}.pbf",
   "sources": {
     "Town_Labels": {
@@ -132,8 +132,8 @@
     }
   ],
   "metadata": {
-    "arcgisStyleUrl": "https://www.arcgis.com/sharing/rest/content/items/04faa79cda0446759b7024bb9b46e3ff/resources/styles/root.json",
-    "arcgisOriginalItemTitle": "VT Basemap 2026 Town Labels Manual Deconflict",
+    "arcgisStyleUrl": "https://www.arcgis.com/sharing/rest/content/items/70bdd74a5472484eaa169b583a642237/resources/styles/root.json",
+    "arcgisOriginalItemTitle": "VT Basemap 2026 Town Labels Manual Deconflict DESAT",
     "arcgisEditorExtents": [
       {
         "spatialReference": {
@@ -145,6 +145,10 @@
         "ymax": 5496816.148592025
       }
     ],
-    "arcgisMinimapVisibility": false
+    "arcgisMinimapVisibility": false,
+    "arcgisViewState": {
+      "is3D": false,
+      "viewpoint": null
+    }
   }
 }

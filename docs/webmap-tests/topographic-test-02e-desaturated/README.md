@@ -28,7 +28,7 @@ Three groups:
 |---|---|---|
 | Base Desaturated | `024fe4874e67434d8987e580300b228c` ("VT Basemap 2026 Base Desaturated") | Same composition as [Base](../topographic-test-02d-base/README.md#base-group), with desaturated vector-tile styles substituted in — see below |
 | Boundaries | `78853d8236e04a1d8d6df5c0f94e7c13` ("VT Basemap 2026 Town Boundaries") | **Same, non-desaturated item** reused from Test 02b/02c/02d — its existing light-gray/white palette was already close enough to the desaturated target that no separate copy was made |
-| Labels Desaturated | `ceaef1a3a4744f8e99f05f9f3148443e` ("VT Basemap 2026 Labels Desaturated") | Desaturated World Terrain Reference Labels Light, plus the same Town Labels and City Points items reused from the Labels group — see below |
+| Labels Desaturated | `ceaef1a3a4744f8e99f05f9f3148443e` ("VT Basemap 2026 Labels Desaturated") | Desaturated World Terrain Reference Labels Light, plus desaturated-specific copies of Town Labels and City Points — see below |
 
 ## Layers shown (top to bottom within each group, as returned by the API)
 
@@ -60,16 +60,18 @@ Not re-styled for this configuration.
 | # | Layer | Source | On? | Notes |
 |---|---|---|---|---|
 | 12 | World Terrain Reference Labels Light **Desaturated** | VCGI vector tile layer, item `8c0999ee861c4c66801b6bcb1bc0ffd6` | On *(presumed — no explicit `visibility` key)* | All water-feature label text (lakes, rivers, bays, marine/ocean, ferry route names) desaturated to `#9DA9B1`; marine label halos normalized to the standard `#fcfcfa` — see [style file](../../basemap-styles/world-terrain-reference-labels-light-desat). `minScale` ≈ 1:691,175 |
-| 13 | VT Basemap 2026 Town Labels Manual Deconflict | VCGI vector tile layer, item `04faa79cda0446759b7024bb9b46e3ff` — **same item reused**, not a desaturated copy | On *(presumed)* | Town labels are already a neutral `#505050`, so no separate desaturated version was needed. Unlike Base Topo/Base's Labels group, the superseded (Off) earlier Town Labels item isn't carried along here |
-| 14 | VT Basemap 2026 City Points WM - Levels 6 7 8 | VCGI vector tile layer, item `a58653bb5d8947b0909ccbdec1cb463f` — **same item reused** | On *(presumed)* | Already neutral `#505050`; no desaturated copy needed |
+| 13 | VT Basemap 2026 Town Labels Manual Deconflict **DESAT** | VCGI vector tile layer, item `70bdd74a5472484eaa169b583a642237` — Save As copy of the shared item (`04faa79cda0446759b7024bb9b46e3ff`, used as-is by Base Topo/Base) | On *(presumed)* | Text color lightened `#505050` → `#758191`, matching `Neighborhood`'s color — see [style file](../../basemap-styles/vt-basemap-2026-town-labels-desat) |
+| 14 | VT Basemap 2026 City Points WM - Levels 6 7 8 **DESAT** | VCGI vector tile layer, item `77b6f532de0b4da091cbc07f1d38a75c` — Save As copy of the shared item (`a58653bb5d8947b0909ccbdec1cb463f`, used as-is by Base Topo/Base) | On *(presumed)* | Text color lightened `#505050` → `#758191` across all three zoom tiers (Default/Regional/Other); circle marker stroke (`#4E4E4E`) unchanged — see [style file](../../basemap-styles/vt-basemap-2026-city-points-desat) |
 
 ## What's different from Base Topo / Base
 
 Every vector-tile style with a saturated color (water fills/lines,
 water-feature labels, ferry-route labels) has a desaturated sibling
-substituted in; everything already neutral (Town Boundaries, Town
-Labels, City Points, State Boundary) is reused as-is rather than
-duplicated. The one deliberate exception is the Wetlands Inventory
+substituted in, as do Town Labels and City Points once their text color
+turned out too dark relative to everything else once lightened. Town
+Boundaries and State Boundary are already neutral enough to reuse as-is
+without a separate copy. The one deliberate exception is the Wetlands
+Inventory
 symbol, kept at a reduced-but-still-visible saturation (`#5eabc4`) so
 the regulatory/ecological meaning of the symbol isn't lost — see the
 layer table above for the reasoning.
