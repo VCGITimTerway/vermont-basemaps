@@ -30,7 +30,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "fill-color": "#eaeae5",
+        "fill-color": "#f1f1f1",
         "fill-outline-color": "#dbdbda"
       },
       "showProperties": false

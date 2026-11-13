@@ -180,9 +180,11 @@ the 1' contour layer.
   black), `fill-opacity: 0.25` layer beneath, peeking out on one side.
   On the desaturated basemap (no hillshade/base-color canvas beneath
   it), that shadow read as the building's actual edge rather than a
-  subtle depth cue. Replaced with a single flat fill, Positron's own
-  building treatment: `#eaeae5` fill, `#dbdbda` outline — a simple
-  stroke instead of a shadow, kept light per the desaturated brief.
+  subtle depth cue. Replaced with a single flat fill + stroke outline
+  instead of a shadow. Fill color iterated after testing: Positron's own
+  `#eaeae5` read too dark, then `#f8f8f8` too close to the white canvas
+  — currently `#f1f1f1` (the midpoint between the two) with the outline
+  unchanged at `#dbdbda`.
 - [`vt-basemap-2026-city-points`](vt-basemap-2026-city-points) — VCGI's
   own city-point labels, filling the statewide/regional zoom gap where
   Esri's Living Atlas content has no Vermont-only filter. Tiered across
