@@ -91,10 +91,39 @@ the 1' contour layer.
       Local and Minor — 4 layers): `#595959` → `#bbbbbb`, Positron's
       `highway_name_other` — a much lighter tier, giving a real gap
       (~70 points) from the major-road/placename tier instead of 11.
-    - Left untouched for this pass: island labels (also `#595959`, but
-      not roads — e.g. `Water area/label/Small island`), and all other
-      categories (admin area labels, building/POI labels, railroad/ferry
-      labels) not explicitly covered by the road/placename ask.
+    - Left untouched in this pass: island labels (also `#595959`, but
+      not roads — e.g. `Water area/label/Small island`).
+  - **Third pass — admin, building, neighborhood, railroad labels**
+    (water, ferry, and open-space labels confirmed good as-is and left
+    alone):
+    - `Neighborhood` had **no explicit text-color at all** (silently
+      defaulting to black) — set to `#758191`, the same tone as
+      placenames, matching Positron's `place_other` layer (which groups
+      neighbourhoods with every other place-name tier under one color).
+    - `Building/label/Default` and `Point of interest/General`
+      (building/POI name labels — the latter's color was a zoom-stop
+      `#787878`→`#343434`, flattened in the process): both set to
+      `#758191` as well, for the same visual weight as placenames/
+      neighborhoods.
+    - `Admin0 point/*` (country-level labels, all size tiers + the
+      zoom-stop `2x large` variant, flattened) and
+      `Disputed label point/Admin0`: neutral `#3c3c3c` → `#808080` (no
+      Positron admin-point equivalent to benchmark against directly, so
+      lightened by the same ~25-point-lightness magnitude used
+      elsewhere rather than picked arbitrarily).
+    - `Admin1 area/label/*` (purple, all 6 size tiers) and
+      `Admin2 area/label/*` (tan, both tiers): hue preserved, lightness
+      raised by the same ~25 points — `#785ba6`→`#ad9cc9`,
+      `#80755f`→`#bbb3a3` — rather than flattened to gray, so the
+      distinct admin-level color-coding isn't lost.
+    - `Railroad/label/Default`: same hue-preserving lighten,
+      `#6e5d54`→`#ad9d94`. `Ferry/label/Rail ferry` shares the original
+      brown but was **not** touched, since Tim categorized railways and
+      ferries separately (railways need updating, ferries don't) even
+      though they currently share a color — they'll diverge after this.
+    - `Continent`: `#7d8287` → `#9DA9B1`, aligning with Positron's own
+      country-label tone (the same value already used for water-feature
+      label text, reused here rather than inventing a new one).
 - [`vt-basemap-2026-city-points`](vt-basemap-2026-city-points) — VCGI's
   own city-point labels, filling the statewide/regional zoom gap where
   Esri's Living Atlas content has no Vermont-only filter. Tiered across

@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "sprite": "https://www.arcgis.com/sharing/rest/content/items/8c0999ee861c4c66801b6bcb1bc0ffd6/resources/sprites/sprite-1793302440929",
+  "sprite": "https://www.arcgis.com/sharing/rest/content/items/8c0999ee861c4c66801b6bcb1bc0ffd6/resources/sprites/sprite-1794597393736",
   "glyphs": "https://basemaps.arcgis.com/arcgis/rest/services/World_Basemap_v2/VectorTileServer/resources/fonts/{fontstack}/{range}.pbf",
   "sources": {
     "esri": {
@@ -1597,7 +1597,7 @@
         "text-padding": 50
       },
       "paint": {
-        "text-color": "#6e5d54",
+        "text-color": "#ad9d94",
         "text-halo-color": "#fcfcfa",
         "text-halo-width": 1
       }
@@ -7056,7 +7056,7 @@
         "symbol-avoid-edges": true
       },
       "paint": {
-        "text-color": "#343434",
+        "text-color": "#758191",
         "text-halo-color": "#fcfcfa",
         "text-halo-width": 0.7,
         "text-halo-blur": 1
@@ -7085,18 +7085,7 @@
         "text-padding": 25
       },
       "paint": {
-        "text-color": {
-          "stops": [
-            [
-              15,
-              "#787878"
-            ],
-            [
-              16,
-              "#343434"
-            ]
-          ]
-        },
+        "text-color": "#758191",
         "text-halo-width": 0.93,
         "text-halo-color": "#fcfcfa",
         "text-halo-blur": 1
@@ -7419,7 +7408,7 @@
         "visibility": "none"
       },
       "paint": {
-        "text-color": "#80755f",
+        "text-color": "#bbb3a3",
         "text-halo-color": "#fcfcfa",
         "text-halo-width": 1.5,
         "text-halo-blur": 1
@@ -7449,7 +7438,7 @@
         "visibility": "none"
       },
       "paint": {
-        "text-color": "#80755f",
+        "text-color": "#bbb3a3",
         "text-halo-color": "#fcfcfa",
         "text-halo-width": 1.5,
         "text-halo-blur": 1
@@ -7510,7 +7499,7 @@
         "visibility": "none"
       },
       "paint": {
-        "text-color": "#785ba6",
+        "text-color": "#ad9cc9",
         "text-halo-color": "#fcfcfa",
         "text-halo-width": 1.5,
         "text-halo-blur": 1
@@ -7571,7 +7560,7 @@
         "visibility": "none"
       },
       "paint": {
-        "text-color": "#785ba6",
+        "text-color": "#ad9cc9",
         "text-halo-color": "#fcfcfa",
         "text-halo-width": 1.5,
         "text-halo-blur": 1
@@ -7632,7 +7621,7 @@
         "visibility": "none"
       },
       "paint": {
-        "text-color": "#785ba6",
+        "text-color": "#ad9cc9",
         "text-halo-color": "#fcfcfa",
         "text-halo-width": 1.5,
         "text-halo-blur": 1
@@ -7693,7 +7682,7 @@
         "visibility": "none"
       },
       "paint": {
-        "text-color": "#785ba6",
+        "text-color": "#ad9cc9",
         "text-halo-color": "#fcfcfa",
         "text-halo-width": 1.5,
         "text-halo-blur": 1
@@ -7754,7 +7743,7 @@
         "visibility": "none"
       },
       "paint": {
-        "text-color": "#785ba6",
+        "text-color": "#ad9cc9",
         "text-halo-color": "#fcfcfa",
         "text-halo-width": 1.5,
         "text-halo-blur": 1
@@ -7815,7 +7804,7 @@
         "visibility": "none"
       },
       "paint": {
-        "text-color": "#785ba6",
+        "text-color": "#ad9cc9",
         "text-halo-color": "#fcfcfa",
         "text-halo-width": 1.5,
         "text-halo-blur": 1
@@ -7857,7 +7846,8 @@
       "paint": {
         "text-halo-color": "#fcfcfa",
         "text-halo-width": 1,
-        "text-halo-blur": 1
+        "text-halo-blur": 1,
+        "text-color": "#758191"
       }
     },
     {
@@ -9200,7 +9190,7 @@
         "visibility": "none"
       },
       "paint": {
-        "text-color": "#3c3c3c",
+        "text-color": "#808080",
         "text-halo-color": "#fcfcfa",
         "text-halo-width": 2,
         "text-halo-blur": 1
@@ -9257,7 +9247,7 @@
         "visibility": "none"
       },
       "paint": {
-        "text-color": "#3c3c3c",
+        "text-color": "#808080",
         "text-halo-color": "#fcfcfa",
         "text-halo-width": 2,
         "text-halo-blur": 1
@@ -9318,7 +9308,7 @@
         "visibility": "none"
       },
       "paint": {
-        "text-color": "#3c3c3c",
+        "text-color": "#808080",
         "text-halo-color": "#fcfcfa",
         "text-halo-width": 2,
         "text-halo-blur": 1
@@ -9375,7 +9365,7 @@
         "visibility": "none"
       },
       "paint": {
-        "text-color": "#3c3c3c",
+        "text-color": "#808080",
         "text-halo-color": "#fcfcfa",
         "text-halo-width": 2,
         "text-halo-blur": 1
@@ -9433,7 +9423,7 @@
         "visibility": "none"
       },
       "paint": {
-        "text-color": "#3c3c3c",
+        "text-color": "#808080",
         "text-halo-color": "#fcfcfa",
         "text-halo-width": 2,
         "text-halo-blur": 1
@@ -9491,18 +9481,7 @@
         "visibility": "none"
       },
       "paint": {
-        "text-color": {
-          "stops": [
-            [
-              3,
-              "#505050"
-            ],
-            [
-              7,
-              "#000000"
-            ]
-          ]
-        },
+        "text-color": "#808080",
         "text-halo-color": "#fcfcfa",
         "text-halo-width": 2,
         "text-halo-blur": 1
@@ -9539,7 +9518,7 @@
         "visibility": "none"
       },
       "paint": {
-        "text-color": "#7d8287",
+        "text-color": "#9DA9B1",
         "text-halo-color": "#fcfcfa",
         "text-halo-width": 2,
         "text-halo-blur": 1
@@ -9822,7 +9801,7 @@
         "visibility": "none"
       },
       "paint": {
-        "text-color": "#3c3c3c",
+        "text-color": "#808080",
         "text-halo-color": "#fcfcfa",
         "text-halo-width": 2,
         "text-halo-blur": 1
@@ -9838,10 +9817,10 @@
         "spatialReference": {
           "wkid": 102100
         },
-        "xmin": -8460446.934581198,
-        "ymin": 5203979.000658106,
-        "xmax": -7704026.1026711315,
-        "ymax": 5609400.998682661
+        "xmin": -8128576.453027975,
+        "ymin": 5436328.457387949,
+        "xmax": -8081300.151033657,
+        "ymax": 5461667.33226445
       },
       {
         "spatialReference": {
@@ -9887,6 +9866,10 @@
         "land": "#fcfcfa"
       }
     },
-    "arcgisActiveBasemap": "1b243539f4514b6ba35e7d995890db1d"
+    "arcgisActiveBasemap": "1b243539f4514b6ba35e7d995890db1d",
+    "arcgisViewState": {
+      "is3D": false,
+      "viewpoint": null
+    }
   }
 }
