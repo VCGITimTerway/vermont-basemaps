@@ -145,9 +145,11 @@ the 1' contour layer.
     own (`paint: {}`). These are baked multi-color sprite graphics, not
     SDF icons, so `icon-color` can't recolor them directly — `icon-opacity:
     0.75` added to all 64 instead, to visually mute them in line with the
-    now-lighter major road label text. (The shield's own internal route
-    number still defaults to black, untouched — only flagged if that
-    turns out to need the same treatment.) This was also why shields
+    now-lighter major road label text. The shield's internal route
+    number (also previously an unset `paint: {}`, silently defaulting to
+    black — same gap pattern as `Neighborhood` earlier) now explicitly
+    set to `#758191` as well, matching the major road label color. This
+    was also why shields
     looked doubled/conflicting in testing: see the matching note under
     Light Roads Desat above — the features style had its own redundant,
     near-black road-name-plus-shield layers covering the same roads,
