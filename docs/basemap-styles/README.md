@@ -45,9 +45,10 @@ the 1' contour layer.
     the perpendicular tick marks) was missing entirely from this item
     (present in the base, non-desaturated Blue Water style) — re-added
     at the same lightened `#dddddd`.
-  - Buildings and the plain `Boundary line`/`Airport property` layers in
-    this style are hidden (`"visibility": "none"`) and weren't touched —
-    no visible effect either way.
+  - This style's own `Building` layer (from the same `World_Basemap_v2`
+    source, not the dedicated Buildings 2022 layer below) is hidden
+    (`"visibility": "none"`) and wasn't touched — no visible effect
+    either way.
   - **Road name/shield duplication**: this style carries its own
     `Road/label/Rectangle white black` and `.../(Alt)` layers — full
     road-name-plus-shield-icon symbol layers (text, not just an icon),
@@ -170,6 +171,18 @@ the 1' contour layer.
     alongside the others. Major/Highway/Freeway Motorway and Local-ramp
     classes were already correctly aligned or label-after-feature (the
     safe direction), and weren't touched.
+- [`buildings-2022-white-desat`](buildings-2022-white-desat) — the
+  already-separate, Desaturated-specific "Buildings 2022" item (item
+  `b9f60490ca3d4a3f8d6af6c80e4b8c96`, titled "...Buildings 2022 f8f8f8"
+  — distinct from the shared item used by Base Topo/Base, so this edit
+  only affects Desaturated). Was a two-layer drop-shadow effect: a
+  `fill-translate`-offset `#f8f8f8` fill on top of an untinted (default
+  black), `fill-opacity: 0.25` layer beneath, peeking out on one side.
+  On the desaturated basemap (no hillshade/base-color canvas beneath
+  it), that shadow read as the building's actual edge rather than a
+  subtle depth cue. Replaced with a single flat fill, Positron's own
+  building treatment: `#eaeae5` fill, `#dbdbda` outline — a simple
+  stroke instead of a shadow, kept light per the desaturated brief.
 - [`vt-basemap-2026-city-points`](vt-basemap-2026-city-points) — VCGI's
   own city-point labels, filling the statewide/regional zoom gap where
   Esri's Living Atlas content has no Vermont-only filter. Tiered across

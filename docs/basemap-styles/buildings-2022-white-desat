@@ -1,0 +1,120 @@
+{
+  "version": 8,
+  "sprite": "https://www.arcgis.com/sharing/rest/content/items/b9f60490ca3d4a3f8d6af6c80e4b8c96/resources/sprites/sprite-1794323157311",
+  "glyphs": "https://tiles.arcgis.com/tiles/BkFxaEFNwHqX3tAw/arcgis/rest/services/VECTOR_VCGI_BUILDINGS2022_WM_v1/VectorTileServer/resources/fonts/{fontstack}/{range}.pbf",
+  "sources": {
+    "esri": {
+      "type": "vector",
+      "bounds": [
+        -73.4448,
+        42.7228,
+        -71.4714,
+        45.0176
+      ],
+      "minzoom": 6,
+      "maxzoom": 19,
+      "scheme": "xyz",
+      "url": "https://tiles.arcgis.com/tiles/BkFxaEFNwHqX3tAw/arcgis/rest/services/VECTOR_VCGI_BUILDINGS2022_WM_v1/VectorTileServer",
+      "tiles": [
+        "https://tiles.arcgis.com/tiles/BkFxaEFNwHqX3tAw/arcgis/rest/services/VECTOR_VCGI_BUILDINGS2022_WM_v1/VectorTileServer/tile/{z}/{y}/{x}.pbf"
+      ]
+    }
+  },
+  "layers": [
+    {
+      "id": "LandLandcov_Buildings2022_poly/1",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "LandLandcov_Buildings2022_poly",
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "#eaeae5",
+        "fill-outline-color": "#dbdbda"
+      },
+      "showProperties": false
+    }
+  ],
+  "metadata": {
+    "arcgisStyleUrl": "https://www.arcgis.com/sharing/rest/content/items/b9f60490ca3d4a3f8d6af6c80e4b8c96/resources/styles/root.json",
+    "arcgisOriginalItemTitle": "VT Basemap - Vermont Physical Geography - Vector Tile Layer - Buildings 2022 f8f8f8",
+    "arcgisQuickEditorWarning": true,
+    "arcgisEditorExtents": [
+      {
+        "spatialReference": {
+          "wkid": 102100
+        },
+        "xmin": -8150259.82909007,
+        "ymin": 5538322.440620649,
+        "xmax": -8148985.480509095,
+        "ymax": 5539213.409731622
+      },
+      {
+        "spatialReference": {
+          "latestWkid": 3857,
+          "wkid": 102100,
+          "falseM": -100000,
+          "falseX": -20037700,
+          "falseY": -30241100,
+          "falseZ": -100000,
+          "mTolerance": 0.001,
+          "mUnits": 10000,
+          "xyTolerance": 0.001,
+          "xyUnits": 10000,
+          "zTolerance": 0.001,
+          "zUnits": 10000
+        },
+        "xmin": -13814922.744146012,
+        "ymin": -10935935.284227662,
+        "xmax": 13814922.744146012,
+        "ymax": 10980089.465692356
+      },
+      {
+        "spatialReference": {
+          "latestWkid": 3857,
+          "wkid": 102100,
+          "falseM": -100000,
+          "falseX": -20037700,
+          "falseY": -30241100,
+          "falseZ": -100000,
+          "mTolerance": 0.001,
+          "mUnits": 10000,
+          "xyTolerance": 0.001,
+          "xyUnits": 10000,
+          "zTolerance": 0.001,
+          "zUnits": 10000
+        },
+        "xmin": -8151624.014615384,
+        "ymin": 5536663.75964946,
+        "xmax": -8144878.446869227,
+        "ymax": 5542014.351629415
+      },
+      {
+        "spatialReference": {
+          "latestWkid": 3857,
+          "wkid": 102100,
+          "falseM": -100000,
+          "falseX": -20037700,
+          "falseY": -30241100,
+          "falseZ": -100000,
+          "mTolerance": 0.001,
+          "mUnits": 10000,
+          "xyTolerance": 0.001,
+          "xyUnits": 10000,
+          "zTolerance": 0.001,
+          "zUnits": 10000
+        },
+        "xmin": -13814922.744146012,
+        "ymin": -10935935.284227662,
+        "xmax": 13814922.744146012,
+        "ymax": 10980089.465692356
+      }
+    ],
+    "arcgisMinimapVisibility": true,
+    "arcgisViewState": {
+      "is3D": false,
+      "viewpoint": null
+    }
+  }
+}
