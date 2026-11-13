@@ -41,7 +41,7 @@ Three groups:
 | 2 | Golf Courses — VT E911 Other Mapped Features of Interest | same FeatureServer | On | 0.75 | |
 | 3 | Quarries — VT E911 Other Mapped Features of Interest | same FeatureServer | On | 0.41 | |
 | 4 | 1ft Lidar Contours — "COPY - Dark Olive" | Vector tile (Esri VT style copy, not a desaturated variant) | On | 0.25 | |
-| 5 | Human Geography Detail — Blue Water **Light Roads Desat** | Esri Living Atlas vector tile, VCGI-styled | On | — | Water fill/line desaturated to `#c2c8ca` (Positron-derived) — see [style file](../../basemap-styles/human-geography-detail-blue-water-light-roads-desat) |
+| 5 | Human Geography Detail — Blue Water **Light Roads Desat** | Esri Living Atlas vector tile, VCGI-styled | On | — | Water, road casings, trails, and railroad all lightened against Positron-benchmarked values — see [style file](../../basemap-styles/human-geography-detail-blue-water-light-roads-desat) |
 | 6 | Vermont Significant Wetlands Inventory | [AGOL hosted feature layer](https://services5.arcgis.com/Uzks6LSde6r23wwG/arcgis/rest/services/Vermont_Significant_Wetland_Inventory/FeatureServer/0) | Off | 0.75 | Symbol color set to `#5eabc4` (hue preserved from the original `#00AEEF`, saturation roughly halved) — a deliberate exception to the otherwise near-monochrome palette, since wetlands are a regulatory/thematic feature where losing the color cue would reduce usability |
 | 7 | Buildings 2022 (White) | Vector tile ("White" style variant, not a desaturated variant) | Off | — | Scale range 1:25,617–1:153 when on |
 | 8 | VT Data — E911 Alpine Ski Lifts | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_ALPINELIFTS_line_SP_v1/FeatureServer/0) | Off | — | |

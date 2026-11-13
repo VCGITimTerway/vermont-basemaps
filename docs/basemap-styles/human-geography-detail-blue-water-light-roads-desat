@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "sprite": "https://www.arcgis.com/sharing/rest/content/items/8a67a669155d4e67b53527bab6d40f5c/resources/sprites/sprite-1790713759527",
+  "sprite": "https://www.arcgis.com/sharing/rest/content/items/bb6f7b84a0244a75909cff78f2883e6c/resources/sprites/sprite-1794593334991",
   "glyphs": "https://basemaps.arcgis.com/arcgis/rest/services/World_Basemap_v2/VectorTileServer/resources/fonts/{fontstack}/{range}.pbf",
   "sources": {
     "esri": {
@@ -998,19 +998,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": {
-          "base": 1,
-          "stops": [
-            [
-              14,
-              "#999999"
-            ],
-            [
-              15,
-              "#505050"
-            ]
-          ]
-        },
+        "line-color": "#d5d5d5",
         "line-width": {
           "base": 1.2,
           "stops": [
@@ -3379,8 +3367,8 @@
     }
   ],
   "metadata": {
-    "arcgisStyleUrl": "https://www.arcgis.com/sharing/rest/content/items/8a67a669155d4e67b53527bab6d40f5c/resources/styles/root.json",
-    "arcgisOriginalItemTitle": "VT Basemap - Vermont Physical Geography Light - Human Geography Detail - Blue Water Desaturated",
+    "arcgisStyleUrl": "https://www.arcgis.com/sharing/rest/content/items/bb6f7b84a0244a75909cff78f2883e6c/resources/styles/root.json",
+    "arcgisOriginalItemTitle": "VT Basemap - Vermont Physical Geography Light - Human Geography Detail - Blue Water Light Roads DESAT",
     "arcgisQuickEditor": {
       "land": "#808082",
       "water": "#ddeff4",
@@ -3404,42 +3392,46 @@
         "spatialReference": {
           "wkid": 102100
         },
-        "xmin": -62554840.97003527,
-        "ymin": -23747934.46424162,
-        "xmax": 46320839.12688883,
-        "ymax": 34642617.190902434
+        "xmin": -8478638.586300576,
+        "ymin": 5265088.688036614,
+        "xmax": -7722217.754390674,
+        "ymax": 5670510.6860610815
       },
       {
         "spatialReference": {
           "latestWkid": 3857,
           "wkid": 102100
         },
-        "xmin": -410333.69660541334,
-        "ymin": 6530005.872046205,
-        "xmax": 153465.82402589684,
-        "ymax": 6872443.7587637035
+        "xmin": -8246352.088286504,
+        "ymin": 5287751.288355854,
+        "xmax": -7995638.635511193,
+        "ymax": 5436956.367568479
       },
       {
         "spatialReference": {
           "latestWkid": 3857,
           "wkid": 102100
         },
-        "xmin": -8600300.221741656,
-        "ymin": 4694679.739100283,
-        "xmax": -8565062.751702176,
-        "ymax": 4716082.10702014
+        "xmin": -8614020.668318823,
+        "ymin": 4686730.2881586375,
+        "xmax": -8551342.30512501,
+        "ymax": 4724031.557961785
       },
       {
         "spatialReference": {
           "latestWkid": 3857,
           "wkid": 102100
         },
-        "xmin": 16831993.734221157,
-        "ymin": -4011837.102318151,
-        "xmax": 16832544.319690537,
-        "ymax": -4011502.6903193947
+        "xmin": 16831779.352243382,
+        "ymin": -4011961.3124891175,
+        "xmax": 16832758.70166831,
+        "ymax": -4011378.480148428
       }
     ],
-    "arcgisMinimapVisibility": true
+    "arcgisMinimapVisibility": true,
+    "arcgisViewState": {
+      "is3D": false,
+      "viewpoint": null
+    }
   }
 }
