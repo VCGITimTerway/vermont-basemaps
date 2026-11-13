@@ -1,0 +1,222 @@
+{
+  "version": 8,
+  "sprite": "https://www.arcgis.com/sharing/rest/content/items/a58653bb5d8947b0909ccbdec1cb463f/resources/sprites/sprite-1793194414591",
+  "glyphs": "https://vectortileservices1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/VT_Basemap_2026_City_Points_WM/VectorTileServer/resources/fonts/{fontstack}/{range}.pbf",
+  "sources": {
+    "VT_Basemap_2026_City_Points_WM": {
+      "type": "vector",
+      "bounds": [
+        -73.254,
+        42.8627,
+        -71.8854,
+        44.9375
+      ],
+      "minzoom": 0,
+      "maxzoom": 10,
+      "scheme": "xyz",
+      "url": "https://vectortileservices1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/VT_Basemap_2026_City_Points_WM/VectorTileServer",
+      "tiles": [
+        "https://vectortileservices1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/VT_Basemap_2026_City_Points_WM/VectorTileServer/tile/{z}/{y}/{x}.pbf"
+      ]
+    }
+  },
+  "layers": [
+    {
+      "id": "VT Basemap 2026 City Points WM",
+      "type": "circle",
+      "source": "VT_Basemap_2026_City_Points_WM",
+      "source-layer": "VT Basemap 2026 City Points WM",
+      "maxzoom": 10,
+      "filter": [
+        "in",
+        "_name",
+        "Burlington",
+        "Montpelier",
+        "Rutland",
+        "Bennington"
+      ],
+      "layout": {},
+      "paint": {
+        "circle-radius": 2.4,
+        "circle-color": "#FFFFFF",
+        "circle-stroke-color": "#4E4E4E",
+        "circle-stroke-width": 0.533333
+      }
+    },
+    {
+      "id": "VT Basemap 2026 City Points WM/label/Default",
+      "type": "symbol",
+      "source": "VT_Basemap_2026_City_Points_WM",
+      "source-layer": "VT Basemap 2026 City Points WM",
+      "maxzoom": 10,
+      "filter": [
+        "in",
+        "_name",
+        "Burlington",
+        "Montpelier",
+        "Rutland",
+        "Bennington"
+      ],
+      "layout": {
+        "text-font": [
+          "Arial Regular"
+        ],
+        "text-size": 10.6667,
+        "text-anchor": "bottom-left",
+        "text-justify": "left",
+        "text-offset": [
+          0.275,
+          0.025
+        ],
+        "text-field": "{_name}",
+        "text-optional": true
+      },
+      "paint": {
+        "text-color": "#758191",
+        "text-halo-color": "#FCFCFA",
+        "text-halo-width": 1.33333
+      }
+    },
+    {
+      "id": "VT Basemap 2026 City Points WM/regional",
+      "type": "circle",
+      "source": "VT_Basemap_2026_City_Points_WM",
+      "source-layer": "VT Basemap 2026 City Points WM",
+      "maxzoom": 10,
+      "filter": [
+        "in",
+        "_name",
+        "Barre",
+        "Brattleboro",
+        "Saint Albans",
+        "Saint Johnsbury"
+      ],
+      "layout": {},
+      "paint": {
+        "circle-radius": 2.4,
+        "circle-color": "#FFFFFF",
+        "circle-stroke-color": "#4E4E4E",
+        "circle-stroke-width": 0.533333
+      },
+      "minzoom": 7
+    },
+    {
+      "id": "VT Basemap 2026 City Points WM/label/Regional",
+      "type": "symbol",
+      "source": "VT_Basemap_2026_City_Points_WM",
+      "source-layer": "VT Basemap 2026 City Points WM",
+      "maxzoom": 10,
+      "filter": [
+        "in",
+        "_name",
+        "Barre",
+        "Brattleboro",
+        "Saint Albans",
+        "Saint Johnsbury"
+      ],
+      "layout": {
+        "text-font": [
+          "Arial Regular"
+        ],
+        "text-size": 10.6667,
+        "text-anchor": "bottom-left",
+        "text-justify": "left",
+        "text-offset": [
+          0.275,
+          0.025
+        ],
+        "text-field": "{_name}",
+        "text-optional": true
+      },
+      "paint": {
+        "text-color": "#758191",
+        "text-halo-color": "#FCFCFA",
+        "text-halo-width": 1.33333
+      },
+      "minzoom": 7
+    },
+    {
+      "id": "VT Basemap 2026 City Points WM/other",
+      "type": "circle",
+      "source": "VT_Basemap_2026_City_Points_WM",
+      "source-layer": "VT Basemap 2026 City Points WM",
+      "maxzoom": 10,
+      "filter": [
+        "in",
+        "_name",
+        "Island Pond",
+        "Manchester",
+        "Middlebury",
+        "Newport",
+        "Springfield",
+        "Vergennes",
+        "Wallingford",
+        "White River Junction"
+      ],
+      "layout": {},
+      "paint": {
+        "circle-radius": 2.4,
+        "circle-color": "#FFFFFF",
+        "circle-stroke-color": "#4E4E4E",
+        "circle-stroke-width": 0.533333
+      },
+      "minzoom": 8
+    },
+    {
+      "id": "VT Basemap 2026 City Points WM/label/Other",
+      "type": "symbol",
+      "source": "VT_Basemap_2026_City_Points_WM",
+      "source-layer": "VT Basemap 2026 City Points WM",
+      "maxzoom": 10,
+      "filter": [
+        "in",
+        "_name",
+        "Island Pond",
+        "Manchester",
+        "Middlebury",
+        "Newport",
+        "Springfield",
+        "Vergennes",
+        "Wallingford",
+        "White River Junction"
+      ],
+      "layout": {
+        "text-font": [
+          "Arial Regular"
+        ],
+        "text-size": 10.6667,
+        "text-anchor": "bottom-left",
+        "text-justify": "left",
+        "text-offset": [
+          0.275,
+          0.025
+        ],
+        "text-field": "{_name}",
+        "text-optional": true
+      },
+      "paint": {
+        "text-color": "#758191",
+        "text-halo-color": "#FCFCFA",
+        "text-halo-width": 1.33333
+      },
+      "minzoom": 8
+    }
+  ],
+  "metadata": {
+    "arcgisStyleUrl": "https://vectortileservices1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/VT_Basemap_2026_City_Points_WM/VectorTileServer/resources/styles/root.json",
+    "arcgisOriginalItemTitle": "VT Basemap 2026 City Points WM",
+    "arcgisEditorExtents": [
+      {
+        "spatialReference": {
+          "latestWkid": 3857,
+          "wkid": 102100
+        },
+        "xmin": -8743945.645966861,
+        "ymin": 4964796.636486685,
+        "xmax": -7231103.982147055,
+        "ymax": 6078942.760771118
+      }
+    ],
+    "arcgisMinimapVisibility": false
+  }
+}

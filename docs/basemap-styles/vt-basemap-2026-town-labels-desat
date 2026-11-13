@@ -1,0 +1,150 @@
+{
+  "version": 8,
+  "sprite": "https://www.arcgis.com/sharing/rest/content/items/04faa79cda0446759b7024bb9b46e3ff/resources/sprites/sprite-1793219228275",
+  "glyphs": "https://vectortileservices1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/Town_Labels/VectorTileServer/resources/fonts/{fontstack}/{range}.pbf",
+  "sources": {
+    "Town_Labels": {
+      "type": "vector",
+      "bounds": [
+        -73.4542,
+        42.7226,
+        -71.4654,
+        45.0184
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "scheme": "xyz",
+      "url": "https://vectortileservices1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/Town_Labels/VectorTileServer",
+      "tiles": [
+        "https://vectortileservices1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/Town_Labels/VectorTileServer/tile/{z}/{y}/{x}.pbf"
+      ]
+    }
+  },
+  "layers": [
+    {
+      "id": "Town Labels/1",
+      "type": "fill",
+      "source": "Town_Labels",
+      "source-layer": "Town Labels",
+      "layout": {},
+      "paint": {
+        "fill-color": "rgba(179,252,194,0)"
+      }
+    },
+    {
+      "id": "Town Labels/label/Class 1",
+      "type": "symbol",
+      "source": "Town_Labels",
+      "source-layer": "Town Labels/label",
+      "minzoom": 8.7231,
+      "maxzoom": 10.9455,
+      "filter": [
+        "!in",
+        "_name",
+        "BELVIDERE",
+        "EDEN",
+        "BURLINGTON",
+        "WINOOSKI",
+        "ESSEX JUNCTION",
+        "ALBANY",
+        "HOLLAND",
+        "NEWPORT CITY",
+        "HARDWICK",
+        "JOHNSON",
+        "MONTPELIER",
+        "HINESBURG",
+        "RICHMOND",
+        "WATERBURY",
+        "RANDOLPH",
+        "TUNBRIDGE",
+        "BRISTOL",
+        "MIDDLEBURY",
+        "ROCHESTER",
+        "BRANDON",
+        "HARTLAND",
+        "POULTNEY",
+        "LUDLOW",
+        "LONDONDERRY",
+        "MANCHESTER",
+        "ARLINGTON",
+        "WILMINGTON",
+        "BRATTLEBORO",
+        "SEARSBURG",
+        "BENNINGTON",
+        "VERGENNES",
+        "WAITSFIELD",
+        "MORGAN",
+        "TOPSHAM",
+        "WEST FAIRLEE",
+        "DORSET",
+        "WOODSTOCK",
+        "BROOKLINE",
+        "WOODFORD",
+        "GLASTENBURY",
+        "DUMMERSTON",
+        "MOUNT TABOR",
+        "RUTLAND CITY",
+        "SALISBURY",
+        "CAVENDISH",
+        "SPRINGFIELD",
+        "SUNDERLAND",
+        "PITTSFORD",
+        "SOMERSET",
+        "JAMAICA",
+        "SHOREHAM",
+        "FAIRLEE",
+        "RIPTON",
+        "STARKSBORO",
+        "WILLIAMSTOWN",
+        "BRADFORD",
+        "RYEGATE",
+        "NORTHFIELD",
+        "CRAFTSBURY",
+        "HUNTINGTON",
+        "JERICHO",
+        "PEACHAM",
+        "LYNDON",
+        "BLOOMFIELD",
+        "GRANBY",
+        "CHARLESTON",
+        "BARTON",
+        "FERDINAND",
+        "DANVILLE",
+        "SAINT JOHNSBURY",
+        "SWANTON",
+        "WOLCOTT",
+        "LEMINGTON",
+        "WORCESTER"
+      ],
+      "layout": {
+        "text-font": [
+          "Arial Regular"
+        ],
+        "text-size": 10,
+        "text-field": "{_name}",
+        "text-optional": true
+      },
+      "paint": {
+        "text-color": "#758191",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 1.33333
+      }
+    }
+  ],
+  "metadata": {
+    "arcgisStyleUrl": "https://www.arcgis.com/sharing/rest/content/items/04faa79cda0446759b7024bb9b46e3ff/resources/styles/root.json",
+    "arcgisOriginalItemTitle": "VT Basemap 2026 Town Labels Manual Deconflict",
+    "arcgisEditorExtents": [
+      {
+        "spatialReference": {
+          "wkid": 102100
+        },
+        "xmin": -8205453.093830627,
+        "ymin": 5357547.883056501,
+        "xmax": -8016347.885853193,
+        "ymax": 5496816.148592025
+      }
+    ],
+    "arcgisMinimapVisibility": false
+  }
+}

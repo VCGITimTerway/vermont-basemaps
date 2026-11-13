@@ -185,6 +185,21 @@ the 1' contour layer.
   `#eaeae5` read too dark, then `#f8f8f8` too close to the white canvas
   — currently `#f1f1f1` (the midpoint between the two) with the outline
   unchanged at `#dbdbda`.
+- [`vt-basemap-2026-town-labels-desat`](vt-basemap-2026-town-labels-desat)
+  and [`vt-basemap-2026-city-points-desat`](vt-basemap-2026-city-points-desat) —
+  candidate Desaturated-specific copies of **VT Basemap 2026 Town Labels
+  Manual Deconflict** (item `04faa79cda0446759b7024bb9b46e3ff`) and
+  **VT Basemap 2026 City Points WM - Levels 6 7 8** (item
+  `a58653bb5d8947b0909ccbdec1cb463f`) — confirmed **currently shared**
+  between the Desaturated, Base Topo, and Base configurations (same item
+  IDs in all three), unlike Buildings 2022 above. Label text color
+  lightened `#505050` → `#758191` (matching `Neighborhood`'s color, per
+  request) in both — all 3 City Points tiers (Default/Regional/Other)
+  and the single Town Labels layer. Only text color was touched; the
+  City Points circle marker's own stroke (`#4E4E4E`) wasn't part of the
+  ask and was left alone. **These need a Save As into new items** before
+  use — pasting directly into the existing shared items would also
+  lighten labels on Base Topo and Base, which isn't wanted.
 - [`vt-basemap-2026-city-points`](vt-basemap-2026-city-points) — VCGI's
   own city-point labels, filling the statewide/regional zoom gap where
   Esri's Living Atlas content has no Vermont-only filter. Tiered across
