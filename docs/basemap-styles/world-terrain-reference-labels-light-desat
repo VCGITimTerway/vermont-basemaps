@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "sprite": "https://www.arcgis.com/sharing/rest/content/items/8c0999ee861c4c66801b6bcb1bc0ffd6/resources/sprites/sprite-1794599427180",
+  "sprite": "https://www.arcgis.com/sharing/rest/content/items/8c0999ee861c4c66801b6bcb1bc0ffd6/resources/sprites/sprite-1794599582538",
   "glyphs": "https://basemaps.arcgis.com/arcgis/rest/services/World_Basemap_v2/VectorTileServer/resources/fonts/{fontstack}/{range}.pbf",
   "sources": {
     "esri": {
@@ -1680,7 +1680,7 @@
           3
         ]
       ],
-      "minzoom": 12,
+      "minzoom": 13,
       "layout": {
         "symbol-placement": "line",
         "symbol-avoid-edges": true,
@@ -1717,7 +1717,7 @@
           3
         ]
       ],
-      "minzoom": 10,
+      "minzoom": 12,
       "layout": {
         "symbol-placement": "line",
         "symbol-avoid-edges": true,
@@ -7301,7 +7301,7 @@
           3
         ]
       ],
-      "minzoom": 12,
+      "minzoom": 15,
       "layout": {
         "symbol-placement": "line",
         "symbol-avoid-edges": true,
@@ -7337,7 +7337,7 @@
           3
         ]
       ],
-      "minzoom": 12,
+      "minzoom": 13,
       "layout": {
         "symbol-placement": "line",
         "symbol-avoid-edges": true,
@@ -7374,7 +7374,7 @@
           3
         ]
       ],
-      "minzoom": 11,
+      "minzoom": 12,
       "layout": {
         "symbol-placement": "line",
         "symbol-avoid-edges": true,

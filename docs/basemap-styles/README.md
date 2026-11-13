@@ -154,6 +154,22 @@ the 1' contour layer.
     Light Roads Desat above — the features style had its own redundant,
     near-black road-name-plus-shield layers covering the same roads,
     now hidden there so only this style's shields render.
+  - **Sixth pass — label/feature zoom mismatch**: several road-class
+    labels had a lower `minzoom` than the matching line layer in Light
+    Roads Desat, so the name appeared one (or more) zoom levels before
+    the road itself was visible — confirmed by comparing both styles'
+    `minzoom` directly rather than guessing: `Road/label/Minor`
+    (11→12), `Road/label/Local` (12→13), `Road tunnel/label/Minor`
+    (10→12), `Road tunnel/label/Local, service, 4WD` (12→13, a
+    three-class combined label layer — this only exactly matches two of
+    the three feature classes it covers, `Local` and `4WD`, since
+    `Service` tunnels start one level later still at 14; splitting the
+    label layer to match all three exactly wasn't attempted here).
+    `Road/label/Pedestrian` was off by **three** levels (12 vs. feature
+    minzoom 15) — not one of the examples given, but the same bug, fixed
+    alongside the others. Major/Highway/Freeway Motorway and Local-ramp
+    classes were already correctly aligned or label-after-feature (the
+    safe direction), and weren't touched.
 - [`vt-basemap-2026-city-points`](vt-basemap-2026-city-points) — VCGI's
   own city-point labels, filling the statewide/regional zoom gap where
   Esri's Living Atlas content has no Vermont-only filter. Tiered across
