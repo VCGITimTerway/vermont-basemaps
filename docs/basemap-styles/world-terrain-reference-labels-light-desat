@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "sprite": "https://www.arcgis.com/sharing/rest/content/items/8c0999ee861c4c66801b6bcb1bc0ffd6/resources/sprites/sprite-1794598110842",
+  "sprite": "https://www.arcgis.com/sharing/rest/content/items/8c0999ee861c4c66801b6bcb1bc0ffd6/resources/sprites/sprite-1794598537776",
   "glyphs": "https://basemaps.arcgis.com/arcgis/rest/services/World_Basemap_v2/VectorTileServer/resources/fonts/{fontstack}/{range}.pbf",
   "sources": {
     "esri": {
@@ -2250,7 +2250,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/U-shaped yellow black",
@@ -2291,7 +2293,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/U-shaped red white (Alt)",
@@ -2331,7 +2335,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/U-shaped red white",
@@ -2371,7 +2377,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/U-shaped blue white (Alt)",
@@ -2412,7 +2420,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/U-shaped blue white",
@@ -2453,7 +2463,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/V-shaped white black (Alt)",
@@ -2493,7 +2505,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/V-shaped white black",
@@ -2533,7 +2547,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/U-shaped white black (Alt)",
@@ -2574,7 +2590,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/U-shaped white black",
@@ -2615,7 +2633,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/U-shaped white green (Alt)",
@@ -2656,7 +2676,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/U-shaped white green",
@@ -2697,7 +2719,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/U-shaped green leaf (Alt)",
@@ -2738,7 +2762,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/U-shaped green leaf",
@@ -2779,7 +2805,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Rectangle yellow black (Alt)",
@@ -2820,7 +2848,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Rectangle yellow black",
@@ -2861,7 +2891,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Rectangle red white (Alt)",
@@ -2902,7 +2934,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Rectangle red white",
@@ -2943,7 +2977,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Rectangle blue white (Alt)",
@@ -2983,7 +3019,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Rectangle blue white",
@@ -3023,7 +3061,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Rectangle green white (Alt)",
@@ -3064,7 +3104,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Rectangle green white",
@@ -3105,7 +3147,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Rectangle green yellow (Alt)",
@@ -3145,7 +3189,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Rectangle green yellow",
@@ -3185,7 +3231,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Pentagon inverse white black (Alt)",
@@ -3225,7 +3273,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Pentagon inverse white black",
@@ -3265,7 +3315,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Pentagon white black (Alt)",
@@ -3305,7 +3357,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Pentagon white black",
@@ -3345,7 +3399,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Pentagon yellow black (Alt)",
@@ -3385,7 +3441,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Pentagon yellow black",
@@ -3425,7 +3483,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Pentagon green white",
@@ -3465,7 +3525,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Pentagon green white (Alt)",
@@ -3505,7 +3567,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Pentagon green yellow",
@@ -3545,7 +3609,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Pentagon green yellow (Alt)",
@@ -3585,7 +3651,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Pentagon blue white (Alt)",
@@ -3625,7 +3693,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Pentagon blue white",
@@ -3665,7 +3735,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Hexagon white black (Alt)",
@@ -3705,7 +3777,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Hexagon white black",
@@ -3745,7 +3819,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Hexagon blue white",
@@ -3785,7 +3861,9 @@
         ],
         "text-padding": 5
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Hexagon blue white (Alt)",
@@ -3825,7 +3903,9 @@
         ],
         "text-padding": 5
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Hexagon red white",
@@ -3865,7 +3945,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Hexagon red white (Alt)",
@@ -3905,7 +3987,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Hexagon green white (Alt)",
@@ -3945,7 +4029,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Hexagon green white",
@@ -3985,7 +4071,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Hexagon orange black",
@@ -4025,7 +4113,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Hexagon orange black (Alt)",
@@ -4065,7 +4155,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Rectangle hexagon blue white (Alt)",
@@ -4106,7 +4198,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Rectangle hexagon blue white",
@@ -4146,7 +4240,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Rectangle hexagon red white (Alt)",
@@ -4186,7 +4282,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Rectangle hexagon red white",
@@ -4226,7 +4324,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Rectangle hexagon green white (Alt)",
@@ -4266,7 +4366,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Rectangle hexagon green white",
@@ -4306,7 +4408,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Rectangle hexagon brown white (Alt)",
@@ -4346,7 +4450,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Rectangle hexagon brown white",
@@ -4386,7 +4492,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Octagon green white (Alt)",
@@ -4426,7 +4534,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Octagon green white",
@@ -4466,7 +4576,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Shield white black (Alt)",
@@ -4506,7 +4618,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Shield white black",
@@ -4546,7 +4660,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Secondary Hwy green white (Alt)",
@@ -4586,7 +4702,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Secondary Hwy green white",
@@ -4626,7 +4744,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Secondary Hwy white black (Alt)",
@@ -4667,7 +4787,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Secondary Hwy white black",
@@ -4707,7 +4829,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Shield blue white (Alt)",
@@ -4747,7 +4871,9 @@
         ],
         "text-padding": 25
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Road/label/Shield blue white",
@@ -4802,7 +4928,9 @@
           ]
         }
       },
-      "paint": {}
+      "paint": {
+        "icon-opacity": 0.75
+      }
     },
     {
       "id": "Ocean point/Depth",
@@ -9817,10 +9945,10 @@
         "spatialReference": {
           "wkid": 102100
         },
-        "xmin": -8151294.894458353,
-        "ymin": 5535727.391205251,
-        "xmax": -8149817.510021153,
-        "ymax": 5536519.231045077
+        "xmin": -8152121.847587364,
+        "ymin": 5535320.722328248,
+        "xmax": -8149167.078712637,
+        "ymax": 5536904.402008074
       },
       {
         "spatialReference": {

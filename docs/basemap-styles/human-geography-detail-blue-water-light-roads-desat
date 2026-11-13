@@ -2921,7 +2921,8 @@
           0,
           0.2
         ],
-        "text-padding": 20
+        "text-padding": 20,
+        "visibility": "none"
       },
       "paint": {
         "text-color": "#000003"
@@ -3020,7 +3021,8 @@
           0,
           0.2
         ],
-        "text-padding": 20
+        "text-padding": 20,
+        "visibility": "none"
       },
       "paint": {
         "text-color": "#000003"

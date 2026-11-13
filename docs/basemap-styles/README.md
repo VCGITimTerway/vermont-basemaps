@@ -48,6 +48,14 @@ the 1' contour layer.
   - Buildings and the plain `Boundary line`/`Airport property` layers in
     this style are hidden (`"visibility": "none"`) and weren't touched —
     no visible effect either way.
+  - **Road name/shield duplication**: this style carries its own
+    `Road/label/Rectangle white black` and `.../(Alt)` layers — full
+    road-name-plus-shield-icon symbol layers (text, not just an icon),
+    rendered at near-black `#000003`, covering the exact same
+    `_label_class` range as the proper shield system in the Labels Desat
+    style below. Both hidden (`"visibility": "none"`) so road names/
+    shields render once, from the Labels style only, not twice at
+    conflicting darkness.
 - [`world-terrain-reference-labels-light`](world-terrain-reference-labels-light) —
   styled copy of Esri's World Terrain Reference Labels item
   (`World_Basemap_v2`), with placename and spot-elevation text muted to
@@ -129,6 +137,21 @@ the 1' contour layer.
     touched by the earlier open-space exclusion decision — hue-preserved
     lighten to `#b6bcad`. `Pedestrian/label/Default` currently shares the
     original `#778069` but was left alone since only trails were flagged.
+  - **Fifth pass — road shield icons**: this style's own road-name
+    layers (64 `Road/label/<Shape> <color>` variants — U-shaped,
+    Rectangle, Pentagon, Hexagon, Octagon, Shield, Secondary Hwy, each
+    with a `(Alt)` counterpart) render a highway-shield sprite via
+    `icon-image` per road system/class, with no paint overrides of their
+    own (`paint: {}`). These are baked multi-color sprite graphics, not
+    SDF icons, so `icon-color` can't recolor them directly — `icon-opacity:
+    0.75` added to all 64 instead, to visually mute them in line with the
+    now-lighter major road label text. (The shield's own internal route
+    number still defaults to black, untouched — only flagged if that
+    turns out to need the same treatment.) This was also why shields
+    looked doubled/conflicting in testing: see the matching note under
+    Light Roads Desat above — the features style had its own redundant,
+    near-black road-name-plus-shield layers covering the same roads,
+    now hidden there so only this style's shields render.
 - [`vt-basemap-2026-city-points`](vt-basemap-2026-city-points) — VCGI's
   own city-point labels, filling the statewide/regional zoom gap where
   Esri's Living Atlas content has no Vermont-only filter. Tiered across
