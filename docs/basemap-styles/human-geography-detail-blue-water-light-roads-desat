@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "sprite": "https://www.arcgis.com/sharing/rest/content/items/bb6f7b84a0244a75909cff78f2883e6c/resources/sprites/sprite-1794593334991",
+  "sprite": "https://www.arcgis.com/sharing/rest/content/items/bb6f7b84a0244a75909cff78f2883e6c/resources/sprites/sprite-1794593681014",
   "glyphs": "https://basemaps.arcgis.com/arcgis/rest/services/World_Basemap_v2/VectorTileServer/resources/fonts/{fontstack}/{range}.pbf",
   "sources": {
     "esri": {
@@ -889,6 +889,24 @@
         },
         "line-color": "#ffffff"
       }
+    },
+    {
+      "id": "Railroad/ties",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "Railroad",
+      "layout": {
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#dddddd",
+        "line-width": 5,
+        "line-dasharray": [
+          0.2,
+          2
+        ]
+      },
+      "minzoom": 15
     },
     {
       "id": "Railroad",

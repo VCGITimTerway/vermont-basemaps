@@ -30,13 +30,21 @@ the 1' contour layer.
     tier road colors by class the way the Imagery variant does):
     lightened from `#505050` to `#d5d5d5`, matching Positron's
     `highway_major_casing`/`highway_motorway_casing`
-    (`rgb(213, 213, 213)`) almost exactly.
+    (`rgb(213, 213, 213)`) almost exactly. One layer (`Road/Service/1`)
+    initially missed this pass since its color was a zoom-stop
+    expression (`#999999`→`#505050`), not a flat string — caught and
+    flattened to `#d5d5d5` in a follow-up fix.
   - **Trails and pedestrian-road casings** (`Trail or path/1`,
     `Road/Pedestrian/1`): lightened from `#8c8c8c` to `#eaeaea`,
     matching Positron's `highway_path` (`rgb(234, 234, 234)`) — Positron
     keeps paths lighter than roads, mirrored here.
-  - **Railroad**: lightened from `#c8c8c8` to `#dddddd`, matching
-    Positron's `railway` color exactly.
+  - **Railroad**: base line lightened from `#c8c8c8` to `#dddddd`,
+    matching Positron's `railway` color exactly. The cross-tie overlay
+    (`Railroad/ties` — a second line layer, same source, width 5 with a
+    tight `[0.2, 2]` dasharray drawn under the thin base line, creating
+    the perpendicular tick marks) was missing entirely from this item
+    (present in the base, non-desaturated Blue Water style) — re-added
+    at the same lightened `#dddddd`.
   - Buildings and the plain `Boundary line`/`Airport property` layers in
     this style are hidden (`"visibility": "none"`) and weren't touched —
     no visible effect either way.
@@ -63,6 +71,30 @@ the 1' contour layer.
   everywhere else in this style, since a blue-tinted halo would have
   undercut the desaturation. Non-blue water labels (islands, playas,
   dams/weirs — already neutral gray) were left unchanged.
+  - **Road/placename contrast and hierarchy** (second pass, benchmarked
+    against Positron's `highway_name_motorway`/`place_*`/
+    `highway_name_other` layers): Positron keeps overall label contrast
+    lower than ours and gives major roads and placenames the same
+    darker tone, with minor/local road labels notably lighter — not
+    something we had before (major vs. minor road labels only differed
+    by `#4e4e4e` vs. `#595959`, an 11-point gap, both quite dark).
+    - **Placenames, landform names, and spot elevations** (38 layers —
+      every `City large/small scale`, `Landform/label/*`, and `Spot
+      elevation` layer): `#505050` → `#758191`, Positron's exact
+      `place_*` text color.
+    - **Major road labels** (`Road`/`Road tunnel` label layers for
+      Major, Highway, Freeway Motorway, and their alt-name variants —
+      10 layers): `#4e4e4e` → `#758191`, matching Positron's
+      `highway_name_motorway` — which uses the identical color to its
+      place labels, mirrored here.
+    - **Minor/local road labels** (`Road`/`Road tunnel` label layers for
+      Local and Minor — 4 layers): `#595959` → `#bbbbbb`, Positron's
+      `highway_name_other` — a much lighter tier, giving a real gap
+      (~70 points) from the major-road/placename tier instead of 11.
+    - Left untouched for this pass: island labels (also `#595959`, but
+      not roads — e.g. `Water area/label/Small island`), and all other
+      categories (admin area labels, building/POI labels, railroad/ferry
+      labels) not explicitly covered by the road/placename ask.
 - [`vt-basemap-2026-city-points`](vt-basemap-2026-city-points) — VCGI's
   own city-point labels, filling the statewide/regional zoom gap where
   Esri's Living Atlas content has no Vermont-only filter. Tiered across
