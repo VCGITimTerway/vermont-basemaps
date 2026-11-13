@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "sprite": "https://www.arcgis.com/sharing/rest/content/items/4e2c697b1f4b4bde99ca9f3b6b7ffff9/resources/sprites/sprite-1791470246325",
+  "sprite": "https://www.arcgis.com/sharing/rest/content/items/1dc25cb00c084249b3ec5dea89fbb752/resources/sprites/sprite-1794605153286",
   "glyphs": "https://tiles.arcgis.com/tiles/BkFxaEFNwHqX3tAw/arcgis/rest/services/VECTOR_VCGI_CN1TGEN_WM_v1/VectorTileServer/resources/fonts/{fontstack}/{range}.pbf",
   "sources": {
     "esri": {
@@ -39,7 +39,11 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 1
+        "line-width": 1,
+        "line-dasharray": [
+          2,
+          1
+        ]
       },
       "showProperties": false
     },
@@ -60,7 +64,11 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 1.5
+        "line-width": 1.5,
+        "line-dasharray": [
+          2,
+          1
+        ]
       },
       "showProperties": false
     },
@@ -81,7 +89,11 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 1
+        "line-width": 1,
+        "line-dasharray": [
+          2,
+          1
+        ]
       },
       "showProperties": false
     },
@@ -102,7 +114,11 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 1.5
+        "line-width": 1.5,
+        "line-dasharray": [
+          2,
+          1
+        ]
       },
       "showProperties": false
     },
@@ -123,7 +139,11 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 1
+        "line-width": 1,
+        "line-dasharray": [
+          2,
+          1
+        ]
       },
       "showProperties": false
     },
@@ -144,7 +164,11 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 1
+        "line-width": 1,
+        "line-dasharray": [
+          2,
+          1
+        ]
       },
       "showProperties": false
     },
@@ -165,7 +189,11 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 1.5
+        "line-width": 1.5,
+        "line-dasharray": [
+          2,
+          1
+        ]
       },
       "showProperties": false
     },
@@ -186,7 +214,11 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 0.8
+        "line-width": 0.8,
+        "line-dasharray": [
+          2,
+          1
+        ]
       },
       "showProperties": false
     },
@@ -207,7 +239,11 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 1.5
+        "line-width": 1.5,
+        "line-dasharray": [
+          2,
+          1
+        ]
       },
       "showProperties": false
     },
@@ -228,7 +264,11 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 1.5
+        "line-width": 1.5,
+        "line-dasharray": [
+          2,
+          1
+        ]
       },
       "showProperties": false
     },
@@ -248,7 +288,11 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#504f3d"
+        "line-color": "#504f3d",
+        "line-dasharray": [
+          2,
+          1
+        ]
       },
       "showProperties": false
     },
@@ -268,7 +312,11 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#504f3d"
+        "line-color": "#504f3d",
+        "line-dasharray": [
+          2,
+          1
+        ]
       },
       "showProperties": false
     },
@@ -289,7 +337,11 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 1.5
+        "line-width": 1.5,
+        "line-dasharray": [
+          2,
+          1
+        ]
       },
       "showProperties": false
     },
@@ -310,7 +362,11 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 0.7
+        "line-width": 0.7,
+        "line-dasharray": [
+          2,
+          1
+        ]
       },
       "showProperties": false
     },
@@ -331,7 +387,11 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 1.5
+        "line-width": 1.5,
+        "line-dasharray": [
+          2,
+          1
+        ]
       },
       "showProperties": false
     },
@@ -352,7 +412,11 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 1.5
+        "line-width": 1.5,
+        "line-dasharray": [
+          2,
+          1
+        ]
       },
       "showProperties": false
     },
@@ -373,7 +437,11 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 0.7
+        "line-width": 0.7,
+        "line-dasharray": [
+          2,
+          1
+        ]
       },
       "showProperties": false
     },
@@ -394,7 +462,11 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 0.7
+        "line-width": 0.7,
+        "line-dasharray": [
+          2,
+          1
+        ]
       },
       "showProperties": false
     },
@@ -415,7 +487,11 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 1.5
+        "line-width": 1.5,
+        "line-dasharray": [
+          2,
+          1
+        ]
       },
       "showProperties": false
     },
@@ -436,7 +512,11 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 1.5
+        "line-width": 1.5,
+        "line-dasharray": [
+          2,
+          1
+        ]
       },
       "showProperties": false
     },
@@ -482,7 +562,11 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 1.5
+        "line-width": 1.5,
+        "line-dasharray": [
+          2,
+          1
+        ]
       },
       "showProperties": false
     },
@@ -503,7 +587,11 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 1.5
+        "line-width": 1.5,
+        "line-dasharray": [
+          2,
+          1
+        ]
       },
       "showProperties": false
     },
@@ -573,7 +661,11 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 1.5
+        "line-width": 1.5,
+        "line-dasharray": [
+          2,
+          1
+        ]
       },
       "showProperties": false
     },
@@ -593,7 +685,11 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 1.5
+        "line-width": 1.5,
+        "line-dasharray": [
+          2,
+          1
+        ]
       },
       "showProperties": false
     },
@@ -889,20 +985,24 @@
     }
   ],
   "metadata": {
-    "arcgisStyleUrl": "https://www.arcgis.com/sharing/rest/content/items/4e2c697b1f4b4bde99ca9f3b6b7ffff9/resources/styles/root.json",
-    "arcgisOriginalItemTitle": "VT Service - Vector Tile Layer - 1ft Lidar Contours COPY - Dark Olive",
+    "arcgisStyleUrl": "https://www.arcgis.com/sharing/rest/content/items/1dc25cb00c084249b3ec5dea89fbb752/resources/styles/root.json",
+    "arcgisOriginalItemTitle": "VT Service - Vector Tile Layer - 1ft Lidar Contours - Dark Olive DASHED",
     "arcgisEditorExtents": [
       {
         "spatialReference": {
           "wkid": 102100
         },
-        "xmin": -8280444.561492846,
-        "ymin": 5317572.944228835,
-        "xmax": -7902234.145537813,
-        "ymax": 5596109.475300005
+        "xmin": -8108895.677869328,
+        "ymin": 5507865.613384077,
+        "xmax": -8085257.52687217,
+        "ymax": 5525274.146576002
       }
     ],
     "arcgisMinimapVisibility": false,
-    "arcgisQuickEditorWarning": true
+    "arcgisQuickEditorWarning": true,
+    "arcgisViewState": {
+      "is3D": false,
+      "viewpoint": null
+    }
   }
 }
