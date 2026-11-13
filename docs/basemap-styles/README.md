@@ -124,6 +124,11 @@ the 1' contour layer.
     - `Continent`: `#7d8287` → `#9DA9B1`, aligning with Positron's own
       country-label tone (the same value already used for water-feature
       label text, reused here rather than inventing a new one).
+  - **Fourth pass**: `Trail or path/label/Default` (`#778069`) stood out
+    once everything around it had been lightened, even though it wasn't
+    touched by the earlier open-space exclusion decision — hue-preserved
+    lighten to `#b6bcad`. `Pedestrian/label/Default` currently shares the
+    original `#778069` but was left alone since only trails were flagged.
 - [`vt-basemap-2026-city-points`](vt-basemap-2026-city-points) — VCGI's
   own city-point labels, filling the statewide/regional zoom gap where
   Esri's Living Atlas content has no Vermont-only filter. Tiered across

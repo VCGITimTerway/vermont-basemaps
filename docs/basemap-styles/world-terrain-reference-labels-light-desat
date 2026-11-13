@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "sprite": "https://www.arcgis.com/sharing/rest/content/items/8c0999ee861c4c66801b6bcb1bc0ffd6/resources/sprites/sprite-1794597393736",
+  "sprite": "https://www.arcgis.com/sharing/rest/content/items/8c0999ee861c4c66801b6bcb1bc0ffd6/resources/sprites/sprite-1794598110842",
   "glyphs": "https://basemaps.arcgis.com/arcgis/rest/services/World_Basemap_v2/VectorTileServer/resources/fonts/{fontstack}/{range}.pbf",
   "sources": {
     "esri": {
@@ -1620,7 +1620,7 @@
         "text-field": "{_name_global}"
       },
       "paint": {
-        "text-color": "#778069",
+        "text-color": "#b6bcad",
         "text-halo-color": "#fcfcfa",
         "text-halo-width": 1
       }
@@ -9817,10 +9817,10 @@
         "spatialReference": {
           "wkid": 102100
         },
-        "xmin": -8128576.453027975,
-        "ymin": 5436328.457387949,
-        "xmax": -8081300.151033657,
-        "ymax": 5461667.33226445
+        "xmin": -8151294.894458353,
+        "ymin": 5535727.391205251,
+        "xmax": -8149817.510021153,
+        "ymax": 5536519.231045077
       },
       {
         "spatialReference": {
