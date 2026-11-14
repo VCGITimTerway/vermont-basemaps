@@ -35,10 +35,16 @@ Intermediate dashed) is the closest internally-consistent approximation
 available, since "Intermediate" is the one category Esri's own naming
 marks as pure filler, not index of any kind.
 
-If this still doesn't read right, the next option is varying the dash
-by zoom tier directly (e.g. which interval tiers get dashed treatment
-at all, independent of symbol category) rather than continuing to key
-off `_symbol`.
+**Confirmed as a data limitation, not a remaining style question:** at
+several coarser zoom tiers, every visible line is classified
+`Index Major` in the tile data — there's no `Index Minor` or
+`Intermediate` line present at all to dash, no matter how the style is
+written. Getting dashed intermediates to appear at those zooms would
+need the service itself republished with different index-class
+assignments there — see
+[`../../data-sources/contours-1ft.md`](../../data-sources/contours-1ft.md#use-cases--limitations)
+for the confirmed detail. This style's current rule is the best
+available outcome short of that republish.
 
 ## Related
 

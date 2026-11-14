@@ -108,6 +108,19 @@ unless the contours are regenerated from the 2023 QL1 data.
   [dark-olive style](../contour-styles/dark-olive/README.md#low-zoom-contour-density)'s
   sparse Champlain Valley contours at low zoom could be improved —
   they couldn't, via styling alone.
+  - **Index/Intermediate classification is also baked in server-side, not
+    stylable** — confirmed while building the
+    [dark-olive-dashed style](../contour-styles/dark-olive-dashed/README.md)
+    (dashing intermediate lines to recede them relative to index
+    contours, a landscape architecture/site planning convention). At
+    several coarser zoom tiers, the service classifies every visible
+    line as `Index Major` (`_symbol: 0`) with no `Index Minor` or
+    `Intermediate` lines present in the tile data at all — so there's
+    nothing for a dashed-intermediate style to dash at those zooms, no
+    matter how the style.json is written. Getting dashed intermediates
+    to appear earlier (at the same zoom where index lines already show)
+    would need the service itself republished with different
+    symbol/index-class assignments at those tiers, not a style change.
 
 ## Current source
 
