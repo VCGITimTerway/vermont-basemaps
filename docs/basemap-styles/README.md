@@ -206,7 +206,16 @@ the 1' contour layer.
 - [`vt-basemap-2026-city-points`](vt-basemap-2026-city-points) — VCGI's
   own city-point labels, filling the statewide/regional zoom gap where
   Esri's Living Atlas content has no Vermont-only filter. Tiered across
-  three zoom levels (statewide/regional/close-in).
+  three zoom levels: statewide (Burlington, Montpelier, Rutland,
+  Bennington — no `minzoom`), regional (Brattleboro, Saint Albans,
+  Saint Johnsbury — `minzoom: 7`), close-in (the remaining 9, including
+  Barre — `minzoom: 8`). Barre moved from the regional to the close-in
+  tier after testing showed it standing out at a zoom level none of the
+  other close-in-only cities (e.g. Middlebury, White River Junction) did
+  — same fix applied to the
+  [`vt-basemap-2026-city-points-desat`](vt-basemap-2026-city-points-desat)
+  copy below, since this was a tier-placement correction, not a
+  desaturation-specific choice.
 - [`vt-basemap-2026-town-labels`](vt-basemap-2026-town-labels) — VCGI's
   own Vermont municipal-name labels, filling a content gap (official
   town names not always present in Living Atlas content), not just a

@@ -86,7 +86,6 @@
       "filter": [
         "in",
         "_name",
-        "Barre",
         "Brattleboro",
         "Saint Albans",
         "Saint Johnsbury"
@@ -109,7 +108,6 @@
       "filter": [
         "in",
         "_name",
-        "Barre",
         "Brattleboro",
         "Saint Albans",
         "Saint Johnsbury"
@@ -144,6 +142,7 @@
       "filter": [
         "in",
         "_name",
+        "Barre",
         "Island Pond",
         "Manchester",
         "Middlebury",
@@ -171,6 +170,7 @@
       "filter": [
         "in",
         "_name",
+        "Barre",
         "Island Pond",
         "Manchester",
         "Middlebury",

@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "sprite": "https://vectortileservices1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/VT_Basemap_2026_City_Points_WM/VectorTileServer/resources/sprites/sprite",
+  "sprite": "https://www.arcgis.com/sharing/rest/content/items/a58653bb5d8947b0909ccbdec1cb463f/resources/sprites/sprite-1793194414591",
   "glyphs": "https://vectortileservices1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/VT_Basemap_2026_City_Points_WM/VectorTileServer/resources/fonts/{fontstack}/{range}.pbf",
   "sources": {
     "VT_Basemap_2026_City_Points_WM": {
@@ -86,7 +86,6 @@
       "filter": [
         "in",
         "_name",
-        "Barre",
         "Brattleboro",
         "Saint Albans",
         "Saint Johnsbury"
@@ -109,7 +108,6 @@
       "filter": [
         "in",
         "_name",
-        "Barre",
         "Brattleboro",
         "Saint Albans",
         "Saint Johnsbury"
@@ -144,6 +142,7 @@
       "filter": [
         "in",
         "_name",
+        "Barre",
         "Island Pond",
         "Manchester",
         "Middlebury",
@@ -171,6 +170,7 @@
       "filter": [
         "in",
         "_name",
+        "Barre",
         "Island Pond",
         "Manchester",
         "Middlebury",
@@ -201,5 +201,22 @@
       },
       "minzoom": 8
     }
-  ]
+  ],
+  "metadata": {
+    "arcgisStyleUrl": "https://vectortileservices1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/VT_Basemap_2026_City_Points_WM/VectorTileServer/resources/styles/root.json",
+    "arcgisOriginalItemTitle": "VT Basemap 2026 City Points WM",
+    "arcgisEditorExtents": [
+      {
+        "spatialReference": {
+          "latestWkid": 3857,
+          "wkid": 102100
+        },
+        "xmin": -8743945.645966861,
+        "ymin": 4964796.636486685,
+        "xmax": -7231103.982147055,
+        "ymax": 6078942.760771118
+      }
+    ],
+    "arcgisMinimapVisibility": false
+  }
 }
