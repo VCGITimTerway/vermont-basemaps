@@ -8,7 +8,8 @@ interval structure. Current rule: **Index Major** and **Index Minor**
 lines (`_symbol: 0`/`1`) are solid; only **Intermediate Even/Odd** lines
 (`_symbol: 2`/`3`) are dashed (`line-dasharray: [2, 1]`). Intermediate
 lines only exist at the finest three interval tiers (5ft, 2ft, 1ft) —
-nothing is dashed at coarser tiers.
+nothing is dashed at coarser tiers. Label text size reduced from the
+original `13.3333` to `11` across all 10 label layers.
 
 ## Why not dash by "is this line labeled"
 

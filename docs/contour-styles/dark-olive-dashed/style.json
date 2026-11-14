@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "sprite": "https://www.arcgis.com/sharing/rest/content/items/1dc25cb00c084249b3ec5dea89fbb752/resources/sprites/sprite-1794627446112",
+  "sprite": "https://www.arcgis.com/sharing/rest/content/items/1dc25cb00c084249b3ec5dea89fbb752/resources/sprites/sprite-1794628381849",
   "glyphs": "https://tiles.arcgis.com/tiles/BkFxaEFNwHqX3tAw/arcgis/rest/services/VECTOR_VCGI_CN1TGEN_WM_v1/VectorTileServer/resources/fonts/{fontstack}/{range}.pbf",
   "sources": {
     "esri": {
@@ -658,7 +658,7 @@
         "text-font": [
           "Arial Bold"
         ],
-        "text-size": 13.3333,
+        "text-size": 11,
         "text-field": "{_name}",
         "text-optional": true
       },
@@ -682,7 +682,7 @@
         "text-font": [
           "Arial Bold"
         ],
-        "text-size": 13.3333,
+        "text-size": 11,
         "text-field": "{_name}",
         "text-optional": true
       },
@@ -706,7 +706,7 @@
         "text-font": [
           "Arial Bold"
         ],
-        "text-size": 13.3333,
+        "text-size": 11,
         "text-field": "{_name}",
         "text-optional": true
       },
@@ -730,7 +730,7 @@
         "text-font": [
           "Arial Bold"
         ],
-        "text-size": 13.3333,
+        "text-size": 11,
         "text-field": "{_name}",
         "text-optional": true
       },
@@ -754,7 +754,7 @@
         "text-font": [
           "Arial Bold"
         ],
-        "text-size": 13.3333,
+        "text-size": 11,
         "text-field": "{_name}",
         "text-optional": true
       },
@@ -778,7 +778,7 @@
         "text-font": [
           "Arial Bold"
         ],
-        "text-size": 13.3333,
+        "text-size": 11,
         "text-field": "{_name}",
         "text-optional": true
       },
@@ -802,7 +802,7 @@
         "text-font": [
           "Arial Bold"
         ],
-        "text-size": 13.3333,
+        "text-size": 11,
         "text-field": "{_name}",
         "text-optional": true
       },
@@ -826,7 +826,7 @@
         "text-font": [
           "Arial Bold"
         ],
-        "text-size": 13.3333,
+        "text-size": 11,
         "text-field": "{_name}",
         "text-allow-overlap": true,
         "text-optional": true
@@ -851,7 +851,7 @@
         "text-font": [
           "Arial Bold"
         ],
-        "text-size": 13.3333,
+        "text-size": 11,
         "text-field": "{_name}",
         "text-allow-overlap": true,
         "text-optional": true
@@ -875,7 +875,7 @@
         "text-font": [
           "Arial Bold"
         ],
-        "text-size": 13.3333,
+        "text-size": 11,
         "text-field": "{_name}",
         "text-allow-overlap": true,
         "text-optional": true
