@@ -4,31 +4,40 @@ Save-as variant of [Dark Olive](../dark-olive/README.md), for use in the
 desaturated basemap configuration (AGOL item "VT Service - Vector Tile
 Layer - 1ft Lidar Contours - Dark Olive DASHED", owned by
 `Services_VCGI`). Same color (`#504f3d`), widths, and zoom-dependent
-interval structure. Current rule: **Index Major** lines (`_symbol: 0`)
-are solid at every tier; **Index Minor** (`_symbol: 1`) and
-**Intermediate Even/Odd** (`_symbol: 2`/`3`) lines are dashed
-(`line-dasharray: [2, 1]`) at every tier where they exist.
+interval structure. Current rule: **Index Major** and **Index Minor**
+lines (`_symbol: 0`/`1`) are solid; only **Intermediate Even/Odd** lines
+(`_symbol: 2`/`3`) are dashed (`line-dasharray: [2, 1]`). Intermediate
+lines only exist at the finest three interval tiers (5ft, 2ft, 1ft) —
+nothing is dashed at coarser tiers.
 
-This landed after a few iterations: dashing only the Intermediate layers
-first (5 layers, only present at the finest three tiers) read fine but
-left the index lines at coarser tiers looking relatively strong; dashing
-every line (including Index Major) was tested next and came back as too
-much dashing overall. The fix wasn't a bespoke per-zoom lookup — it's
-that `_symbol: 0` ("Index Major," the labeled line) vs. everything else
-is **already the same distinction at every tier**, confirmed by decoding
-live tiles directly rather than assuming from layer names alone: at
-tiers where a source-layer has more than one symbol value present
-(e.g. `250ft` at z12–13, `50ft`/`10ft` at z16–17, `1ft`/`2ft` at
-z18–19+), symbol 0 always lines up with the labeled contours and the
-higher symbol numbers are always the finer, unlabeled lines between
-them — regardless of what actual foot-interval that tier represents.
-So "solid Index Major, dashed everything else" applied uniformly across
-all 29 contour line layers reproduces the tier-by-tier behavior
-described (e.g. "1000/2000/3000 solid with 250ft dashed in between,"
-then "1000/1500/2000 solid with 100ft dashed in between" one zoom in)
-without needing to special-case each interval tier individually. Some
-coarser tiers (1000ft down to 20ft, depending on exact zoom) only have
-Index Major defined in the style at all — nothing to dash there yet.
+## Why not dash by "is this line labeled"
+
+The first two attempts (dash intermediate-only, then dash everything)
+didn't match what a labeled-vs-unlabeled distinction should look like,
+so a third attempt tried solid-Index-Major / dashed-everything-else —
+also wrong, confirmed by testing: at several tiers, Esri's own "Index
+Minor" lines (`_symbol: 1`) **do** carry visible elevation labels (e.g.
+1250/1750 between 1000/1500/2000), so treating them as the "unlabeled"
+category dashed them incorrectly.
+
+Investigated further by decoding live tiles directly rather than
+guessing from layer names: the contour **line** features carry only a
+`_symbol` number, no name or elevation value at all. Labels live in a
+completely separate point-feature layer with its own collision logic
+(`text-optional: true`, no filter tying it to which lines are "major"),
+so which lines visibly show a label at any moment is a dynamic
+rendering outcome, not a fixed attribute on the line. There's no way to
+style a line based on "does it currently show a label" — the two
+feature sets aren't linked. A perfect labeled/unlabeled split isn't
+achievable with this data; the current rule (Major + Minor solid,
+Intermediate dashed) is the closest internally-consistent approximation
+available, since "Intermediate" is the one category Esri's own naming
+marks as pure filler, not index of any kind.
+
+If this still doesn't read right, the next option is varying the dash
+by zoom tier directly (e.g. which interval tiers get dashed treatment
+at all, independent of symbol category) rather than continuing to key
+off `_symbol`.
 
 ## Related
 

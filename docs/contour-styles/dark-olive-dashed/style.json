@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "sprite": "https://www.arcgis.com/sharing/rest/content/items/1dc25cb00c084249b3ec5dea89fbb752/resources/sprites/sprite-1794605417787",
+  "sprite": "https://www.arcgis.com/sharing/rest/content/items/1dc25cb00c084249b3ec5dea89fbb752/resources/sprites/sprite-1794627446112",
   "glyphs": "https://tiles.arcgis.com/tiles/BkFxaEFNwHqX3tAw/arcgis/rest/services/VECTOR_VCGI_CN1TGEN_WM_v1/VectorTileServer/resources/fonts/{fontstack}/{range}.pbf",
   "sources": {
     "esri": {
@@ -144,11 +144,7 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 1,
-        "line-dasharray": [
-          2,
-          1
-        ]
+        "line-width": 1
       },
       "showProperties": false
     },
@@ -232,11 +228,7 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 1.5,
-        "line-dasharray": [
-          2,
-          1
-        ]
+        "line-width": 1.5
       },
       "showProperties": false
     },
@@ -276,11 +268,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#504f3d",
-        "line-dasharray": [
-          2,
-          1
-        ]
+        "line-color": "#504f3d"
       },
       "showProperties": false
     },
@@ -364,11 +352,7 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 1.5,
-        "line-dasharray": [
-          2,
-          1
-        ]
+        "line-width": 1.5
       },
       "showProperties": false
     },
@@ -410,11 +394,7 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 0.7,
-        "line-dasharray": [
-          2,
-          1
-        ]
+        "line-width": 0.7
       },
       "showProperties": false
     },
@@ -456,11 +436,7 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 1.5,
-        "line-dasharray": [
-          2,
-          1
-        ]
+        "line-width": 1.5
       },
       "showProperties": false
     },
@@ -527,11 +503,7 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 1.5,
-        "line-dasharray": [
-          2,
-          1
-        ]
+        "line-width": 1.5
       },
       "showProperties": false
     },
@@ -621,11 +593,7 @@
       },
       "paint": {
         "line-color": "#504f3d",
-        "line-width": 1.5,
-        "line-dasharray": [
-          2,
-          1
-        ]
+        "line-width": 1.5
       },
       "showProperties": false
     },
