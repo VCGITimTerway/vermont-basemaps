@@ -11,7 +11,7 @@ the underlying data itself (stewardship, vintage, known limitations).
 - [`dark-olive/`](dark-olive/README.md) — dark olive-green lines/labels
   (`#504f3d`), thinned line widths.
 - [`dark-olive-dashed/`](dark-olive-dashed/README.md) — save-as of Dark
-  Olive for the desaturated basemap, with a tight dash (`[2, 1]`) on
-  every contour line — a common landscape architecture/site planning
-  convention. Index contours are differentiated from intermediate ones
-  by line weight alone (both are now dashed, not solid-vs-dashed).
+  Olive for the desaturated basemap: Index Major (labeled) contours stay
+  solid at every zoom tier, Index Minor/Intermediate (unlabeled) ones
+  get a tight dash (`[2, 1]`) — a common landscape architecture/site
+  planning convention.
