@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "sprite": "https://www.arcgis.com/sharing/rest/content/items/b9f60490ca3d4a3f8d6af6c80e4b8c96/resources/sprites/sprite-1794323157311",
+  "sprite": "https://www.arcgis.com/sharing/rest/content/items/b9f60490ca3d4a3f8d6af6c80e4b8c96/resources/sprites/sprite-1794602957688",
   "glyphs": "https://tiles.arcgis.com/tiles/BkFxaEFNwHqX3tAw/arcgis/rest/services/VECTOR_VCGI_BUILDINGS2022_WM_v1/VectorTileServer/resources/fonts/{fontstack}/{range}.pbf",
   "sources": {
     "esri": {
@@ -26,9 +26,7 @@
       "type": "fill",
       "source": "esri",
       "source-layer": "LandLandcov_Buildings2022_poly",
-      "layout": {
-        "visibility": "visible"
-      },
+      "layout": {},
       "paint": {
         "fill-color": "#f1f1f1",
         "fill-outline-color": "#dbdbda"
@@ -45,10 +43,10 @@
         "spatialReference": {
           "wkid": 102100
         },
-        "xmin": -8150259.82909007,
-        "ymin": 5538322.440620649,
-        "xmax": -8148985.480509095,
-        "ymax": 5539213.409731622
+        "xmin": -8150584.686460291,
+        "ymin": 5538372.005256179,
+        "xmax": -8148660.623138874,
+        "ymax": 5539163.845096092
       },
       {
         "spatialReference": {
@@ -65,10 +63,10 @@
           "zTolerance": 0.001,
           "zUnits": 10000
         },
-        "xmin": -13814922.744146012,
-        "ymin": -10935935.284227662,
-        "xmax": 13814922.744146012,
-        "ymax": 10980089.465692356
+        "xmin": -20898495.029388018,
+        "ymin": -9527047.978875661,
+        "xmax": 20898495.029388018,
+        "ymax": 9571202.160340356
       },
       {
         "spatialReference": {
@@ -85,10 +83,10 @@
           "zTolerance": 0.001,
           "zUnits": 10000
         },
-        "xmin": -8151624.014615384,
-        "ymin": 5536663.75964946,
-        "xmax": -8144878.446869227,
-        "ymax": 5542014.351629415
+        "xmin": -8158455.574018363,
+        "ymin": 5534676.396914048,
+        "xmax": -8138046.887466248,
+        "ymax": 5544001.714364827
       },
       {
         "spatialReference": {
@@ -105,10 +103,10 @@
           "zTolerance": 0.001,
           "zUnits": 10000
         },
-        "xmin": -13814922.744146012,
-        "ymin": -10935935.284227662,
-        "xmax": 13814922.744146012,
-        "ymax": 10980089.465692356
+        "xmin": -20898495.029388018,
+        "ymin": -9527047.978875661,
+        "xmax": 20898495.029388018,
+        "ymax": 9571202.160340356
       }
     ],
     "arcgisMinimapVisibility": true,

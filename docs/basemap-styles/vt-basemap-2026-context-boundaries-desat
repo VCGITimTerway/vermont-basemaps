@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "sprite": "https://www.arcgis.com/sharing/rest/content/items/a6a4272f7f904905b13644e20de6f6ea/resources/sprites/sprite-1793299179306",
+  "sprite": "https://www.arcgis.com/sharing/rest/content/items/a6a4272f7f904905b13644e20de6f6ea/resources/sprites/sprite-1793300353298",
   "glyphs": "https://basemaps.arcgis.com/arcgis/rest/services/World_Basemap_v2/VectorTileServer/resources/fonts/{fontstack}/{range}.pbf",
   "sources": {
     "esri": {
@@ -25,7 +25,7 @@
       "source-layer": "Marine area",
       "layout": {},
       "paint": {
-        "fill-color": "#c2c8ca"
+        "fill-color": "#d4dadc"
       }
     },
     {
@@ -37,7 +37,7 @@
       "maxzoom": 5,
       "layout": {},
       "paint": {
-        "fill-color": "#c2c8ca"
+        "fill-color": "#d4dadc"
       }
     },
     {
@@ -54,7 +54,7 @@
       "maxzoom": 7,
       "layout": {},
       "paint": {
-        "fill-color": "#c2c8ca"
+        "fill-color": "#d4dadc"
       }
     },
     {
@@ -71,7 +71,7 @@
       "maxzoom": 11,
       "layout": {},
       "paint": {
-        "fill-color": "#c2c8ca"
+        "fill-color": "#d4dadc"
       }
     },
     {
@@ -85,7 +85,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#c2c8ca",
+        "line-color": "#d4dadc",
         "line-width": 0.5
       }
     },
@@ -100,7 +100,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#c2c8ca",
+        "line-color": "#d4dadc",
         "line-width": {
           "base": 1.2,
           "stops": [
@@ -128,7 +128,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#c2c8ca",
+        "line-color": "#d4dadc",
         "line-width": 0.7
       }
     },
@@ -283,9 +283,9 @@
         "spatialReference": {
           "wkid": 102100
         },
-        "xmin": -8528322.654685957,
+        "xmin": -8413972.860371364,
         "ymin": 5249495.534266382,
-        "xmax": -7543202.234146868,
+        "xmax": -7657552.028461462,
         "ymax": 5654917.53229085
       },
       {
@@ -293,9 +293,9 @@
           "latestWkid": 3857,
           "wkid": 102100
         },
-        "xmin": -8284264.854315942,
+        "xmin": -8246352.088286504,
         "ymin": 5287751.288355854,
-        "xmax": -7957725.869481755,
+        "xmax": -7995638.635511193,
         "ymax": 5436956.367568479
       },
       {
@@ -303,9 +303,9 @@
           "latestWkid": 3857,
           "wkid": 102100
         },
-        "xmin": -8623498.859826181,
+        "xmin": -8614020.668318823,
         "ymin": 4686730.2881586375,
-        "xmax": -8541864.113617651,
+        "xmax": -8551342.30512501,
         "ymax": 4724031.557961785
       },
       {
@@ -313,9 +313,9 @@
           "latestWkid": 3857,
           "wkid": 102100
         },
-        "xmin": 16831631.255501077,
+        "xmin": 16831779.352243382,
         "ymin": -4011961.3124891175,
-        "xmax": 16832906.798410617,
+        "xmax": 16832758.70166831,
         "ymax": -4011378.480148428
       }
     ],

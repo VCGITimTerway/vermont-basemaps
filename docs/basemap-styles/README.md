@@ -23,176 +23,121 @@ the 1' contour layer.
   throughout against
   [OpenMapTiles' Positron style](https://github.com/openmaptiles/positron-gl-style/blob/master/style.json).
   - **Water** (10 layers: `Water area`/`Water line` at every scale tier,
-    `Marine area`): lightened in stages, currently `#d4dadc` (Tim's own
-    further refinement of an earlier `#c2c8ca`, which was itself lifted
-    from Positron's `water` fill, `rgb(194, 200, 202)`).
+    `Marine area`): `#d4dadc` (Tim's own further refinement of an earlier
+    `#c2c8ca`, which was itself lifted from Positron's `water` fill,
+    `rgb(194, 200, 202)`).
   - **Road casings** (19 layers, all road classes — this style doesn't
     tier road colors by class the way the Imagery variant does):
-    lightened from `#505050` to `#d5d5d5`, matching Positron's
-    `highway_major_casing`/`highway_motorway_casing`
-    (`rgb(213, 213, 213)`) almost exactly. One layer (`Road/Service/1`)
-    initially missed this pass since its color was a zoom-stop
-    expression (`#999999`→`#505050`), not a flat string — caught and
-    flattened to `#d5d5d5` in a follow-up fix.
+    `#d5d5d5`, matching Positron's `highway_major_casing`/
+    `highway_motorway_casing` (`rgb(213, 213, 213)`) almost exactly.
+    `Road/Service/1`'s color is a zoom-stop expression rather than a flat
+    string and needs to be checked separately from the others when this
+    style is next revised.
   - **Trails and pedestrian-road casings** (`Trail or path/1`,
-    `Road/Pedestrian/1`): lightened from `#8c8c8c` to `#eaeaea`,
-    matching Positron's `highway_path` (`rgb(234, 234, 234)`) — Positron
-    keeps paths lighter than roads, mirrored here.
-  - **Railroad**: base line lightened from `#c8c8c8` to `#dddddd`,
-    matching Positron's `railway` color exactly. The cross-tie overlay
-    (`Railroad/ties` — a second line layer, same source, width 5 with a
-    tight `[0.2, 2]` dasharray drawn under the thin base line, creating
-    the perpendicular tick marks) was missing entirely from this item
-    (present in the base, non-desaturated Blue Water style) — re-added
-    at the same lightened `#dddddd`.
+    `Road/Pedestrian/1`): `#eaeaea`, matching Positron's `highway_path`
+    (`rgb(234, 234, 234)`) — Positron keeps paths lighter than roads,
+    mirrored here.
+  - **Railroad**: base line `#dddddd`, matching Positron's `railway`
+    color exactly. The cross-tie overlay (`Railroad/ties` — a second
+    line layer, same source, width 5 with a tight `[0.2, 2]` dasharray
+    drawn under the thin base line, creating the perpendicular tick
+    marks) is present here at the same `#dddddd`, matching the base,
+    non-desaturated Blue Water style.
   - This style's own `Building` layer (from the same `World_Basemap_v2`
     source, not the dedicated Buildings 2022 layer below) is hidden
-    (`"visibility": "none"`) and wasn't touched — no visible effect
-    either way.
+    (`"visibility": "none"`) — no visible effect either way.
   - **Road name/shield duplication**: this style carries its own
     `Road/label/Rectangle white black` and `.../(Alt)` layers — full
     road-name-plus-shield-icon symbol layers (text, not just an icon),
     rendered at near-black `#000003`, covering the exact same
     `_label_class` range as the proper shield system in the Labels Desat
-    style below. Both hidden (`"visibility": "none"`) so road names/
-    shields render once, from the Labels style only, not twice at
-    conflicting darkness.
+    style below. Both are hidden (`"visibility": "none"`) so road names/
+    shields render once, from the Labels style only.
 - [`world-terrain-reference-labels-light`](world-terrain-reference-labels-light) —
   styled copy of Esri's World Terrain Reference Labels item
   (`World_Basemap_v2`), with placename and spot-elevation text muted to
   `#505050`. Used by [Test 02b](../webmap-tests/topographic-test-02b-world-terrain-labels/README.md)
   and [Test 02c](../webmap-tests/topographic-test-02c-admin/README.md).
 - [`world-terrain-reference-labels-light-desat`](world-terrain-reference-labels-light-desat) —
-  save-as of the above for the desaturated "Base" configuration. All
-  water-feature label text (lakes, rivers, bays, marine/ocean names — 39
-  layers across `Water line/area/point`, `Marine area/waterbody`,
-  `Ocean point/area`, the disputed-waterbody label, and ferry route names
-  like "Burlington - Port Kent") changed from saturated blue (`#1e73c8`,
-  plus `#0087ff` on the ferry-label layer specifically — a different,
-  even more saturated blue that the first pass missed since it doesn't
-  share the other layers' hex value) to `#9DA9B1`, a muted blue-gray
-  lifted from
-  [OpenMapTiles' Positron style](https://github.com/openmaptiles/positron-gl-style/blob/master/style.json)'s
-  own `water_name` text color (`rgb(157,169,177)`) — same source used for
-  Light Roads Desat's water fill, for a consistent design lineage. Also
-  normalized the Marine/Ocean label halos (previously pale blue,
-  `#e0f4ff`/`#e5f6ff`) to the same off-white `#fcfcfa` halo used
-  everywhere else in this style, since a blue-tinted halo would have
-  undercut the desaturation. Non-blue water labels (islands, playas,
-  dams/weirs — already neutral gray) were left unchanged.
-  - **Road/placename contrast and hierarchy** (second pass, benchmarked
-    against Positron's `highway_name_motorway`/`place_*`/
-    `highway_name_other` layers): Positron keeps overall label contrast
-    lower than ours and gives major roads and placenames the same
-    darker tone, with minor/local road labels notably lighter — not
-    something we had before (major vs. minor road labels only differed
-    by `#4e4e4e` vs. `#595959`, an 11-point gap, both quite dark).
-    - **Placenames, landform names, and spot elevations** (38 layers —
-      every `City large/small scale`, `Landform/label/*`, and `Spot
-      elevation` layer): `#505050` → `#758191`, Positron's exact
-      `place_*` text color.
-    - **Major road labels** (`Road`/`Road tunnel` label layers for
-      Major, Highway, Freeway Motorway, and their alt-name variants —
-      10 layers): `#4e4e4e` → `#758191`, matching Positron's
-      `highway_name_motorway` — which uses the identical color to its
-      place labels, mirrored here.
-    - **Minor/local road labels** (`Road`/`Road tunnel` label layers for
-      Local and Minor — 4 layers): `#595959` → `#bbbbbb`, Positron's
-      `highway_name_other` — a much lighter tier, giving a real gap
-      (~70 points) from the major-road/placename tier instead of 11.
-    - Left untouched in this pass: island labels (also `#595959`, but
-      not roads — e.g. `Water area/label/Small island`).
-  - **Third pass — admin, building, neighborhood, railroad labels**
-    (water, ferry, and open-space labels confirmed good as-is and left
-    alone):
-    - `Neighborhood` had **no explicit text-color at all** (silently
-      defaulting to black) — set to `#758191`, the same tone as
-      placenames, matching Positron's `place_other` layer (which groups
-      neighbourhoods with every other place-name tier under one color).
-    - `Building/label/Default` and `Point of interest/General`
-      (building/POI name labels — the latter's color was a zoom-stop
-      `#787878`→`#343434`, flattened in the process): both set to
-      `#758191` as well, for the same visual weight as placenames/
-      neighborhoods.
-    - `Admin0 point/*` (country-level labels, all size tiers + the
-      zoom-stop `2x large` variant, flattened) and
-      `Disputed label point/Admin0`: neutral `#3c3c3c` → `#808080` (no
-      Positron admin-point equivalent to benchmark against directly, so
-      lightened by the same ~25-point-lightness magnitude used
-      elsewhere rather than picked arbitrarily).
-    - `Admin1 area/label/*` (purple, all 6 size tiers) and
-      `Admin2 area/label/*` (tan, both tiers): hue preserved, lightness
-      raised by the same ~25 points — `#785ba6`→`#ad9cc9`,
-      `#80755f`→`#bbb3a3` — rather than flattened to gray, so the
-      distinct admin-level color-coding isn't lost.
-    - `Railroad/label/Default`: same hue-preserving lighten,
-      `#6e5d54`→`#ad9d94`. `Ferry/label/Rail ferry` shares the original
-      brown but was **not** touched, since Tim categorized railways and
-      ferries separately (railways need updating, ferries don't) even
-      though they currently share a color — they'll diverge after this.
-    - `Continent`: `#7d8287` → `#9DA9B1`, aligning with Positron's own
-      country-label tone (the same value already used for water-feature
-      label text, reused here rather than inventing a new one).
-  - **Fourth pass**: `Trail or path/label/Default` (`#778069`) stood out
-    once everything around it had been lightened, even though it wasn't
-    touched by the earlier open-space exclusion decision — hue-preserved
-    lighten to `#b6bcad`. `Pedestrian/label/Default` currently shares the
-    original `#778069` but was left alone since only trails were flagged.
-  - **Fifth pass — road shield icons**: this style's own road-name
-    layers (64 `Road/label/<Shape> <color>` variants — U-shaped,
-    Rectangle, Pentagon, Hexagon, Octagon, Shield, Secondary Hwy, each
-    with a `(Alt)` counterpart) render a highway-shield sprite via
-    `icon-image` per road system/class, with no paint overrides of their
-    own (`paint: {}`). These are baked multi-color sprite graphics, not
-    SDF icons, so `icon-color` can't recolor them directly — `icon-opacity:
-    0.75` added to all 64 instead, to visually mute them in line with the
-    now-lighter major road label text. The shield's internal route
-    number (also previously an unset `paint: {}`, silently defaulting to
-    black — same gap pattern as `Neighborhood` earlier) now explicitly
-    set to `#758191` as well, matching the major road label color. This
-    was also why shields
-    looked doubled/conflicting in testing: see the matching note under
-    Light Roads Desat above — the features style had its own redundant,
-    near-black road-name-plus-shield layers covering the same roads,
-    now hidden there so only this style's shields render.
-  - **Sixth pass — label/feature zoom mismatch**: several road-class
-    labels had a lower `minzoom` than the matching line layer in Light
-    Roads Desat, so the name appeared one (or more) zoom levels before
-    the road itself was visible — confirmed by comparing both styles'
-    `minzoom` directly rather than guessing: `Road/label/Minor`
-    (11→12), `Road/label/Local` (12→13), `Road tunnel/label/Minor`
-    (10→12), `Road tunnel/label/Local, service, 4WD` (12→13, a
-    three-class combined label layer — this only exactly matches two of
-    the three feature classes it covers, `Local` and `4WD`, since
-    `Service` tunnels start one level later still at 14; splitting the
-    label layer to match all three exactly wasn't attempted here).
-    `Road/label/Pedestrian` was off by **three** levels (12 vs. feature
-    minzoom 15) — not one of the examples given, but the same bug, fixed
-    alongside the others. Major/Highway/Freeway Motorway and Local-ramp
-    classes were already correctly aligned or label-after-feature (the
-    safe direction), and weren't touched.
-  - **Seventh pass**: `Road/label/Pedestrian` was still at its original,
-    never-touched `#594c42` (dark brown) — lightened to `#b6bcad` to
-    match `Trail or path/label/Default`, the one trail-family label
-    color already lightened in this style. `Road tunnel/label/Pedestrian`
-    and `Pedestrian/label/Default` (both the original `#778069`, the
-    same open-space-green left alone in the Fourth pass) were lightened
-    to `#b6bcad` as well in a follow-up — all four
-    trail/pedestrian-family label layers now match.
+  save-as of the above for the desaturated "Base" configuration, benchmarked
+  throughout against
+  [OpenMapTiles' Positron style](https://github.com/openmaptiles/positron-gl-style/blob/master/style.json).
+  Current label color scheme:
+  - **Water-feature labels** (39 layers across `Water line/area/point`,
+    `Marine area/waterbody`, `Ocean point/area`, the disputed-waterbody
+    label, and ferry route names like "Burlington - Port Kent"): `#9DA9B1`,
+    a muted blue-gray lifted from Positron's `water_name` text color
+    (`rgb(157,169,177)`) — same source used for Light Roads Desat's water
+    fill, for a consistent design lineage. Marine/Ocean label halos are
+    the same off-white `#fcfcfa` used everywhere else in this style, not
+    the saturated pale blue Esri ships by default. Non-blue water labels
+    (islands, playas, dams/weirs — already neutral gray) are unchanged
+    from the source style. `Continent` is also `#9DA9B1`, aligning with
+    Positron's own country-label tone.
+  - **Placenames, landform names, and spot elevations** (38 layers —
+    every `City large/small scale`, `Landform/label/*`, and `Spot
+    elevation` layer), plus `Neighborhood`, `Building/label/Default`, and
+    `Point of interest/General`: `#758191`, Positron's exact `place_*`
+    text color — Positron groups all of these under one placename tone,
+    mirrored here. (`Neighborhood` previously had no explicit
+    `text-color` at all and silently defaulted to black; `Point of
+    interest/General`'s color was a zoom-stop expression, now flattened.)
+  - **Major road labels** (`Road`/`Road tunnel` label layers for Major,
+    Highway, Freeway Motorway, and their alt-name variants — 10 layers):
+    `#758191`, matching Positron's `highway_name_motorway`, which uses
+    the identical color to its place labels.
+  - **Minor/local road labels** (`Road`/`Road tunnel` label layers for
+    Local and Minor — 4 layers): `#bbbbbb`, Positron's
+    `highway_name_other` — a deliberately much lighter tier than the
+    major-road/placename group above. Island labels (`Water area/label/
+    Small island`, also naturally lighter) are unrelated to this tier and
+    unchanged.
+  - **Trail/pedestrian label family** (`Road/label/Pedestrian`, `Road
+    tunnel/label/Pedestrian`, `Trail or path/label/Default`,
+    `Pedestrian/label/Default`): `#b6bcad`, a hue-preserved lighten of
+    the original olive-green `#778069`/`#594c42` — all four now match.
+  - **Admin/railroad labels**: `Admin0 point/*` (country-level, all size
+    tiers) and `Disputed label point/Admin0`: `#808080`. `Admin1 area/
+    label/*` (purple, 6 size tiers): `#ad9cc9`. `Admin2 area/label/*`
+    (tan, both tiers): `#bbb3a3`. `Railroad/label/Default`: `#ad9d94`.
+    Admin1/Admin2/Railroad are hue-preserved lightens of their original
+    purple/tan/brown, rather than flattened to gray, so the distinct
+    category color-coding isn't lost. `Ferry/label/Rail ferry` shares
+    the original railroad brown (`#6e5d54`) but is intentionally
+    unchanged — Tim categorizes railways and ferries separately even
+    though they currently share a color.
+  - **Road shield icons**: this style's own road-name layers (64
+    `Road/label/<Shape> <color>` variants — U-shaped, Rectangle,
+    Pentagon, Hexagon, Octagon, Shield, Secondary Hwy, each with a
+    `(Alt)` counterpart) render a highway-shield sprite via `icon-image`
+    per road system/class. These are baked multi-color sprite graphics,
+    not SDF icons, so `icon-color` can't recolor them directly —
+    `icon-opacity: 0.75` is set on all 64 instead, to visually mute them
+    in line with the lighter road label text. Each shield's internal
+    route number is explicitly `#758191` (previously an unset `paint:
+    {}`, silently defaulting to black). The Light Roads Desat features
+    style hides its own redundant, near-black road-name-plus-shield
+    layers that used to cover the same roads, so only this style's
+    shields render.
+  - **Label/feature zoom alignment**: label `minzoom` values are aligned
+    with the matching line layer's `minzoom` in Light Roads Desat, so
+    road names don't appear before the road itself is visible:
+    `Road/label/Minor` (12), `Road/label/Local` (13), `Road
+    tunnel/label/Minor` (12), `Road tunnel/label/Local, service, 4WD`
+    (13 — this three-class combined label layer exactly matches `Local`
+    and `4WD`'s feature minzoom; `Service` tunnels start one level later
+    still, at 14), `Road/label/Pedestrian` (15). Major/Highway/Freeway
+    Motorway and Local-ramp classes are already aligned or
+    label-after-feature (the safe direction).
 - [`buildings-2022-white-desat`](buildings-2022-white-desat) — the
   already-separate, Desaturated-specific "Buildings 2022" item (item
   `b9f60490ca3d4a3f8d6af6c80e4b8c96`, titled "...Buildings 2022 f8f8f8"
-  — distinct from the shared item used by Base Topo/Base, so this edit
-  only affects Desaturated). Was a two-layer drop-shadow effect: a
-  `fill-translate`-offset `#f8f8f8` fill on top of an untinted (default
-  black), `fill-opacity: 0.25` layer beneath, peeking out on one side.
-  On the desaturated basemap (no hillshade/base-color canvas beneath
-  it), that shadow read as the building's actual edge rather than a
-  subtle depth cue. Replaced with a single flat fill + stroke outline
-  instead of a shadow. Fill color iterated after testing: Positron's own
-  `#eaeae5` read too dark, then `#f8f8f8` too close to the white canvas
-  — currently `#f1f1f1` (the midpoint between the two) with the outline
-  unchanged at `#dbdbda`.
+  — distinct from the shared item used by Base Topo/Base, so this only
+  affects Desaturated). A single flat fill (`#f1f1f1`) + stroke outline
+  (`#dbdbda`), rather than the two-layer `fill-translate` drop-shadow
+  trick the source style uses elsewhere — on the desaturated basemap,
+  with no hillshade/base-color canvas beneath it, that shadow reads as
+  the building's actual edge rather than a subtle depth cue.
 - [`vt-basemap-2026-town-labels-desat`](vt-basemap-2026-town-labels-desat)
   and [`vt-basemap-2026-city-points-desat`](vt-basemap-2026-city-points-desat) —
   Desaturated-specific Save As copies of **VT Basemap 2026 Town Labels
@@ -205,25 +150,21 @@ the 1' contour layer.
   (`77b6f532de0b4da091cbc07f1d38a75c`) — referenced by the Labels
   Desaturated Group Layer item in place of the shared ones; Base Topo
   and Base's Labels group (`0ff87dab7daf4141a5e95a2f8be0715e`) still
-  points at the original shared items, confirmed unaffected. Label text
-  color lightened `#505050` → `#758191` (matching `Neighborhood`'s
-  color, per request) in both — all 3 City Points tiers (Default/
-  Regional/Other) and the single Town Labels layer. Only text color was
-  touched; the City Points circle marker's own stroke (`#4E4E4E`) wasn't
-  part of the ask and was left alone.
+  points at the original shared items. Label text color is `#758191`
+  (matching `Neighborhood`'s color) in both — all 3 City Points tiers
+  (Default/Regional/Other) and the single Town Labels layer. The City
+  Points circle marker's own stroke (`#4E4E4E`) is unchanged from the
+  shared item.
 - [`vt-basemap-2026-city-points`](vt-basemap-2026-city-points) — VCGI's
   own city-point labels, filling the statewide/regional zoom gap where
   Esri's Living Atlas content has no Vermont-only filter. Tiered across
   three zoom levels: statewide (Burlington, Montpelier, Rutland,
   Bennington — no `minzoom`), regional (Brattleboro, Saint Albans,
   Saint Johnsbury — `minzoom: 7`), close-in (the remaining 9, including
-  Barre — `minzoom: 8`). Barre moved from the regional to the close-in
-  tier after testing showed it standing out at a zoom level none of the
-  other close-in-only cities (e.g. Middlebury, White River Junction) did
-  — same fix applied to the
+  Barre — `minzoom: 8`, alongside e.g. Middlebury and White River
+  Junction). Same tier placement applied to the
   [`vt-basemap-2026-city-points-desat`](vt-basemap-2026-city-points-desat)
-  copy below, since this was a tier-placement correction, not a
-  desaturation-specific choice.
+  copy below.
 - [`vt-basemap-2026-town-labels`](vt-basemap-2026-town-labels) — VCGI's
   own Vermont municipal-name labels, filling a content gap (official
   town names not always present in Living Atlas content), not just a
@@ -238,11 +179,11 @@ the 1' contour layer.
   default). Positioned above the VT mask so neighboring-state context
   still shows at statewide zoom while non-Vermont roads stay masked.
 - [`vt-basemap-2026-context-boundaries-desat`](vt-basemap-2026-context-boundaries-desat) —
-  save-as of Context Boundaries with water desaturated to the same
-  `#c2c8ca` used in Light Roads Desat (all 7 water/marine layers), for
-  use alongside that style in the desaturated "Base" configuration.
-  Boundary-line colors (country/state gray) are unchanged — only water
-  was in scope for this pass.
+  save-as of Context Boundaries with water desaturated to `#d4dadc`
+  (all 7 water/marine layers), matching Light Roads Desat's own water
+  fill, for use alongside that style in the desaturated "Base"
+  configuration. Boundary-line colors (country/state gray,
+  `#a8a8a8`/`#c8c8c8`) are unchanged.
 - [`world-terrain-reference-labels-dark-imagery`](world-terrain-reference-labels-dark-imagery) —
   styled copy of Esri's World Terrain Reference Labels item, for the
   "Labels Imagery" Group Layer configuration (dark aerial imagery

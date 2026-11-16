@@ -21,14 +21,14 @@ There are three such combinations so far:
 
 A grayscale/monochromatic take on the basemap (MapTiler Positron is the
 visual reference). Every vector-tile style with a saturated color has a
-desaturated sibling substituted in; anything already neutral (Town
-Boundaries, Town Labels, City Points, State Boundary) is reused as-is.
+desaturated sibling substituted in; Town Boundaries and State Boundary
+were already neutral enough to reuse as-is.
 
 | Order | Group | Item ID | Contents |
 |---|---|---|---|
-| Top | Labels Desaturated | `ceaef1a3a4744f8e99f05f9f3148443e` | Desaturated World Terrain Reference Labels Light, plus the same Town Labels and City Points items reused from the other configurations |
+| Top | Labels Desaturated | `ceaef1a3a4744f8e99f05f9f3148443e` | Desaturated World Terrain Reference Labels Light, plus Desaturated-specific copies of Town Labels and City Points (text lightened to match) |
 | — | Boundaries | `78853d8236e04a1d8d6df5c0f94e7c13` | Same item as the other configurations — its existing light-gray/white palette needed no desaturated copy |
-| Bottom | Base Desaturated | `024fe4874e67434d8987e580300b228c` | Same as Base, with desaturated Light Roads and Context Boundaries styles substituted in; the Wetlands Inventory symbol is a deliberate exception, kept at reduced-but-visible saturation |
+| Bottom | Base Desaturated | `024fe4874e67434d8987e580300b228c` | Same as Base, with desaturated Light Roads, Buildings 2022, and Context Boundaries styles substituted in; the Wetlands Inventory symbol is a deliberate exception, kept at reduced-but-visible saturation |
 
 [Test 02e](topographic-test-02e-desaturated/README.md) is the reference
 example for this combination.
