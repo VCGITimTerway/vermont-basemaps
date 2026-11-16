@@ -82,7 +82,7 @@
   the item don't automatically propagate to maps that already reference
   it).</p>
   <p>These three combine into one basemap "style" and must be stacked in
-  the order shown (top layer drawn last, i.e. on top). There are three
+  the order shown (top layer drawn last, i.e. on top). There are four
   such combinations so far.</p>
 
   <div class="config-columns">
@@ -115,6 +115,38 @@
           the Wetlands Inventory symbol is a deliberate exception, kept
           at reduced-but-visible saturation. —
           <a href="https://vcgi.maps.arcgis.com/home/item.html?id=024fe4874e67434d8987e580300b228c">item page</a></div>
+        </li>
+      </ol>
+    </div>
+    <div>
+      <h3>Desaturated Imagery configuration</h3>
+      <p class="stack-note">Work in progress — save-as of the Desaturated
+      configuration, adding a muted World Imagery layer. No
+      Imagery-specific style save-as has been made yet for anything
+      inside either group.</p>
+      <ol class="stack-list">
+        <li class="group-item">
+          <div class="stack-pos">Top</div>
+          <div class="title">Labels Desaturated Imagery</div>
+          <div class="item-id">54e31a3ce1a54922896fea2f4b05124b</div>
+          <div class="status">Same three sub-layers/items as Labels
+          Desaturated, no changes yet. —
+          <a href="https://vcgi.maps.arcgis.com/home/item.html?id=54e31a3ce1a54922896fea2f4b05124b">item page</a></div>
+        </li>
+        <li class="group-item">
+          <div class="title">Boundaries</div>
+          <div class="item-id">78853d8236e04a1d8d6df5c0f94e7c13</div>
+          <div class="status">Same item as the other configurations. —
+          <a href="https://vcgi.maps.arcgis.com/home/item.html?id=78853d8236e04a1d8d6df5c0f94e7c13">item page</a></div>
+        </li>
+        <li class="group-item">
+          <div class="stack-pos">Bottom</div>
+          <div class="title">Base Desaturated Imagery</div>
+          <div class="item-id">41b654fbf29441e7bb649ae24d09e921</div>
+          <div class="status">Same as Base Desaturated, plus a World
+          Imagery layer at 0.4 opacity; Alpine Trails, Golf Courses, and
+          Quarries currently toggled off. —
+          <a href="https://vcgi.maps.arcgis.com/home/item.html?id=41b654fbf29441e7bb649ae24d09e921">item page</a></div>
         </li>
       </ol>
     </div>
@@ -198,6 +230,23 @@
           —
           <a href="https://github.com/VCGITimTerway/vermont-basemaps/blob/main/docs/webmap-tests/topographic-test-02e-desaturated/README.md">documentation</a>
           <div class="status">Grayscale/monochromatic take on the basemap; references the Base Desaturated and Labels Desaturated Group Layers.</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3>Desaturated Imagery example</h3>
+      <p class="stack-note">Test 02f is the reference example for the
+      Desaturated Imagery + Boundaries + Labels Desaturated Imagery
+      combination above; work in progress.</p>
+      <div class="card">
+        <a href="topographic-test-02f-desaturated-imagery/">
+          <img src="https://vcgi.maps.arcgis.com/sharing/rest/content/items/a6cecec78d114e0e924b7e10cafbfd16/info/thumbnail/ago_downloaded.png" alt="Topographic Test 02f thumbnail">
+        </a>
+        <div>
+          <a class="embed" href="topographic-test-02f-desaturated-imagery/">Desaturated Imagery — Test 02f</a>
+          —
+          <a href="https://github.com/VCGITimTerway/vermont-basemaps/blob/main/docs/webmap-tests/topographic-test-02f-desaturated-imagery/README.md">documentation</a>
+          <div class="status">Desaturated basemap with a muted World Imagery layer added; references the Base Desaturated Imagery and Labels Desaturated Imagery Group Layers.</div>
         </div>
       </div>
     </div>

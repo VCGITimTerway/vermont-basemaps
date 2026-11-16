@@ -15,7 +15,7 @@ does and doesn't give you.
 
 These are designed to combine into a single basemap "style," and **must
 be stacked in the order listed** (top row drawn last, i.e. on top).
-There are three such combinations so far:
+There are four such combinations so far:
 
 ### Desaturated configuration
 
@@ -32,6 +32,24 @@ were already neutral enough to reuse as-is.
 
 [Test 02e](topographic-test-02e-desaturated/README.md) is the reference
 example for this combination.
+
+### Desaturated Imagery configuration
+
+**Work in progress.** A save-as variant of the Desaturated configuration
+above, adding a muted World Imagery layer underneath the same
+desaturated vector-tile styles. Some layers are currently toggled off
+rather than removed, and no Imagery-specific style save-as has been made
+yet for anything inside either group — both still reference the same
+items the Desaturated configuration uses.
+
+| Order | Group | Item ID | Contents |
+|---|---|---|---|
+| Top | Labels Desaturated Imagery | `54e31a3ce1a54922896fea2f4b05124b` | Same three sub-layers/items as Labels Desaturated, no changes yet |
+| — | Boundaries | `78853d8236e04a1d8d6df5c0f94e7c13` | Same item as the other configurations |
+| Bottom | Base Desaturated Imagery | `41b654fbf29441e7bb649ae24d09e921` | Same as Base Desaturated, plus a World Imagery layer at 0.4 opacity; Alpine Trails, Golf Courses, and Quarries currently toggled off |
+
+[Test 02f](topographic-test-02f-desaturated-imagery/README.md) is the
+reference example for this combination.
 
 ### Base Topo configuration
 
@@ -154,6 +172,12 @@ not what to build against directly; use
 | Test | Live embed | Notes |
 |---|---|---|
 | [Desaturated — Test 02e](topographic-test-02e-desaturated/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-02e-desaturated/) | Reference example for the Desaturated + Boundaries + Labels Desaturated combination above; grayscale/monochromatic take on the basemap (MapTiler Positron as the visual reference) |
+
+### Desaturated Imagery configuration example
+
+| Test | Live embed | Notes |
+|---|---|---|
+| [Desaturated Imagery — Test 02f](topographic-test-02f-desaturated-imagery/README.md) | [embed](https://vcgitimterway.github.io/vermont-basemaps/webmap-tests/topographic-test-02f-desaturated-imagery/) | Reference example for the Desaturated Imagery + Boundaries + Labels Desaturated Imagery combination above; work in progress |
 
 ### Base Topo configuration example
 
