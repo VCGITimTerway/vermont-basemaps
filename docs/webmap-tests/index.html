@@ -57,11 +57,21 @@
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
     align-items: start;
   }
+  .example-row {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+    align-items: start; margin-top: 1.5rem;
+  }
+  .example-row:first-of-type { margin-top: 0; }
+  .placeholder-card {
+    padding: 1rem; border: 1px dashed #ccc; border-radius: 6px;
+    color: #555555; font-size: 0.95rem;
+  }
   @media (max-width: 900px) {
     .config-columns { grid-template-columns: 1fr; }
   }
   @media (max-width: 700px) {
     .card-grid { grid-template-columns: 1fr; }
+    .example-row { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -212,7 +222,7 @@
   design decisions) for each is linked alongside it. Thumbnails are each
   item's live ArcGIS Online thumbnail, not a static copy.</p>
 
-  <div class="config-columns">
+  <div class="example-row">
     <div>
       <h3>Desaturated example</h3>
       <p class="stack-note">Test 02e is the reference example for the
@@ -246,6 +256,25 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="example-row">
+    <div>
+      <h3>Base example</h3>
+      <p class="stack-note">Test 02d is the reference example for the Base
+      + Boundaries + Labels combination above.</p>
+      <div class="card">
+        <a href="topographic-test-02d-base/">
+          <img src="https://vcgi.maps.arcgis.com/sharing/rest/content/items/5e5d8a7a2bb54ca791271c7050f6e29d/info/thumbnail/ago_downloaded.png" alt="Topographic Test 02d thumbnail">
+        </a>
+        <div>
+          <a class="embed" href="topographic-test-02d-base/">Base — Test 02d</a>
+          —
+          <a href="https://github.com/VCGITimTerway/vermont-basemaps/blob/main/docs/webmap-tests/topographic-test-02d-base/README.md">documentation</a>
+          <div class="status">Same as Test 02b, minus the Lidar DEM Hillshade layer; references the Base Group Layer instead of Base Topo.</div>
+        </div>
+      </div>
+    </div>
     <div>
       <h3>Base Topo example</h3>
       <p class="stack-note">Test 02b is the reference example for the Base
@@ -262,21 +291,18 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="example-row">
     <div>
-      <h3>Base example</h3>
-      <p class="stack-note">Test 02d is the reference example for the Base
-      + Boundaries + Labels combination above.</p>
-      <div class="card">
-        <a href="topographic-test-02d-base/">
-          <img src="https://vcgi.maps.arcgis.com/sharing/rest/content/items/5e5d8a7a2bb54ca791271c7050f6e29d/info/thumbnail/ago_downloaded.png" alt="Topographic Test 02d thumbnail">
-        </a>
-        <div>
-          <a class="embed" href="topographic-test-02d-base/">Base — Test 02d</a>
-          —
-          <a href="https://github.com/VCGITimTerway/vermont-basemaps/blob/main/docs/webmap-tests/topographic-test-02d-base/README.md">documentation</a>
-          <div class="status">Same as Test 02b, minus the Lidar DEM Hillshade layer; references the Base Group Layer instead of Base Topo.</div>
-        </div>
-      </div>
+      <h3>Imagery example</h3>
+      <div class="placeholder-card">Not yet documented — "VT Basemap 2026 - Imagery - Test 03" and its Base Imagery / Labels Imagery Group Layers are still being built and iterated. This card will link here once that's ready.</div>
+    </div>
+    <div>
+      <h3>Additional Imagery example</h3>
+      <div class="placeholder-card">Reserved for a second Imagery
+      configuration (naming/scope not yet decided) — placeholder until
+      that work starts.</div>
     </div>
   </div>
 
