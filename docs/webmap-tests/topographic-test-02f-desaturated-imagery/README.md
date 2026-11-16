@@ -48,7 +48,7 @@ Three groups:
 | 7 | Human Geography Detail — Blue Water Light Roads Desat | Esri Living Atlas vector tile, item `bb6f7b84a0244a75909cff78f2883e6c` | **Off** | — | Hidden — superseded by row 8, kept in the map rather than removed |
 | 8 | Human Geography Detail — Blue Water **Light Roads DESAT IMAGERY** | Esri Living Atlas vector tile, item `8a665305420b4fccafd43059bc5c73c4` | On | — | Save-as of Light Roads Desat, specific to this configuration — see [style file](../../basemap-styles/human-geography-detail-blue-water-light-roads-desat-imagery) |
 | 9 | Vermont Significant Wetlands Inventory | [AGOL hosted feature layer](https://services5.arcgis.com/Uzks6LSde6r23wwG/arcgis/rest/services/Vermont_Significant_Wetland_Inventory/FeatureServer/0) | On | 0.75 | Same `#5eabc4` symbol color as Test 02e |
-| 10 | Buildings 2022 (White) | Vector tile, item `b9f60490ca3d4a3f8d6af6c80e4b8c96`, Desaturated-specific fork | On | — | Same item as Test 02e, scale range narrowed here to 1:23,411–1:2,643 — see [style file](../../basemap-styles/buildings-2022-white-desat) |
+| 10 | Buildings 2022 (White) | Vector tile, item `b9f60490ca3d4a3f8d6af6c80e4b8c96`, Desaturated-specific fork | On | — | Same item as Test 02e, scale range narrowed here to 1:23,411–1:5,331 — see [style file](../../basemap-styles/buildings-2022-white-desat) |
 | 11 | VT Data — E911 Alpine Ski Lifts | [AGOL hosted feature layer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_ALPINELIFTS_line_SP_v1/FeatureServer/0) | On | — | Same as Test 02e |
 | 12 | VT Mask - GeoJSON Test | [`vermont-mask.geojson`](../../basemap-styles/human-geography-detail-blue-water/vermont-mask.geojson) | On | — | Same as Test 02e |
 | 13 | VT Data - State Boundary | [AGOL hosted FeatureServer](https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Boundary_BNDHASH_poly_vtbnd_SP_v1/FeatureServer/0) | On | — | Same as Test 02e |
@@ -81,8 +81,10 @@ Identical to every other configuration — see
   for the water zoom-cutoff change. The original Light Roads Desat item
   is still in the map but hidden.
 - **Buildings 2022** keeps the same style item as Test 02e, but its
-  scale range is narrower here (1:23,411–1:2,643 vs. Test 02e's
-  1:23,411–1:12) — set at the webmap layer level, not in the style.
+  scale range is narrower here (1:23,411–1:5,331 vs. Test 02e's
+  1:23,411–1:12) — set at the webmap layer level, not in the style. The
+  zoomed-out bound (1:23,411, zoom ≈ 14.625) is the one the Light Roads
+  DESAT IMAGERY water `maxzoom` above matches — unchanged.
 - Everything else is currently identical to Test 02e.
 
 ## Related
