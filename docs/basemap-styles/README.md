@@ -53,6 +53,23 @@ the 1' contour layer.
     `_label_class` range as the proper shield system in the Labels Desat
     style below. Both are hidden (`"visibility": "none"`) so road names/
     shields render once, from the Labels style only.
+- [`human-geography-detail-blue-water-light-roads-desat-imagery`](human-geography-detail-blue-water-light-roads-desat-imagery) —
+  save-as of Light Roads Desat for the "Base Desaturated Imagery" group
+  (Test 02f), used alongside a muted World Imagery layer at 0.4 opacity.
+  Same `#d4dadc` water/casing colors as Light Roads Desat. The four
+  water layers with no existing upper zoom cutoff (`Marine area`,
+  `Water line/Stream or river`, `Water area/Lake, river or bay`,
+  `Water area/Dam or weir`) have `maxzoom: 14.625277` added, matching
+  the zoom level where the Base Desaturated Imagery group's Buildings
+  2022 layer currently starts rendering (`minScale: 23411.228391` in
+  that group, converted from Esri scale to a MapLibre zoom value) — so
+  the stylized water fill drops away at the same point buildings start
+  showing, letting the aerial imagery itself carry water detail once
+  zoomed in that close, mirroring the plain (non-desaturated) Imagery
+  style's choice to hide water entirely. The other three water-fill/line
+  tiers (`small scale`/`medium scale`/`large scale`) already stop at
+  zoom 5/7/11 respectively as part of their normal generalization
+  tiering, well before 14.6, so they didn't need a change.
 - [`world-terrain-reference-labels-light`](world-terrain-reference-labels-light) —
   styled copy of Esri's World Terrain Reference Labels item
   (`World_Basemap_v2`), with placename and spot-elevation text muted to
