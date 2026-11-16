@@ -171,6 +171,14 @@ the 1' contour layer.
     alongside the others. Major/Highway/Freeway Motorway and Local-ramp
     classes were already correctly aligned or label-after-feature (the
     safe direction), and weren't touched.
+  - **Seventh pass**: `Road/label/Pedestrian` was still at its original,
+    never-touched `#594c42` (dark brown) — lightened to `#b6bcad` to
+    match `Trail or path/label/Default`, the one trail-family label
+    color already lightened in this style. `Road tunnel/label/Pedestrian`
+    and `Pedestrian/label/Default` (both the original `#778069`, the
+    same open-space-green left alone in the Fourth pass) were lightened
+    to `#b6bcad` as well in a follow-up — all four
+    trail/pedestrian-family label layers now match.
 - [`buildings-2022-white-desat`](buildings-2022-white-desat) — the
   already-separate, Desaturated-specific "Buildings 2022" item (item
   `b9f60490ca3d4a3f8d6af6c80e4b8c96`, titled "...Buildings 2022 f8f8f8"

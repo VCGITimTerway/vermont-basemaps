@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "sprite": "https://www.arcgis.com/sharing/rest/content/items/8c0999ee861c4c66801b6bcb1bc0ffd6/resources/sprites/sprite-1794599582538",
+  "sprite": "https://www.arcgis.com/sharing/rest/content/items/8c0999ee861c4c66801b6bcb1bc0ffd6/resources/sprites/sprite-1794600958420",
   "glyphs": "https://basemaps.arcgis.com/arcgis/rest/services/World_Basemap_v2/VectorTileServer/resources/fonts/{fontstack}/{range}.pbf",
   "sources": {
     "esri": {
@@ -1656,7 +1656,7 @@
         "text-field": "{_name_global}"
       },
       "paint": {
-        "text-color": "#778069",
+        "text-color": "#b6bcad",
         "text-halo-color": "#fcfcfa",
         "text-halo-width": 1,
         "text-halo-blur": 1
@@ -7314,7 +7314,7 @@
         "text-field": "{_name_global}"
       },
       "paint": {
-        "text-color": "#594c42",
+        "text-color": "#b6bcad",
         "text-halo-color": "#fcfcfa",
         "text-halo-width": 1
       }
@@ -7446,7 +7446,7 @@
         "text-padding": 25
       },
       "paint": {
-        "text-color": "#778069",
+        "text-color": "#b6bcad",
         "text-halo-color": "#fcfcfa",
         "text-halo-width": 1,
         "text-halo-blur": 1
