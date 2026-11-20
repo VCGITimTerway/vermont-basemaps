@@ -114,15 +114,18 @@ the 1' contour layer.
   `text-halo-color` pair at zoom 15.76, matching the zoom where the
   corresponding road/transportation network disappears in Light Roads
   DESAT IMAGERY above: below that zoom, labels keep their normal dark
-  text on a `#fcfcfa` halo; at and above it, the halo color becomes the
-  text color and the original text color becomes the halo (e.g. `Road/
-  label/Major`: `#758191` text on `#fcfcfa` halo below 15.76, `#fcfcfa`
-  text on a `#758191` halo at/above it) — readable against raw imagery
-  once the vector road fill is no longer there to read against. Done
-  as a two-stop color function (`15.75`→old, `15.76`→swapped) rather
-  than a hard step, for compatibility with the same `stops` function
-  syntax already used elsewhere in these styles; the 0.01-zoom gap
-  reads as instant in practice. Road-name shield icon layers
+  text on a `#fcfcfa` halo; at and above it, the text becomes `#fcfcfa`
+  and the halo becomes a hue-preserved darkened version of the original
+  text color — darker than the original (not just the original color
+  reused), so the now-white text stays legible against the aerial
+  imagery (e.g. `Road/label/Major`: `#758191` text on `#fcfcfa` halo
+  below 15.76, `#fcfcfa` text on a `#596370` halo at/above it). The
+  other three: `#bbbbbb`→`#9c9c9c` (Local/Minor), `#b6bcad`→`#98a08b`
+  (Pedestrian/Trail), `#ad9d94`→`#927d71` (Railroad). Done as a two-stop
+  color function (`15.75`→old, `15.76`→swapped/darkened) rather than a
+  hard step, for compatibility with the same `stops` function syntax
+  already used elsewhere in these styles; the 0.01-zoom gap reads as
+  instant in practice. Road-name shield icon layers
   (`Road/label/<Shape> <color>`, 64 layers) are untouched — they only
   have `icon-opacity`/`text-color`, no halo, so the same swap doesn't
   apply the same way; `Ferry/label/Ferry` and `Ferry/label/Rail ferry`
