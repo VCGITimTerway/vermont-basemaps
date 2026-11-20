@@ -99,8 +99,9 @@ Identical to every other configuration — see
   layer lists.
 - **Trails** (`Trail or path/0`/`/1`, only ever visible in that same
   narrow zoom 15–15.76 band) have `line-opacity: 0.5` in Light Roads
-  DESAT IMAGERY, toning them down against the muted aerial imagery;
-  width and color are otherwise unchanged from Light Roads Desat — see
+  DESAT IMAGERY, plus a `[3, 2]` dash on the fill layer, toning them
+  down further against the muted aerial imagery; width and color are
+  otherwise unchanged from Light Roads Desat — see
   [style file](../../basemap-styles/human-geography-detail-blue-water-light-roads-desat-imagery).
 - Everything else is currently identical to Test 02e.
 

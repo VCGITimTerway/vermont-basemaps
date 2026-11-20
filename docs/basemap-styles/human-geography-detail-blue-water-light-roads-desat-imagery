@@ -852,7 +852,11 @@
       "paint": {
         "line-width": 1.6,
         "line-color": "#ffffff",
-        "line-opacity": 0.5
+        "line-opacity": 0.5,
+        "line-dasharray": [
+          3,
+          2
+        ]
       },
       "maxzoom": 15.76
     },

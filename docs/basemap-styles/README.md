@@ -86,9 +86,12 @@ the 1' contour layer.
     render in the narrow zoom 15–15.76 band (per the cutoff above).
     Width and color are unchanged from Light Roads Desat (`1.6`/
     `#ffffff` fill, `2.9`/`#eaeaea` casing) — both layers have
-    `line-opacity: 0.5` added, toning them down against the muted
-    aerial imagery without otherwise changing their appearance.
-    `Road/Pedestrian/0`/`/1` share the same narrow zoom band and
+    `line-opacity: 0.5` added, and the fill (`/0`) also has
+    `line-dasharray: [3, 2]`, toning them down further against the
+    muted aerial imagery — the same dash pattern already used for
+    trails in the plain (non-desaturated)
+    [`human-geography-detail-blue-water-light-roads-imagery`](human-geography-detail-blue-water-light-roads-imagery)
+    style. `Road/Pedestrian/0`/`/1` share the same narrow zoom band and
     original full opacity but weren't touched — only trails were
     flagged.
 - [`world-terrain-reference-labels-light-desaturated-imagery`](world-terrain-reference-labels-light-desaturated-imagery) —
