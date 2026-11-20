@@ -97,6 +97,11 @@ Identical to every other configuration — see
   color` invert at that same zoom instead, so they stay readable
   against the raw imagery. See both style files above for the full
   layer lists.
+- **Trails** (`Trail or path/0`/`/1`, only ever visible in that same
+  narrow zoom 15–15.76 band) are thinned, darkened, and given reduced
+  opacity in Light Roads DESAT IMAGERY, since they read too strongly
+  against the muted aerial imagery at their original width/color — see
+  [style file](../../basemap-styles/human-geography-detail-blue-water-light-roads-desat-imagery).
 - Everything else is currently identical to Test 02e.
 
 ## Related
