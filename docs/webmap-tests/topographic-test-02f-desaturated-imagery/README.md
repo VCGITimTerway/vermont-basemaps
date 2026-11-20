@@ -87,15 +87,16 @@ Identical to every other configuration — see
   scale range is narrower here (1:23,411–1:5,331 vs. Test 02e's
   1:23,411–1:12) — set at the webmap layer level, not in the style.
 - **The whole road/transportation network now disappears at zoom
-  16.76**, matching where Buildings 2022 already stops rendering in
-  this group (same reasoning: past that zoom, the aerial imagery itself
-  carries the detail). Road, road tunnel, trail, pedestrian-road,
-  railroad, rail ferry, and airport runway line/fill layers in Light
-  Roads DESAT IMAGERY all get `maxzoom: 16.76`. The corresponding
-  road/transportation text labels in the Labels style don't disappear —
-  their `text-color`/`text-halo-color` invert at that same zoom instead,
-  so they stay readable against the raw imagery. See both style files
-  above for the full layer lists.
+  15.76** — one zoom level before Buildings 2022 stops rendering in
+  this group (zoom ≈ 16.76) — so the aerial imagery carries road detail
+  a level sooner than it carries building detail. Road, road tunnel,
+  trail, pedestrian-road, railroad, rail ferry, and airport runway
+  line/fill layers in Light Roads DESAT IMAGERY all get
+  `maxzoom: 15.76`. The corresponding road/transportation text labels
+  in the Labels style don't disappear — their `text-color`/`text-halo-
+  color` invert at that same zoom instead, so they stay readable
+  against the raw imagery. See both style files above for the full
+  layer lists.
 - Everything else is currently identical to Test 02e.
 
 ## Related

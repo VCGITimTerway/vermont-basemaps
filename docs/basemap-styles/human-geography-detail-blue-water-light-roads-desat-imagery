@@ -46,7 +46,7 @@
       "paint": {
         "fill-color": "#e7e5e5"
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Water line small scale",
@@ -791,7 +791,7 @@
         "line-width": 2.9,
         "line-color": "#eaeaea"
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road/Pedestrian/1",
@@ -836,7 +836,7 @@
         },
         "line-color": "#eaeaea"
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Trail or path/0",
@@ -852,7 +852,7 @@
         "line-width": 1.6,
         "line-color": "#ffffff"
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road/Pedestrian/0",
@@ -897,7 +897,7 @@
         },
         "line-color": "#ffffff"
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Railroad/ties",
@@ -916,7 +916,7 @@
         ]
       },
       "minzoom": 15,
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Railroad",
@@ -931,7 +931,7 @@
         "line-width": 1.2
       },
       "minzoom": 15,
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Ferry/Rail ferry",
@@ -959,7 +959,7 @@
         "line-color": "#f2ffff",
         "line-width": 1.2
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road/4WD/1",
@@ -1003,7 +1003,7 @@
         ],
         "line-color": "#d5d5d5"
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road/Service/1",
@@ -1048,7 +1048,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road/Local/1",
@@ -1097,7 +1097,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road/Minor, ramp or traffic circle/1",
@@ -1146,7 +1146,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road/Minor/1",
@@ -1195,7 +1195,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road/Major, ramp or traffic circle/1",
@@ -1244,7 +1244,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road/Major/1",
@@ -1293,7 +1293,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road/Freeway Motorway, ramp or traffic circle/1",
@@ -1342,7 +1342,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road/Highway/1",
@@ -1390,7 +1390,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road/Freeway Motorway/1",
@@ -1438,7 +1438,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road/4WD/0",
@@ -1478,7 +1478,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road/Service/0",
@@ -1523,7 +1523,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road/Local/0",
@@ -1572,7 +1572,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road/Minor, ramp or traffic circle/0",
@@ -1621,7 +1621,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road/Minor/0",
@@ -1670,7 +1670,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road/Major, ramp or traffic circle/0",
@@ -1719,7 +1719,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road/Major/0",
@@ -1768,7 +1768,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road/Freeway Motorway, ramp or traffic circle/0",
@@ -1817,7 +1817,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road/Highway/0",
@@ -1865,7 +1865,7 @@
         },
         "line-color": "#ffffff"
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road/Freeway Motorway/0",
@@ -1913,7 +1913,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road tunnel/4WD/1",
@@ -1958,7 +1958,7 @@
         "line-opacity": 0.5,
         "line-color": "#d5d5d5"
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road tunnel/Service/1",
@@ -2000,7 +2000,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road tunnel/Local/1",
@@ -2050,7 +2050,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road tunnel/Minor, ramp or traffic circle/1",
@@ -2100,7 +2100,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road tunnel/Minor/1",
@@ -2150,7 +2150,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road tunnel/Major, ramp or traffic circle/1",
@@ -2200,7 +2200,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road tunnel/Major/1",
@@ -2250,7 +2250,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road tunnel/Freeway Motorway, ramp or traffic circle/1",
@@ -2300,7 +2300,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road tunnel/Highway/1",
@@ -2349,7 +2349,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road tunnel/Freeway Motorway/1",
@@ -2398,7 +2398,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road tunnel/4WD/0",
@@ -2439,7 +2439,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road tunnel/Service/0",
@@ -2481,7 +2481,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road tunnel/Local/0",
@@ -2531,7 +2531,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road tunnel/Minor, ramp or traffic circle/0",
@@ -2581,7 +2581,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road tunnel/Minor/0",
@@ -2631,7 +2631,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road tunnel/Major, ramp or traffic circle/0",
@@ -2681,7 +2681,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road tunnel/Major/0",
@@ -2731,7 +2731,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road tunnel/Freeway Motorway, ramp or traffic circle/0",
@@ -2781,7 +2781,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road tunnel/Highway/0",
@@ -2830,7 +2830,7 @@
         "line-opacity": 0.7,
         "line-color": "#ffffff"
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road tunnel/Freeway Motorway/0",
@@ -2879,7 +2879,7 @@
           ]
         }
       },
-      "maxzoom": 16.76
+      "maxzoom": 15.76
     },
     {
       "id": "Road/label/Rectangle white black (Alt)",

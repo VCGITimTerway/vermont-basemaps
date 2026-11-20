@@ -72,15 +72,16 @@ the 1' contour layer.
   tiering, well before 14.6, so they didn't need a change.
   - **Road/transportation network cutoff**: all 48 road, road tunnel,
     trail, pedestrian-road, railroad, rail ferry, and airport runway
-    line/fill layers now have `maxzoom: 16.76`, matching the zoom where
+    line/fill layers now have `maxzoom: 15.76` — one zoom level before
     the Base Desaturated Imagery group's Buildings 2022 layer currently
-    stops rendering (`maxScale: 5330.99674` in that group, converted to
-    a MapLibre zoom value). Past that zoom, the vector road network
-    disappears and the aerial imagery itself carries the detail,
-    consistent with the same reasoning Buildings already uses. Road
-    name/shield label layers and their blockout masks are untouched —
-    they live in the Labels style below and keep rendering past this
-    cutoff, just with inverted colors (see below).
+    stops rendering (`maxScale: 5330.99674` in that group, zoom ≈ 16.76)
+    — so the road network disappears a level sooner than buildings do,
+    per Tim's preference after testing the initial matching cutoff.
+    Past that zoom, the vector road network disappears and the aerial
+    imagery itself carries the detail. Road name/shield label layers
+    and their blockout masks are untouched — they live in the Labels
+    style below and keep rendering past this cutoff, just with inverted
+    colors (see below).
 - [`world-terrain-reference-labels-light-desaturated-imagery`](world-terrain-reference-labels-light-desaturated-imagery) —
   save-as of World Terrain Reference Labels Light Desaturated for the
   "Labels Desaturated Imagery" group (Test 02f). Same color scheme as
@@ -90,15 +91,15 @@ the 1' contour layer.
   Motorway, Local, Minor, Pedestrian, and their alt-name/tunnel
   variants — plus `Railroad/label/Default`, `Trail or path/label/
   Default`, and `Pedestrian/label/Default`) invert their `text-color`/
-  `text-halo-color` pair at zoom 16.76, matching the zoom where the
+  `text-halo-color` pair at zoom 15.76, matching the zoom where the
   corresponding road/transportation network disappears in Light Roads
   DESAT IMAGERY above: below that zoom, labels keep their normal dark
   text on a `#fcfcfa` halo; at and above it, the halo color becomes the
   text color and the original text color becomes the halo (e.g. `Road/
-  label/Major`: `#758191` text on `#fcfcfa` halo below 16.76, `#fcfcfa`
+  label/Major`: `#758191` text on `#fcfcfa` halo below 15.76, `#fcfcfa`
   text on a `#758191` halo at/above it) — readable against raw imagery
   once the vector road fill is no longer there to read against. Done
-  as a two-stop color function (`16.75`→old, `16.76`→swapped) rather
+  as a two-stop color function (`15.75`→old, `15.76`→swapped) rather
   than a hard step, for compatibility with the same `stops` function
   syntax already used elsewhere in these styles; the 0.01-zoom gap
   reads as instant in practice. Road-name shield icon layers
