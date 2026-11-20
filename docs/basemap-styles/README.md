@@ -83,16 +83,13 @@ the 1' contour layer.
     style below and keep rendering past this cutoff, just with inverted
     colors (see below).
   - **Trail prominence**: `Trail or path/0`/`Trail or path/1` only ever
-    render in the narrow zoom 15–15.76 band (per the cutoff above), and
-    read too strongly against the muted aerial imagery at their
-    original width/color. Fill (`/0`) thinned `1.6`→`1.4` and given
-    `line-opacity: 0.3`; casing (`/1`) thinned `2.9`→`2`, darkened
-    `#eaeaea`→`#8c8c8c`, and given `line-opacity: 0.5` — mirroring the
-    same width/opacity/color treatment already used for trails in the
-    plain (non-desaturated)
-    [`human-geography-detail-blue-water-light-roads-imagery`](human-geography-detail-blue-water-light-roads-imagery)
-    style. `Road/Pedestrian/0`/`/1` share the same narrow zoom band and
-    original light casing color but weren't touched — only trails were
+    render in the narrow zoom 15–15.76 band (per the cutoff above).
+    Width and color are unchanged from Light Roads Desat (`1.6`/
+    `#ffffff` fill, `2.9`/`#eaeaea` casing) — both layers have
+    `line-opacity: 0.5` added, toning them down against the muted
+    aerial imagery without otherwise changing their appearance.
+    `Road/Pedestrian/0`/`/1` share the same narrow zoom band and
+    original full opacity but weren't touched — only trails were
     flagged.
 - [`world-terrain-reference-labels-light-desaturated-imagery`](world-terrain-reference-labels-light-desaturated-imagery) —
   save-as of World Terrain Reference Labels Light Desaturated for the

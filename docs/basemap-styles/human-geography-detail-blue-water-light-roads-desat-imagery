@@ -788,8 +788,8 @@
         "line-join": "round"
       },
       "paint": {
-        "line-width": 2,
-        "line-color": "#8c8c8c",
+        "line-width": 2.9,
+        "line-color": "#eaeaea",
         "line-opacity": 0.5
       },
       "maxzoom": 15.76
@@ -850,9 +850,9 @@
         "line-join": "round"
       },
       "paint": {
-        "line-width": 1.4,
+        "line-width": 1.6,
         "line-color": "#ffffff",
-        "line-opacity": 0.3
+        "line-opacity": 0.5
       },
       "maxzoom": 15.76
     },
