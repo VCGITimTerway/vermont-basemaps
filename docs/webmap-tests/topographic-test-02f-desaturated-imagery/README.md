@@ -63,7 +63,7 @@ Identical to every other configuration — see
 
 | # | Layer | Source | On? | Notes |
 |---|---|---|---|---|
-| 15 | World Terrain Reference Labels Light **Desaturated** | VCGI vector tile layer, item `8c0999ee861c4c66801b6bcb1bc0ffd6` | On *(presumed)* | Same item as Test 02e — see [style file](../../basemap-styles/world-terrain-reference-labels-light-desat) |
+| 15 | World Terrain Reference Labels Light **Desaturated Imagery** | VCGI vector tile layer, item `e15d87c415184a2ea51a82db63db629d` | On *(presumed)* | Imagery-specific save-as, specific to this configuration — see [style file](../../basemap-styles/world-terrain-reference-labels-light-desaturated-imagery) |
 | 16 | VT Basemap 2026 Town Labels Manual Deconflict **DESAT** | VCGI vector tile layer, item `70bdd74a5472484eaa169b583a642237` | On *(presumed)* | Same item as Test 02e |
 | 17 | VT Basemap 2026 City Points WM - Levels 6 7 8 **DESAT** | VCGI vector tile layer, item `77b6f532de0b4da091cbc07f1d38a75c` | On *(presumed)* | Same item as Test 02e |
 
@@ -77,14 +77,25 @@ Identical to every other configuration — see
   re-enabled.
 - **Light Roads** has its own Imagery-specific save-as here (item
   `8a665305420b4fccafd43059bc5c73c4`, "...Light Roads DESAT IMAGERY") —
-  see [style file](../../basemap-styles/human-geography-detail-blue-water-light-roads-desat-imagery)
-  for the water zoom-cutoff change. The original Light Roads Desat item
-  is still in the map but hidden.
+  see [style file](../../basemap-styles/human-geography-detail-blue-water-light-roads-desat-imagery).
+  The original Light Roads Desat item is still in the map but hidden.
+- **Labels** also has its own Imagery-specific save-as here (item
+  `e15d87c415184a2ea51a82db63db629d`, "...World Terrain Reference
+  Labels Light Desaturated Imagery") — see
+  [style file](../../basemap-styles/world-terrain-reference-labels-light-desaturated-imagery).
 - **Buildings 2022** keeps the same style item as Test 02e, but its
   scale range is narrower here (1:23,411–1:5,331 vs. Test 02e's
-  1:23,411–1:12) — set at the webmap layer level, not in the style. The
-  zoomed-out bound (1:23,411, zoom ≈ 14.625) is the one the Light Roads
-  DESAT IMAGERY water `maxzoom` above matches — unchanged.
+  1:23,411–1:12) — set at the webmap layer level, not in the style.
+- **The whole road/transportation network now disappears at zoom
+  16.76**, matching where Buildings 2022 already stops rendering in
+  this group (same reasoning: past that zoom, the aerial imagery itself
+  carries the detail). Road, road tunnel, trail, pedestrian-road,
+  railroad, rail ferry, and airport runway line/fill layers in Light
+  Roads DESAT IMAGERY all get `maxzoom: 16.76`. The corresponding
+  road/transportation text labels in the Labels style don't disappear —
+  their `text-color`/`text-halo-color` invert at that same zoom instead,
+  so they stay readable against the raw imagery. See both style files
+  above for the full layer lists.
 - Everything else is currently identical to Test 02e.
 
 ## Related
