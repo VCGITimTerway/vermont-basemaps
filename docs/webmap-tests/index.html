@@ -66,6 +66,17 @@
     padding: 1rem; border: 1px dashed #ccc; border-radius: 6px;
     color: #555555; font-size: 0.95rem;
   }
+  .status-tag {
+    display: inline-block; font-size: 0.75rem; font-weight: 600;
+    padding: 0.15rem 0.6rem; border-radius: 999px;
+    letter-spacing: 0.02em; margin: 0.35rem 0 0.5rem;
+  }
+  .status-tag--complete {
+    background: #e6f4ea; color: #1e7b34; border: 1px solid #b7dfc2;
+  }
+  .status-tag--in-progress {
+    background: #fdf0d8; color: #8a5a00; border: 1px solid #f0cf8e;
+  }
   @media (max-width: 900px) {
     .config-columns { grid-template-columns: 1fr; }
   }
@@ -98,6 +109,7 @@
   <div class="config-columns">
     <div>
       <h3>Desaturated Config</h3>
+      <div class="status-tag status-tag--complete">Draft Complete | Source Data Changes Pending</div>
       <ol class="stack-list">
         <li class="group-item">
           <div class="stack-pos">Top</div>
@@ -130,6 +142,7 @@
     </div>
     <div>
       <h3>Desaturated Imagery Config</h3>
+      <div class="status-tag status-tag--complete">Draft Complete | Source Data Changes Pending</div>
       <ol class="stack-list">
         <li class="group-item">
           <div class="stack-pos">Top</div>
@@ -158,6 +171,7 @@
     </div>
     <div>
       <h3>Base Topo Config</h3>
+      <div class="status-tag status-tag--in-progress">Draft in Progress | Source Data Changes Pending</div>
       <ol class="stack-list">
         <li class="group-item">
           <div class="stack-pos">Top</div>
@@ -188,6 +202,7 @@
     </div>
     <div>
       <h3>Base Config</h3>
+      <div class="status-tag status-tag--in-progress">Draft in Progress | Source Data Changes Pending</div>
       <ol class="stack-list">
         <li class="group-item">
           <div class="stack-pos">Top</div>
@@ -225,6 +240,7 @@
   <div class="example-row">
     <div>
       <h3>Desaturated example</h3>
+      <div class="status-tag status-tag--complete">Draft Complete | Source Data Changes Pending</div>
       <p class="stack-note">Test 02e is the reference example for the
       Desaturated + Boundaries + Labels Desaturated combination above.</p>
       <div class="card">
@@ -241,6 +257,7 @@
     </div>
     <div>
       <h3>Desaturated Imagery example</h3>
+      <div class="status-tag status-tag--complete">Draft Complete | Source Data Changes Pending</div>
       <p class="stack-note">Test 02f is the reference example for the
       Desaturated Imagery + Boundaries + Labels Desaturated Imagery
       combination above</p>
@@ -261,6 +278,7 @@
   <div class="example-row">
     <div>
       <h3>Base example</h3>
+      <div class="status-tag status-tag--in-progress">Draft in Progress | Source Data Changes Pending</div>
       <p class="stack-note">Test 02d is the reference example for the Base
       + Boundaries + Labels combination above.</p>
       <div class="card">
@@ -277,6 +295,7 @@
     </div>
     <div>
       <h3>Base Topo example</h3>
+      <div class="status-tag status-tag--in-progress">Draft in Progress | Source Data Changes Pending</div>
       <p class="stack-note">Test 02b is the reference example for the Base
       Topo + Boundaries + Labels combination above.</p>
       <div class="card">
