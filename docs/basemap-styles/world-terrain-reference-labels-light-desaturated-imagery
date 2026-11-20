@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "sprite": "https://www.arcgis.com/sharing/rest/content/items/e15d87c415184a2ea51a82db63db629d/resources/sprites/sprite-1795181361083",
+  "sprite": "https://www.arcgis.com/sharing/rest/content/items/e15d87c415184a2ea51a82db63db629d/resources/sprites/sprite-1795191229043",
   "glyphs": "https://basemaps.arcgis.com/arcgis/rest/services/World_Basemap_v2/VectorTileServer/resources/fonts/{fontstack}/{range}.pbf",
   "sources": {
     "esri": {
@@ -1617,7 +1617,7 @@
             ],
             [
               15.76,
-              "#927d71"
+              "#ad9d94"
             ]
           ]
         },
@@ -1908,7 +1908,7 @@
             ],
             [
               15.76,
-              "#596370"
+              "#758191"
             ]
           ]
         },
@@ -1978,7 +1978,7 @@
             ],
             [
               15.76,
-              "#596370"
+              "#758191"
             ]
           ]
         },
@@ -2048,7 +2048,7 @@
             ],
             [
               15.76,
-              "#596370"
+              "#758191"
             ]
           ]
         },
@@ -2118,7 +2118,7 @@
             ],
             [
               15.76,
-              "#596370"
+              "#758191"
             ]
           ]
         },
@@ -2188,7 +2188,7 @@
             ],
             [
               15.76,
-              "#596370"
+              "#758191"
             ]
           ]
         },
@@ -2258,7 +2258,7 @@
             ],
             [
               15.76,
-              "#596370"
+              "#758191"
             ]
           ]
         },
@@ -2327,7 +2327,7 @@
             ],
             [
               15.76,
-              "#596370"
+              "#758191"
             ]
           ]
         },
@@ -2396,7 +2396,7 @@
             ],
             [
               15.76,
-              "#596370"
+              "#758191"
             ]
           ]
         },
@@ -2465,7 +2465,7 @@
             ],
             [
               15.76,
-              "#596370"
+              "#758191"
             ]
           ]
         },
@@ -2534,7 +2534,7 @@
             ],
             [
               15.76,
-              "#596370"
+              "#758191"
             ]
           ]
         },
@@ -10419,27 +10419,27 @@
     }
   ],
   "metadata": {
-    "arcgisStyleUrl": "https://www.arcgis.com/sharing/rest/content/items/8c0999ee861c4c66801b6bcb1bc0ffd6/resources/styles/root.json",
-    "arcgisOriginalItemTitle": "VT Basemap - Vermont Physical Geography Light - World Terrain Reference Labels Light Desaturated",
+    "arcgisStyleUrl": "https://www.arcgis.com/sharing/rest/content/items/e15d87c415184a2ea51a82db63db629d/resources/styles/root.json",
+    "arcgisOriginalItemTitle": "VT Basemap - Vermont Physical Geography Light - World Terrain Reference Labels Light Desaturated Imagery",
     "arcgisQuickEditorWarning": true,
     "arcgisEditorExtents": [
       {
         "spatialReference": {
           "wkid": 102100
         },
-        "xmin": -8049404.097092862,
-        "ymin": 5510274.457950651,
-        "xmax": -8045555.97045003,
-        "ymax": 5511858.137630477
+        "xmin": -8080192.656793082,
+        "ymin": 5505406.551947962,
+        "xmax": -8078715.272355882,
+        "ymax": 5506198.391787787
       },
       {
         "spatialReference": {
           "latestWkid": 3857,
           "wkid": 102100
         },
-        "xmin": -1320240.0813119095,
+        "xmin": -1016937.9530764107,
         "ymin": 6104404.498554457,
-        "xmax": 1292071.7973615797,
+        "xmax": 988769.6691260809,
         "ymax": 7298045.132255452
       },
       {
@@ -10447,19 +10447,19 @@
           "latestWkid": 3857,
           "wkid": 102100
         },
-        "xmin": -8656787.185644386,
-        "ymin": 4668079.653257047,
-        "xmax": -8493517.69322726,
-        "ymax": 4742682.192863376
+        "xmin": -8637830.802629637,
+        "ymin": 4668079.653257064,
+        "xmax": -8512474.07624201,
+        "ymax": 4742682.192863359
       },
       {
         "spatialReference": {
           "latestWkid": 3857,
           "wkid": 102100
         },
-        "xmin": 16829734.60196205,
+        "xmin": 16830326.988931257,
         "ymin": -4012543.9656513296,
-        "xmax": 16834836.773600075,
+        "xmax": 16834244.386630867,
         "ymax": -4010212.6362886345
       }
     ],
@@ -10476,7 +10476,7 @@
         "land": "#fcfcfa"
       }
     },
-    "arcgisActiveBasemap": "1b243539f4514b6ba35e7d995890db1d",
+    "arcgisActiveBasemap": "10df2279f9684e4a9f6a7f08febac2a9",
     "arcgisViewState": {
       "is3D": false,
       "viewpoint": null
