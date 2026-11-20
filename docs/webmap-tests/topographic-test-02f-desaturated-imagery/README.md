@@ -97,6 +97,11 @@ Identical to every other configuration — see
   color` invert at that same zoom instead, so they stay readable
   against the raw imagery. See both style files above for the full
   layer lists.
+- **Road/transportation opacity (test)**: all surface road, pedestrian-
+  road, railroad, rail ferry, and airport runway layers in Light Roads
+  DESAT IMAGERY now render at 50% opacity, same as Trail or path.
+  `Road tunnel/*` layers keep their own pre-existing opacity scheme,
+  unrelated to this change.
 - **Trails** (`Trail or path/0`/`/1`, only ever visible in that same
   narrow zoom 15–15.76 band) have `line-opacity: 0.5` in Light Roads
   DESAT IMAGERY, plus a `[3, 2]` dash on the fill layer, toning them

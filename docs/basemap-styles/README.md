@@ -82,6 +82,14 @@ the 1' contour layer.
     and their blockout masks are untouched — they live in the Labels
     style below and keep rendering past this cutoff, just with inverted
     colors (see below).
+  - **Road/transportation opacity (test)**: all surface `Road/*`
+    layers, `Road/Pedestrian/0`/`/1`, `Railroad`/`Railroad/ties`,
+    `Ferry/Rail ferry`, and `Airport/Airport runway` now have
+    `line-opacity`/`fill-opacity: 0.5` (26 layers), toning them down
+    against the muted aerial imagery, the same way Trail or path
+    already was. `Road tunnel/*` layers already carried their own
+    opacity scheme (`0.5` casing / `0.7` fill, indicating "underground"
+    regardless of imagery) predating this change and weren't touched.
   - **Trail prominence**: `Trail or path/0`/`Trail or path/1` only ever
     render in the narrow zoom 15–15.76 band (per the cutoff above).
     Width and color are unchanged from Light Roads Desat (`1.6`/

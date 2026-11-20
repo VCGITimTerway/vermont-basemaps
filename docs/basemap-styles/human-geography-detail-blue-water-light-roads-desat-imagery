@@ -44,7 +44,8 @@
       "minzoom": 11,
       "layout": {},
       "paint": {
-        "fill-color": "#e7e5e5"
+        "fill-color": "#e7e5e5",
+        "fill-opacity": 0.5
       },
       "maxzoom": 15.76
     },
@@ -835,7 +836,8 @@
             ]
           ]
         },
-        "line-color": "#eaeaea"
+        "line-color": "#eaeaea",
+        "line-opacity": 0.5
       },
       "maxzoom": 15.76
     },
@@ -901,7 +903,8 @@
             ]
           ]
         },
-        "line-color": "#ffffff"
+        "line-color": "#ffffff",
+        "line-opacity": 0.5
       },
       "maxzoom": 15.76
     },
@@ -919,7 +922,8 @@
         "line-dasharray": [
           0.2,
           2
-        ]
+        ],
+        "line-opacity": 0.5
       },
       "minzoom": 15,
       "maxzoom": 15.76
@@ -934,7 +938,8 @@
       },
       "paint": {
         "line-color": "#dddddd",
-        "line-width": 1.2
+        "line-width": 1.2,
+        "line-opacity": 0.5
       },
       "minzoom": 15,
       "maxzoom": 15.76
@@ -963,7 +968,8 @@
       },
       "paint": {
         "line-color": "#f2ffff",
-        "line-width": 1.2
+        "line-width": 1.2,
+        "line-opacity": 0.5
       },
       "maxzoom": 15.76
     },
@@ -1007,7 +1013,8 @@
           6,
           3
         ],
-        "line-color": "#d5d5d5"
+        "line-color": "#d5d5d5",
+        "line-opacity": 0.5
       },
       "maxzoom": 15.76
     },
@@ -1052,7 +1059,8 @@
               16.5
             ]
           ]
-        }
+        },
+        "line-opacity": 0.5
       },
       "maxzoom": 15.76
     },
@@ -1101,7 +1109,8 @@
               45
             ]
           ]
-        }
+        },
+        "line-opacity": 0.5
       },
       "maxzoom": 15.76
     },
@@ -1150,7 +1159,8 @@
               33
             ]
           ]
-        }
+        },
+        "line-opacity": 0.5
       },
       "maxzoom": 15.76
     },
@@ -1199,7 +1209,8 @@
               46
             ]
           ]
-        }
+        },
+        "line-opacity": 0.5
       },
       "maxzoom": 15.76
     },
@@ -1248,7 +1259,8 @@
               33
             ]
           ]
-        }
+        },
+        "line-opacity": 0.5
       },
       "maxzoom": 15.76
     },
@@ -1297,7 +1309,8 @@
               48
             ]
           ]
-        }
+        },
+        "line-opacity": 0.5
       },
       "maxzoom": 15.76
     },
@@ -1346,7 +1359,8 @@
               33
             ]
           ]
-        }
+        },
+        "line-opacity": 0.5
       },
       "maxzoom": 15.76
     },
@@ -1394,7 +1408,8 @@
               50
             ]
           ]
-        }
+        },
+        "line-opacity": 0.5
       },
       "maxzoom": 15.76
     },
@@ -1442,7 +1457,8 @@
               50
             ]
           ]
-        }
+        },
+        "line-opacity": 0.5
       },
       "maxzoom": 15.76
     },
@@ -1482,7 +1498,8 @@
               2.5
             ]
           ]
-        }
+        },
+        "line-opacity": 0.5
       },
       "maxzoom": 15.76
     },
@@ -1527,7 +1544,8 @@
               15
             ]
           ]
-        }
+        },
+        "line-opacity": 0.5
       },
       "maxzoom": 15.76
     },
@@ -1576,7 +1594,8 @@
               40
             ]
           ]
-        }
+        },
+        "line-opacity": 0.5
       },
       "maxzoom": 15.76
     },
@@ -1625,7 +1644,8 @@
               30
             ]
           ]
-        }
+        },
+        "line-opacity": 0.5
       },
       "maxzoom": 15.76
     },
@@ -1674,7 +1694,8 @@
               42
             ]
           ]
-        }
+        },
+        "line-opacity": 0.5
       },
       "maxzoom": 15.76
     },
@@ -1723,7 +1744,8 @@
               30
             ]
           ]
-        }
+        },
+        "line-opacity": 0.5
       },
       "maxzoom": 15.76
     },
@@ -1772,7 +1794,8 @@
               44
             ]
           ]
-        }
+        },
+        "line-opacity": 0.5
       },
       "maxzoom": 15.76
     },
@@ -1821,7 +1844,8 @@
               30
             ]
           ]
-        }
+        },
+        "line-opacity": 0.5
       },
       "maxzoom": 15.76
     },
@@ -1869,7 +1893,8 @@
             ]
           ]
         },
-        "line-color": "#ffffff"
+        "line-color": "#ffffff",
+        "line-opacity": 0.5
       },
       "maxzoom": 15.76
     },
@@ -1917,7 +1942,8 @@
               45
             ]
           ]
-        }
+        },
+        "line-opacity": 0.5
       },
       "maxzoom": 15.76
     },
